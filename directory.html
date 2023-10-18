@@ -4,7 +4,246 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EcoScape</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="icon" href="./favicon.ico">
+    <link href="bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+    <style>
+        @import url(https://db.onlinewebfonts.com/c/490cb0e45f39580c7ba1b856f2f1f4a7?family=Righteous);
+        @import url(https://db.onlinewebfonts.com/c/490cb0e45f39580c7ba1b856f2f1f4a7?family=Assistant+SemiBold);
+
+        @font-face {
+            font-family: "Righteous";
+            src: url("https://db.onlinewebfonts.com/t/490cb0e45f39580c7ba1b856f2f1f4a7.eot");
+            src: url("https://db.onlinewebfonts.com/t/490cb0e45f39580c7ba1b856f2f1f4a7.eot?#iefix")format("embedded-opentype"),
+            url("https://db.onlinewebfonts.com/t/490cb0e45f39580c7ba1b856f2f1f4a7.woff2")format("woff2"),
+            url("https://db.onlinewebfonts.com/t/490cb0e45f39580c7ba1b856f2f1f4a7.woff")format("woff"),
+            url("https://db.onlinewebfonts.com/t/490cb0e45f39580c7ba1b856f2f1f4a7.ttf")format("truetype"),
+            url("https://db.onlinewebfonts.com/t/490cb0e45f39580c7ba1b856f2f1f4a7.svg#Righteous")format("svg");
+        }
+
+        @font-face {
+            font-family: "Assistant SemiBold";
+            src: url("https://db.onlinewebfonts.com/t/9faccf1abf257c519fac11992fcbe96f.eot");
+            src: url("https://db.onlinewebfonts.com/t/9faccf1abf257c519fac11992fcbe96f.eot?#iefix")format("embedded-opentype"),
+            url("https://db.onlinewebfonts.com/t/9faccf1abf257c519fac11992fcbe96f.woff2")format("woff2"),
+            url("https://db.onlinewebfonts.com/t/9faccf1abf257c519fac11992fcbe96f.woff")format("woff"),
+            url("https://db.onlinewebfonts.com/t/9faccf1abf257c519fac11992fcbe96f.ttf")format("truetype"),
+            url("https://db.onlinewebfonts.com/t/9faccf1abf257c519fac11992fcbe96f.svg#Assistant SemiBold")format("svg");
+        }
+
+        /* .overlay-div{
+            position:relative;  
+            background-color:black;
+            opacity:0.5;
+            height: 100%;
+            padding-bottom: 0px;
+            margin: 0px;
+        } */
+
+        .bx-chevron-down:before {
+            content: "\ea4a";
+        }
+
+        .main-banner{
+            width: 100%;
+            height: 100%;
+
+        }
+
+
+        @media screen and (min-width: 1001px) {
+            .main-title{
+                font-size: 80px;
+            }
+            .typed{
+                font-size: 30px;
+            }
+            .typed-cursor{
+                font-size: 30px;
+            }
+            .typed-text{
+                font-size: 25px;
+            }
+            .title-icon{
+                width: 85px;
+                height: 75px;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .main-title{
+                font-size: 65px;
+            }
+            .typed{
+                font-size: 25px;
+            }
+            .typed-cursor{
+                font-size: 25px;
+            }
+            .typed-text{
+                font-size: 20px;
+            }
+            .title-icon{
+                width: 70px;
+                height: 60px;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .main-title{
+                font-size: 47px;
+            }
+            .typed{
+                font-size: 20px;
+            }
+            .typed-cursor{
+                font-size: 20px;
+            }
+            .typed-text{
+                font-size: 15px;
+            }
+            .title-icon{
+                width: 55px;
+                height: 45px;
+            }
+        }
+
+        @media screen and (max-width: 501px) {
+            .main-title{
+                font-size: 35px;
+            }
+            .typed{
+                font-size: 15px;
+            }
+            .typed-cursor{
+                font-size: 15px;
+            }
+            .typed-text{
+                font-size: 10px;
+            }
+            .title-icon{
+                width: 40px;
+                height: 30px;
+            }
+        }
+
+        .title-icon{
+            width: 85px;
+            height: 75px;
+            position: sticky;
+
+        }
+
+        .header-area .main-nav {
+            min-height: 30px;
+            background: transparent;
+        }
+
+        .title{
+            padding-left: 1%;
+            padding-top: 0.6%;
+            font-weight: bold;
+            font-size: larger;
+            font-family: "Righteous";
+            color: #fff;
+        }
+
+        .header-area {
+            background-color: rgba(250, 250, 250, 0.245);
+            position: absolute;
+            height: 6%;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            -webkit-transition: all .5s ease 0s;
+            -moz-transition: all .5s ease 0s;
+            -o-transition: all .5s ease 0s;
+            transition: all .5s ease 0s;
+        }
+
+        .nav-item{
+            padding-top: 2px;
+            font-size: large;
+        }
+
+/* 
+        .btn-get-started {
+            display: inline-block;
+            justify-content: center;
+            border-radius: 50px;
+            transition: 0.3s ease-in-out;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border: 2px solid #fff;
+            color: #fff;
+        } */
+
+        .heading{
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        .mask{
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .circle-btn {
+            
+            display: inline-flex;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            align-items: center;
+            line-height: 50px; 
+            color: #fff; 
+            position: relative; 
+            font-size: 30px;
+            justify-content: center;
+            border: 2px solid #fff;
+        }
+
+        .bx.bx-chevrons-down {
+            vertical-align: center;
+        }
+
+        .typed {
+            text-decoration: underline;
+            font-weight: bold;
+            color: #b3cf99;
+            font-family: "Assistant SemiBold";
+        }
+
+        .typed-cursor {
+            color: #fff;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        
+    </style>
+
 </head>
 <body>
           <!-- ======= Header ======= -->
