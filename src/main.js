@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Chakra, { CThemeProvider } from '@chakra-ui/vue'
 import App from './App.vue'
 
+
 Vue.use(Chakra)
 
 new Vue({

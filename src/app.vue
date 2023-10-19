@@ -7,8 +7,7 @@
   </template>
   
   <script lang="js">
-  import { CBox, CButton } from '@chakra-ui/vue'
-  
+  import { CBox, CButton } from '@chakra-ui/vue' 
   export default {
     name: 'App',
     components: {
@@ -16,4 +15,5 @@
       CButton
     }
   }
+  
   </script>

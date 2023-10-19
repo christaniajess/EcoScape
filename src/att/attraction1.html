@@ -6,14 +6,84 @@
     <title>EcoScape</title>
     <link rel="stylesheet" href="../att/typewriter_style.css" />
     <script src="../att/typewriter.js" defer></script>
-    <link rel="icon" href="../image/icon2.png">
+    <link rel="icon" href="/image/icon2.png">
+
+    <!--idk what this is-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap"
+            rel="stylesheet"
+            type='text/css'
+        >
+   
+
   </head>
   <body>
     <!--Header-->
         <h1>Search for <span id="typewriter"></span><span id="cursor">|</span></h1>
     <!---->
     
-    <!--Tabs-->
+    <!--Tabs (choosing attractions or hotel)-->
+    <div class="container">
+      <header>
+        <div class="tabs">
+          <a id="tab1" name="all" href="#tab1">
+            <svg  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            </svg>
+            All
+          </a>
+          <a id="tab2" name="Central" href="#tab2">
+            <svg  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            </svg>
+            Central
+          </a>
+          <a id="tab3" name="East" href="#tab3">
+            <svg  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            </svg>
+            East
+          </a>
+          <a id="tab4" name="South" href="#tab4">
+            <svg  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            </svg>
+            South
+          </a>
+          <a id="tab5" name="North" href="#tab5">
+            <svg  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+          North
+          </a>
+          <a id="tab6" name="West" href="#tab6">
+            <svg  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+          West
+          </a>
+        </div>
+      </header>
+      <div class="tab-content-wrapper">
+        <div id="tab1-content" class="tab-content">
+        </div>
+        <div id="tab2-content" class="tab-content">
+        </div>
+        <div id="tab3-content" class="tab-content">
+        </div>
+        <div id="tab4-content" class="tab-content">
+        </div>
+        <div id="tab5-content" class="tab-content">
+        </div>
+        <div id="tab6-content" class="tab-content">
+        </div>
+      </div>
+    </div>
+    <script src="./typewriter.js"></script>
+ 
+
     
 
   </body>
