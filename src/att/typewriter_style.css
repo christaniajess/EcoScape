@@ -175,7 +175,7 @@ footer {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin: 0 auto;
+      margin: auto;
       text-align: center;
   }
 
@@ -302,6 +302,7 @@ footer {
     display: flex;
     gap:1.5cm;
     padding-top: 1rem;
+    padding-bottom:1rem;
     
     
   }
@@ -333,8 +334,8 @@ footer {
 .card:hover figcaption {
     font-size: 0.6rem;
     position: absolute;
-    height: 80px;
-    width: 160px;
+    height: 180px;
+    width: 190px;
     display: flex;
     align-items: end;
     background: linear-gradient(
@@ -354,4 +355,6 @@ footer {
     cursor: pointer;
     transform: translateX(22px);
 }
+
+
  

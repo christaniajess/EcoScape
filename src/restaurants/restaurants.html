@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoScape</title>
+    <link rel="stylesheet" href="./" />
+    <script src="./restaurant.js" defer></script>
+    <link rel="icon" href="../image/icon2.png">
+    <!-- <link rel="stylesheet" href="./menu.css"> -->
+    <link rel="stylesheet"  href="hotel.css">
+    <link href="restaurant.css" rel="stylesheet">
+    
+   
+    
+
+  </head>
+  <body>
+    <!--Header-->
+        
+        <img src="../image/icon.png" width="50cm">
+        <h1>Discover <span id="typewriter"></span><span id="cursor">|</span></h1>
+    <!---->
+    
+    <!--Tabs (choosing which region)-->
+    <div id="tab-container" class="tab-container">
+      <div class="container-fluid">
+        <div class="text-center col-md-10 col-md-offset-1">
+    
+          <input id="tab1" type="radio" name="tabs" checked>
+          <label for="tab1">All</label>
+      
+          <input id="tab2" type="radio" name="tabs">
+          <label for="tab2">Asian</label>
+      
+          <input id="tab3" type="radio" name="tabs">
+          <label for="tab3">European</label>
+      
+          <input id="tab4" type="radio" name="tabs">
+          <label for="tab4">Mediterranean</label>
+
+          <input id="tab5" type="radio" name="tabs">
+          <label for="tab5">American</label>
+
+          <input id="tab6" type="radio" name="tabs">
+          <label for="tab6">African</label>
+
+          <!-- Content for All -->
+          <!-- https://thehoneycombers.com/singapore/sustainable-dining-restaurants-singapore/ -->
+          <div id="content1" class="tab-content">
+              <div class="gallery">
+                <article class="card" onclick="location.href='attractions.html'"> 
+                  <!-- the onclick should redirect to the actual info about that location -->
+                  <figure>
+                    <img src="./image/kausmo.jpg">
+                    <figcaption><h3>Kausmo - Japanese</h3></figcaption>
+                  </figure>
+                </article>
+                <article class="card" onclick="location.href='attractions.html'"> 
+                    <!-- the onclick should redirect to the actual info about that location -->
+                    <figure>
+                      <img src="./image/ofc.webp">
+                      <figcaption><h3>Open Farm Community - European</h3></figcaption>
+                    </figure>
+                  </article>
+                  <article class="card" onclick="location.href='attractions.html'"> 
+                    <!-- the onclick should redirect to the actual info about that location -->
+                    <figure>
+                      <img src="./image/thesummerhouse.png">
+                      <figcaption><h3>The Summerhouse - European</h3></figcaption>
+                    </figure>
+                  </article>
+
+                  <article class="card" onclick="location.href='attractions.html'"> 
+                    <!-- the onclick should redirect to the actual info about that location -->
+                    <figure>
+                      <img src="./image/vineyad.jpg">
+                      <figcaption><h3>Vineyard - European</h3></figcaption>
+                    </figure>
+                  </article>
+                  <article class="card" onclick="location.href='attractions.html'"> 
+                    <!-- the onclick should redirect to the actual info about that location -->
+                    <figure>
+                      <img src="./image/artemisgrill.png">
+                      <figcaption><h3>Artemis Grill - Mediterranean</h3></figcaption>
+                    </figure>
+                  </article>
+                  <article class="card" onclick="location.href='attractions.html'"> 
+                    <!-- the onclick should redirect to the actual info about that location -->
+                    <figure>
+                      <img src="./image/poisonivy.jpg">
+                      <figcaption><h3>Poison Ivy Bistro - Asian</h3></figcaption>
+                    </figure>
+                  </article>
+                
+              </div>
+            </div>
+            
+            <!-- putting it in another -->
+            <div id="content1" class="tab-content">
+              <div class="gallery">
+                
+                
+              </div>
+            </div>
+
+          <!-- Content for Asian -->
+          <div id="content2" class="tab-content">
+            <div class="gallery">
+                <article class="card" onclick="location.href='attractions.html'"> 
+                    <!-- the onclick should redirect to the actual info about that location -->
+                    <figure>
+                      <img src="./image/kausmo.jpg">
+                      <figcaption><h3>Kausmo - Japanese</h3></figcaption>
+                    </figure>
+                  </article>
+                  <article class="card" onclick="location.href='attractions.html'"> 
+                    <!-- the onclick should redirect to the actual info about that location -->
+                    <figure>
+                      <img src="./image/poisonivy.jpg">
+                      <figcaption><h3>Poison Ivy Bistro - Asian</h3></figcaption>
+                    </figure>
+                  </article>
+              
+
+            </div>
+          </div>
+
+          <!-- Content for European -->
+          <div id="content3" class="tab-content">
+            <div class="gallery">
+                <article class="card" onclick="location.href='attractions.html'"> 
+                    <!-- the onclick should redirect to the actual info about that location -->
+                    <figure>
+                      <img src="./image/ofc.webp">
+                      <figcaption><h3>Open Farm Community - European</h3></figcaption>
+                    </figure>
+                  </article>
+                  <article class="card" onclick="location.href='attractions.html'"> 
+                    <!-- the onclick should redirect to the actual info about that location -->
+                    <figure>
+                      <img src="./image/thesummerhouse.png">
+                      <figcaption><h3>The Summerhouse - French</h3></figcaption>
+                    </figure>
+                  </article>
+                  <article class="card" onclick="location.href='attractions.html'"> 
+                    <!-- the onclick should redirect to the actual info about that location -->
+                    <figure>
+                      <img src="./image/vineyad.jpg">
+                      <figcaption><h3>Vineyard - French and Italian</h3></figcaption>
+                    </figure>
+                  </article>
+                  
+            </div>
+            
+           
+          </div>
+
+          <!-- Content for the Mediterranean -->
+          <div id="content4" class="tab-content">
+            <div class="gallery">
+              
+                <article class="card" onclick="location.href='attractions.html'"> 
+                    <!-- the onclick should redirect to the actual info about that location -->
+                    <figure>
+                      <img src="./image/artemisgrill.png">
+                      <figcaption><h3>Artemis Grill - Mediterranean</h3></figcaption>
+                    </figure>
+                  </article>
+            </div>
+          </div>
+
+          <!-- Content for the north -->
+          <div id="content5" class="tab-content">
+            <h1>Sorry we can't find any sustainable restaurants under this cuisine yet in Singapore<span id="typewriter"></span><span id="cursor">...</span></h1>
+
+          </div>
+        
+
+
+          <!-- Content for the west (jurong lake gardens) -->
+          <div id="content6" class="tab-content">
+            <h1>Sorry we can't find any sustainable restaurants under this cuisine yet in Singapore<span id="typewriter"></span><span id="cursor">...</span></h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-wrapper">
+          <div class="footer-columns">
+              <div class="footer-links">
+                  <div class="footer-logo">
+                      <img src="../image/icon2.png">
+                  </div>
+                  <section>
+                    <ul>
+                      <h3>Directory</h3>
+                      <li>
+                        <a href="../att/attraction1.html" title="attractions">Attractions</a>
+                      </li>
+                      <li>
+                        <a href="../hotel/hotel.html" title="hotel">Hotel</a>
+                      </li>
+                      <li>
+                        <a href="#" title="restaurant">Restaurant</a>
+                      </li>
+                      <li>
+                        <a href="#" title="GTP">Green Transport Planner</a>
+                      </li>
+                    </ul>
+                  </section>
+                  <section>
+                    <ul>
+                      <h3>Ecoscape</h3>
+                      <li>
+                        <a href="#" title="aboutus">About Us</a>
+                      </li>
+                    </ul>
+                  </section>
+              </div>
+             
+          </div>
+          <div class="footer-bottom">
+            <small>Ecoscape Ltd.
+              <span id="year"></span>, All rights reserved
+            </small>
+          </div>
+      </div>
+  </footer>
+  <script>
+      document.getElementById("year").innerHTML = new Date().getFullYear()
+    </script>
+      
+
+  </body>
+</html>
