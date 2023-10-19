@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    
+    font-family:system-ui;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  h1 {
+    font-size: 25px;
+    
+  }
+  
+  #typewriter {
+    color: #628a5c;
+  }
+  
+  #cursor {
+    color: #21321F;
+    font-weight: bold;
+    animation: blink 1s linear infinite;
+  }
+  
+  @keyframes blink {
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
