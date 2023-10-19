@@ -27,3 +27,5 @@ const effect = async () => {
 };
 
 effect();
+
+// for the tabs
