@@ -60,14 +60,14 @@
   box-sizing: border-box;
 }
 footer {
-  bottom: 0px;
+  /* bottom: 0px; */
   background-color: var(
       --primary);
   width: 100%;
   min-width: 300px;
   bottom: 0px;
   display: flex; 
-  align-items: center;
+  /* align-items: center; */
   /* flex-direction: column;  */
   position:absolute;
 }
@@ -208,304 +208,150 @@ footer {
     }
   }
   
-  /*--------------------------------------------------------------
-  # Navigation Menu
-  --------------------------------------------------------------*/
-  /**
-  * Desktop Navigation 
-  */
-  .navbar {
-    padding: 0;
-    position: static;
+ /* tabs */
+  #tab-container 
+  {
+    /* margin-top: 20px;
+    margin-bottom: 10px; */
+    padding:1.5rem;
+    
+
   }
-  
-  .navbar ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    align-items: center;
-  }
-  
-  .navbar li {
-    position: relative;
-  }
-  
-  .navbar a,
-  .navbar a:focus {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 16px;
-    margin-left: 10px;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: blac;
-    white-space: nowrap;
-    transition: 0.3s;
-  }
-  
-  .navbar a i,
-  .navbar a:focus i {
-    font-size: 12px;
-    line-height: 0;
-    margin-left: 5px;
-  }
-  
-  .navbar a:hover,
-  .navbar .active,
-  .navbar .active:focus,
-  .navbar li:hover>a {
-    background: rgba(255, 255, 255, 0.2);
-  }
-  
-  .navbar .dropdown ul {
-    display: block;
-    position: absolute;
-    left: 10px;
-    top: calc(100% + 30px);
-    margin: 0;
-    padding: 10px 0;
-    z-index: 99;
-    opacity: 0;
-    visibility: hidden;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-    transition: 0.3s;
-  }
-  
-  .navbar .dropdown ul li {
-    min-width: 200px;
-  }
-  
-  .navbar .dropdown ul a {
-    padding: 10px 20px;
-    font-size: 15px;
-    text-transform: none;
-    font-weight: 600;
-    color: #2f4d5a;
-  }
-  
-  .navbar .dropdown ul a i {
-    font-size: 12px;
-  }
-  
-  .navbar .dropdown ul a:hover,
-  .navbar .dropdown ul .active:hover,
-  .navbar .dropdown ul li:hover>a {
-    color: #67b0d1;
-  }
-  
-  .navbar .dropdown:hover>ul {
-    opacity: 1;
-    top: 100%;
-    visibility: visible;
-  }
-  
-  .navbar .megamenu {
-    position: static;
-  }
-  
-  .navbar .megamenu ul {
-    margin: 0;
-    padding: 10px;
-    display: block;
-    position: absolute;
-    top: 130%;
-    left: 0;
-    right: 0;
-    visibility: hidden;
-    opacity: 0;
-    display: flex;
-    transition: 0.3s;
-    border-radius: 4px;
-    z-index: 99;
-  }
-  
-  .navbar .megamenu ul li {
-    flex: 1;
-  }
-  
-  .navbar .megamenu ul li strong {
-    padding: 10px 0 10px 20px;
-    display: block;
-  }
-  
-  .navbar .megamenu ul li a,
-  .navbar .megamenu ul li:hover>a {
-    color: rgba(var(--color-white-rgb), 0.5);
-    background: none;
-    padding: 8px 10px;
-  }
-  
-  .navbar .megamenu ul li a:hover,
-  .navbar .megamenu ul li .active,
-  .navbar .megamenu ul li .active:hover {
-    color: #67b0d1;
-  }
-  
-  .navbar .megamenu:hover>ul {
-    opacity: 1;
-    top: 100%;
-    visibility: visible;
-  }
-  
-  .navbar .dropdown .dropdown ul {
-    top: 0;
-    left: calc(100% - 30px);
-    visibility: hidden;
-  }
-  
-  .navbar .dropdown .dropdown:hover>ul {
-    opacity: 1;
-    top: 0;
-    left: 100%;
-    visibility: visible;
-  }
-  
-  @media (max-width: 1366px) {
-    .navbar .dropdown .dropdown ul {
-      left: -90%;
-    }
-  
-    .navbar .dropdown .dropdown:hover>ul {
-      left: -100%;
-    }
-  }
-  
-  /**
-  * Mobile Navigation 
-  */
-  .mobile-nav-toggle {
-    color: #fff;
-    font-size: 28px;
-    cursor: pointer;
+
+  .tab-content 
+  {
     display: none;
-    line-height: 0;
-    transition: 0.5s;
+    padding: 20px 0 0;
   }
-  
-  @media (max-width: 991px) {
-    .mobile-nav-toggle {
+
+  input 
+  {
+    display: none;
+    &:checked 
+    {
+      &+label 
+      {
+        color: #bd235d;
+      }
+    }
+  }
+  label {
+    display: inline-block;
+    padding: 0 25px;
+    font-weight: 600;
+    &:not(:first-of-type) {
+      border-left: 2px solid #628a5c;
+      @media screen and (max-width: 480px) {
+        border-left: none;
+      }
+    }
+    @media screen and (max-width: 480px) {
       display: block;
     }
-  
-    .navbar ul {
-      display: none;
+    &:hover {
+      color: #bd235d;
+      cursor: pointer;
+      
     }
   }
-  
-  .navbar-mobile {
-    position: fixed;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(43, 111, 142, 0.9);
-    transition: 0.3s;
+  #tab1 {
+    &:checked {
+      &~#content1 {
+        display: block;
+      }
+    }
   }
-  
-  .navbar-mobile .mobile-nav-toggle {
-    position: absolute;
-    top: 15px;
-    right: 15px;
+  #tab2 {
+    &:checked {
+      &~#content2 {
+        display: block;
+      }
+    }
   }
-  
-  .navbar-mobile ul {
-    display: block;
-    position: absolute;
-    top: 55px;
-    right: 15px;
-    bottom: 15px;
-    left: 15px;
-    padding: 10px 0;
-    background-color: #fff;
-    overflow-y: auto;
-    transition: 0.3s;
+  #tab3 {
+    &:checked {
+      &~#content3 {
+        display: block;
+      }
+    }
   }
-  
-  .navbar-mobile a,
-  .navbar-mobile a:focus {
-    padding: 10px 20px;
-    font-size: 15px;
-    color: #2f4d5a;
+  #tab4 {
+    &:checked {
+      &~#content4 {
+        display: block;
+      }
+    }
   }
-  
-  .navbar-mobile a:hover,
-  .navbar-mobile .active,
-  .navbar-mobile li:hover>a {
-    color: #67b0d1;
+  #tab5 {
+    &:checked {
+      &~#content5 {
+        display: block;
+      }
+    }
   }
-  
-  .navbar-mobile .getstarted,
-  .navbar-mobile .getstarted:focus {
-    margin: 15px;
-  }
-  
-  .navbar-mobile .dropdown ul {
-    position: static;
-    display: none;
-    margin: 10px 20px;
-    padding: 10px 0;
-    z-index: 99;
-    opacity: 1;
-    visibility: visible;
-    background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-  }
-  
-  .navbar-mobile .dropdown ul li {
-    min-width: 200px;
-  }
-  
-  .navbar-mobile .dropdown ul a {
-    padding: 10px 20px;
-  }
-  
-  .navbar-mobile .dropdown ul a i {
-    font-size: 12px;
-  }
-  
-  .navbar-mobile .dropdown ul a:hover,
-  .navbar-mobile .dropdown ul .active:hover,
-  .navbar-mobile .dropdown ul li:hover>a {
-    color: #67b0d1;
-  }
-  
-  .navbar-mobile .dropdown>.dropdown-active {
-    display: block;
-  }
-  
-  .navbar-mobile .megamenu ul li a,
-  .navbar-mobile .megamenu ul li:hover>a {
-    color: rgba(var(--color-white-rgb), 0.5);
-    background: none;
-  }
-  
-  .navbar-mobile .megamenu ul li a:hover,
-  .navbar-mobile .megamenu ul li .active,
-  .navbar-mobile .megamenu ul li .active:hover {
-    color: #67b0d1;
+  #tab6 {
+    &:checked {
+      &~#content6 {
+        display: block;
+      }
+    }
   }
 
-
-  /* gpt */
-
-  /* Add this CSS for the video container */
-.main-banner {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+  .gallery
+  {
+    display: flex;
+    gap:1.5cm;
+    padding-top: 1rem;
+    
+    
+  }
+  .card
+  {
+    position:relative;
+    left:1.5rem;
+    width:190px;
+    height:140px;
+    /* background-color:#3c343d; */
+    border-radius:8px;
+    transition:1000ms all;
+    transform-origin: center left;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+    outline: 1px solid #3c343d;
+    overflow:hidden;
+  }
+  .card img {
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
-#bg-video {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+.card:hover figcaption {
+    font-size: 0.6rem;
+    position: absolute;
+    height: 80px;
+    width: 160px;
+    display: flex;
+    align-items: end;
+    background: linear-gradient(
+        to top, 
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    color: white;
+    left: 0px;
+    bottom: 0px;
+    padding-left: 12px;
+    padding-bottom: 10px;
+}
+
+.card:hover ~ .card {
+    font-weight: bold;
+    cursor: pointer;
+    transform: translateX(22px);
 }
  
-

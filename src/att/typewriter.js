@@ -1,4 +1,4 @@
-const words = ["sustainable attractions here", "eco-friendly attractions here"];
+const words = ["sustainable attractions here!", "eco-friendly attractions here!"];
 const el = document.querySelector("#typewriter");
 
 const sleepTime = 100;
