@@ -16,7 +16,10 @@
     <link href="boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js">
+      
+    </script>
+    
 
 
     <style>
@@ -58,6 +61,7 @@
 </head>
 
 <body>
+  
   <div class="container-fluid mt-4 mx-2 d-flex flex-column" style="">
     <div class="row mx-5">
       <div class="col"><h2>Attractions</h2></div>
@@ -66,7 +70,7 @@
       <div class="col">
         <nav>
           <ul>
-            <li><a href="#">All</a></li>
+            <li><a href="#" >All</a></li>
             <li><a href="#">Central</a></li>
             <li><a href="#">West</a></li>
             <li><a href="#">East</a></li>
@@ -75,12 +79,58 @@
         </nav>
       </div>
     </div>
-    <div class="row">
+    <div class="row" id="asd">
+      <div class="col">
       <div class="grid">
         <div class="grid-item">
-          <div class="card"></div>
+          <div class="card">
+            <img 
+              class="card-img" 
+              src="../image/licensed-image.jpg"
+            >
+            <div class="card-content">
+              <h1 class="card-header">Grand Canyon</h1>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Possimus, praesentium porro eligendi eaque a facere itaque cumque neque iusto laudantium facilis maiores. Dignissimos nemo, obcaecati eos cum nulla illum unde!
+              </p>
+              <button class="card-btn">
+                Visit <span>&rarr;</span>
+
+              </button>
+            </div>
+
+          </div>
+          
+
+          </div>
+          <div class="grid-item">
+            <div class="card">
+              <img 
+                class="card-img" 
+                src="../image/licensed-image.jpg"
+              >
+              <div class="card-content">
+                <h1 class="card-header">Grand Canyon</h1>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                  Possimus, praesentium porro eligendi eaque a facere itaque cumque neque iusto laudantium facilis maiores. Dignissimos nemo, obcaecati eos cum nulla illum unde!
+                </p>
+                <button class="card-btn">
+                  Visit <span>&rarr;</span>
+  
+                </button>
+              </div>
+  
+            </div>
+            
+  
+            </div>
+          
 
         </div>
+
+      </div>
 
       </div>
     </div>
