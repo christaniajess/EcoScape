@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="test.css" />
+</head>
+<body>
+<div>
+    Enter a star rating 0-5: <input onkeyup="rating(this.value)" value="4.3"> 
+<p>
+<div id="rating1" class="rating"></div>
+</div>
+
+
+<script>
+    var cw = window.rating1.clientWidth; // save original 100% pixel width
+
+function rating( stars ) {
+  window.rating1.style.width = Math.round(cw * (stars / 5)) + 'px';
+}
+
+rating(4.3);
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+body{background:black; font-size:50px}
+
+
+
+
+
+
+/* START FROM HERE */
+
+.rating {
+    font-size: 30px;
+    color: orange;
+    display: inline-block;
+    overflow: hidden;
+  }
+  .rating::before { 
+    content: "★★★★★" 
+  }
