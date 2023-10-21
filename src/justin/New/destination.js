@@ -1,5 +1,6 @@
 let map;
 
+
 async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
 
@@ -25,24 +26,14 @@ async function initMap() {
 
 initMap();
 
-const app = Vue.createApp ({
-  data() {
-    return {
-      attraction_detail: [
-        {
-          hotelname: "",
-          lat: "",
-          long: "",
-          img: "",
-          description: "",
 
-        }
-      ]
-    }
-  },
-  methods: {
-    
-  }
-})
-
-
+axios.get('destination.json')
+                .then(response => {
+                    // this gets the data from destination.json, which is an array
+                    console.log(response.data)
+                    document.getElementById("attraction-img").setAttribute("src", response.data[0].image)
+                    document.getElementById("open-web-link").setAttribute("href", response.data[0].url)
+                    document.getElementById("attraction-name").innerText = response.data[0].name
+                    document.getElementById("rating").innerHTML = "Rating: " + response.data[0].rating + "<br>Green Score: " + response.data[0].greenScore
+                    document.getElementById("description").innerText = response.data[0].description
+                })
