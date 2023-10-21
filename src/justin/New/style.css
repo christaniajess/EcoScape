@@ -1,29 +1,6 @@
-.nav-item {
-    font-size: small;
-    background-color: white;
-    justify-content: center;
-    height: 50px;
-    width: auto;
-    margin: 10px;
-}
+@import url("https://github.com/christaniajess/EcoScape/blob/362273a0fed78c5e8650c9e19025bc96bdc8fa55/src/att/style.css");
+@import url("https://github.com/christaniajess/EcoScape/blob/b1858dc5e5b1e6289c5bc3971d9eda690fa85d81/src/att/typewriter_style.css");
 
-#logo-img {
-    height: 50px;
-    width: auto;
-}
-
-#logo {
-    padding: 10px;
-}
-
-#back-btn, #open-web-link {
-    font-size: small;
-    color: white;
-    background-color: black;
-    justify-content: center;
-    width: auto;
-    margin: 10px;
-}
 /* 
  * Always set the map height explicitly to define the size of the div element
  * that contains the map. 
