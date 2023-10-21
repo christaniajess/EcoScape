@@ -1,6 +1,6 @@
 [
     {
-        "image": "./image/botanic.jpg",
+        "image": "../image/botanic.jpg",
         "name": "Botanic Gardens",
         "rating": "4.5",
         "greenScore": "4.8/5",

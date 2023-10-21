@@ -61,7 +61,26 @@
 .navbar li:hover>a {
   background: rgba(255, 255, 255, 0.2);
 }
+.rating {
+  font-size: 48px;
+  color: orange;
+  display: inline-block;
+  overflow: hidden;
+}
+.rating::before { 
+  content: "★★★★★" 
+}
 
+label {
+  font-size: x-large;
+  position: relative;
+  bottom: 20px;
+}
+
+#rating {
+    font-size: x-large;
+    padding-top: 20px;
+}
 
 
   </style>
@@ -97,9 +116,11 @@
           </div>
           <div class="col-lg-9">
             <h1 id = "attraction-name"></h1>
-
-            <h3 id = "rating"></h3> 
-          
+            <div id = "rating"></div> 
+            <div>
+              <label for="rating1">Rating:</label>
+              <div id="rating1" class="rating"></div>
+            </div>
             <p id = "description"></p>
           </div>
         </div>
