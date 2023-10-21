@@ -31,4 +31,6 @@ effect();
 // for the tabs
 const areas = ['All', 'Central','East','South','North','West']
 var count = 1
+id= tab+count
+count++
 
