@@ -15,32 +15,31 @@ axios.get('destination.json')
                     document.getElementById("rating").innerHTML = "Green Score: " + response.data[0].greenScore
                     rating(response.data[0].rating)
                     document.getElementById("description").innerText = response.data[0].description
-                })
 
-let map;
+                    let map;
 
+                    async function initMap() {
+                      const { Map } = await google.maps.importLibrary("maps");
 
-async function initMap() {
-  const { Map } = await google.maps.importLibrary("maps");
+                      map = new Map(document.getElementById("map"), {
+                        center: { lat: parseFloat(response.data[0].lat), lng: parseFloat(response.data[0].long) },
+                        zoom: 15
+                      });
 
-  map = new Map(document.getElementById("map"), {
-    center: { lat: 1.3138, lng: 103.8159 },
-    zoom: 15
-  });
+                      const marker = new google.maps.Marker({
+                        position: { lat: parseFloat(response.data[0].lat), lng: parseFloat(response.data[0].long) },
+                        map: map,
+                        title: response.data[0].name,
+                        draggable: false,
+                        animation: google.maps.Animation.DROP
+                      });
 
-  const marker = new google.maps.Marker({
-    position: { lat: 1.3138, lng: 103.8159 },
-    map: map,
-    label: "A",
-    title: "Random Title",
-    draggable: false,
-    animation: google.maps.Animation.DROP
-  });
+                      const infoWindow = new google.maps.InfoWindow({
+                        content: "<h3>" + response.data[0].name +"</h3>"
+                      });
+                      infoWindow.open(map, marker)
+                    }
 
-  const infoWindow = new google.maps.InfoWindow({
-    content: "<p>This is a window info</p>"
-  });
-  infoWindow.open(map, marker)
-}
+                    initMap();
+                                    })
 
-initMap();
