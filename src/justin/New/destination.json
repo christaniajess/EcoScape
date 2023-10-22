@@ -2,6 +2,8 @@
     {
         "image": "../image/botanic.jpg",
         "name": "Botanic Gardens",
+        "type": "park",
+        "area": ["all", "south"],
         "rating": "4.5",
         "greenScore": "4.8/5",
         "url": "https://www.nparks.gov.sg/gardens-parks-and-nature/singapore-botanic-gardens",
@@ -12,9 +14,95 @@
     {
         "image": "./image/ecp.jpg",
         "name": "East Coast Park",
+        "type": "park",
+        "area": ["all", "east"],
         "rating": "4.6",
         "greenScore": "4.8/5",
-        "url": "url",
+        "url": "https://www.nparks.gov.sg/gardens-parks-and-nature/parks-and-nature-reserves/east-coast-park",
+        "lat": "1.3008",
+        "long": "103.9122",
+        "description": "East Coast Park is one of Singapore's most treasured urban getaways, offering a exciting diversity of recreational, sporting and dining activities. With the theme “Recreation for All”, the park has an activity for everyone. Families and friends can sit back, relax and enjoy picnics under the swaying coconut palms, Casuarinas and Ketapangs in the park. For families looking for a fun day out, head down to the play towers, water play area, nature playgardens and swings across the park. For those looking for action, there are myriad sporting activities such as beach volleyball, cycling, cable skiing and various water sports as well as an Xtreme SkatePark. The public restrooms in East Coast Park (at Areas B1, B2, C1, C4, D1, D5, F1, F2, G1 and G2) are equipped with shower facilities, so you can choose to wash up in the park if needed.       In the evenings, have a barbecue or indulge in sumptuous cuisines at the nearby hawker centre or restaurants while enjoying the cool sea breeze. East Coast Park has a total land size of 185 hectares, and a scenic coastline that stretches over 15 km, and attracts a visitorship of more than seven million a year. Get connected from East Coast Park to Rower's Bay, Pasir Ris Park, Sengkang Riverside Park, Changi Beach Park and other park connectors via the Round Island Route! Click here to read more."
+    },
+    {
+        "image": "./image/fcpark.jpg",
+        "name": "Fort Canning Park",
+        "type": "park",
+        "area": ["all", "southt"],
+        "rating": "4.5",
+        "greenScore": "4.5/5",
+        "url": "https://www.nparks.gov.sg/gardens-parks-and-nature/parks-and-nature-reserves/fort-canning-park",
+        "lat": "1.2944",
+        "long": "103.8458",
+        "description": "Festival at the Fort is on from 26 August 2022 to 4 September 2022 - find out more here. Fort Canning Park, an iconic hilltop landmark has witnessed many of Singapore's historical milestones. The hill once sited the palaces of 14th century Kings and served as the Headquarters of the Far East Command Centre and British Army Barracks. The decision to surrender Singapore to the Japanese on 15 February 1942 was also made on the hill, in the Underground Far East Command Centre, commonly known as Battle Box. Today, Fort Canning Park features nine historical gardens - the Pancur Larangan, Artisan's Garden, Sang Nila Utama Garden, Jubilee Park (Phase 1), Raffles Garden, First Botanic Garden, Farquhar Garden, Spice Garden and Armenian Street Park. To get to Fort Canning Park, visitors can make use of the covered escalators from Fort Canning MRT station and Bras Basah MRT station to the top of Fort Canning Park. Fort Canning Park is a venue for celebrations. Its expansive, sprawling lawns play host to concerts, theatre productions and festivals such as Shakespeare in the Park, Ballet Under the Stars, Shakespeare in the Park and Films at the Fort, while weddings, parties and gatherings are a regular sight in the park's venue spaces. Its ancient artefacts are a must-see for history buffs, and its lush greenery and expansive lawns offer a variety of arts, heritage and nature experiences. Whether you are drawn by the park's ancient artefacts and rich heritage or simply its tranquility, this hilltop park offers something for the whole family.."
+    },
+    {
+        "image": "./image/jewel.jpg",
+        "name": "Jewel Changi Airport",
+        "area": ["all", "east"],
+        "type": "mall",
+        "rating": "4.6",
+        "greenScore": "4.0/5",
+        "url": "https://www.jewelchangiairport.com/",
+        "lat": "1.3600",
+        "long": "103.9893",
+        "description": "Jewel Changi Airport is located in the eastern part of Singapore and has earned a reputation as an environmentally friendly attraction. This iconic structure is a testament to Singapore's commitment to sustainability and green design. The green rating of 4 out of 5 reflects the numerous environmentally conscious features. One of the most striking features is the Rain Vortex, which is the world's tallest indoor waterfall. It serves a dual purpose as a stunning visual attraction and a functional rainwater harvesting system. The collected rainwater is used to irrigate the lush indoor forest known as the Shiseido Forest Valley. Jewel is also home to a wide variety of plant species, and its facade is covered with a distinctive glass and steel design that allows for natural light and ventilation. The shopping and dining options within the complex prioritize sustainable practices and local sourcing of products. Additionally, the airport encourages visitors to use public transportation, reducing the carbon footprint of travelers. Incorporating greenery and sustainable features, Jewel Changi Airport stands as a model for environmentally conscious urban development, blending modern infrastructure with the beauty of nature."
+    },
+    {
+        "image": "./image/jlg.jpg",
+        "name": "Jurong Lake Garden",
+        "area": ["all", "west"],
+        "type": "park",
+        "rating": "4.7",
+        "greenScore": "4.5/5",
+        "url": "https://www.nparks.gov.sg/juronglakegardens",
+        "lat": " 1.3440",
+        "long": "103.7226",
+        "description": "Jurong Lake Gardens, located in the western part of Singapore, is renowned for its commitment to environmental sustainability and green practices. This sprawling garden complex encompasses Lakeside Garden, Chinese Garden, and Japanese Garden, and it offers a harmonious blend of natural beauty and eco-friendly design. One of the highlights of Jurong Lake Gardens is the careful preservation of existing greenery and ecosystems. The gardens incorporate natural wetlands, lush green spaces, and a diverse range of plant and animal species. Efforts have been made to restore and enhance the biodiversity of the area. The green rating of 4.5 out of 5 reflects the presence of solar panels for clean energy generation, energy-efficient lighting, and a robust recycling program. Rainwater harvesting systems are in place to minimize water wastage, and sustainable landscaping practices are employed throughout the gardens. Jurong Lake Gardens also encourages eco-friendly transportation with well-maintained cycling and walking paths, as well as ample access to public transit. Visitors can learn about conservation and sustainability through educational programs and exhibitions. In summary, Jurong Lake Gardens exemplifies Singapore's commitment to creating urban spaces that are not only aesthetically pleasing but also environmentally responsible, making it a haven for nature lovers and environmentally conscious individuals."
+    },
+    {
+        "image": "./image/reservoir.jpg",
+        "name": "MacRitchie Reservoir",
+        "area": ["all", "central"],
+        "type": "park",
+        "rating": "4.5",
+        "greenScore": "4.5/5",
+        "url": "https://www.nparks.gov.sg/gardens-parks-and-nature/parks-and-nature-reserves/macritchie-reservoir-park",
+        "lat": "1.3402",
+        "long": "103.8333",
+        "description": "MacRitchie Reservoir, nestled in the heart of Central Singapore, is not only a popular recreational area but also a prime example of environmental conservation. This lush green oasis boasts a green rating of 4.5 out of 5 due to its extensive commitment to sustainability. The reservoir area is surrounded by a thriving tropical rainforest, and its preservation is paramount. The park encourages visitors to explore the natural beauty while respecting the environment, with well-maintained boardwalks and trails designed to minimize ecological impact. To protect the local wildlife, restrictions on boating and fishing are in place. Furthermore, MacRitchie Reservoir actively engages in forest restoration and the protection of native flora and fauna. It also promotes public awareness of environmental issues and conservation through educational programs and initiatives. With its dedication to preserving the natural environment, MacRitchie Reservoir stands as a testament to Singapore's commitment to sustainable green spaces."
+    },
+    {
+        "image": "./image/sembawang.jpg",
+        "name": "Sembawang Hot Spring Park",
+        "area": ["all", "north"],
+        "type": "park",
+        "rating": "4.4",
+        "greenScore": "4.3",
+        "url": "https://www.nparks.gov.sg/sembawanghotspringpark",
+        "lat": "1.4178",
+        "long": "103.8202",
+        "description": "Sembawang Hot Spring Park, situated in the northern region of Singapore, is a testament to the city-state's dedication to environmental sustainability. With a green rating of 4.3 out of 5, this park seamlessly blends the natural wonders of geothermal hot springs with eco-conscious practices. The park not only showcases the unique geological feature of a natural hot spring, but it also educates visitors about the importance of conserving this precious resource. Sembawang Hot Spring Park has implemented various eco-friendly measures, including rainwater harvesting systems, energy-efficient lighting, and waste recycling programs. The lush greenery surrounding the park contributes to local biodiversity and is carefully maintained to minimize environmental impact. It offers a serene and informative experience, encouraging visitors to appreciate the harmony between nature and sustainable practices. Sembawang Hot Spring Park serves as a model for eco-tourism, promoting awareness about the environment while providing a space for relaxation and rejuvenation in a natural setting."
+    },
+    {
+        "image": "./image/ecp.jpg",
+        "name": "",
+        "area": ["all", "east"],
+        "rating": "",
+        "greenScore": "",
+        "url": "",
+        "lat": "",
+        "long": "",
+        "description": ""
+    },
+    {
+        "image": "./image/ecp.jpg",
+        "name": "",
+        "area": ["all", "east"],
+        "rating": "",
+        "greenScore": "",
+        "url": "",
+        "lat": "",
+        "long": "",
         "description": ""
     }
 
