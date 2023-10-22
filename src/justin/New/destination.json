@@ -1,7 +1,7 @@
 [
     {
         "image": "../image/botanic.jpg",
-        "name": "Botanic Gardens",
+        "name": "Singapore Botanic Gardens",
         "type": "park",
         "area": ["all", "south"],
         "rating": "4.5",
@@ -84,26 +84,81 @@
         "description": "Sembawang Hot Spring Park, situated in the northern region of Singapore, is a testament to the city-state's dedication to environmental sustainability. With a green rating of 4.3 out of 5, this park seamlessly blends the natural wonders of geothermal hot springs with eco-conscious practices. The park not only showcases the unique geological feature of a natural hot spring, but it also educates visitors about the importance of conserving this precious resource. Sembawang Hot Spring Park has implemented various eco-friendly measures, including rainwater harvesting systems, energy-efficient lighting, and waste recycling programs. The lush greenery surrounding the park contributes to local biodiversity and is carefully maintained to minimize environmental impact. It offers a serene and informative experience, encouraging visitors to appreciate the harmony between nature and sustainable practices. Sembawang Hot Spring Park serves as a model for eco-tourism, promoting awareness about the environment while providing a space for relaxation and rejuvenation in a natural setting."
     },
     {
-        "image": "./image/ecp.jpg",
-        "name": "",
+        "image": "./image/gbtb.webp",
+        "name": "Gardens By The Bay",
+        "area": ["all", "central"],
+        "type": "park",
+        "rating": "4.7",
+        "greenScore": "4.6/5",
+        "url": "https://www.gardensbythebay.com.sg/",
+        "lat": "1.2815",
+        "long": "103.8636",
+        "description": "Gardens by the Bay, located in the heart of Singapore's central region, stands as a shining example of environmental stewardship and sustainability. This iconic attraction has earned a green rating of 4.6 out of 5 due to its extensive commitment to ecological and energy-efficient practices. The Supertree Grove, a central feature of the park, exemplifies this commitment with its vertical gardens that harness solar energy and serve as an air exhaust receptacle for the conservatories. The conservatories themselves, the Flower Dome and Cloud Forest, are designed with sustainable cooling and water-recycling systems. These measures help reduce energy consumption and waste production. Gardens by the Bay also promotes biodiversity by featuring a wide array of plant species and maintaining natural ecosystems. Furthermore, the park encourages visitors to use public transportation and minimizes the use of single-use plastics, reflecting its dedication to reducing its carbon footprint. Overall, Gardens by the Bay is a remarkable demonstration of how an urban garden can harmonize with sustainable principles, offering a breathtaking and educational experience for visitors while actively contributing to environmental conservation."
+    },
+    {
+        "image": "./image/sungeibuloh.jpg",
+        "name": "Sungei Buloh Wetland Reserve",
+        "area": ["all", "north"],
+        "rating": "4.6",
+        "greenScore": "4.8/5",
+        "url": "https://www.nparks.gov.sg/sbwr",
+        "lat": "1.4477",
+        "long": "103.7264",
+        "description": "Sungei Buloh Wetland Reserve, nestled in the northern part of Singapore, is a true testament to environmental preservation and sustainability. This ecological gem has earned an impressive green rating of 4.8 out of 5 due to its unwavering commitment to conservation and eco-friendly practices. The reserve serves as a haven for numerous bird species and wildlife, and its lush mangrove forests play a critical role in protecting coastal ecosystems. Sustainable practices are deeply ingrained here, from the minimal use of artificial lighting to reduce light pollution to comprehensive waste recycling and water conservation efforts. The management of Sungei Buloh Wetland Reserve focuses on habitat restoration, ecological research, and education, inviting visitors to learn about and appreciate the importance of preserving wetlands and wildlife. With its dedication to protecting and nurturing natural ecosystems, Sungei Buloh Wetland Reserve showcases the harmony between human and nature, offering a unique and educational experience while actively contributing to the preservation of the environment."
+    },
+    {
+        "image": "./image/tampinesecogreen.jpg",
+        "name": "Tampines Eco Green",
         "area": ["all", "east"],
-        "rating": "",
-        "greenScore": "",
-        "url": "",
-        "lat": "",
-        "long": "",
+        "rating": "4.6",
+        "greenScore": "4.8",
+        "url": "https://www.nparks.gov.sg/gardens-parks-and-nature/parks-and-nature-reserves/tampines-eco-green",
+        "lat": "1.3525",
+        "long": "103.9405",
         "description": ""
     },
     {
-        "image": "./image/ecp.jpg",
-        "name": "",
+        "image": "./image/tampinesecogreen.jpg",
+        "name": "Tampines Eco Green",
         "area": ["all", "east"],
-        "rating": "",
-        "greenScore": "",
-        "url": "",
-        "lat": "",
-        "long": "",
+        "rating": "4.6",
+        "greenScore": "4.8",
+        "url": "https://www.nparks.gov.sg/gardens-parks-and-nature/parks-and-nature-reserves/tampines-eco-green",
+        "lat": "1.3525",
+        "long": "103.9405",
+        "description": ""
+    },
+    {
+        "image": "./image/tampinesecogreen.jpg",
+        "name": "Tampines Eco Green",
+        "area": ["all", "east"],
+        "rating": "4.6",
+        "greenScore": "4.8",
+        "url": "https://www.nparks.gov.sg/gardens-parks-and-nature/parks-and-nature-reserves/tampines-eco-green",
+        "lat": "1.3525",
+        "long": "103.9405",
+        "description": ""
+    },
+    {
+        "image": "./image/tampinesecogreen.jpg",
+        "name": "Tampines Eco Green",
+        "area": ["all", "east"],
+        "rating": "4.6",
+        "greenScore": "4.8",
+        "url": "https://www.nparks.gov.sg/gardens-parks-and-nature/parks-and-nature-reserves/tampines-eco-green",
+        "lat": "1.3525",
+        "long": "103.9405",
+        "description": ""
+    },
+    {
+        "image": "./image/tampinesecogreen.jpg",
+        "name": "Tampines Eco Green",
+        "area": ["all", "east"],
+        "rating": "4.6",
+        "greenScore": "4.8",
+        "url": "https://www.nparks.gov.sg/gardens-parks-and-nature/parks-and-nature-reserves/tampines-eco-green",
+        "lat": "1.3525",
+        "long": "103.9405",
         "description": ""
     }
-
 ]
