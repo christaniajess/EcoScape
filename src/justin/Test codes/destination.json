@@ -1,6 +1,6 @@
 [
     {
-        "image": "../image/botanic.jpg",
+        "image": "./image/botanic.jpg",
         "name": "Singapore Botanic Gardens",
         "type": "park",
         "area": ["all", "central"],
@@ -48,7 +48,7 @@
         "description": "Jewel Changi Airport is located in the eastern part of Singapore and has earned a reputation as an environmentally friendly attraction. This iconic structure is a testament to Singapore's commitment to sustainability and green design. The green rating of 4 out of 5 reflects the numerous environmentally conscious features. One of the most striking features is the Rain Vortex, which is the world's tallest indoor waterfall. It serves a dual purpose as a stunning visual attraction and a functional rainwater harvesting system. The collected rainwater is used to irrigate the lush indoor forest known as the Shiseido Forest Valley. Jewel is also home to a wide variety of plant species, and its facade is covered with a distinctive glass and steel design that allows for natural light and ventilation. The shopping and dining options within the complex prioritize sustainable practices and local sourcing of products. Additionally, the airport encourages visitors to use public transportation, reducing the carbon footprint of travelers. Incorporating greenery and sustainable features, Jewel Changi Airport stands as a model for environmentally conscious urban development, blending modern infrastructure with the beauty of nature."
     },
     {
-        "image": "./image/jlg.jpg",
+        "image": "./image/jlg.png",
         "name": "Jurong Lake Garden",
         "area": ["all", "west"],
         "type": "park",
@@ -273,17 +273,5 @@
         "lat": "1.2441",
         "long": "103.8274",
         "description": "Capella Singapore, located on the tranquil Sentosa Island in the south of Singapore, sets the benchmark for sustainable luxury. The resort is renowned for its commitment to eco-conscious practices and is often recognized for its environmental efforts. It boasts lush, well-manicured green landscapes that blend seamlessly with the natural surroundings, promoting a sense of harmony with nature. The hotel has implemented various sustainable initiatives, such as energy-efficient lighting, waste reduction, and water conservation measures, to reduce its environmental footprint. With an emphasis on locally sourced and organic ingredients, the dining options are aligned with eco-conscious culinary practices. The location of Capella Singapore encourages guests to explore the island's eco-friendly attractions and transportation, minimizing their carbon footprint. Often celebrated for its environmental stewardship, as evidenced by its green certifications and numerous green initiatives, Capella Singapore showcases that luxury can coexist with a strong commitment to environmental responsibility. Guests can experience a luxurious and environmentally conscious stay while actively contributing to the preservation of the environment on Sentosa Island."
-    },
-    {
-        "image": "./image/template.jpg",
-        "name": "template",
-        "area": ["all", "east"],
-        "type": "park",
-        "rating": "4.6",
-        "greenScore": "4.8/5",
-        "url": "url",
-        "lat": "1.2441",
-        "long": " 103.8274",
-        "description": "lorem"
     }
 ]
