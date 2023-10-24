@@ -8,7 +8,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     
     <link rel="stylesheet" href="./" />
-    <script src="../att/typewriter.js" defer></script>
     <link rel="icon" href="../image/icon2.png">
     <!-- <link rel="stylesheet" href="./menu.css"> -->
     <link rel="stylesheet"  href="./typewriter_style.css">
@@ -115,17 +114,14 @@
           <label for="tab6">West</label>
 
           <!-- Content for All -->
-          <div id="content1" class="tab-content">
+          <div id="app">
+            <div class="tab-content" v-for="(gallery, index) in dividedDestinations" :key="index">
               <div class="gallery">
-                <!-- <article class="card" onclick="location.href='attractions.html'"> 
-                  <figure>
-                    <img src="../image/jewel.jpg">
-                    <figcaption><h3>Changi - Jewel</h3></figcaption>
-                  </figure>
-                </article> -->
-                <dest class="card" v-for="destination in destinations" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
+                <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
               </div>
             </div>
+          </div>
+          
 
           <!-- Content for Central -->
           <div id="content2" class="tab-content">
@@ -318,6 +314,17 @@
                 window.location.href = url;
               }
             },
+            computed: {
+              dividedDestinations() {
+                // Divide the destinations array into groups of 6
+                const result = [];
+                for (let i = 0; i < this.destinations.length; i += 6) {
+                  result.push(this.destinations.slice(i, i + 6));
+                }
+                console.log(result)
+                return result;
+              },
+            },
             created() { // lifecycle book -- created is an event tat occurs when the Vue instance has been created
                 axios.get(url)
                         .then(response => {
@@ -338,7 +345,7 @@
                             } else 
                                 this.destinations.push(destination)
                             }
-                            console.log(this.destinations)
+                            // console.log(this.destinations)
                         })
             }
         })
