@@ -1,6 +1,6 @@
 [
     {
-        "image": "./image/botanic.jpg",
+        "image": "../image/botanic.jpg",
         "name": "Singapore Botanic Gardens",
         "type": "park",
         "area": ["all", "central"],
@@ -273,5 +273,17 @@
         "lat": "1.2441",
         "long": "103.8274",
         "description": "Capella Singapore, located on the tranquil Sentosa Island in the south of Singapore, sets the benchmark for sustainable luxury. The resort is renowned for its commitment to eco-conscious practices and is often recognized for its environmental efforts. It boasts lush, well-manicured green landscapes that blend seamlessly with the natural surroundings, promoting a sense of harmony with nature. The hotel has implemented various sustainable initiatives, such as energy-efficient lighting, waste reduction, and water conservation measures, to reduce its environmental footprint. With an emphasis on locally sourced and organic ingredients, the dining options are aligned with eco-conscious culinary practices. The location of Capella Singapore encourages guests to explore the island's eco-friendly attractions and transportation, minimizing their carbon footprint. Often celebrated for its environmental stewardship, as evidenced by its green certifications and numerous green initiatives, Capella Singapore showcases that luxury can coexist with a strong commitment to environmental responsibility. Guests can experience a luxurious and environmentally conscious stay while actively contributing to the preservation of the environment on Sentosa Island."
-    }    
+    },
+    {
+        "image": "./image/template.jpg",
+        "name": "template",
+        "area": ["all", "east"],
+        "type": "park",
+        "rating": "4.6",
+        "greenScore": "4.8/5",
+        "url": "url",
+        "lat": "1.2441",
+        "long": " 103.8274",
+        "description": "lorem"
+    }
 ]

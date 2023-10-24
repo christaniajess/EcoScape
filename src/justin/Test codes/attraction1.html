@@ -68,7 +68,7 @@
 
   </head>
   <body>
-
+    <div id = "app">
         
     <div class="container d-flex align-items-center justify-content-between position-relative">
       
@@ -117,66 +117,13 @@
           <!-- Content for All -->
           <div id="content1" class="tab-content">
               <div class="gallery">
-                <article class="card" onclick="location.href='attractions.html'"> 
-                  <!-- the onclick should redirect to the actual info about that location -->
+                <!-- <article class="card" onclick="location.href='attractions.html'"> 
                   <figure>
                     <img src="../image/jewel.jpg">
                     <figcaption><h3>Changi - Jewel</h3></figcaption>
                   </figure>
-                </article>
-                <article class="card" onclick="location.href='attractions.html'"> 
-                  <!-- the onclick should redirect to the actual info about that location -->
-                  <figure>
-                    <img src="../image/reservoir.jpg">
-                    <figcaption><h3>MacRitchie Reservoir</h3></figcaption>
-                  </figure>
-                </article>
-                <article class="card" onclick="location.href='attractions.html'"> 
-                  <!-- the onclick should redirect to the actual info about that location -->
-                  <figure>
-                    <img src="../image/ecp.jpg">
-                    <figcaption><h3>East Coast Park</h3></figcaption>
-                  </figure>
-                </article>
-                <article class="card" onclick="location.href='attractions.html'"> 
-                  <!-- the onclick should redirect to the actual info about that location -->
-                  <figure>
-                    <img src="../image/fcpark.jpg">
-                    <figcaption><h3>Fort Canning Park</h3></figcaption>
-                  </figure>
-                </article>
-                <article class="card" onclick="location.href='attractions.html'"> 
-                  <!-- the onclick should redirect to the actual info about that location -->
-                  <figure>
-                    <img src="../image/gbtb.webp">
-                    <figcaption><h3>Gardens By the Bay</h3></figcaption>
-                  </figure>
-                </article>
-                <article class="card" onclick="location.href='attractions.html'"> 
-                  <!-- the onclick should redirect to the actual info about that location -->
-                  <figure>
-                    <img src="../image/jlg.png">
-                    <figcaption><h3>Jurong Lake Gardens</h3></figcaption>
-                  </figure>
-                </article>
-              </div>
-            </div>
-            <div id="content1" class="tab-content">
-              <div class="gallery">
-                <article class="card" onclick="location.href='attractions.html'"> 
-                  <!-- the onclick should redirect to the actual info about that location -->
-                  <figure>
-                    <img src="../image/sembawang.jpg">
-                    <figcaption><h3>Sembawang Hot Spring Park</h3></figcaption>
-                  </figure>
-                </article>
-                <article class="card" onclick="location.href='attractions.html'"> 
-                  <!-- the onclick should redirect to the actual info about that location -->
-                  <figure>
-                    <img src="../image/botanic.jpg">
-                    <figcaption><h3>Botanic Gardens</h3></figcaption>
-                  </figure>
-                </article>
+                </article> -->
+                <dest class="card" v-for="destination in destinations" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
               </div>
             </div>
 
@@ -351,8 +298,69 @@
           </div>
       </div>
   </footer>
+  </div>
+  <script src="https://unpkg.com/vue@next"></script>
   <script>
       document.getElementById("year").innerHTML = new Date().getFullYear()
+
+      var url = "destination.json" 
+
+      const app = Vue.createApp( {
+            data() {
+                return {
+                    destinations: [{name:"", image:"", url: "", area: []}],
+                    init: true
+                }
+            },
+            methods: {
+              navigateToUrl(url) {
+                // Handle the navigation to the specified URL
+                window.location.href = url;
+              }
+            },
+            created() { // lifecycle book -- created is an event tat occurs when the Vue instance has been created
+                axios.get(url)
+                        .then(response => {
+                            result = response.data
+                            // console.log(result)
+                            
+                            for (let i = 0; i<result.length; i++) {
+                              // console.log(result[i])
+                              destination = {}
+                              
+                              destination.name = result[i].name
+                              destination.image = "." + result[i].image
+                              destination.url = result[i].url
+                              destination.area = result[i].area
+                              if (this.init) {
+                                this.destinations = [destination]
+                                this.init = false
+                            } else 
+                                this.destinations.push(destination)
+                            }
+                            console.log(this.destinations)
+                        })
+            }
+        })
+
+        app.component("dest", {
+          data() {
+            return {
+
+            }
+          },
+          template: `
+            <figure>
+                      <img :src="image">
+                      <figcaption><h3>{{ name }}</h3></figcaption>
+            </figure>
+          `,
+          props: ['name', 'image', 'url']
+        })
+
+    const vm = app.mount('#app')
+
+        
     </script>
       
 
