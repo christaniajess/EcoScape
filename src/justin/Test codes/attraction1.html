@@ -151,16 +151,13 @@
           <label for="tab6">West</label>
 
           <!-- Content for All -->
-          
             <div id="content1" class="tab-content" v-for="gallery in dividedAllDestinations" >
               <div class="gallery">
                 <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
               </div>
             </div>
-          
-
+        
           <!-- Content for Central -->
-
           <div id="content2" class="tab-content" v-for="gallery in dividedCentralDestinations">
             <div class="gallery">
               <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
