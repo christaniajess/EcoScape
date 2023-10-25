@@ -22,9 +22,9 @@
     justify-content: center; */
   }
   
-  h1 {
+  h2 {
     font-size: 25px;
-    margin-left: 1.5rem;
+    margin-left: 3.5rem;
     padding: 1.5rem;
     
   }
@@ -220,8 +220,6 @@ footer {
     /* margin-top: 20px;
     margin-bottom: 10px; */
     padding:1.5rem;
-    
-
   }
 
   .tab-content 
@@ -409,4 +407,5 @@ h1 span {
 .navbar li:hover>a {
   background: #BDBDBD;
 }
+
  
