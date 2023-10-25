@@ -1,0 +1,83 @@
+<html lang = "en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookings and Reservations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="module" src="destination.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-1" id="logo">
+              <!-- logo -->
+              <img id="logo-img" src="EcoScape_Logojpg.jpg" alt="">
+          </div>
+          <div class="col-5">
+              <!-- Nav Bar -->
+              <nav class="navbar navbar-expand-lg ">
+                  <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Attractions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Bookings and Reservations</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Green Transport Planner</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+          </div>
+          <div class="col-4">
+              <!-- empty space -->
+          </div>
+          <div class="col-2">
+              <!-- Profile, put profile pic -->
+              Profile
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <!-- Back Button -->
+          <a id="back-btn" class="btn" href="#" role="button">Back</a>
+        </div>
+        <div class="col-11"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <!-- image col -->
+          <img id="attraction-img" src="macritchie-reservoir-park-treetop-walk-guide.jpg" class="rounded float-start img-fluid w-100">
+          <a id="open-web-link" class="btn" href="#" role="button">Open Website</a>
+          <a href="https://www.instagram.com/explore/locations/653371075/macritchie-reservoir-park-singapore/">
+            <img id="ig-logo" src="Instagram_logo_2016.svg.webp" class="rounded img-fluid ">
+          </a>
+        </div>
+        <div class="col-lg-9">
+          <h1>Mac Ritchie Reservoir Park</h1>
+          <h3>Random Details</h3> 
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio facere consequatur debitis autem aliquid saepe. Nihil autem corrupti corporis? Quisquam possimus perferendis deserunt, dignissimos minus voluptatem quibusdam dolorem nobis libero.</p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae dolores atque a voluptate nihil, impedit nisi repellendus quos quo doloribus, necessitatibus similique ea ut qui id, voluptatem ipsum earum possimus.</p>
+        </div>
+      </div>
+      <div class="row">
+
+      </div>
+    <div id="map"></div>
+
+    <!-- prettier-ignore -->
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ", v: "weekly"});</script>
+  </body>
+</html>

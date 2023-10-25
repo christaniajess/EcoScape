@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoScape</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <link rel="stylesheet" href="./" />
+    <link rel="icon" href="../image/icon2.png">
+    <!-- <link rel="stylesheet" href="./menu.css"> -->
+    <link rel="stylesheet"  href="./typewriter_style.css">
+    <link href="./style.css" rel="stylesheet">
+    <style>
+      .navbar {
+  padding: 0;
+  position: static;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 13px;
+  margin-left: 10px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: green;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+  </style>
+
+    
+   
+    
+
+  </head>
+  <body>
+    <div id = "app">
+        
+    <div class="container d-flex align-items-center justify-content-between position-relative">
+      
+      
+      
+      <nav id="navbar" class="navbar">
+        <ul>
+              <img src="../image/icon.png" width="50cm">
+              <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+              <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+              <li><a class="nav-link scrollto" href="attraction1.html">Attractions</a></li>
+              <li><a class="nav-link scrollto" href="#portfolio">Hotels</a></li>
+              <li><a class="nav-link scrollto" href="#team">Restaurants</a></li>
+              <li><a class="nav-link scrollto" href="#team">Green Transport Planner</a></li>
+              <li><a class="nav-link scrollto" href="#team">Login / Sign Up</a></li>
+            </ul>
+          </nav>
+        </div>
+        
+        <h1>Discover <span id="typewriter"></span><span id="cursor">|</span></h1>
+    <!---->
+    
+    <!--Tabs (choosing which region)-->
+    <div id="tab-container" class="tab-container">
+      <div class="container-fluid">
+        <div class="text-center col-md-10 col-md-offset-1">
+    
+          <input id="tab1" type="radio" name="tabs" checked>
+          <label for="tab1">All</label>
+      
+          <input id="tab2" type="radio" name="tabs">
+          <label for="tab2">Central</label>
+      
+          <input id="tab3" type="radio" name="tabs">
+          <label for="tab3">East</label>
+      
+          <input id="tab4" type="radio" name="tabs">
+          <label for="tab4">South</label>
+
+          <input id="tab5" type="radio" name="tabs">
+          <label for="tab5">North</label>
+
+          <input id="tab6" type="radio" name="tabs">
+          <label for="tab6">West</label>
+
+          <!-- Content for All -->
+          
+            <div id="content1" class="tab-content" v-for="gallery in dividedDestinations" >
+              <div class="gallery">
+                <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
+              </div>
+            </div>
+          
+
+          <!-- Content for Central -->
+          <div id="content2" class="tab-content">
+            <div class="gallery">
+              <article class="card" onclick="location.href='attractions.html'"> 
+                <!-- the onclick should redirect to the actual info about that location -->
+                <figure>
+                  <img src="../image/botanic.jpg">
+                  <figcaption><h3>Botanic Gardens</h3></figcaption>
+                </figure>
+              </article>
+              <article class="card" onclick="location.href='attractions.html'"> 
+                <!-- the onclick should redirect to the actual info about that location -->
+                <figure>
+                  <img src="../image/fcpark.jpg">
+                  <figcaption><h3>Fort Canning Park</h3></figcaption>
+                </figure>
+              </article>
+              <article class="card" onclick="location.href='attractions.html'"> 
+                <!-- the onclick should redirect to the actual info about that location -->
+                <figure>
+                  <img src="../image/reservoir.jpg">
+                  <figcaption><h3>MacRitchie Reservoir</h3></figcaption>
+                </figure>
+              </article>
+            </div>
+
+          </div>
+
+          <!-- Content for East -->
+          <div id="content3" class="tab-content">
+            <div class="gallery">
+              <article class="card" onclick="location.href='attractions.html'"> 
+                <!-- the onclick should redirect to the actual info about that location -->
+                <figure>
+                  <img src="../image/ecp.jpg">
+                  <figcaption><h3>East Coast Park</h3></figcaption>
+                </figure>
+              </article>
+              <article class="card" onclick="location.href='attractions.html'"> 
+                <!-- the onclick should redirect to the actual info about that location -->
+                <figure>
+                  <img src="../image/jewel.jpg">
+                  <figcaption><h3>Changi - Jewel</h3></figcaption>
+                </figure>
+              </article>
+            </div>
+          </div>
+
+          <!-- Content for the south -->
+          <div id="content4" class="tab-content">
+            <div class="gallery">
+              <article class="card" onclick="location.href='attractions.html'"> 
+                <!-- the onclick should redirect to the actual info about that location -->
+                <figure>
+                  <img src="../image/gbtb.webp">
+                  <figcaption><h3>Gardens By the Bay</h3></figcaption>
+                </figure>
+              </article>
+            </div>
+          </div>
+
+          <!-- Content for the north -->
+          <div id="content5" class="tab-content">
+            <div class="gallery">
+              <article class="card" onclick="location.href='attractions.html'"> 
+                <!-- the onclick should redirect to the actual info about that location -->
+                <figure>
+                  <img src="../image/sembawang.jpg">
+                  <figcaption><h3>Sembawang Hot Spring Parl</h3></figcaption>
+                </figure>
+              </article>
+            </div>
+          </div>
+        
+
+
+          <!-- Content for the west (jurong lake gardens) -->
+          <div id="content6" class="tab-content">
+            <div class="gallery">
+              <article class="card" onclick="location.href='attractions.html'"> 
+                <!-- the onclick should redirect to the actual info about that location -->
+                <figure>
+                  <img src="../image/jlg.png">
+                  <figcaption><h3>Jurong Lake Gardens</h3></figcaption>
+                </figure>
+              </article>
+            </div>
+
+          </div>
+
+
+
+
+            
+        
+          
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+    
+        <!-- <div id="content1" class="tab-content">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4">
+                <div class="card card-body">
+                  <div class="view">
+                        <img src="https://assets.foxdcg.com/dpp-uploaded/images/the-90s-greatest/seriesDetail.jpg?fit=inside%7C1920:1080" class="img-responsive" alt="">
+                  </div>
+                  <div class="card text-center">
+                      <h4 class="card-title"><strong>Name</strong></h4>
+                      <p class="card-description">Some informations <br>
+                        will be placed here
+                      </p>
+                      <a href="#!" class="card-link">See more
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+        </div> -->
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-wrapper">
+          <div class="footer-columns">
+              <div class="footer-links">
+                  <div class="footer-logo">
+                      <img src="../image/icon2.png">
+                  </div>
+                  <section>
+                    <ul>
+                      <h3>Directory</h3>
+                      <li>
+                        <a href="attraction1.html" title="attractions">Attractions</a>
+                      </li>
+                      <li>
+                        <a href="../hotel/hotel.html" title="hotel">Hotel</a>
+                      </li>
+                      <li>
+                        <a href="../restaurants/restaurants.html" title="restaurant">Restaurant</a>
+                      </li>
+                      <li>
+                        <a href="#" title="GTP">Green Transport Planner</a>
+                      </li>
+                    </ul>
+                  </section>
+                  <section>
+                    <ul>
+                      <h3>Ecoscape</h3>
+                      <li>
+                        <a href="#" title="aboutus">About Us</a>
+                      </li>
+                    </ul>
+                  </section>
+              </div>
+             
+          </div>
+          <div class="footer-bottom">
+            <small>Ecoscape Ltd.
+              <span id="year"></span>, All rights reserved
+            </small>
+          </div>
+      </div>
+  </footer>
+  </div>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+      document.getElementById("year").innerHTML = new Date().getFullYear()
+
+      var url = "destination.json" 
+
+      const app = Vue.createApp( {
+            data() {
+                return {
+                    destinations: [{name:"", image:"", url: "", area: []}],
+                    init: true
+                }
+            },
+            methods: {
+              navigateToUrl(url) {
+                // Handle the navigation to the specified URL
+                window.location.href = url;
+              }
+            },
+            computed: {
+              dividedDestinations() {
+                // Divide the destinations array into groups of 6
+                const result = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.destinations.length; i += groupSize) {
+                  result.push(this.destinations.slice(i, i + groupSize));
+                }
+                console.log(result)
+                return result;
+              },
+            },
+            created() { // lifecycle book -- created is an event tat occurs when the Vue instance has been created
+                axios.get(url)
+                        .then(response => {
+                            result = response.data
+                            // console.log(result)
+                            
+                            for (let i = 0; i<result.length; i++) {
+                              // console.log(result[i])
+                              destination = {}
+                              
+                              destination.name = result[i].name
+                              destination.image = "." + result[i].image
+                              destination.url = result[i].url
+                              destination.area = result[i].area
+                              if (this.init) {
+                                this.destinations = [destination]
+                                this.init = false
+                            } else 
+                                this.destinations.push(destination)
+                            }
+                            // console.log(this.destinations)
+                        })
+            }
+        })
+
+        app.component("dest", {
+          data() {
+            return {
+
+            }
+          },
+          template: `
+            <article class="card">
+            <figure>
+                      <img :src="image">
+                      <figcaption><h3>{{ name }}</h3></figcaption>
+            </figure>
+            </article>
+          `,
+          props: ['name', 'image', 'url']
+        })
+
+    const vm = app.mount('#app')
+
+        
+    </script>
+      
+
+  </body>
+</html>

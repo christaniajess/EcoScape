@@ -1,0 +1,126 @@
+[
+    {
+        "image": "../image/openfarmcommunity.jpg",
+        "name": "Open Farm Community",
+        "type": "restaurant",
+        "area": ["all", "central"],
+        "rating": "4.2",
+        "greenScore": "4/5",
+        "url":"https://www.openfarmcommunity.com/",
+        "lat": "1.30608",
+        "long": "103.81559",
+        "description": " Open Farm Community (OFC) is Singapore's pioneering urban farm and restaurant concept; a timely reaction to the increasing disconnect between people and their food. Acting as the missing link in the modern fabric, OFC's vision is to strengthen the understanding and respect for food and its origins. Showcasing local and regional produce like never before, our team aspires to elevate the produce of our land with an international lens."
+    },
+    {
+        "image": "../image/theelephantroom.webp",
+        "name": "The Elephant Room",
+        "type": "restaurant",
+        "area": ["all", "central"],
+        "rating": "4.6",
+        "greenScore": "4/5",
+        "url":"https://www.theelephantroom.sg/",
+        "lat": "1.27943",
+        "long": "103.84397",
+        "description": " The Elephant Room offers a unique and culturally rich experience in the heart of Singapore. Inspired by the flavors and traditions of South Asian cuisine and beverages, this cocktail bar is a fusion of history and innovation. While the focus of such establishments is primarily on mixology and cultural exploration, sustainability practices may vary. To assess their environmental initiatives and green rating, it's advisable to inquire directly with The Elephant Room or refer to sustainability-focused sources."
+    },
+    {
+        "image": "../image/labyrinth.webp",
+        "name": "Labyrinth",
+        "type": "restaurant",
+        "area": ["all", "central"],
+        "rating": "4.6",
+        "greenScore": "4/5",
+        "url":"https://www.restaurantlabyrinth.com/",
+        "lat": "1.29006",
+        "long": "103.85627",
+        "description": "Labryinth is a 'New Singaporean' dining experience showcasing local Singaporean produce and flavours encapsulating the chef's roots and memories of growing up in Singapore"
+    },
+    {
+        "image": "../image/labyrinth.webp",
+        "name": "Origin Grill",
+        "type": "restaurant",
+        "area": ["all", "central"],
+        "rating": "4.5",
+        "greenScore": "4/5",
+        "url":"https://www.shangri-la.com/singapore/shangrila/dining/restaurants/origin-grill/",
+        "lat": "1.31140",
+        "long": "103.82655",
+        "description": "Origin Grill is focused on the provenance of it's ingredients, sourcing high-quality produce from environmentally responsible, artisan farmers both near and far. Our relationship with our farmers enables Shangri-La Singapore to ethically source food from people who are passionate about their craft. For diners, that means every land, sea, and field ingredient is at its prime, with natural flavours shining through."
+    },
+    {
+        "image": "../image/opusbarandgrill.png",
+        "name": "Opus Bar and Grill",
+        "type": "restaurant",
+        "area": ["all", "central"],
+        "rating": "4.2",
+        "greenScore": "4/5",
+        "url":"https://orcharddining.vocohotels.com/dining/opus-bar-grill",
+        "lat": "1.30614",
+        "long": "103.82925",
+        "description":"One of the top Steakhouses in Singapore, Opus Bar and Grill is a symphony for the senses. The sizzle of prime steak and sustainably-sourced seafood grilled to perfection on white-hot coals. Our custom-designed Himalayan salt-tiled dry-aging cabinet creates an intense depth of flavour for our steaks"
+    },
+    {
+
+        "image": "../image/cafeiguana.jpg",
+        "name": "Cafe Iguana Riverside Point",
+        "type": "restaurant",
+        "area": ["all", "central"],
+        "rating": "4.1",
+        "greenScore": "4/5",
+        "url":"https://cafeiguana.com/",
+        "lat": "1.29112",
+        "long": "103.84462",
+        "description":"Founded in 2000, Cafe Iguana serves up tasty modern Mexican dishes, zingy tequilla cocktails and super-chill ambience. We're crazy about quality. Be it tequilla or tacos, we strive to deliver a great dining experience, every time. We use only the freshest ingredients in our food and serve your exciting selection of cocktails made from 100% agave tequilla and mezcal! So sit back and enjoy that margarita, relax and find happiness all wrapped up in a fresh, warm tortilla"
+    },
+    {
+        "image": "../image/cultivatecafe.jpg",
+        "name": "Cultivate Cafe",
+        "type": "restaurant",
+        "area": ["all", "central"],
+        "rating": "4.0",
+        "greenScore": "4/5",
+        "url":"https://cultivatecafe.sg/",
+        "lat": "1.27924",
+        "long": "103.84438",
+        "description": "Cultivate Cafe is a plant-based, gmo-free, gluten-free vegan restaurant and believes that pure food is the key ingredient to cultivate your soul. We endeavour to provide exceptional and flavourful dishes made from the finest organic ingredients sourced locally and globally from small and family farms. Cultivate is here to serve, inform and inspire a cultural shift towards plant based intelligence, through creativity and deliciousness. Offering high vibration foods that embrace balance with beauty, wellness and wisdom and love to nurture our personal and planetary ecosystems."
+    },
+    {
+        "image": "../image/osteriamozza.jpg",
+        "name": "Osteria Mozza",
+        "type": "restaurant",
+        "area": ["all", "central"],
+        "rating": "4.7",
+        "greenScore": "4/5",
+        "url":"https://www.hilton.com/en/hotels/sinorhi-hilton-singapore-orchard/dining/osteria-mozza/",
+        "lat": "1.30294",
+        "long": "103.83580",
+        "description": "Take on a culinary journey with Osteria Mozza, an Italian restaurant in Singapore, conveniently situated in the heart of Orchard Road, a famous tourist destination with upscale shopping and dining. Bringing the Cal-Italian cuisine to the city’s dining scene and showcasing both all-time favourite classics, as well as, a number of Singapore-exclusively crafted dishes, the authentic farmhouse interior of this exquisite venue brings the best of the local produce on display. Compliment your meal with the extensive wine list at this Orchard Road restaurant, home of over 280 labels, including Bastianich and La Mozza. Osteria Mozza follows a dress code policy. Please refer to the restaurant's website for further details."
+    },
+    {
+        "image": "../image/thesummerhouse.jpg",
+        "name": "The Summerhouse",
+        "type": "restaurant",
+        "area": ["all", "central"],
+        "rating": "4.3",
+        "greenScore": "4/5",
+        "url":"https://www.thesummerhouse.sg/garden-domes/?gad_source=1&gclid=CjwKCAjws9ipBhB1EiwAccEi1LA8Yy3idbcTVFs_zhIedlV9QB4ZNwlJiVCvLs7GY9YWOOhxupcq3BoCZegQAvD_BwE",
+        "lat": "1.40893",
+        "long": "103.86943",
+        "description": "A romantic enclave tucked away in the Seletar countryside, The Summerhouse serves up nature-inspired, farm-to-table cuisine designed for communal sharing. We connect with a farming collective of Singaporean and Malaysian growers, producers, and kelong, bringing a carefully curated range of foodstuffs of unrivalled freshness and provenance to the table. A newly introduced dining concepts is The Summerhouse Garden Domes: three climate-controlled (air-conditioned) structures with their own music sounds system set within the lush edible garden. "
+
+    },
+    {
+        "image": "../image/yunnans.jpg",
+        "name": "YUNNANS",
+        "type": "restaurant",
+        "area": ["all", "west"],
+        "rating": "4.7",
+        "greenScore": "4/5",
+        "url":"https://yunnans.sg/",
+        "lat": "1.33502",
+        "long": "103.74330",
+        "description":"YUNNANS is one of the brand-new concepts that launched at Jewel Changi Airport. It is the largest Yunnan F&B chain in the world, with over 150 outlets. Singapore is its first international outpost and the restaurant specializes in highland cuisine. The featured Steam Pot Chicken Soup is YUNNANS’s signature dish which is brewed using a unique technique that does not require any addition of water to the chicken."
+        
+    }
+
+]

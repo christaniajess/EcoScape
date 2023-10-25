@@ -1,0 +1,14 @@
+[
+    {
+        "image": "./image/template.jpg",
+        "name": "template",
+        "area": ["all", "east"],
+        "type": "park",
+        "rating": "4.6",
+        "greenScore": "4.8/5",
+        "url": "url",
+        "lat": "1.2441",
+        "long": " 103.8274",
+        "description": "lorem"
+    }
+]
