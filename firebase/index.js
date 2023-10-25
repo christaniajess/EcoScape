@@ -1,12 +1,13 @@
 // Import the functions you need from the SDKs you need
 // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-// // import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 // import {getAuth} from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js'; 
 // import {getFirestore} from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js';  
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+// import {getFirestore, doc} from 'firebase/firestore'; 
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -22,6 +23,8 @@ const firebaseConfig = {
   appId: "1:104462396856:web:bcaaa850fb71afed13b34d",
   measurementId: "G-35CF9R9L0S"
 };
+
+const firestore = getFirestore(); 
 
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
