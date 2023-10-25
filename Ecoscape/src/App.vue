@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-    <router-link to="/home">Home</router-link> <!-- Example router link -->
+    <NavBar />
+    <HomepageParallax />
+    <Footer />
+ 
+ <!-- Example router link -->
     <router-view></router-view> <!-- This is where your components will render -->
   </div>
 </template>
 
 <script>
 import NavBar from "@/components/NavBar.vue";
-import { ref, onMounted } from "vue";
 import HomepageParallax from "./components/HomepageParallax.vue";
 import Footer from "@/components/Footer.vue";
-// animate on scroll library
-import { AOS } from "aos";
-const el = ref();
+import "aos/dist/aos.css"; // Import the AOS styles
+import AOS from "aos";
 
 export default {
   name: "App",
@@ -21,11 +23,12 @@ export default {
     Footer,
     HomepageParallax,
   },
-  created() {
-    AOS.init()
+  mounted() {
+    AOS.init(); // Initialize AOS
   },
 };
 </script>
+
 
 <style >
 .pageSizing {

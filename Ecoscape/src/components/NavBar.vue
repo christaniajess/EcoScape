@@ -32,20 +32,20 @@
                 </div>
               </li>
               <li>
-                <router-link to="/about" class="nav-link">About Us</router-link>
+                <router-link to="#" class="nav-link">About Us</router-link>
               </li>
               <li class="dropdown">
                 <a href="#"><span>Directory</span> <i class="fa fa-angle-down"></i></a>
                 <ul>
-                  <li><router-link to="/hotels">Hotels</router-link></li>
-                  <li><router-link to="/attractions">Attractions</router-link></li>
-                  <li><router-link to="/restaurants">Restaurants</router-link></li>
-                  <li><router-link to="/planner">Green Transport Planner</router-link></li>
+                  <li><router-link to="#">Hotels</router-link></li>
+                  <li><router-link to="#">Attractions</router-link></li>
+                  <li><router-link to="#">Restaurants</router-link></li>
+                  <li><router-link to="#">Green Transport Planner</router-link></li>
                 </ul>
               </li>
               <li>
-                <router-link to="/login" class="nav-link">
-                  <img src="../images/profile-icon.png" class="profile-icon" alt="profile" />Login / Sign Up
+                <router-link to="#" class="nav-link">
+                  <img src="/images/profile-icon.png" class="profile-icon" alt="profile" />Login / Sign Up
                 </router-link>
               </li>
             </ul>

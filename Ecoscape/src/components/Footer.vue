@@ -5,14 +5,14 @@
         <div class="row pt-2 mb-2">
           <div class="col-lg-1 col-md-6 mb-2 mb-lg-0"></div>
 
-          <div class="col-lg-4 col-md-12 mb-2 mb-lg-0">
+          <div class="col-lg-4 col-md-4 mb-2 mb-lg-0">
             <div class="d-flex align-items-center">
               <img src="images/icon-lightgreen.png" alt="" class="footer-logo mt-4 mb-3" />
               <h2 class="footer-main-title mt-2 ps-3 pt-2">EcoScape</h2>
             </div>
           </div>
 
-          <div class="footer-columns col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0">
             <h6 class="footer-title text-uppercase fw-bold mb-2">Directory</h6>
             <ul class="list-unstyled mb-0">
               <li class="mb-1">
@@ -30,7 +30,7 @@
             </ul>
           </div>
 
-          <div class="footer-columns col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0">
             <h6 class="footer-title text-uppercase fw-bold mb-2">Account</h6>
             <ul class="list-unstyled mb-0">
               <li class="mb-3">
@@ -45,7 +45,7 @@
             </ul>
           </div>
 
-          <div class="footer-columns col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0">
             <h6 class="footer-title text-uppercase fw-bold mb-2">Contact Us</h6>
             <ul class="list-unstyled mb-0">
               <li class="mb-1">
@@ -61,7 +61,7 @@
           </div>
         </div>
 
-        <div class="col-lg-1 col-md-6 mb-2 mb-lg-0"></div>
+        <div class="col-lg-1 col-md-2 mb-2 mb-lg-0"></div>
 
         <!-- Copyrights -->
         <div class="footer-copyrights">
@@ -80,23 +80,42 @@
 export default {
   methods: {
     openEmail() {
-      // Implement logic to open the email link here
+      window.open('mailto:example@example.com');
     },
+
     openFacebook() {
-      // Implement logic to open the Facebook link here
+      window.open('https://www.facebook.com/your-facebook-page', '_blank');
     },
+
     openInstagram() {
-      // Implement logic to open the Instagram link here
-    },
+      window.open('https://www.instagram.com/your-instagram-profile', '_blank');
+    }
+
   },
   created() {
-    document.getElementById("year").innerHTML = new Date().getFullYear();
-  },
+    const yearElement = document.getElementById("year");
+    if (yearElement) {
+      yearElement.innerHTML = new Date().getFullYear();
+    }
+  }
+
 };
 </script>
 
 
 <style scoped>
+@import url(https://db.onlinewebfonts.com/c/ae54ba780341eb52a73bf1c481b8b951?family=Poppins);
+
+@font-face {
+  font-family: "Poppins";
+  src: url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.eot");
+  src: url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.svg#Poppins")format("svg");
+}
+
   #footer-separation {
   background-color: #8ebe6d; /* Remove white space above and below */
   border: none; /* Remove the default line */
@@ -111,6 +130,7 @@ export default {
   width: 100%;
   min-width: 300px;
   background-color: #101207;
+  font-family: 'Poppins', sans-serif;
 }
 
 
