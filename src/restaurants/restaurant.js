@@ -52,4 +52,8 @@ for(area of areas)
     }
 }
 tabs.innerHTML = string
-console.log(tabs)
+
+
+
+
+

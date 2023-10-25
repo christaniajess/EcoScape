@@ -8,11 +8,13 @@
     <script src="./restaurant.js" defer></script>
     <link rel="icon" href="../image/icon2.png">
     <!-- <link rel="stylesheet" href="./menu.css"> -->
-    <link rel="stylesheet"  href="hotel.css">
+    <link rel="stylesheet"  href="restaurant.css">
     <link href="restaurant.css" rel="stylesheet">
-    
-   
-    
+
+    <!-- Import Vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- Import AJAX -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   </head>
   <body>
@@ -22,6 +24,7 @@
         <h1>Discover <span id="typewriter"></span><span id="cursor">|</span></h1>
     <!---->
     
+    <div id = "app">
     <!--Tabs (choosing which region)-->
     <div id="tab-container" class="tab-container">
       <div class="container-fluid">
@@ -29,143 +32,46 @@
           <p id="tabs"></p>
 
           <!-- Content for All -->
-          <!-- https://thehoneycombers.com/singapore/sustainable-dining-restaurants-singapore/ -->
-          <div id="content1" class="tab-content">
-              <div class="gallery">
-                <article class="card" onclick="location.href='attractions.html'"> 
-                  <!-- the onclick should redirect to the actual info about that location -->
-                  <figure>
-                    <img src="./image/kausmo.jpg">
-                    <figcaption><h3>Kausmo - Japanese</h3></figcaption>
-                  </figure>
-                </article>
-                <article class="card" onclick="location.href='attractions.html'"> 
-                    <!-- the onclick should redirect to the actual info about that location -->
-                    <figure>
-                      <img src="./image/ofc.webp">
-                      <figcaption><h3>Open Farm Community - European</h3></figcaption>
-                    </figure>
-                  </article>
-                  <article class="card" onclick="location.href='attractions.html'"> 
-                    <!-- the onclick should redirect to the actual info about that location -->
-                    <figure>
-                      <img src="./image/thesummerhouse.png">
-                      <figcaption><h3>The Summerhouse - European</h3></figcaption>
-                    </figure>
-                  </article>
-
-                  <article class="card" onclick="location.href='attractions.html'"> 
-                    <!-- the onclick should redirect to the actual info about that location -->
-                    <figure>
-                      <img src="./image/vineyad.jpg">
-                      <figcaption><h3>Vineyard - European</h3></figcaption>
-                    </figure>
-                  </article>
-                  <article class="card" onclick="location.href='attractions.html'"> 
-                    <!-- the onclick should redirect to the actual info about that location -->
-                    <figure>
-                      <img src="./image/artemisgrill.png">
-                      <figcaption><h3>Artemis Grill - Mediterranean</h3></figcaption>
-                    </figure>
-                  </article>
-                  <article class="card" onclick="location.href='attractions.html'"> 
-                    <!-- the onclick should redirect to the actual info about that location -->
-                    <figure>
-                      <img src="./image/poisonivy.jpg">
-                      <figcaption><h3>Poison Ivy Bistro - Asian</h3></figcaption>
-                    </figure>
-                  </article>
-                
-              </div>
-            </div>
-            
-            <!-- putting it in another -->
-            <div id="content1" class="tab-content">
-              <div class="gallery">
-                
-                
-              </div>
-            </div>
-
-          <!-- Content for Asian -->
-          <div id="content2" class="tab-content">
+          <div id="content1" class="tab-content" v-for="gallery in dividedAllDestinations" >
             <div class="gallery">
-                <article class="card" onclick="location.href='attractions.html'"> 
-                    <!-- the onclick should redirect to the actual info about that location -->
-                    <figure>
-                      <img src="./image/kausmo.jpg">
-                      <figcaption><h3>Kausmo - Japanese</h3></figcaption>
-                    </figure>
-                  </article>
-                  <article class="card" onclick="location.href='attractions.html'"> 
-                    <!-- the onclick should redirect to the actual info about that location -->
-                    <figure>
-                      <img src="./image/poisonivy.jpg">
-                      <figcaption><h3>Poison Ivy Bistro - Asian</h3></figcaption>
-                    </figure>
-                  </article>
-              
-
+              <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
+            </div>
+          </div>
+      
+          <!-- Content for Central -->
+          <div id="content2" class="tab-content" v-for="gallery in dividedCentralDestinations">
+            <div class="gallery">
+              <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
             </div>
           </div>
 
-          <!-- Content for European -->
-          <div id="content3" class="tab-content">
+          <!-- Content for East -->
+          <div id="content3" class="tab-content" v-for="gallery in dividedEastDestinations">
             <div class="gallery">
-                <article class="card" onclick="location.href='attractions.html'"> 
-                    <!-- the onclick should redirect to the actual info about that location -->
-                    <figure>
-                      <img src="./image/ofc.webp">
-                      <figcaption><h3>Open Farm Community - European</h3></figcaption>
-                    </figure>
-                  </article>
-                  <article class="card" onclick="location.href='attractions.html'"> 
-                    <!-- the onclick should redirect to the actual info about that location -->
-                    <figure>
-                      <img src="./image/thesummerhouse.png">
-                      <figcaption><h3>The Summerhouse - French</h3></figcaption>
-                    </figure>
-                  </article>
-                  <article class="card" onclick="location.href='attractions.html'"> 
-                    <!-- the onclick should redirect to the actual info about that location -->
-                    <figure>
-                      <img src="./image/vineyad.jpg">
-                      <figcaption><h3>Vineyard - French and Italian</h3></figcaption>
-                    </figure>
-                  </article>
-                  
+              <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
             </div>
-            
-           
           </div>
 
-          <!-- Content for the Mediterranean -->
-          <div id="content4" class="tab-content">
+          <!-- Content for the south -->
+          <div id="content4" class="tab-content" v-for="gallery in dividedSouthDestinations">
             <div class="gallery">
-              
-                <article class="card" onclick="location.href='attractions.html'"> 
-                    <!-- the onclick should redirect to the actual info about that location -->
-                    <figure>
-                      <img src="./image/artemisgrill.png">
-                      <figcaption><h3>Artemis Grill - Mediterranean</h3></figcaption>
-                    </figure>
-                  </article>
+              <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
             </div>
           </div>
 
           <!-- Content for the north -->
-          <div id="content5" class="tab-content">
-            <h1>Sorry we can't find any sustainable restaurants under this cuisine yet in Singapore<span id="typewriter"></span><span id="cursor">...</span></h1>
-
+          <div id="content5" class="tab-content" v-for="gallery in dividedNorthDestinations">
+            <div class="gallery">
+              <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
+            </div>
           </div>
-        
-
 
           <!-- Content for the west (jurong lake gardens) -->
-          <div id="content6" class="tab-content">
-            <h1>Sorry we can't find any sustainable restaurants under this cuisine yet in Singapore<span id="typewriter"></span><span id="cursor">...</span></h1>
-
+          <div id="content6" class="tab-content" v-for="gallery in dividedWestDestinations">
+            <div class="gallery">
+              <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -213,8 +119,146 @@
           </div>
       </div>
   </footer>
+  </div>
   <script>
       document.getElementById("year").innerHTML = new Date().getFullYear()
+
+      var url = "restaurant.json" 
+
+      const app = Vue.createApp( {
+            data() {
+                return {
+                    destinations: [{name:"", image:"", url: "", area: []}],
+                    init: true,
+                    central_dest: [],
+                    north_dest: [],
+                    south_dest: [],
+                    east_dest: [],
+                    west_dest: []
+                }
+            },
+            methods: {
+              navigateToUrl(url) {
+                // Handle the navigation to the specified URL
+                window.location.href = url;
+              }
+            },
+            computed: {
+              dividedAllDestinations() {
+                // Divide the destinations array into groups of 6
+                const result = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.destinations.length; i += groupSize) {
+                  result.push(this.destinations.slice(i, i + groupSize));
+                }
+                // console.log(result)
+                return result;
+              },
+              dividedCentralDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultC = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.central_dest.length; i += groupSize) {
+                  resultC.push(this.central_dest.slice(i, i + groupSize));
+                }
+                return resultC;
+              },
+              dividedNorthDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultN = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.north_dest.length; i += groupSize) {
+                  resultN.push(this.north_dest.slice(i, i + groupSize));
+                }
+                return resultN;
+              },
+              dividedSouthDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultS = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.south_dest.length; i += groupSize) {
+                  resultS.push(this.south_dest.slice(i, i + groupSize));
+                }
+                return resultS;
+              },
+              dividedEastDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultE = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.east_dest.length; i += groupSize) {
+                  resultE.push(this.east_dest.slice(i, i + groupSize));
+                }
+                return resultE;
+              },
+              dividedWestDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultW = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.west_dest.length; i += groupSize) {
+                  resultW.push(this.west_dest.slice(i, i + groupSize));
+                }
+                return resultW;
+              }
+            },
+            created() { // lifecycle book -- created is an event tat occurs when the Vue instance has been created
+                axios.get(url)
+                        .then(response => {
+                            result = response.data
+                            // console.log(result)
+                            
+                            for (let i = 0; i<result.length; i++) {
+                              // console.log(result[i])
+                              destination = {}
+                              
+                              destination.name = result[i].name
+                              destination.image = "../justin/" + result[i].image
+                              destination.url = result[i].url
+                              destination.area = result[i].area
+                              if (this.init) {
+                                this.destinations = [destination]
+                                this.init = false
+                            } else 
+                                this.destinations.push(destination)
+                            }
+                            console.log(this.destinations)
+
+                            // Populating different areas
+                            for (destination of this.destinations) {
+                              // console.log(destination)
+                              // console.log(destination.area[1])
+                              if (destination.area[1] == "central") {
+                                this.central_dest.push(destination)
+                              }
+                              else if (destination.area[1] == "north") {
+                                this.north_dest.push(destination)
+                              }
+                              else if (destination.area[1] == "south") {
+                                this.south_dest.push(destination)
+                              }
+                              else if (destination.area[1] == "east") {
+                                this.east_dest.push(destination)
+                              }
+                              else if (destination.area[1] == "west") {
+                                this.west_dest.push(destination)
+                              }
+                            }
+                        })
+            }
+        })
+
+        app.component("dest", {
+          template: `
+            <article class="card">
+            <figure>
+                      <img :src="image">
+                      <figcaption><h3>{{ name }}</h3></figcaption>
+            </figure>
+            </article>
+          `,
+          props: ['name', 'image', 'url']
+        })
+
+    const vm = app.mount('#app')
     </script>
       
 
