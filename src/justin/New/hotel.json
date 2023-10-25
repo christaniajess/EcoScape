@@ -1,0 +1,98 @@
+[
+    {
+        "image": "./image/PARKROYAL-COLLECTION-Marina-Bay.webp",
+        "name": "Parkroyal Collection Marina Bay",
+        "area": ["all", "central"],
+        "type": "hotel",
+        "rating": "4.4",
+        "greenScore": "4.5/5",
+        "url": "https://www.panpacific.com/en/hotels-and-resorts/pr-collection-marina-bay.html",
+        "lat": "1.2823",
+        "long": "103.8591",
+        "description": "Parkroyal Collection Marina Bay, nestled in the heart of Singapore, stands as a model for green and environmentally friendly hospitality. The hotel has made significant strides in sustainability, incorporating energy-efficient lighting, waste reduction, and water conservation practices. It also boasts GreenMark Platinum certification, a recognition of its commitment to environmental stewardship. The property features a lush sky garden that not only provides a serene environment for guests but also helps with temperature regulation and reduces energy consumption. Sustainable dining options with locally sourced ingredients and the implementation of a comprehensive recycling program underline the hotel's dedication to green practices. Its central location encourages guests to explore the city by foot or public transportation, minimizing carbon emissions. Parkroyal Collection Marina Bay demonstrates that luxury and environmental responsibility can coexist, providing a beautiful and eco-conscious space for travelers while actively contributing to the preservation of the environment."
+    },
+    {
+        "image": "./image/OasiaHotel.jpg",
+        "name": "Oasia Hotel Downtown",
+        "area": ["all", "central"],
+        "type": "hotel",
+        "rating": "4.5",
+        "greenScore": "4.7/5",
+        "url": "https://www.oasiahotels.com/en/singapore/hotels/oasia-hotel-downtown?dcm=sem&gclid=CjwKCAjwkNOpBhBEEiwAb3MvvUdcTY3XgNuuhItnMepwfNfVRrJzDE-RjL8TPrIIbIhONh7WZJAzXRoCfKsQAvD_BwE&gclsrc=aw.ds",
+        "lat": "1.2930",
+        "long": "103.8391",
+        "description": "Oasia Hotel, located in the heart of Singapore's bustling central district, is a shining example of a green and environmentally friendly hotel. With a strong commitment to sustainability, it has earned a reputation as an eco-conscious accommodation choice. The hotel incorporates numerous green practices, including energy-efficient lighting, water-saving measures, and waste reduction initiatives. Its facade is adorned with lush vertical gardens, which not only enhance the aesthetics but also contribute to temperature regulation, reducing energy consumption. Oasia Hotel's commitment to eco-friendly dining includes the use of locally sourced ingredients and sustainable culinary practices. Furthermore, its convenient central location encourages guests to explore the city on foot or through eco-friendly public transportation options, minimizing their carbon footprint. With Green Mark Platinum certification and a range of green initiatives, Oasia Hotel is a prime example of how a luxurious hotel can harmoniously coexist with eco-conscious principles, offering a sustainable and comfortable stay for guests while actively contributing to environmental conservation."
+    },
+    {
+        "image": "./image/jwmarriott.webp",
+        "name": "JW Marriott South Beach",
+        "area": ["all", "central"],
+        "type": "hotel",
+        "rating": "4.5",
+        "greenScore": "4.6/5",
+        "url": "https://www.marriott.com/en-us/hotels/sinjw-jw-marriott-hotel-singapore-south-beach/overview/",
+        "lat": "1.2975",
+        "long": "103.8590",
+        "description": "JW Marriott South Beach, situated in the vibrant central district of Singapore, has established itself as a model of environmental responsibility and sustainability within the luxury hotel industry. With a strong focus on green practices, the hotel has implemented various initiatives, including energy-efficient lighting, water-saving measures, and comprehensive waste reduction programs. One of its standout features is the rooftop garden, which not only provides a serene and scenic escape for guests but also contributes to temperature regulation and reduces energy consumption. Sustainable dining options that incorporate locally sourced ingredients and eco-conscious culinary practices are a staple at the hotel. The central location promotes eco-friendly exploration of the city by foot or public transportation, encouraging guests to minimize their carbon footprint. JW Marriott South Beach's commitment to environmental stewardship, exemplified by its Green Mark Platinum certification and numerous sustainable practices, showcases that luxury and eco-friendliness can coexist, providing a stylish and responsible option for travelers while actively contributing to the preservation of the environment."
+    },
+    {
+        "image": "./image/grandhyatt.jpg",
+        "name": "Grand Hyatt",
+        "area": ["all", "central"],
+        "type": "hotel",
+        "rating": "4.6",
+        "greenScore": "4.6/5",
+        "url": "https://www.hyatt.com/en-US/hotel/singapore/grand-hyatt-singapore/sinrs",
+        "lat": "1.3064",
+        "long": "103.8313",
+        "description": "Grand Hyatt, situated in the heart of Singapore's central district, is a prime example of a green and environmentally friendly luxury hotel. The hotel's commitment to sustainability is evident in its eco-friendly practices, including energy-efficient lighting, water conservation, and waste reduction initiatives. Grand Hyatt boasts several green features such as a rooftop garden that enhances aesthetics while contributing to temperature regulation and reducing energy consumption. Sustainable dining options feature locally sourced ingredients, reducing the carbon footprint of culinary offerings. Its central location encourages guests to explore the city through eco-friendly public transportation or on foot, further minimizing environmental impact. The hotel's focus on environmental stewardship, often acknowledged with Green Mark Platinum certification and a variety of green initiatives, underscores that luxury and environmental responsibility can coexist. Grand Hyatt offers travelers an eco-conscious and upscale experience, actively contributing to the preservation of the environment, and serving as a role model for the hospitality industry in Singapore."
+    },
+    {
+        "image": "./image/panpacificorchard.jpg",
+        "name": "Pan Pacific Orchard",
+        "area": ["all", "central"],
+        "type": "hotel",
+        "rating": "4.2",
+        "greenScore": "4.5/5",
+        "url": "https://www.nparks.gov.sg/gardens-parks-and-nature/parks-and-nature-reserves/tampines-eco-green",
+        "lat": "1.3039",
+        "long": "103.8324",
+        "description": "Pan Pacific Orchard, located in the central district of Singapore, stands as a prime example of an eco-conscious and green hotel. The hotel's dedication to sustainability is evident through its energy-efficient lighting, waste reduction, and water conservation initiatives. It incorporates various green features such as a rooftop garden that not only enhances the hotel's aesthetics but also serves as an urban oasis for guests and contributes to temperature regulation, reducing energy consumption. Sustainable dining options include the use of locally sourced ingredients and eco-friendly culinary practices. Pan Pacific Orchard's central location promotes eco-friendly exploration of the city by foot or through efficient public transportation, encouraging guests to minimize their carbon footprint. With Green Mark Platinum certification and a range of green initiatives, the hotel actively contributes to environmental preservation while offering a luxurious and environmentally responsible experience for travelers. Pan Pacific Orchard's commitment to environmental responsibility sets a high standard for eco-friendly hospitality in Singapore, emphasizing that luxury and eco-conscious principles can harmoniously coexist."
+    },
+    {
+        "image": "./image/PARKROYAL-pickering.jpg",
+        "name": "Parkroyal Collection Pickering",
+        "area": ["all", "central"],
+        "type": "hotel",
+        "rating": "4.6",
+        "greenScore": "4.8/5",
+        "url": "https://www.panpacific.com/en/hotels-and-resorts/pr-collection-pickering.html",
+        "lat": "1.2828",
+        "long": "103.8467",
+        "description": "PARKROYAL on Pickering, located in the central district of Singapore, is a remarkable testament to eco-conscious hospitality. The hotel's commitment to sustainability is evident in its innovative 'hotel in a garden' concept, which seamlessly integrates lush greenery and eco-friendly features into its design. With energy-efficient lighting, rainwater harvesting, and a focus on waste reduction, it's not just a hotel—it's a living, breathing eco-oasis. The use of sustainable materials and architectural choices, like vertical gardens and sky terraces, have transformed this urban space into a green sanctuary. Sustainable dining options featuring locally sourced ingredients further reduce the hotel's carbon footprint. Situated in a central location, the hotel encourages guests to explore the city on foot or using eco-friendly public transportation, promoting a lower environmental impact. With Green Mark Platinum certification and an array of green initiatives, PARKROYAL on Pickering is a pioneer in eco-friendly luxury, offering a green, vibrant, and sustainable haven for travelers while actively contributing to environmental preservation."
+    },
+    {
+        "image": "./image/Shangri-La.webp",
+        "name": "Shangri-La Hotel Singapore",
+        "area": ["all", "central"],
+        "type": "hotel",
+        "rating": "4.6",
+        "greenScore": "4.7/5",
+        "url": "https://www.shangri-la.com/en/singapore/shangrila/",
+        "lat": " 1.3059",
+        "long": "103.8264",
+        "description": "Shangri-La Hotel in Singapore, nestled in the central district, beautifully combines luxury and environmental responsibility. The hotel is recognized for its strong commitment to sustainability, with various eco-friendly practices such as energy-efficient lighting and water conservation measures. It offers a tranquil urban retreat with lush gardens and green spaces that promote a sense of harmony with nature. Sustainable dining options showcase locally sourced ingredients and eco-conscious culinary practices. The hotel's central location encourages guests to explore the city on foot or through eco-friendly public transportation, reducing their environmental footprint. With a dedication to environmental stewardship, often evidenced through Green Mark certifications and a range of green initiatives, Shangri-La Hotel serves as a model of eco-conscious luxury. It proves that high-end accommodations can coexist harmoniously with eco-friendly principles, providing guests with a luxurious and environmentally responsible experience while actively contributing to the preservation of the environment."
+    },
+    {
+        "image": "./image/Capella.jpg",
+        "name": "Capella Singapore",
+        "area": ["all", "south"],
+        "type": "hotel",
+        "rating": "4.7",
+        "greenScore": "4.8/5",
+        "url": "https://www.nparks.gov.sg/gardens-parks-and-nature/parks-and-nature-reserves/tampines-eco-green",
+        "lat": "1.2441",
+        "long": "103.8274",
+        "description": "Capella Singapore, located on the tranquil Sentosa Island in the south of Singapore, sets the benchmark for sustainable luxury. The resort is renowned for its commitment to eco-conscious practices and is often recognized for its environmental efforts. It boasts lush, well-manicured green landscapes that blend seamlessly with the natural surroundings, promoting a sense of harmony with nature. The hotel has implemented various sustainable initiatives, such as energy-efficient lighting, waste reduction, and water conservation measures, to reduce its environmental footprint. With an emphasis on locally sourced and organic ingredients, the dining options are aligned with eco-conscious culinary practices. The location of Capella Singapore encourages guests to explore the island's eco-friendly attractions and transportation, minimizing their carbon footprint. Often celebrated for its environmental stewardship, as evidenced by its green certifications and numerous green initiatives, Capella Singapore showcases that luxury can coexist with a strong commitment to environmental responsibility. Guests can experience a luxurious and environmentally conscious stay while actively contributing to the preservation of the environment on Sentosa Island."
+    }    
+]
