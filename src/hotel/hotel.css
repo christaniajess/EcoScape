@@ -388,7 +388,7 @@ footer {
   font-family: "Raleway", sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: #fff;
+  color: black;
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -401,12 +401,12 @@ footer {
 }
 
 h1 span {
-  color:white; 
+  color:black; 
 }
 .navbar a:hover,
 .navbar.active,
 .navbar.active:focus,
 .navbar li:hover>a {
-  background: rgba(255, 255, 255, 0.2);
+  background: #BDBDBD;
 }
  
