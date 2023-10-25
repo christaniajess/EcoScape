@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"); 
+/* bootstrap, icons & fonts  */
+@import url("https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"); 
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900"); 
 
 * {
     margin: 0;
@@ -16,9 +22,9 @@
     justify-content: center; */
   }
   
-  h1 {
+  h2 {
     font-size: 25px;
-    margin-left: 1.5rem;
+    margin-left: 3.5rem;
     padding: 1.5rem;
     
   }
@@ -214,8 +220,6 @@ footer {
     /* margin-top: 20px;
     margin-bottom: 10px; */
     padding:1.5rem;
-    
-
   }
 
   .tab-content 
@@ -354,4 +358,54 @@ footer {
     cursor: pointer;
     transform: translateX(22px);
 }
+
+.navbar {
+  padding: 0;
+  position: static;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 13px;
+  margin-left: 10px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: black;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+h1 span {
+  color:black; 
+}
+.navbar a:hover,
+.navbar.active,
+.navbar.active:focus,
+.navbar li:hover>a {
+  background: #BDBDBD;
+}
+
  
