@@ -158,7 +158,7 @@
 
           <!-- Content for All -->
           
-            <div id="content1" class="tab-content" v-for="gallery in dividedDestinations" >
+            <div id="content1" class="tab-content" v-for="gallery in dividedAllDestinations" >
               <div class="gallery">
                 <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
               </div>
@@ -166,132 +166,44 @@
           
 
           <!-- Content for Central -->
-          <div id="content2" class="tab-content">
-            <div class="gallery">
-              <article class="card" onclick="location.href='attractions.html'"> 
-                <!-- the onclick should redirect to the actual info about that location -->
-                <figure>
-                  <img src="../image/botanic.jpg">
-                  <figcaption><h3>Botanic Gardens</h3></figcaption>
-                </figure>
-              </article>
-              <article class="card" onclick="location.href='attractions.html'"> 
-                <!-- the onclick should redirect to the actual info about that location -->
-                <figure>
-                  <img src="../image/fcpark.jpg">
-                  <figcaption><h3>Fort Canning Park</h3></figcaption>
-                </figure>
-              </article>
-              <article class="card" onclick="location.href='attractions.html'"> 
-                <!-- the onclick should redirect to the actual info about that location -->
-                <figure>
-                  <img src="../image/reservoir.jpg">
-                  <figcaption><h3>MacRitchie Reservoir</h3></figcaption>
-                </figure>
-              </article>
-            </div>
 
+          <div id="content2" class="tab-content" v-for="gallery in dividedCentralDestinations">
+            <div class="gallery">
+              <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
+            </div>
           </div>
 
           <!-- Content for East -->
-          <div id="content3" class="tab-content">
+          <div id="content3" class="tab-content" v-for="gallery in dividedEastDestinations">
             <div class="gallery">
-              <article class="card" onclick="location.href='attractions.html'"> 
-                <!-- the onclick should redirect to the actual info about that location -->
-                <figure>
-                  <img src="../image/ecp.jpg">
-                  <figcaption><h3>East Coast Park</h3></figcaption>
-                </figure>
-              </article>
-              <article class="card" onclick="location.href='attractions.html'"> 
-                <!-- the onclick should redirect to the actual info about that location -->
-                <figure>
-                  <img src="../image/jewel.jpg">
-                  <figcaption><h3>Changi - Jewel</h3></figcaption>
-                </figure>
-              </article>
+              <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
             </div>
           </div>
 
           <!-- Content for the south -->
-          <div id="content4" class="tab-content">
+          <div id="content4" class="tab-content" v-for="gallery in dividedSouthDestinations">
             <div class="gallery">
-              <article class="card" onclick="location.href='attractions.html'"> 
-                <!-- the onclick should redirect to the actual info about that location -->
-                <figure>
-                  <img src="../image/gbtb.webp">
-                  <figcaption><h3>Gardens By the Bay</h3></figcaption>
-                </figure>
-              </article>
+              <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
             </div>
           </div>
 
           <!-- Content for the north -->
-          <div id="content5" class="tab-content">
+          <div id="content5" class="tab-content" v-for="gallery in dividedNorthDestinations">
             <div class="gallery">
-              <article class="card" onclick="location.href='attractions.html'"> 
-                <!-- the onclick should redirect to the actual info about that location -->
-                <figure>
-                  <img src="../image/sembawang.jpg">
-                  <figcaption><h3>Sembawang Hot Spring Parl</h3></figcaption>
-                </figure>
-              </article>
+              <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
             </div>
           </div>
-        
-
 
           <!-- Content for the west (jurong lake gardens) -->
-          <div id="content6" class="tab-content">
+          <div id="content6" class="tab-content" v-for="gallery in dividedWestDestinations">
             <div class="gallery">
-              <article class="card" onclick="location.href='attractions.html'"> 
-                <!-- the onclick should redirect to the actual info about that location -->
-                <figure>
-                  <img src="../image/jlg.png">
-                  <figcaption><h3>Jurong Lake Gardens</h3></figcaption>
-                </figure>
-              </article>
+              <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
             </div>
-
           </div>
-
-
-
-
-            
-        
-          
-
-
-
 
         </div>
       </div>
     </div>
-
-    
-        <!-- <div id="content1" class="tab-content">
-          <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-4 col-md-offset-4">
-                <div class="card card-body">
-                  <div class="view">
-                        <img src="https://assets.foxdcg.com/dpp-uploaded/images/the-90s-greatest/seriesDetail.jpg?fit=inside%7C1920:1080" class="img-responsive" alt="">
-                  </div>
-                  <div class="card text-center">
-                      <h4 class="card-title"><strong>Name</strong></h4>
-                      <p class="card-description">Some informations <br>
-                        will be placed here
-                      </p>
-                      <a href="#!" class="card-link">See more
-                      </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-      </div>
-        </div> -->
 
     <!-- Footer -->
     <!-- <footer>
@@ -347,7 +259,12 @@
             data() {
                 return {
                     destinations: [{name:"", image:"", url: "", area: []}],
-                    init: true
+                    init: true,
+                    central_dest: [],
+                    north_dest: [],
+                    south_dest: [],
+                    east_dest: [],
+                    west_dest: []
                 }
             },
             methods: {
@@ -357,22 +274,67 @@
               }
             },
             computed: {
-              dividedDestinations() {
+              dividedAllDestinations() {
                 // Divide the destinations array into groups of 6
                 const result = [];
                 const groupSize = 6;
                 for (let i = 0; i < this.destinations.length; i += groupSize) {
                   result.push(this.destinations.slice(i, i + groupSize));
                 }
-                console.log(result)
+                // console.log(result)
                 return result;
               },
+              dividedCentralDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultC = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.central_dest.length; i += groupSize) {
+                  resultC.push(this.central_dest.slice(i, i + groupSize));
+                }
+                return resultC;
+              },
+              dividedNorthDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultN = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.north_dest.length; i += groupSize) {
+                  resultN.push(this.north_dest.slice(i, i + groupSize));
+                }
+                return resultN;
+              },
+              dividedSouthDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultS = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.south_dest.length; i += groupSize) {
+                  resultS.push(this.south_dest.slice(i, i + groupSize));
+                }
+                return resultS;
+              },
+              dividedEastDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultE = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.east_dest.length; i += groupSize) {
+                  resultE.push(this.east_dest.slice(i, i + groupSize));
+                }
+                return resultE;
+              },
+              dividedWestDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultW = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.west_dest.length; i += groupSize) {
+                  resultW.push(this.west_dest.slice(i, i + groupSize));
+                }
+                return resultW;
+              }
             },
             created() { // lifecycle book -- created is an event tat occurs when the Vue instance has been created
                 axios.get(url)
                         .then(response => {
                             result = response.data
-                            console.log(result)
+                            // console.log(result)
                             
                             for (let i = 0; i<result.length; i++) {
                               // console.log(result[i])
@@ -389,6 +351,27 @@
                                 this.destinations.push(destination)
                             }
                             // console.log(this.destinations)
+
+                            // Populating different areas
+                            for (destination of this.destinations) {
+                              // console.log(destination)
+                              // console.log(destination.area[1])
+                              if (destination.area[1] == "central") {
+                                this.central_dest.push(destination)
+                              }
+                              else if (destination.area[1] == "north") {
+                                this.north_dest.push(destination)
+                              }
+                              else if (destination.area[1] == "south") {
+                                this.south_dest.push(destination)
+                              }
+                              else if (destination.area[1] == "east") {
+                                this.east_dest.push(destination)
+                              }
+                              else if (destination.area[1] == "west") {
+                                this.west_dest.push(destination)
+                              }
+                            }
                         })
             }
         })
