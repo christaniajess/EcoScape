@@ -29,8 +29,27 @@ const effect = async () => {
 effect();
 
 // for the tabs
-const areas = ['All', 'Central','East','South','North','West']
-var count = 1
-id= tab+count
-count++
+areas = ['All', 'Central','East','South','North','West']
+var numtab = 1
+string = ''
+tabs = document.getElementById('tabs')
+for(area of areas)
+{
+    if(numtab==1)
+    {
+        string+=
+        `<input id='tab${numtab}' type='radio' name='tabs' checked>
+        <label for='tab${numtab}'>${area}</label>
+        `
+        numtab++
+    }
+    else
+    {
+        string +=
+        `<input id='tab${numtab}' type='radio' name='tabs'>
+        <label for='tab${numtab}'>${area}</label>`
+        numtab++
+    }
+}
+tabs.innerHTML = string
 
