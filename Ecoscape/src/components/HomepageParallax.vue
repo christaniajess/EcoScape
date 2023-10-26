@@ -17,7 +17,7 @@
           <img :src="iconImage" id="title-icon" alt="" /> EcoScape
         </div>
       </div>
-      <a class="btn-get-started scrollto" id="scroll-icon" href="#about_us">
+      <a class="btn-get-started scrollto" id="scroll-icon" href="#about-us">
         <div class="circle-btn">
           <i class="fa fa-angle-double-down" style="font-size: 20px;"></i>
         </div>

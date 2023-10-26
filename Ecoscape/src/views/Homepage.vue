@@ -16,8 +16,6 @@
     <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
 
     <link rel="icon" href="./public/favicon.ico" />
-    <link href="css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/fontawesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
     <link rel="stylesheet" href="../index.css">
@@ -26,13 +24,15 @@
 
   <body>
     
-  <div>
-    <NavBar /> <!-- Include the NavBar component -->
-    <HomepageParallax /> <!-- Include the HomepageParallax component -->
-    <!-- Add your content here -->
-    <router-view /> <!-- This will display the appropriate content based on your routes -->
-    <Footer /> <!-- Include the Footer component -->
-  </div>
+      <NavBar />  <!-- Include the NavBar component -->
+      <HomepageParallax /> <!-- Include the HomepageParallax component -->
+      <!-- Add your content here -->
+      <section>
+        <AboutCarousel />
+      </section>
+      <hr id="footer-separation">
+    <Footer />
+
 
 </body>
 </template>
@@ -43,12 +43,24 @@
 import NavBar from "@/components/NavBar.vue"; // Make sure to adjust the import path as needed
 import HomepageParallax from "@/components/HomepageParallax.vue";
 import Footer from "@/components/Footer.vue";
+import AboutCarousel from "@/components/AboutCarousel.vue";
 
 export default {
   components: {
     NavBar,
     HomepageParallax,
     Footer,
-  },
-};
+    AboutCarousel,
+},
+}
 </script>
+
+<style scoped>
+  #footer-separation {
+  background-color: #8ebe6d; /* Remove white space above and below */
+  border: none; /* Remove the default line */
+  height: 1px; /* Increase line thickness */
+  width: 80%; /* Adjust width as needed */
+  margin: 0 auto; /* Center the line horizontally */
+}
+</style>

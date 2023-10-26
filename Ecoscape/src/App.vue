@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <NavBar />
-    <HomepageParallax />
-    <Footer />
- 
  <!-- Example router link -->
     <router-view></router-view> <!-- This is where your components will render -->
   </div>
@@ -11,7 +7,8 @@
 
 <script>
 import NavBar from "@/components/NavBar.vue";
-import HomepageParallax from "./components/HomepageParallax.vue";
+import HomepageParallax from "@/components/HomepageParallax.vue";
+import AboutCarousel from "@/components/AboutCarousel.vue";
 import Footer from "@/components/Footer.vue";
 import "aos/dist/aos.css"; // Import the AOS styles
 import AOS from "aos";
@@ -22,6 +19,7 @@ export default {
     NavBar,
     Footer,
     HomepageParallax,
+    AboutCarousel,
   },
   mounted() {
     AOS.init(); // Initialize AOS

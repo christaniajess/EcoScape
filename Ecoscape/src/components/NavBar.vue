@@ -331,6 +331,45 @@ export default {
     border: 0px;
 }
 
+.navbar .search-icon {
+  position: relative;
+}
+
+.navbar .search-icon button {
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  padding-left: 1.5rem;
+  padding-right: 1rem;
+}
+
+.navbar .search-bar {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: #fff; /* Background color for the search bar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Box shadow for the search bar */
+  padding: 10px; /* Adjust padding as needed */
+}
+
+.navbar .search-bar .search-input {
+  width: 150px;
+  padding: 8px;
+  border: none; /* Remove the border */
+  background: transparent; /* Background color for the input field */
+  font-size: 16px;
+  color: #000; /* Text color */
+}
+
+.navbar .search-bar button#search-close {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #000; /* Color for the close button */
+}
+
 .profile-icon{
   height: 35px;
   width: 35px;
