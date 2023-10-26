@@ -30,10 +30,12 @@
         // Function to make an API request
         function fetchAPIWithKey() {
             const apiKey = 'mcXYAV2rQXOykVpqxBXaxw==';
-            var apiUrlBicyle = 'https://api.example.com/data?api_key=' + apiKey; // Replace with your API endpoint
+            var apiUrlBicyleParking = 'http://datamall2.mytransport.sg/ltaodataservice/BicycleParkingv2' + apiKey; // Replace with your API endpoint
             var apiUrlEVs = 'https://api.example.com/data?api_key=' + apiKey;
-            var apiUrlBusStop = 'https://api.example.com/data?api_key=' + apiKey;
+            var apiUrlBusStop = 'http://datamall2.mytransport.sg/ltaodataservice/BusStops' + apiKey; 
+            //Description Returns detailed information for all bus stops currently being serviced by buses, including: Bus Stop Code, location coordin
             var apiUrlMRT = 'https://api.example.com/data?api_key=' + apiKey;
+         
 
             // Make the API request using the Fetch API
             fetch(apiUrl)
