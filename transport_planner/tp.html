@@ -20,17 +20,43 @@
         data-text="MRT"></div>
     </div> -->
     <div class="container">
-        <a href="#link1" class="box box-1" style="--img: url(imgs/anywheel1.png);" data-text="Anywheel"></a>
-        <a href="#link2" class="box box-2" style="--img: url(imgs/bluesg1.png);" data-text="BlueSG"></a>
+        <a href="#link1" class="box box-1" style="--img: url(imgs/anywheel1.png);" data-text="Bicycles"></a>
+        <a href="#link2" class="box box-2" style="--img: url(imgs/bluesg1.png);" data-text="Electric Vehicles"></a>
         <a href="#link3" class="box box-3" style="--img: url(imgs/bus1.png);" data-text="Bus"></a>
         <a href="#link4" class="box box-4" style="--img: url(imgs/mrt1.png);" data-text="MRT"></a>
     </div>
     
-    
+    <script>
+        // Function to make an API request
+        function fetchAPIWithKey() {
+            const apiKey = 'mcXYAV2rQXOykVpqxBXaxw==';
+            var apiUrlBicyle = 'https://api.example.com/data?api_key=' + apiKey; // Replace with your API endpoint
+            var apiUrlEVs = 'https://api.example.com/data?api_key=' + apiKey;
+            var apiUrlBusStop = 'https://api.example.com/data?api_key=' + apiKey;
+            var apiUrlMRT = 'https://api.example.com/data?api_key=' + apiKey;
+
+            // Make the API request using the Fetch API
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the API response data
+                    const resultElement = document.getElementById('result');
+                    resultElement.innerHTML = `UserID: ${data.userId}, ID: ${data.id}, Title: ${data.title}`;
+                })
+                .catch(error => {
+                    console.error('API request error:', error);
+                });
+        }
+        
+
+
+        // Call the fetchAPI function when the page loads
+        window.onload = fetchAPI;
+    </script>
     
     <div class="container-fluid">
-        <div class="row">
-            <div>
+        <div class="row" id = "link1">
+            
         </div>
     </div>
 
