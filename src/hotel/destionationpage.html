@@ -45,65 +45,47 @@
   <body>
     <!-- navbar -->
     <header id="header" class="fixed-top header-transparent">
-        <div class="container d-flex align-items-center justify-content-between position-relative">
-    
-          <div class="logo">
-            <!-- <h1><a href="#"><span>ECOSCAPE</span></a></h1> -->
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="#"><img src="../image/icon.png" alt="" class="img-fluid"></a>
-          </div>
-    
-          <nav id="navbar" class="navbar">
-            <ul>
-              <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-              <li><a class="nav-link scrollto" href="#about">About Us</a></li>
-              <li><a class="nav-link scrollto" href="../att/attraction1.html">Attractions</a></li>
-              <li><a class="nav-link scrollto" href="../hotel/hotel.html">Hotels</a></li>
-              <li><a class="nav-link scrollto" href="../restaurants/restaurants.html">Restaurants</a></li>
-              <li><a class="nav-link scrollto" href="#team">Green Transport Planner</a></li>
-              <li><a class="nav-link scrollto" href="/login_page/login.html">Login/Sign Up</a></li>
-          </nav>
-    
-        </div>
-      </header>
-    <div class="container d-flex align-items-center justify-content-between position-relative">
-      
-      
-      
-      
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-3">
-            <!-- image col -->
-            <img id="attraction-img" src="" class="rounded float-start img-fluid w-100">
-            <a id="open-web-link" class="btn" href="#" role="button">Open Website</a>
-            <a href="">
-              <img id="ig-logo" src="Instagram_logo_2016.svg.webp" class="rounded img-fluid ">
-            </a>
-          </div>
-          <div class="col-lg-9">
-            <h1 id = "attraction-name"></h1>
-            <div id = "rating"></div> 
-            <div>
-              <label for="rating1">Rating:</label>
-              <div id="rating1" class="rating"></div>
-            </div>
-            <p id = "description"></p>
-          </div>
-        </div>
-        <div class="row">
+      <div class="container d-flex align-items-center justify-content-between position-relative">
   
+        <div class="logo">
+          <!-- <h1><a href="#"><span>ECOSCAPE</span></a></h1> -->
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <a href="#"><img src="../image/icon.png" alt="" class="img-fluid"></a>
         </div>
+  
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+            <li><a class="nav-link scrollto" href="../att/attraction1.html">Attractions</a></li>
+            <li><a class="nav-link scrollto" href="../hotel/hotel.html">Hotels</a></li>
+            <li><a class="nav-link scrollto" href="../restaurants/restaurants.html">Restaurants</a></li>
+            <li><a class="nav-link scrollto" href="#team">Green Transport Planner</a></li>
+            <li><a class="nav-link scrollto" href="/login_page/login.html">Login/Sign Up</a></li>
+        </nav>
+  
       </div>
+    </header>
+    <div class="container">
+      <br><br><br><br>
+      <div class="row">
+        <div class="col-6">
+          <h2>Marina Bay Sands<span id="typewriter"></span><span id="cursor">|</span></h2>
+          <h3>Green score: 4.5/5</h3>
+          <h3>Rating: 5/5</h3>
+          <hr>
+          <h4>
+            "Shangri-La Hotel in Singapore, nestled in the central district, beautifully combines luxury and environmental responsibility. The hotel is recognized for its strong commitment to sustainability, with various eco-friendly practices such as energy-efficient lighting and water conservation measures. It offers a tranquil urban retreat with lush gardens and green spaces that promote a sense of harmony with nature. Sustainable dining options showcase locally sourced ingredients and eco-conscious culinary practices. The hotel's central location encourages guests to explore the city on foot or through eco-friendly public transportation, reducing their environmental footprint. With a dedication to environmental stewardship, often evidenced through Green Mark certifications and a range of green initiatives, Shangri-La Hotel serves as a model of eco-conscious luxury. It proves that high-end accommodations can coexist harmoniously with eco-friendly principles, providing guests with a luxurious and environmentally responsible experience while actively contributing to the preservation of the environment."
+          </h4>
+          <button>Explore their website!</button>
+        </div>
+        <!-- <div class="col-6">
+          <img src="./image/panpacific.avif">
+        </div> -->
 
-    <div id="map"></div>
-
-    <!-- prettier-ignore -->
-    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-        ({key: "AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ", v: "weekly"});</script>
-
-<script>
-
-</script>
+      </div>
+      
+    </div>
+   
   </body>
 </html>
