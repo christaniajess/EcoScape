@@ -21,11 +21,17 @@
     align-items: center;
     justify-content: center; */
   }
+
+  #stars
+  {
+      width:30%;
+  }
   
   h2{
     font-size: 25px;
     margin-left: 3.5rem;
     /* padding: 1.5rem; */
+    margin-bottom:2rem;
     
   }
 
@@ -50,13 +56,42 @@
     padding:12px 10px;
     outline:none;
     color:#fff;
-    background-color:#628a5c ;
+    background:#628a5c ;
     border-radius:6px;
     cursor:pointer;
     margin-left:3.5rem;
     margin-top:1.5rem;
+    transition: width 0.5s;
   }
-  
+
+  button img
+  {
+    width:30px;
+    display: none;
+    margin-left:5rem;
+    /* margin-top:1rem; */
+
+  }
+
+  button:hover img
+  {
+    width: 30px;
+    display: block;
+    align-items: center;
+    /* justify-content: c-eve/nly; */
+    justify-items: center;
+  }
+
+ .panpacific
+  {
+    width:90%;
+    position:relative;
+    /* flex-basis: 60%; */
+    /* display:flex; */
+    margin-left:1.5rem;
+    margin-top:5rem;
+  }
+
   #typewriter {
     color: #628a5c;
   }
