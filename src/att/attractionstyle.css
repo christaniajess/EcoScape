@@ -21,14 +21,67 @@
     align-items: center;
     justify-content: center; */
   }
-  
-  h2 {
-    font-size: 25px;
-    margin-left: 3.5rem;
-    padding: 1.5rem;
-    
+
+  #stars
+  {
+      width:30%;
   }
   
+  h2{
+    font-size: 25px;
+    margin-left: 3.5rem;
+    /* padding: 1.5rem; */
+    margin-bottom:2rem;
+    
+  }
+
+  h3
+  {
+     margin-left:3.5rem;
+     /* padding:1.5rem; */
+     font-size: 15px;
+  }
+
+  h4
+  {
+    margin-left:3.5rem;
+    font-size: 15px;
+    font-weight:500;
+  }
+
+  button
+  {
+    width:200px;
+    border:0;
+    padding:12px 10px;
+    outline:none;
+    color:#fff;
+    background:#628a5c ;
+    border-radius:6px;
+    cursor:pointer;
+    margin-left:3.5rem;
+    margin-top:1.5rem;
+    transition: width 0.5s;
+  }
+
+  button img
+  {
+    width:30px;
+    display: none;
+    margin-left:5rem;
+    /* margin-top:1rem; */
+
+  }
+
+  button:hover img
+  {
+    width: 30px;
+    display: block;
+    align-items: center;
+    /* justify-content: c-eve/nly; */
+    justify-items: center;
+  }
+
   #typewriter {
     color: #628a5c;
   }
@@ -181,7 +234,7 @@ footer {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin: auto;
+      margin: 0 auto;
       text-align: center;
   }
 
@@ -220,8 +273,6 @@ footer {
     /* margin-top: 20px;
     margin-bottom: 10px; */
     padding:1.5rem;
-    
-
   }
 
   .tab-content 
@@ -308,7 +359,6 @@ footer {
     display: flex;
     gap:1.5cm;
     padding-top: 1rem;
-    padding-bottom:1rem;
     
     
   }
@@ -410,6 +460,33 @@ h1 span {
 .navbar li:hover>a {
   background: #BDBDBD;
 }
+
+ 
+@import url("https://github.com/christaniajess/EcoScape/blob/362273a0fed78c5e8650c9e19025bc96bdc8fa55/src/att/style.css");
+@import url("https://github.com/christaniajess/EcoScape/blob/b1858dc5e5b1e6289c5bc3971d9eda690fa85d81/src/att/typewriter_style.css");
+
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+ #map {
+    height: 50%;
+    width: 50%;
+    float: right;
+    margin-right: 15px;
+  }
+
+#attraction-img {
+    padding-left: 5.5rem;
+    height: 250px;
+    width: 500px;
+}
+
+#ig-logo {
+    height: 30px;
+    width: auto;
+}
+
 
 
 .gallery {
