@@ -48,7 +48,7 @@
         "description": "Jewel Changi Airport is located in the eastern part of Singapore and has earned a reputation as an environmentally friendly attraction. This iconic structure is a testament to Singapore's commitment to sustainability and green design. The green rating of 4 out of 5 reflects the numerous environmentally conscious features. One of the most striking features is the Rain Vortex, which is the world's tallest indoor waterfall. It serves a dual purpose as a stunning visual attraction and a functional rainwater harvesting system. The collected rainwater is used to irrigate the lush indoor forest known as the Shiseido Forest Valley. Jewel is also home to a wide variety of plant species, and its facade is covered with a distinctive glass and steel design that allows for natural light and ventilation. The shopping and dining options within the complex prioritize sustainable practices and local sourcing of products. Additionally, the airport encourages visitors to use public transportation, reducing the carbon footprint of travelers. Incorporating greenery and sustainable features, Jewel Changi Airport stands as a model for environmentally conscious urban development, blending modern infrastructure with the beauty of nature."
     },
     {
-        "image": "./image/jlg.jpg",
+        "image": "./image/jlg.png",
         "name": "Jurong Lake Garden",
         "area": ["all", "west"],
         "type": "park",
@@ -179,7 +179,7 @@
         "description": "Henderson Waves, situated in the southern part of Singapore, is an iconic pedestrian bridge that not only offers breathtaking views but also exemplifies environmentally friendly design. With a green rating of 4.5 out of 5, the bridge integrates seamlessly into the lush natural landscape of the Southern Ridges. The structure features sustainable materials and energy-efficient lighting, minimizing its carbon footprint. Its elevated design preserves the ground beneath and encourages the growth of local vegetation. The bridge is part of the Southern Ridges, a network of parks and green spaces connected by elevated walkways and bridges, fostering a sense of harmony with nature. Henderson Waves is also known for its low light pollution, providing a tranquil and eco-conscious place for stargazing. The surrounding flora and fauna are carefully preserved, creating an environment where visitors can appreciate nature without disrupting it. The bridge's gentle curves and artistic design reflect Singapore's dedication to creating green and environmentally friendly urban spaces that enhance the city's aesthetics while embracing eco-conscious principles."
     },
     {
-        "image": "./image/PARKROYAL-COLLECTION-Marina-Bay.webp",
+        "image": "./image/PARK-ROYAL-MARINA.jpg",
         "name": "Parkroyal Collection Marina Bay",
         "area": ["all", "central"],
         "type": "hotel",
@@ -239,7 +239,7 @@
         "description": "Pan Pacific Orchard, located in the central district of Singapore, stands as a prime example of an eco-conscious and green hotel. The hotel's dedication to sustainability is evident through its energy-efficient lighting, waste reduction, and water conservation initiatives. It incorporates various green features such as a rooftop garden that not only enhances the hotel's aesthetics but also serves as an urban oasis for guests and contributes to temperature regulation, reducing energy consumption. Sustainable dining options include the use of locally sourced ingredients and eco-friendly culinary practices. Pan Pacific Orchard's central location promotes eco-friendly exploration of the city by foot or through efficient public transportation, encouraging guests to minimize their carbon footprint. With Green Mark Platinum certification and a range of green initiatives, the hotel actively contributes to environmental preservation while offering a luxurious and environmentally responsible experience for travelers. Pan Pacific Orchard's commitment to environmental responsibility sets a high standard for eco-friendly hospitality in Singapore, emphasizing that luxury and eco-conscious principles can harmoniously coexist."
     },
     {
-        "image": "./image/PARKROYAL-pickering.jpg",
+        "image": "./image/pickering.jpg",
         "name": "Parkroyal Collection Pickering",
         "area": ["all", "central"],
         "type": "hotel",
@@ -251,7 +251,7 @@
         "description": "PARKROYAL on Pickering, located in the central district of Singapore, is a remarkable testament to eco-conscious hospitality. The hotel's commitment to sustainability is evident in its innovative 'hotel in a garden' concept, which seamlessly integrates lush greenery and eco-friendly features into its design. With energy-efficient lighting, rainwater harvesting, and a focus on waste reduction, it's not just a hotel—it's a living, breathing eco-oasis. The use of sustainable materials and architectural choices, like vertical gardens and sky terraces, have transformed this urban space into a green sanctuary. Sustainable dining options featuring locally sourced ingredients further reduce the hotel's carbon footprint. Situated in a central location, the hotel encourages guests to explore the city on foot or using eco-friendly public transportation, promoting a lower environmental impact. With Green Mark Platinum certification and an array of green initiatives, PARKROYAL on Pickering is a pioneer in eco-friendly luxury, offering a green, vibrant, and sustainable haven for travelers while actively contributing to environmental preservation."
     },
     {
-        "image": "./image/Shangri-La.webp",
+        "image": "./image/shangrila.jpg",
         "name": "Shangri-La Hotel Singapore",
         "area": ["all", "central"],
         "type": "hotel",
