@@ -18,178 +18,47 @@
         data-text="Bus"></div>
         <div class="box box-4" style="--img: url(imgs/mrt1.png);"
         data-text="MRT"></div>
-    </div> -->
-    <div class="container">
+    </div>  -->
+    <!-- <div class="container">
         <a href="#bicycle" class="box box-1" style="--img: url(imgs/anywheel1.png);" data-text="Bicycles"></a>
         <a href="#carparks" class="box box-2" style="--img: url(imgs/bluesg1.png);" data-text="Electric Vehicles"></a>
         <a href="#bus" class="box box-3" style="--img: url(imgs/bus1.png);" data-text="Bus"></a>
         <a href="#mrt" class="box box-4" style="--img: url(imgs/mrt1.png);" data-text="MRT"></a>
+    </div> -->
+    <div class="flex-container">
+        <div class="flex-slide bicycle">
+            <div class="flex-title flex-title-bicycle">Bicycle</div>
+            <div class="flex-about flex-about-bicycle"><p>Click here to navigate to the home section of the website</p></div>
+        </div>
+        <div class="flex-slide about">
+            <div class="flex-title">About</div>
+            <div class="flex-about"><p>Click here to navigate to the About section of the website</p></div>
+        </div>
+        <div class="flex-slide work">
+            <div class="flex-title">Work</div>
+            <div class="flex-about"><p>Listing relevant snippets of work:</p>
+                <ul>
+                    <li>First piece of work</li>
+                    <li>Second piece of work</li>
+                    <li>Third piece of work</li>
+                </ul>
+            </div>
+        </div>
+        <div class="flex-slide contact">
+            <div class="flex-title">Contact</div>
+                    <div class="flex-about">
+                        <p>Use the contact form below</p>
+                        <form class="contact-form">
+                            <p>Email <input type="text" name="email"></p>
+                            <p>Comment <textarea type="text" name="comment" row="5"></textarea></p>
+                            <p><input type="submit" name="email" value="Send Message"></p>
+                        </form>
+    
+            </div>
+        </div>
     </div>
     
-    <script>
-        // Function to make an API request for Bicycle Parking
-        function fetchBicycleParking() {
-            const apiKey = 'mcXYAV2rQXOykVpqXBXdDw==';
-            var apiUrlBicycleParking = 'http://datamall2.mytransport.sg/ltaodataservice/BicycleParkingv2' + apiKey;
-    
-            // Define request parameters (latitude, longitude, and distance in km)
-            const latitude = 1.23456; // Replace with the actual latitude
-            const longitude = 2.34567; // Replace with the actual longitude
-            const distance = 0.5; // Specify the radius in km
-    
-            // Construct the API URL with request parameters
-            apiUrlBicycleParking += `?latitude=${latitude}&longitude=${longitude}&distance=${distance}`;
-    
-            // Make the API request using the Fetch API
-            fetch(apiUrlBicycleParking)
-                .then(response => response.json())
-                .then(data => {
-                    // Handle the API response data
-                    const bicycleParkingElement = document.getElementById('bicycle');
-                    data.forEach(parking => {
-                        const description = parking.description;
-                        const latitude = parking.latitude;
-                        const longitude = parking.longitude;
-                        const rackType = parking.rackType;
-                        const rackCount = parking.rackCount;
-                        const shelterIndicator = parking.shelterIndicator;
-                        const parkingInfo = document.createElement('div');
-                        parkingInfo.innerHTML = `
-                            <p><strong>Description:</strong> ${description}</p>
-                            <p><strong>Latitude:</strong> ${latitude}</p>
-                            <p><strong>Longitude:</strong> ${longitude}</p>
-                            <p><strong>Rack Type:</strong> ${rackType}</p>
-                            <p><strong>Rack Count:</strong> ${rackCount}</p>
-                            <p><strong>Shelter Indicator:</strong> ${shelterIndicator}</p>
-                        `;
-                        bicycleParkingElement.appendChild(parkingInfo);
-                    });
-                })
-                .catch(error => {
-                    console.error('API request error:', error);
-                });
-        }
-    
-        // Call the fetchBicycleParking function when the page loads
-        window.onload = fetchBicycleParking;
-    
-        // Function to make an API request for Car Parks
-        function fetchCarParks() {
-            var settingsCarParks = {
-                "url" : "http://datamall2.mytransport.sg/ltaodataservice/CarParkAvailabilityv2", 
-                "method": "GET",
-                "timeout": 0,
-                "headers": {
-                    "accountKey": "mcXYAV2rQXOykVpqXBXdDw=="
-                }
-            };
-            // const apiKey = 'mcXYAV2rQXOykVpqXBXdDw==';
-            // var apiUrlCarParks = 'http://datamall2.mytransport.sg/ltaodataservice/CarParkAvailabilityv2' + apiKey;
-    
-            // Construct the API request using the Fetch API
-            fetch(apiUrlCarParks)
-                .then(response => response.json())
-                .then(data => {
-                    // Handle the API response data for car parks
-                    const carParksElement = document.getElementById('carparks');
-                    data.forEach(carpark => {
-                        const carParkID = carpark.CarParkID;
-                        const area = carpark.Area;
-                        const development = carpark.Development;
-                        const location = carpark.Location;
-                        const availableLots = carpark.AvailableLots;
-                        const lotType = carpark.LotType;
-                        const agency = carpark.Agency;
-                        const carParkInfo = document.createElement('div');
-                        carParkInfo.innerHTML = `
-                            <p><strong>Car Park ID:</strong> ${carParkID}</p>
-                            <p><strong>Area:</strong> ${area}</p>
-                            <p><strong>Development:</strong> ${development}</p>
-                            <p><strong>Location:</strong> ${location}</p>
-                            <p><strong>Available Lots:</strong> ${availableLots}</p>
-                            <p><strong>Lot Type:</strong> ${lotType}</p>
-                            <p><strong>Agency:</strong> ${agency}</p>
-                        `;
-                        carParksElement.appendChild(carParkInfo);
-                    });
-                })
-                .catch(error => {
-                    console.error('API request error:', error);
-                });
-        }
-    
-        // Function to make an API request for Bus Stops
-        function fetchBusStops() {
-            const apiKey = 'mcXYAV2rQXOykVpqXBXdDw==';
-            var apiUrlBusStops = 'http://datamall2.mytransport.sg/ltaodataservice/BusStops' + apiKey;
-    
-            // Make the API request using the Fetch API
-            fetch(apiUrlBusStops)
-                .then(response => response.json())
-                .then(data => {
-                    // Handle the API response data for bus stops
-                    const busStopsElement = document.getElementById('bus');
-                    data.forEach(busStop => {
-                        const busStopCode = busStop.BusStopCode;
-                        const roadName = busStop.RoadName;
-                        const description = busStop.Description;
-                        const latitude = busStop.Latitude;
-                        const longitude = busStop.Longitude;
-                        const busStopInfo = document.createElement('div');
-                        busStopInfo.innerHTML = `
-                            <p><strong>Bus Stop Code:</strong> ${busStopCode}</p>
-                            <p><strong>Road Name:</strong> ${roadName}</p>
-                            <p><strong>Description:</strong> ${description}</p>
-                            <p><strong>Latitude:</strong> ${latitude}</p>
-                            <p><strong>Longitude:</strong> ${longitude}</p>
-                        `;
-                        busStopsElement.appendChild(busStopInfo);
-                    });
-                })
-                .catch(error => {
-                    console.error('API request error:', error);
-                });
-        }
-    
-        // Function to make an API request for MRT
-        function fetchMRT() {
-            const apiKey = 'mcXYAV2rQXOykVpqXBXdDw==';
-            var apiUrlMRT = 'http://datamall2.mytransport.sg/ltaodataservice/TrainServiceAlerts' + apiKey;
-    
-            // Make the API request using the Fetch API
-            fetch(apiUrlMRT)
-                .then(response => response.json())
-                .then(data => {
-                    // Handle the API response data for MRT
-                    const mrtElement = document.getElementById('mrt');
-                    data.forEach(alert => {
-                        const status = alert.status;
-                        const lineAffected = alert.lineAffected;
-                        const direction = alert.direction;
-                        const stations = alert.stations.join(', ');
-                        const mrtInfo = document.createElement('div');
-                        mrtInfo.innerHTML = `
-                            <p><strong>Status:</strong> ${status === '1' ? 'Normal' : 'Disrupted'}</p>
-                            <p><strong>Line Affected:</strong> ${lineAffected}</p>
-                            <p><strong>Direction:</strong> ${direction}</p>
-                            <p><strong>Stations Affected:</strong> ${stations}</p>
-                        `;
-                        mrtElement.appendChild(mrtInfo);
-                    });
-                })
-                .catch(error => {
-                    console.error('API request error:', error);
-                });
-        }
-    
-        // Call the fetchCarParks function when the page loads
-        window.onload = fetchCarParks;
-        // Call the fetchBusStops function when the page loads
-        window.onload = fetchBusStops;
-        // Call the fetchMRT function when the page loads
-        window.onload = fetchMRT; 
-    
-    </script> 
+   <script src="tpscript.js"></script>
     
     
     <div class="container-fluid">
@@ -235,7 +104,10 @@
         </div>
         <div class="row" id="mrt">
             <!-- add jpeg - MRT MAP! -->
-            
+            <div class="row">
+                <!-- <img src="imgs/mrtmap.jpg">  -->
+                <!-- need to edit style for pic -->
+            </div>
             <!-- check train service availabilities? - with API  -->
             <!-- response: 0) status (1 is for normal train service, 2 = disrupted)
                 1) line affected 2) direction of service unavailable - both/towards (station name) 
