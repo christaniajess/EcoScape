@@ -11,17 +11,17 @@
             crossorigin="anonymous"
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <link rel="stylesheet" href="../">
+        <link rel="stylesheet" href="../index.css">
 
     </head>
     <body>
-        <navbar/>
+        <NavBar />
     </body>
 
 
 </template>
 <script>
-    import navbar from "@/components/navbar.vue";
+    import navbar from "../components/navbar.vue";
     export default
     {
         components:

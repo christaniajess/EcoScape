@@ -15,7 +15,7 @@
 
 import { createApp } from 'vue';
 import app from './app.vue';
-import router from '/router/index.js';
+import router from '/src/router/index.js';
 import 'font-awesome/css/font-awesome.min.css';
 
 const app = createApp(app);
