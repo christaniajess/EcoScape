@@ -10,3 +10,14 @@ new Vue({
   render: (h) => h(CThemeProvider, [h(App)]);
   render: (h) => h(CThemeProvider, [h(CReset), h(App)])
 }).$mount()
+
+
+
+import { createApp } from 'vue';
+import App from './app.vue';
+import 'font-awesome/css/font-awesome.min.css';
+
+const app = createApp(App);
+
+app.mount('#app');
+
