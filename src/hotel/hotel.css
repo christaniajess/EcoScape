@@ -12,8 +12,6 @@
     box-sizing: border-box;
   }
   
-
-  
   body {
     
     font-family:system-ui;
@@ -21,75 +19,14 @@
     align-items: center;
     justify-content: center; */
   }
-
-  #stars
-  {
-      width:30%;
-  }
   
   h2{
     font-size: 25px;
-    margin-left: 3.5rem;
+    margin-left: 5.5rem;
     /* padding: 1.5rem; */
-    margin-bottom:2rem;
+    /* margin-bottom:2rem; */
+    margin-top:7rem;
     
-  }
-
-  h3
-  {
-     margin-left:3.5rem;
-     /* padding:1.5rem; */
-     font-size: 15px;
-  }
-
-  h4
-  {
-    margin-left:3.5rem;
-    font-size: 15px;
-    font-weight:500;
-  }
-
-  button
-  {
-    width:200px;
-    border:0;
-    padding:12px 10px;
-    outline:none;
-    color:#fff;
-    background:#628a5c ;
-    border-radius:6px;
-    cursor:pointer;
-    margin-left:3.5rem;
-    margin-top:1.5rem;
-    transition: width 0.5s;
-  }
-
-  button img
-  {
-    width:30px;
-    display: none;
-    margin-left:5rem;
-    /* margin-top:1rem; */
-
-  }
-
-  button:hover img
-  {
-    width: 30px;
-    display: block;
-    align-items: center;
-    /* justify-content: c-eve/nly; */
-    justify-items: center;
-  }
-
- .panpacific
-  {
-    width:90%;
-    position:relative;
-    /* flex-basis: 60%; */
-    /* display:flex; */
-    margin-left:1.5rem;
-    margin-top:5rem;
   }
 
   #typewriter {
@@ -369,8 +306,7 @@ footer {
     display: flex;
     gap:1.5cm;
     padding-top: 1rem;
-    
-    
+     
   }
   .card
   {
@@ -495,4 +431,47 @@ h1 span {
 #ig-logo {
     height: 30px;
     width: auto;
+}
+
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Display 3 cards per row by default */
+  gap: 20px; /* Adjust the gap between cards */
+}
+
+.card {
+  border: 1px solid #ccc; /* Card border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 0;
+  display: flex; /* Make the card a flex container */
+  flex-direction: column; /* Arrange card contents vertically */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 1400px) {
+  .gallery {
+    grid-template-columns: repeat(6, 1fr); /* Display 2 cards per row for medium-sized screens */
+  }
+  
+}
+@media (max-width: 992px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr); /* Display 2 cards per row for medium-sized screens */
+  }
+  
+}
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Display 2 cards per row for medium-sized screens */
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr; /* Display 1 card per row for small screens */
+  }
+  
 }

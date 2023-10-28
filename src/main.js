@@ -13,12 +13,21 @@
 
 
 
-import { createApp } from 'vue';
-import app from './app.vue';
-import router from '/src/router/index.js';
-import 'font-awesome/css/font-awesome.min.css';
+// import { createApp } from 'vue';
+// import app from './app.vue';
+// import router from '/src/router/index.js';
+// import 'font-awesome/css/font-awesome.min.css';
 
-const app = createApp(app);
+// const app = createApp(app);
 
-app.mount('#app');
+// app.mount('#app');
 
+import Vue from 'vue';
+import App from './App.vue'; // Assuming this is your main app component
+import Tabs from './Tabs.vue'; // Import the Tabs component
+
+Vue.config.productionTip = false;
+
+new Vue({
+  render: (h) => h(App),
+}).$mount('#app');
