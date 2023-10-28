@@ -1,8 +1,17 @@
 {
   "name": "ecoscape",
+<<<<<<< HEAD
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+=======
+  "description": "",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {
+    "sass": "^1.69.4"
+  },
+>>>>>>> 868825a5b6f0c00d8e8987a2f4fdc855bcc38b3b
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,10 +19,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "firebase": "^10.5.0"
   },
   "devDependencies": {
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
+=======
+    "aos": "^2.3.4",
+    "bootstrap-icons": "^1.11.1",
+    "vue": "^3.3.7"
+>>>>>>> 868825a5b6f0c00d8e8987a2f4fdc855bcc38b3b
   }
 }
