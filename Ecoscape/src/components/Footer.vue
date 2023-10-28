@@ -12,7 +12,7 @@
             </div>
           </div>
 
-          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0">
+          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0 d-md-flex">
             <h6 class="footer-title text-uppercase fw-bold mb-2">Directory</h6>
             <ul class="list-unstyled mb-0">
               <li class="mb-1">
@@ -30,7 +30,7 @@
             </ul>
           </div>
 
-          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0">
+          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0 d-md-flex">
             <h6 class="footer-title text-uppercase fw-bold mb-2">Account</h6>
             <ul class="list-unstyled mb-0">
               <li class="mb-3">
@@ -45,7 +45,7 @@
             </ul>
           </div>
 
-          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0">
+          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0 d-md-flex">
             <h6 class="footer-title text-uppercase fw-bold mb-2">Contact Us</h6>
             <ul class="list-unstyled mb-0">
               <li class="mb-1">
@@ -61,7 +61,7 @@
           </div>
         </div>
 
-        <div class="col-lg-1 col-md-2 mb-2 mb-lg-0"></div>
+        <div class="col-lg-1 col-md-2 mb-2 mb-lg-0 "></div>
 
         <!-- Copyrights -->
         <div class="footer-copyrights">
@@ -145,7 +145,6 @@ footer ul li{
 footer .footer-links{
   color: #fff;
   /* text-decoration: underline; */
-  font-family: sans-serif;
   font-weight: 500;
 }
 
@@ -181,4 +180,16 @@ footer .footer-logo{
   margin-top: auto;
   margin-bottom: auto;
 }
+
+@media (max-width: 992px) {
+  .footer-columns {
+    flex-basis: 25%; /* Display two columns in a row */
+    padding-left: 2rem;
+  }
+  
+  .footer-columns h6 {
+    margin-bottom: 0; /* Remove the margin to avoid extra space */
+  }
+}
+
 </style>

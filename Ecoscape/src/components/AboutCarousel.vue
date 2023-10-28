@@ -2,7 +2,7 @@
   <div id="about-us">
     <div class="container-fluid about-container mt-5">
       <div class="row align-items-center">
-        <div class="col-12 col-md-4 about_text text-center p-3 pb-5 ps-5">
+        <div class="col-12 col-md-4 about_text text-center p-3 ps-5">
           <div data-aos="fade-up" data-aos-duration="1000">
             <h2>ABOUT US</h2>
             <p class="about-para">
