@@ -1,12 +1,12 @@
-import { createRouter } from 'vue-router';
-import Homepage from '';
+import { createRouter, createWebHistory } from 'vue-router';
+import Homepage from '@/views/homepage.vue';
 
-const routers = 
+const routes = 
 [
     {
         path:'/',
         name:'Homepage',
-        component: Homeapge,
+        component: Homepage,
     },
 
     //add more routes as needed

@@ -14,10 +14,11 @@
 
 
 import { createApp } from 'vue';
-import App from './app.vue';
+import app from './app.vue';
+import router from '/router/index.js';
 import 'font-awesome/css/font-awesome.min.css';
 
-const app = createApp(App);
+const app = createApp(app);
 
 app.mount('#app');
 
