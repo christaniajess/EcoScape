@@ -452,7 +452,7 @@ h1 span {
 /* Media queries for responsive design */
 @media (max-width: 1400px) {
   .gallery {
-    grid-template-columns: repeat(6, 1fr); /* Display 2 cards per row for medium-sized screens */
+    grid-template-columns: repeat(4, 1fr); /* Display 2 cards per row for medium-sized screens */
     /* 4  */
   }
   

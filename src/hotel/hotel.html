@@ -12,7 +12,7 @@
     
   </head>
   <body>
-        <div id = "app"></div>
+        <div id = "app">
         <!-- navbar -->
         <header id="header" class="fixed-top header-transparent">
           <div class="container d-flex align-items-center justify-content-between position-relative">
@@ -110,6 +110,7 @@
               </div>
             </div>
           </div>
+        </div>
           <script src="https://unpkg.com/vue@next"></script>
           <script>
               // document.getElementById("year").innerHTML = new Date().getFullYear()
@@ -202,7 +203,7 @@
                                       destination = {}
                                       
                                       destination.name = result[i].name
-                                      destination.image = "." + result[i].image
+                                      destination.image =  result[i].image
                                       destination.url = result[i].url
                                       destination.area = result[i].area
                                       if (this.init) {
@@ -212,7 +213,7 @@
                                         this.destinations.push(destination)
                                     }
                                     // console.log(this.destinations)
-        
+                                    
                                     // Populating different areas
                                     for (destination of this.destinations) {
                                       // console.log(destination)
