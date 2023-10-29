@@ -1,0 +1,23 @@
+{
+  "name": "ecoscape",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "bootstrap-icons": "^1.11.1",
+    "boxicons": "^2.1.4",
+    "font-awesome": "^4.7.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5",
+    "vue3-carousel": "^0.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.4.0",
+    "vite": "^4.4.11"
+  }
+}
