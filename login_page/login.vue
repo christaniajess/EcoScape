@@ -1,15 +1,25 @@
 <template>
-    
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="icon" href="img/icon.jpg" type="image/icon type">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
+    </head>
+    <body>
     <div>
-      <header class="navbar">
+                    <!-- IMPORT NAVBAR COMPONENT!!! -->
+      <!-- <NavBar />  -->
+        <header class="navbar">
         <div class="container">
           <div class="logo">
             <h1><a href="#"><span>ECOSCAPE</span></a></h1>
           </div>
-  
+    
           <nav>
-            <ul>
+            <ul> 
               <li><a class="nav-link" href="#hero">Home</a></li>
               <li><a class="nav-link" href="#about">About Us</a></li>
               <!-- Other navigation items -->
@@ -91,25 +101,21 @@
       </div>
     </div>
     </div>
+  </body>
+  <hr id="footer-separation">
+    <!-- <Footer /> -->
   </template>
-<!-- camille's vue -->
-<!-- <script>
-import NavBar from "@/components/NavBar.vue"; // Make sure to adjust the import path as needed
-import HomepageParallax from "@/components/HomepageParallax.vue";
-import Footer from "@/components/Footer.vue";
-import AboutCarousel from "@/components/AboutCarousel.vue";
+
+<script>
+// <!-- import NavBar from "@/components/NavBar.vue"; // Make sure to adjust the import path as needed -->
+// import Footer from "@/components/Footer.vue";
 
 export default {
-  components: {
-    NavBar,
-    HomepageParallax,
-    Footer,
-    AboutCarousel,
-},
-}
-</script> -->
-<script>
-export default {
+  // components: {
+  //   NavBar,
+  //   Footer,
+
+  // },
   data() {
     return {
       isLogin: true,
