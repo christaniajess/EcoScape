@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Planner</title>
+    <link rel="icon" href="imgs/icon.jpg" type="image/icon type">
+	<link rel="stylesheet" type="text/css" href="tpstyle.css"/>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+    crossorigin="anonymous"
+  />
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script> -->
+
+  <link rel="icon" href="public/favicon.ico" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
+  <script
+    src="https://kit.fontawesome.com/831470f68d.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <header id="header" class="fixed-top header-transparent">
+        <div class="container-fluid d-flex align-items-center justify-content-between position-relative">
+          <div class="logo ps-3">
+            <h1 class="text-light">
+              <router-link to="/"><span>ECOSCAPE</span></router-link>
+            </h1>
+          </div>
+          <nav class="navbar navbar-expand-lg p-0">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" @click="toggleNavbar">
+                <i class="fa fa-bars mobile-nav-toggle"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarExamples" :class="{ 'show': isNavbarOpen }">
+                <ul>
+                  <li>
+                    <router-link to="/" class="nav-link scrollto" exact>Home</router-link>
+                  </li>
+                  <li class="search-icon">
+                    <button @click="toggleSearch">
+                      <i class="fa fa-search"></i>
+                    </button>
+                    <div class="search-bar" v-show="showSearchBar">
+                      <input
+                        type="text"
+                        class="search-input"
+                        placeholder="Enter key to search"
+                      />
+                      <button @click="toggleSearch">
+                        <i class="fa fa-times"></i>
+                      </button>
+                    </div>
+                  </li>
+                  <li>
+                    <router-link to="#" class="nav-link">About Us</router-link>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#"><span>Directory</span> <i class="fa fa-angle-down"></i></a>
+                    <ul>
+                      <li><router-link to="#">Hotels</router-link></li>
+                      <li><router-link to="#">Attractions</router-link></li>
+                      <li><router-link to="#">Restaurants</router-link></li>
+                      <li><router-link to="#">Green Transport Planner</router-link></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <router-link to="#" class="nav-link">
+                      <img src="/images/profile-icon.png" class="profile-icon" alt="profile" />Login / Sign Up
+                    </router-link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+    <!-- <div class="container"> 
+        <div class="box box-1" style="--img: url(imgs/anywheel1.png);"
+        data-text="Anywheel"></div>
+        <div class="box box-2" style="--img: url(imgs/bluesg1.png);"
+        data-text="BlueSG"></div>
+        <div class="box box-3" style="--img: url(imgs/bus1.png);"
+        data-text="Bus"></div>
+        <div class="box box-4" style="--img: url(imgs/mrt1.png);"
+        data-text="MRT"></div>
+    </div>  -->
+    <div class="flex-container">
+        <div class="flex-slide bicycle">
+            <div class="slide-content">
+                <div class="flex-title flex-title-bicycle" data-aos="fade-up" data-aos-duration="1000">BICYCLE</div>
+                <div class="flex-about flex-about-bicycle text-center">
+                    <p>Pedal your way to a greener future with bicycle rental services across the country. <br>
+                        Enjoy the freedom of two-wheel transportation while contributing to reduced air pollution and traffic congestion.</p>
+                </div>
+                <a class="btn-get-started scrollto" id="scroll-icon" href="#transport-info">
+                    <div class="down-btn" id="down-btn-bicycle">
+                        <i class="fa fa-angle-down"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    
+        <div class="flex-slide ev">
+            <div class="slide-content">
+            <div class="flex-title" data-aos="fade-up" data-aos-duration="1500">ELECTRIC VEHICLE</div>
+            <div class="flex-about text-center"><p>Switch to electric vehicles (EVs) for an emission-free ride. Electric vehicle rental option is provided for a sustainable way to travel, whether it's for a short trip or an extended journey.
+            </p></div>
+            <a class="btn-get-started scrollto" id="scroll-icon" href="#transport-info">
+                <div class="down-btn" id="down-btn-ev">
+                  <i class="fa fa-angle-down"></i>
+                </div>
+              </a>
+        </div>
+    </div>
+
+        <div class="flex-slide bus">
+            <div class="slide-content">
+            <div class="flex-title" data-aos="fade-up" data-aos-duration="2000">BUS</div>
+            <div class="flex-about text-center"><p>Hop on board our eco-friendly public buses, designed for maximum passenger comfort and minimal environmental impact. Convenient routes and reliable schedules make it a breeze to get around.</p></div>
+            <a class="btn-get-started scrollto" id="scroll-icon" href="#transport-info">
+                <div class="down-btn" id="down-btn-bus">
+                  <i class="fa fa-angle-down"></i>
+                </div>
+              </a>
+        </div>
+
+    </div>
+        <div class="flex-slide mrt">
+            <div class="slide-content">
+            <div class="flex-title" data-aos="fade-up" data-aos-duration="2500">MRT</div>
+                    <div class="flex-about text-center">
+                        <p>Experience the speed and efficiency of our MRT system, the backbone of urban public transportation. Save time and energy while minimizing your carbon emissions.</p>
+            </div>
+            <a class="btn-get-started scrollto" id="scroll-icon" href="#transport-info">
+                <div class="down-btn" id="down-btn-mrt">
+                  <i class="fa fa-angle-down"></i>
+                </div>
+              </a>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        (function(){
+            
+            $(".flex-slide").each(function(){
+                $(this).hover(function(){
+                    $(this).find('.flex-title').css({
+                        transform: 'rotate(0deg)',
+                        top: '10%'
+                    });
+                    $(this).find('.flex-about').css({
+                        opacity: '1'
+                    });
+                }, function(){
+                    $(this).find('.flex-title').css({
+                        transform: 'rotate(90deg)',
+                        top: '15%'
+                    });
+                    $(this).find('.flex-about').css({
+                        opacity: '0'
+                    });
+                })
+            });
+        })();
+    </script>
+
+    <section id="transport-info">
+        <div class="card rounded-2 border mx-5 p-3 text-center">
+            <div class="card-title mt-5 pt-3">
+                <h1>Discover Sustainable Mobility with Us</h1>
+            </div>
+            <div class="card-subtitle px-5 pt-4 mx-4">
+                Are you ready to embrace eco-friendly transportation and reduce your carbon footprint? EcoScape offers a range of sustainable options that not only help protect the environment but also make your daily commute or travel more convenient. Explore our Green Transport Planner.
+            </div>
+            <div class="card-text mt-5 pb-3 mb-5" id="card-text">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Get references to your down buttons
+        const downBtnBicycle = document.querySelector("#down-btn-bicycle");
+        const downBtnEv = document.querySelector("#down-btn-ev");
+        const downBtnBus = document.querySelector("#down-btn-bus");
+        const downBtnMrt = document.querySelector("#down-btn-mrt");
+
+        // Get references to the card's content elements
+        // const cardSubtitle = document.getElementById("card-subtitle");
+        const cardText = document.getElementById("card-text");
+
+        // Event listener for the bicycle down button
+        downBtnBicycle.addEventListener("click", function() {
+            // Update the card's content for bicycle
+            // cardSubtitle.textContent = "Information about Bicycle";
+            cardText.textContent = "Learn more about our bicycle rental services and how you can contribute to a greener future.";
+        });
+
+        downBtnEv.addEventListener("click", function() {
+            // Update the card's content for bicycle
+            // cardSubtitle.textContent = "Information about Bicycle";
+            cardText.textContent = "Learn more about our bicycle rental services and how you can contribute to a greener future.";
+        });
+
+        downBtnBus.addEventListener("click", function() {
+            // Update the card's content for bicycle
+            // cardSubtitle.textContent = "Information about Bicycle";
+            cardText.textContent = "Learn more about our bicycle rental services and how you can contribute to a greener future.";
+        });
+
+        // Event listener for the bus down button
+        downBtnMrt.addEventListener("click", function() {
+            // Update the card's content for bus
+            // cardSubtitle.textContent = "Information about Bus";
+            cardText.textContent = "Discover our eco-friendly public bus services designed for maximum comfort and minimal environmental impact.";
+        });
+
+    </script>
+
+    <section id="co2-api">
+        
+    </section>
+    
+    
+    <script>
+        // Function to make an API request for Bicycle Parking
+        function fetchBicycleParking() {
+            const apiKey = 'mcXYAV2rQXOykVpqXBXdDw==';
+            var apiUrlBicycleParking = 'http://datamall2.mytransport.sg/ltaodataservice/BicycleParkingv2' + apiKey;
+    
+            // Define request parameters (latitude, longitude, and distance in km)
+            const latitude = 1.23456; // Replace with the actual latitude
+            const longitude = 2.34567; // Replace with the actual longitude
+            const distance = 0.5; // Specify the radius in km
+    
+            // Construct the API URL with request parameters
+            apiUrlBicycleParking += `?latitude=${latitude}&longitude=${longitude}&distance=${distance}`;
+    
+            // Make the API request using the Fetch API
+            fetch(apiUrlBicycleParking)
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the API response data
+                    const bicycleParkingElement = document.getElementById('bicycle');
+                    data.forEach(parking => {
+                        const description = parking.description;
+                        const latitude = parking.latitude;
+                        const longitude = parking.longitude;
+                        const rackType = parking.rackType;
+                        const rackCount = parking.rackCount;
+                        const shelterIndicator = parking.shelterIndicator;
+                        const parkingInfo = document.createElement('div');
+                        parkingInfo.innerHTML = `
+                            <p><strong>Description:</strong> ${description}</p>
+                            <p><strong>Latitude:</strong> ${latitude}</p>
+                            <p><strong>Longitude:</strong> ${longitude}</p>
+                            <p><strong>Rack Type:</strong> ${rackType}</p>
+                            <p><strong>Rack Count:</strong> ${rackCount}</p>
+                            <p><strong>Shelter Indicator:</strong> ${shelterIndicator}</p>
+                        `;
+                        bicycleParkingElement.appendChild(parkingInfo);
+                    });
+                })
+                .catch(error => {
+                    console.error('API request error:', error);
+                });
+        }
+    
+        // Call the fetchBicycleParking function when the page loads
+        window.onload = fetchBicycleParking;
+    
+        // Function to make an API request for Car Parks
+        function fetchCarParks() {
+            var settingsCarParks = {
+                "url" : "http://datamall2.mytransport.sg/ltaodataservice/CarParkAvailabilityv2", 
+                "method": "GET",
+                "timeout": 0,
+                "headers": {
+                    "accountKey": "mcXYAV2rQXOykVpqXBXdDw=="
+                }
+            };
+            // const apiKey = 'mcXYAV2rQXOykVpqXBXdDw==';
+            // var apiUrlCarParks = 'http://datamall2.mytransport.sg/ltaodataservice/CarParkAvailabilityv2' + apiKey;
+    
+            // Construct the API request using the Fetch API
+            fetch(apiUrlCarParks)
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the API response data for car parks
+                    const carParksElement = document.getElementById('carparks');
+                    data.forEach(carpark => {
+                        const carParkID = carpark.CarParkID;
+                        const area = carpark.Area;
+                        const development = carpark.Development;
+                        const location = carpark.Location;
+                        const availableLots = carpark.AvailableLots;
+                        const lotType = carpark.LotType;
+                        const agency = carpark.Agency;
+                        const carParkInfo = document.createElement('div');
+                        carParkInfo.innerHTML = `
+                            <p><strong>Car Park ID:</strong> ${carParkID}</p>
+                            <p><strong>Area:</strong> ${area}</p>
+                            <p><strong>Development:</strong> ${development}</p>
+                            <p><strong>Location:</strong> ${location}</p>
+                            <p><strong>Available Lots:</strong> ${availableLots}</p>
+                            <p><strong>Lot Type:</strong> ${lotType}</p>
+                            <p><strong>Agency:</strong> ${agency}</p>
+                        `;
+                        carParksElement.appendChild(carParkInfo);
+                    });
+                })
+                .catch(error => {
+                    console.error('API request error:', error);
+                });
+        }
+    
+        // Function to make an API request for Bus Stops
+        function fetchBusStops() {
+            const apiKey = 'mcXYAV2rQXOykVpqXBXdDw==';
+            var apiUrlBusStops = 'http://datamall2.mytransport.sg/ltaodataservice/BusStops' + apiKey;
+    
+            // Make the API request using the Fetch API
+            fetch(apiUrlBusStops)
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the API response data for bus stops
+                    const busStopsElement = document.getElementById('bus');
+                    data.forEach(busStop => {
+                        const busStopCode = busStop.BusStopCode;
+                        const roadName = busStop.RoadName;
+                        const description = busStop.Description;
+                        const latitude = busStop.Latitude;
+                        const longitude = busStop.Longitude;
+                        const busStopInfo = document.createElement('div');
+                        busStopInfo.innerHTML = `
+                            <p><strong>Bus Stop Code:</strong> ${busStopCode}</p>
+                            <p><strong>Road Name:</strong> ${roadName}</p>
+                            <p><strong>Description:</strong> ${description}</p>
+                            <p><strong>Latitude:</strong> ${latitude}</p>
+                            <p><strong>Longitude:</strong> ${longitude}</p>
+                        `;
+                        busStopsElement.appendChild(busStopInfo);
+                    });
+                })
+                .catch(error => {
+                    console.error('API request error:', error);
+                });
+        }
+    
+        // Function to make an API request for MRT
+        function fetchMRT() {
+            const apiKey = 'mcXYAV2rQXOykVpqXBXdDw==';
+            var apiUrlMRT = 'http://datamall2.mytransport.sg/ltaodataservice/TrainServiceAlerts' + apiKey;
+    
+            // Make the API request using the Fetch API
+            fetch(apiUrlMRT)
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the API response data for MRT
+                    const mrtElement = document.getElementById('mrt');
+                    data.forEach(alert => {
+                        const status = alert.status;
+                        const lineAffected = alert.lineAffected;
+                        const direction = alert.direction;
+                        const stations = alert.stations.join(', ');
+                        const mrtInfo = document.createElement('div');
+                        mrtInfo.innerHTML = `
+                            <p><strong>Status:</strong> ${status === '1' ? 'Normal' : 'Disrupted'}</p>
+                            <p><strong>Line Affected:</strong> ${lineAffected}</p>
+                            <p><strong>Direction:</strong> ${direction}</p>
+                            <p><strong>Stations Affected:</strong> ${stations}</p>
+                        `;
+                        mrtElement.appendChild(mrtInfo);
+                    });
+                })
+                .catch(error => {
+                    console.error('API request error:', error);
+                });
+        }
+    
+        // Call the fetchCarParks function when the page loads
+        window.onload = fetchCarParks;
+        // Call the fetchBusStops function when the page loads
+        window.onload = fetchBusStops;
+        // Call the fetchMRT function when the page loads
+        window.onload = fetchMRT; 
+    
+    </script> 
+    
+    
+    <div class="container-fluid">
+        <div class="row" id = "bicycle">
+            <!-- show bicycle parking areas - call API with a map   -->
+
+
+            <!-- request : latitude, longitude of locatin + distance (radius in km) - default is 0.5km -->
+
+            <!-- response: 1) description (of bike parking location) 2) latitude 3) longitude 
+            4) rackType (rack/yellowbox) 5) rackCount (total no. of lots) 6) ShelterIndicator (y/n) -->
+            
+            <!-- link to Anywheel / SGBike for bike rentals -->
+
+        </div>
+        <div class="row" id ="carparks">
+            <!-- show available car park (w/ a search?) - call API with map -->
+
+            <!-- response: 1) CarParkID 2) Area (orchard/marina/etc) 3) Development (major landmark/address where carpark is located - e.g suntec city)
+            4) Location (lat & long coordinates) 5) AvailableLots (no. of lots available) 
+            6) LotType (C cars/H heavy vehicles/Y motorcycles)
+            7) Agency (HDB/LTA/URA) -->
+
+            <!-- link to SP charging locations for electric vehicles
+            https://www.spmobility.sg/charger-locations -->
+            
+        </div>
+        <div class="row" id="bus">
+            <!-- show nearby bus stops - call API with map  -->
+
+            
+
+            <!-- response: BusStopCode The unique 5-digit identifier for this
+                0) physical bus stop 01012
+                1) RoadName The road on which this bus stop is located
+                2) Description Landmarks next to the bus stop (if
+                any) to aid in identifying this bus stop - e.g Hotel Grand Pacific
+                3) Latitude & Longitude --- Location coordinates for this bus stop -->
+
+
+            
+            <!-- feature some common applications to check bus time?? -->
+        </div>
+        <div class="row" id="mrt">
+            <!-- add jpeg - MRT MAP! -->
+            <div class="row">
+                <!-- <img src="imgs/mrtmap.jpg">  -->
+                <!-- need to edit style for pic -->
+            </div>
+            <!-- check train service availabilities? - with API  -->
+            <!-- response: 0) status (1 is for normal train service, 2 = disrupted)
+                1) line affected 2) direction of service unavailable - both/towards (station name) 
+                3) stations (list of affected stations)  -->
+
+        <!-- each line affected will be published as separate clusters within single API response -->
+        </div>
+    
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="node_modules/aos/dist/aos.js"></script>
+    
+    <script>
+        AOS.init()
+    </script>
+</body>
+</html>
+
+  
