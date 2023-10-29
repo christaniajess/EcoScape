@@ -16,11 +16,12 @@
     justify-content: center; */
   }
   
-  h1 {
+  h2{
     font-size: 25px;
-    margin-left: 1.5rem;
+    margin-left: 3rem;
     padding: 1.5rem;
-    
+    /* margin-bottom:2rem; */    
+    font-weight: 50px;
   }
   
   #typewriter {
@@ -59,125 +60,6 @@
   padding: 0px;
   box-sizing: border-box;
 }
-footer {
-  /* bottom: 0px; */
-  background-color: var(
-      --primary);
-  width: 100%;
-  min-width: 300px;
-  bottom: 0px;
-  display: flex; 
-  /* align-items: center; */
-  /* flex-direction: column;  */
-  position:absolute;
-}
-.footer-wrapper {
-  display: flex;
-  flex-direction: column;
-  max-width: 1650px;
-  width: 100%;
-  padding: 5px;
-}
-
-.footer-links {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex-grow: 4;
-  gap: 48px 16px;
-}
-
-.footer-columns {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 24px 8px 36px 8px;
-}
-
-.footer-columns section, 
-.footer-columns .footer-logo {
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 160px;
-  max-width: 160px;
-}
-
-.footer-columns ul {
-  display: flex;
-  gap: 12px;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  flex-direction: column;
-}
-.footer-columns ul a {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-.footer-columns ul a:hover{
-  text-decoration: underline;
-}
-
-.footer-columns h3 {
-  color: var(--text-heading-gray);
-  margin-top: 0;
-  margin-bottom: 16px;
-  font-size: 1rem;
-
-}
-
-.footer-logo {
-  display: flex;
-  gap: 16px;
-  flex-grow: 1;
-  max-width: 160px;
-  margin-bottom: 48px;
-}
-.footer-bottom {
-  margin-top: 48px;
-  display: flex;
-  align-items: end;
-  width: 100%;
-  gap: 16px;
-  padding: 16px 0px;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  color: var(--text-color);
-  border-top: 1px solid var(
-      --border);
-}
-
-.footer-bottom > small {
-  font-size: 16px;
-  margin: 0 4px;
-}
-
-@media (min-width: 926px) {
-  .footer-logo {
-      margin-right: auto;
-  }
-}
-
-@media (max-width: 800px) {
-  .footer-top 
-  {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 16px 8px 32px 8px;
-  }
-}
-
-  .footer-bottom 
-  {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto;
-      text-align: center;
-  }
 
   #header {
     transition: all 0.5s;
@@ -214,6 +96,7 @@ footer {
     /* margin-top: 20px;
     margin-bottom: 10px; */
     padding:1.5rem;
+    margin-left:1.5rem;
     
 
   }
@@ -354,4 +237,120 @@ footer {
     cursor: pointer;
     transform: translateX(22px);
 }
- 
+.navbar {
+  padding: 0;
+  position: static;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 13px;
+  margin-left: 10px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: black;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+h1 span {
+  color:black; 
+}
+.navbar a:hover,
+.navbar.active,
+.navbar.active:focus,
+.navbar li:hover>a {
+  background: #BDBDBD;
+}
+
+
+@import url("https://github.com/christaniajess/EcoScape/blob/362273a0fed78c5e8650c9e19025bc96bdc8fa55/src/att/style.css");
+@import url("https://github.com/christaniajess/EcoScape/blob/b1858dc5e5b1e6289c5bc3971d9eda690fa85d81/src/att/typewriter_style.css");
+
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+ #map {
+    height: 50%;
+    width: 50%;
+    float: right;
+    margin-right: 15px;
+  }
+
+#attraction-img {
+    padding-left: 5.5rem;
+    height: 250px;
+    width: 500px;
+}
+
+#ig-logo {
+    height: 30px;
+    width: auto;
+}
+
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Display 3 cards per row by default */
+  gap: 20px; /* Adjust the gap between cards */
+}
+
+.card {
+  border: 1px solid #ccc; /* Card border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 0;
+  display: flex; /* Make the card a flex container */
+  flex-direction: column; /* Arrange card contents vertically */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 1400px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr); /* Display 2 cards per row for medium-sized screens */
+  }
+  
+}
+@media (max-width: 992px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr); /* Display 2 cards per row for medium-sized screens */
+  }
+  
+}
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Display 2 cards per row for medium-sized screens */
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr; /* Display 1 card per row for small screens */
+  }
+  
+}
