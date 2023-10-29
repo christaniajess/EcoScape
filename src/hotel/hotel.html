@@ -64,11 +64,11 @@
                   <label for="tab6">West</label>
         
                   <!-- Content for All -->
-                    <div id="content1" class="tab-content" v-for="gallery in dividedAllDestinations" >
+                    <div id="content1" class="tab-content">
                       <div class="gallery">
                         <dest
                           class="card"
-                          v-for="(destination, index) in gallery"
+                          v-for="(destination, index) of destinations"
                           :name="destination.name"
                           :image="destination.image"
                           @click="navigateToUrl(index)"
@@ -77,11 +77,11 @@
                     </div>
                 
                   <!-- Content for Central -->
-                  <div id="content2" class="tab-content" v-for="gallery in dividedCentralDestinations">
+                  <div id="content2" class="tab-content">
                     <div class="gallery">
                       <dest
                           class="card"
-                          v-for="(destination, index) in gallery"
+                          v-for="(destination, index) of central_dest"
                           :name="destination.name"
                           :image="destination.image"
                           @click="navigateToUrl(index)"
@@ -90,11 +90,11 @@
                   </div>
         
                   <!-- Content for East -->
-                  <div id="content3" class="tab-content" v-for="gallery in dividedEastDestinations">
+                  <div id="content3" class="tab-content">
                     <div class="gallery">
                       <dest
                           class="card"
-                          v-for="(destination, index) in gallery"
+                          v-for="(destination, index) of east_dest"
                           :name="destination.name"
                           :image="destination.image"
                           @click="navigateToUrl(index)"
@@ -103,11 +103,11 @@
                   </div>
         
                   <!-- Content for the south -->
-                  <div id="content4" class="tab-content" v-for="gallery in dividedSouthDestinations">
+                  <div id="content4" class="tab-content">
                     <div class="gallery">
                       <dest
                           class="card"
-                          v-for="(destination, index) in gallery"
+                          v-for="(destination, index) of south_dest"
                           :name="destination.name"
                           :image="destination.image"
                           @click="navigateToUrl(index)"
@@ -115,11 +115,11 @@
                   </div>
         
                   <!-- Content for the north -->
-                  <div id="content5" class="tab-content" v-for="gallery in dividedNorthDestinations">
+                  <div id="content5" class="tab-content">
                     <div class="gallery">
                       <dest
                           class="card"
-                          v-for="(destination, index) in gallery"
+                          v-for="(destination, index) of north_dest"
                           :name="destination.name"
                           :image="destination.image"
                           @click="navigateToUrl(index)"
@@ -128,11 +128,11 @@
                   </div>
         
                   <!-- Content for the west (jurong lake gardens) -->
-                  <div id="content6" class="tab-content" v-for="gallery in dividedWestDestinations">
+                  <div id="content6" class="tab-content">
                     <div class="gallery">
                       <dest
                           class="card"
-                          v-for="(destination, index) in gallery"
+                          v-for="(destination, index) of north_dest"
                           :name="destination.name"
                           :image="destination.image"
                           @click="navigateToUrl(index)"
@@ -167,63 +167,7 @@
                       // Handle the navigation to the specified URL and pass the index to the next page
                       localStorage.setItem("index", index);
                       window.location.href = "hotel_indiv.html";
-                      }
-                    },
-                    computed: {
-                      dividedAllDestinations() {
-                        // Divide the destinations array into groups of 6
-                        const result = [];
-                        const groupSize = 6;
-                        for (let i = 0; i < this.destinations.length; i += groupSize) {
-                          result.push(this.destinations.slice(i, i + groupSize));
-                        }
-                        // console.log(result)
-                        return result;
-                      },
-                      dividedCentralDestinations() {
-                        // Divide the destinations array into groups of 6
-                        const resultC = [];
-                        const groupSize = 6;
-                        for (let i = 0; i < this.central_dest.length; i += groupSize) {
-                          resultC.push(this.central_dest.slice(i, i + groupSize));
-                        }
-                        return resultC;
-                      },
-                      dividedNorthDestinations() {
-                        // Divide the destinations array into groups of 6
-                        const resultN = [];
-                        const groupSize = 6;
-                        for (let i = 0; i < this.north_dest.length; i += groupSize) {
-                          resultN.push(this.north_dest.slice(i, i + groupSize));
-                        }
-                        return resultN;
-                      },
-                      dividedSouthDestinations() {
-                        // Divide the destinations array into groups of 6
-                        const resultS = [];
-                        const groupSize = 6;
-                        for (let i = 0; i < this.south_dest.length; i += groupSize) {
-                          resultS.push(this.south_dest.slice(i, i + groupSize));
-                        }
-                        return resultS;
-                      },
-                      dividedEastDestinations() {
-                        // Divide the destinations array into groups of 6
-                        const resultE = [];
-                        const groupSize = 6;
-                        for (let i = 0; i < this.east_dest.length; i += groupSize) {
-                          resultE.push(this.east_dest.slice(i, i + groupSize));
-                        }
-                        return resultE;
-                      },
-                      dividedWestDestinations() {
-                        // Divide the destinations array into groups of 6
-                        const resultW = [];
-                        const groupSize = 6;
-                        for (let i = 0; i < this.west_dest.length; i += groupSize) {
-                          resultW.push(this.west_dest.slice(i, i + groupSize));
-                        }
-                        return resultW;
+                      console.log(index)
                       }
                     },
                     created() { // lifecycle book -- created is an event tat occurs when the Vue instance has been created
@@ -276,7 +220,7 @@
                                         this.west_dest.push(destination)
                                       }
                                     }
-                                    
+
                                 })
                     }
                 })
@@ -286,7 +230,7 @@
                     <article class="card">
                     <figure>
                               <img :src="image">
-                              <figcaption><h6>{{ name }}</h6></figcaption>
+                              <figcaption><h4>{{ name }}</h4></figcaption>
                     </figure>
                     </article>
                   `,

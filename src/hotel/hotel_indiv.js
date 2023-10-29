@@ -20,21 +20,22 @@ axios.get('hotel.json')
                     async function initMap() {
                       const { Map } = await google.maps.importLibrary("maps");
 
+                      
                       map = new Map(document.getElementById("map"), {
-                        center: { lat: parseFloat(response.data[0].lat), lng: parseFloat(response.data[0].long) },
+                        center: { lat: parseFloat(response.data[hotelID].lat), lng: parseFloat(response.data[hotelID].long) },
                         zoom: 15
                       });
 
                       const marker = new google.maps.Marker({
-                        position: { lat: parseFloat(response.data[0].lat), lng: parseFloat(response.data[0].long) },
+                        position: { lat: parseFloat(response.data[hotelID].lat), lng: parseFloat(response.data[hotelID].long) },
                         map: map,
-                        title: response.data[0].name,
+                        title: response.data[hotelID].name,
                         draggable: false,
                         animation: google.maps.Animation.DROP
                       });
 
                       const infoWindow = new google.maps.InfoWindow({
-                        content: "<h3>" + response.data[0].name +"</h3>"
+                        content: "<h3>" + response.data[hotelID].name +"</h3>"
                       });
                       infoWindow.open(map, marker)
                     }

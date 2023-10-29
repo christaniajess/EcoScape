@@ -304,13 +304,6 @@ h1 span {
 }
 
 
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); /* Display 3 cards per row by default */
-  gap: 20px; /* Adjust the gap between cards */
-}
-
 .card {
   border: 1px solid #ccc; /* Card border */
   border-radius: 8px; /* Rounded corners */
