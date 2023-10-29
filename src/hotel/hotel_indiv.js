@@ -2,6 +2,7 @@ var cw = window.rating1.clientWidth;
 function rating( stars ) {
   window.rating1.style.width = Math.round(cw * (stars / 5)) + 'px';
 }
+
 var hotelID = localStorage.getItem("index")
 
 axios.get('hotel.json')
@@ -15,11 +16,11 @@ axios.get('hotel.json')
                     rating(response.data[hotelID].rating)
                     document.getElementById("description").innerText = response.data[hotelID].description
 
+                    console.log(response.data[hotelID].url)
                     let map;
 
                     async function initMap() {
                       const { Map } = await google.maps.importLibrary("maps");
-
                       
                       map = new Map(document.getElementById("map"), {
                         center: { lat: parseFloat(response.data[hotelID].lat), lng: parseFloat(response.data[hotelID].long) },
