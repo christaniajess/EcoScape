@@ -20,11 +20,11 @@
                 <button @click="toggleSearch">
                   <i class="fa fa-search"></i>
                 </button>
-                <div class="search-bar" v-show="showSearchBar">
+                <div class="search-bar" :class="{ 'show': showSearchBar }">
                   <input
                     type="text"
                     class="search-input"
-                    placeholder="Enter key to search"
+                    placeholder="Enter keywords to search"
                   />
                   <button @click="toggleSearch">
                     <i class="fa fa-times"></i>
@@ -66,6 +66,7 @@ export default {
   },
   methods: {
     toggleSearch() {
+      console.log('hihi')
       this.showSearchBar = !this.showSearchBar;
     },
     toggleNavbar() {

@@ -337,6 +337,7 @@ body {
 	transition: all 500ms ease;
 	@media screen and (max-width: 768px) {
 		transform: rotate(0deg) !important;
+    font-size: 2.5vw;
 	}
 }
 
@@ -345,7 +346,7 @@ body {
 	color: #f1f1f1;
 	position: relative;
 	width: 70%;
-	font-size: 1vw;
+	font-size: 1.2vw;
 	padding: 5%;
 	top: 20%;
 	border: 2px solid #f1f1f1;
@@ -360,8 +361,8 @@ body {
 	-o-transition: all 500ms ease;
 	transition: all 500ms ease;
 	@media screen and (max-width: 768px) {
-		padding: 0%;
-		border: 0px solid #f1f1f1;
+		
+    font-size: 1vw;
 	}
 }
 
@@ -535,7 +536,7 @@ textarea {
     width: 50px;
     height: 50px;
     position: absolute;
-    bottom: 10px;
+    bottom: 40px;
     left: 50%;
     color: #fff;
     font-size: 40px;
@@ -553,6 +554,38 @@ textarea {
 .flex-slide:hover .slide-content .down-btn {
     opacity: 1;
 }
+
+.slide-content .down-btn:hover {
+  padding-top: 8px;
+}
+
+#transport-info {
+  position: relative;
+  top: 93vh;
+  background-image: linear-gradient(to bottom, rgb(148, 181, 149), rgb(216, 230, 216));
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  top: -20px;
+}
+
+.card .card-title{
+  color: #36502b;
+  font-family: 'Poppins', sans-serif;
+}
+
+.card-subtitle{
+  font-size: 1.2rem;
+}
+
 
 
 

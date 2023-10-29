@@ -112,12 +112,13 @@
     <div class="flex-container">
         <div class="flex-slide bicycle">
             <div class="slide-content">
-                <div class="flex-title flex-title-bicycle">BICYCLE</div>
-                <div class="flex-about flex-about-bicycle">
-                    <p>Click here to navigate to the home section of the website</p>
+                <div class="flex-title flex-title-bicycle" data-aos="fade-up" data-aos-duration="1000">BICYCLE</div>
+                <div class="flex-about flex-about-bicycle text-center">
+                    <p>Pedal your way to a greener future with bicycle rental services across the country. <br>
+                        Enjoy the freedom of two-wheel transportation while contributing to reduced air pollution and traffic congestion.</p>
                 </div>
-                <a class="btn-get-started scrollto" id="scroll-icon" href="#">
-                    <div class="down-btn">
+                <a class="btn-get-started scrollto" id="scroll-icon" href="#transport-info">
+                    <div class="down-btn" id="down-btn-bicycle">
                         <i class="fa fa-angle-down"></i>
                     </div>
                 </a>
@@ -126,10 +127,11 @@
     
         <div class="flex-slide ev">
             <div class="slide-content">
-            <div class="flex-title">ELECTRIC VEHICLE</div>
-            <div class="flex-about"><p>Click here to navigate to the About section of the website</p></div>
-            <a class="btn-get-started scrollto" id="scroll-icon" href="#about_us">
-                <div class="down-btn">
+            <div class="flex-title" data-aos="fade-up" data-aos-duration="1250">ELECTRIC VEHICLE</div>
+            <div class="flex-about text-center"><p>Switch to electric vehicles (EVs) for an emission-free ride. Electric vehicle rental option is provided for a sustainable way to travel, whether it's for a short trip or an extended journey.
+            </p></div>
+            <a class="btn-get-started scrollto" id="scroll-icon" href="#transport-info">
+                <div class="down-btn" id="down-btn-ev">
                   <i class="fa fa-angle-down"></i>
                 </div>
               </a>
@@ -138,30 +140,24 @@
 
         <div class="flex-slide bus">
             <div class="slide-content">
-            <div class="flex-title">BUS</div>
-            <div class="flex-about"><p>Listing relevant snippets of work:</p>
-                <ul>
-                    <li>First piece of work</li>
-                    <li>Second piece of work</li>
-                    <li>Third piece of work</li>
-                </ul>
-            </div>
-            <a class="btn-get-started scrollto" id="scroll-icon" href="#about_us">
-                <div class="down-btn">
+            <div class="flex-title" data-aos="fade-up" data-aos-duration="1500">BUS</div>
+            <div class="flex-about text-center"><p>Hop on board our eco-friendly public buses, designed for maximum passenger comfort and minimal environmental impact. Convenient routes and reliable schedules make it a breeze to get around.</p></div>
+            <a class="btn-get-started scrollto" id="scroll-icon" href="#transport-info">
+                <div class="down-btn" id="down-btn-bus">
                   <i class="fa fa-angle-down"></i>
                 </div>
               </a>
         </div>
-        
+
     </div>
         <div class="flex-slide mrt">
             <div class="slide-content">
-            <div class="flex-title">MRT</div>
-                    <div class="flex-about">
-                        <p>Use the contact form below</p>
+            <div class="flex-title" data-aos="fade-up" data-aos-duration="1750">MRT</div>
+                    <div class="flex-about text-center">
+                        <p>Experience the speed and efficiency of our MRT system, the backbone of urban public transportation. Save time and energy while minimizing your carbon emissions.</p>
             </div>
-            <a class="btn-get-started scrollto" id="scroll-icon" href="#about_us">
-                <div class="down-btn">
+            <a class="btn-get-started scrollto" id="scroll-icon" href="#transport-info">
+                <div class="down-btn" id="down-btn-mrt">
                   <i class="fa fa-angle-down"></i>
                 </div>
               </a>
@@ -192,6 +188,58 @@
                 })
             });
         })();
+    </script>
+
+    <section id="transport-info">
+        <div class="card rounded-2 border mx-5 p-3 text-center">
+            <div class="card-title mt-5 pt-3">
+                <h1>Discover Sustainable Mobility with Us</h1>
+            </div>
+            <div class="card-subtitle px-5 pt-4 mx-4">
+                Are you ready to embrace eco-friendly transportation and reduce your carbon footprint? EcoScape offers a range of sustainable options that not only help protect the environment but also make your daily commute or travel more convenient. Explore our Green Transport Planner.
+            </div>
+            <div class="card-text mt-5 pb-3 mb-5" id="card-text">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Get references to your down buttons
+        const downBtnBicycle = document.querySelector("#down-btn-bicycle");
+        const downBtnEv = document.querySelector("#down-btn-ev");
+        const downBtnBus = document.querySelector("#down-btn-bus");
+        const downBtnMrt = document.querySelector("#down-btn-mrt");
+
+        // Get references to the card's content elements
+        // const cardSubtitle = document.getElementById("card-subtitle");
+        const cardText = document.getElementById("card-text");
+
+        // Event listener for the bicycle down button
+        downBtnBicycle.addEventListener("click", function() {
+            // Update the card's content for bicycle
+            // cardSubtitle.textContent = "Information about Bicycle";
+            cardText.textContent = "Learn more about our bicycle rental services and how you can contribute to a greener future.";
+        });
+
+        downBtnEv.addEventListener("click", function() {
+            // Update the card's content for bicycle
+            // cardSubtitle.textContent = "Information about Bicycle";
+            cardText.textContent = "Learn more about our bicycle rental services and how you can contribute to a greener future.";
+        });
+
+        downBtnBus.addEventListener("click", function() {
+            // Update the card's content for bicycle
+            // cardSubtitle.textContent = "Information about Bicycle";
+            cardText.textContent = "Learn more about our bicycle rental services and how you can contribute to a greener future.";
+        });
+
+        // Event listener for the bus down button
+        downBtnMrt.addEventListener("click", function() {
+            // Update the card's content for bus
+            // cardSubtitle.textContent = "Information about Bus";
+            cardText.textContent = "Discover our eco-friendly public bus services designed for maximum comfort and minimal environmental impact.";
+        });
+
     </script>
     
     
@@ -418,6 +466,14 @@
     
     </div>
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        AOS.init()
+    </script>
 </body>
 </html>
 

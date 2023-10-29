@@ -3,7 +3,7 @@
     <footer>
       <div class="container-fluid pt-2 ps-2 pe-0">
         <div class="row pt-2 mb-2">
-          <div class="col-lg-1 col-md-6 mb-2 mb-lg-0"></div>
+          <div class="col-lg-1 col-md-1 mb-2 mb-lg-0"></div>
 
           <div class="col-lg-4 col-md-4 mb-2 mb-lg-0">
             <div class="d-flex align-items-center">
@@ -12,7 +12,7 @@
             </div>
           </div>
 
-          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0 d-md-flex">
+          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0">
             <h6 class="footer-title text-uppercase fw-bold mb-2">Directory</h6>
             <ul class="list-unstyled mb-0">
               <li class="mb-1">
@@ -30,7 +30,7 @@
             </ul>
           </div>
 
-          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0 d-md-flex">
+          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0">
             <h6 class="footer-title text-uppercase fw-bold mb-2">Account</h6>
             <ul class="list-unstyled mb-0">
               <li class="mb-3">
@@ -45,7 +45,7 @@
             </ul>
           </div>
 
-          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0 d-md-flex">
+          <div class="footer-columns col-lg-2 col-md-2 mb-4 mb-lg-0">
             <h6 class="footer-title text-uppercase fw-bold mb-2">Contact Us</h6>
             <ul class="list-unstyled mb-0">
               <li class="mb-1">
@@ -181,9 +181,9 @@ footer .footer-logo{
   margin-bottom: auto;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 771px) {
   .footer-columns {
-    flex-basis: 25%; /* Display two columns in a row */
+    flex-basis: 25%;
     padding-left: 2rem;
   }
   
