@@ -109,20 +109,17 @@ label {
         <div class="row">
           <div class="col-lg-3">
             <!-- image col -->
-            <img id="attraction-img" src="" class="rounded float-start img-fluid w-100">
-            <a id="open-web-link" class="btn" href="#" role="button">Open Website</a>
-            <a href="">
-              <img id="ig-logo" src="../image/Instagram_logo_2016.svg.webp" class="rounded img-fluid ">
-            </a>
+            <img id="attraction-img" :src="hotelImage" class="rounded float-start img-fluid w-100">
+            <a id="open-web-link" class="btn" :href="hotelUrl" role="button">Open Website</a>
           </div>
           <div class="col-lg-9">
-            <h1 id = "attraction-name"></h1>
-            <div id = "rating"></div> 
+            <h1 id = "attraction-name">{{hotelName}}</h1>
+            <div id = "rating">Green Score: {{hotelGreenScore}}</div> 
             <div>
               <label for="rating1" style="padding: 0;">Rating:</label>
               <div id="rating1" class="rating"></div>
             </div>
-            <p id = "description"></p>
+            <p id = "description">{{hotelDesc}}</p>
           </div>
         </div>
         <div class="row">
@@ -131,13 +128,18 @@ label {
       </div>
 
     <div id="map"></div>
-
+    <script src="https://unpkg.com/vue@next"></script>
     <!-- prettier-ignore -->
     <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-        ({key: "AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ", v: "weekly"});</script>
+        ({key: "AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ", v: "weekly"});
+      
+        var cw = window.rating1.clientWidth; 
+        function rating( stars ) {
+          window.rating1.style.width = Math.round(cw * (stars / 5)) + 'px';
+        }
+        
+  
+    </script>
 
-<script>
-
-</script>
   </body>
 </html>

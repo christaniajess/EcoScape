@@ -53,4 +53,3 @@ effect();
 // }
 // tabs.innerHTML = string
 // console.log(tabs)
-

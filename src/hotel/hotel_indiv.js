@@ -1,20 +1,19 @@
-
-
 var cw = window.rating1.clientWidth; 
 function rating( stars ) {
   window.rating1.style.width = Math.round(cw * (stars / 5)) + 'px';
 }
+var hotelID = localStorage.getItem("index")
 
 axios.get('hotel.json')
                 .then(response => {
-                    // this gets the data from destination.json, which is an array
-                    console.log(response.data)
-                    document.getElementById("attraction-img").setAttribute("src", response.data[0].image)
-                    document.getElementById("open-web-link").setAttribute("href", response.data[0].url)
-                    document.getElementById("attraction-name").innerText = response.data[0].name
-                    document.getElementById("rating").innerHTML = "Green Score: " + response.data[0].greenScore
-                    rating(response.data[0].rating)
-                    document.getElementById("description").innerText = response.data[0].description
+                    // this gets the data from hotel.json, which is an array
+                    // console.log(response.data)
+                    document.getElementById("attraction-img").setAttribute("src", response.data[hotelID].image)
+                    document.getElementById("open-web-link").setAttribute("href", response.data[hotelID].url)
+                    document.getElementById("attraction-name").innerText = response.data[hotelID].name
+                    document.getElementById("rating").innerHTML = "Green Score: " + response.data[hotelID].greenScore
+                    rating(response.data[hotelID].rating)
+                    document.getElementById("description").innerText = response.data[hotelID].description
 
                     let map;
 
@@ -42,4 +41,3 @@ axios.get('hotel.json')
 
                     initMap();
                                     })
-
