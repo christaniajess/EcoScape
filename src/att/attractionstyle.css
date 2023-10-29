@@ -301,19 +301,19 @@ footer {
     }
   }
 
-  .gallery
+  /* .gallery
   {
     display: flex;
     gap:1.5cm;
     padding-top: 1rem;
      
-  }
+  } */
   .card
   {
     position:relative;
     left:1.5rem;
     width:190px;
-    height:140px;
+    height:150px;
     /* background-color:#3c343d; */
     border-radius:8px;
     transition:1000ms all;
@@ -331,10 +331,11 @@ footer {
 .card:hover {
     cursor: pointer;
     transform: scale(1.15);
+    
 }
 
-.card:hover figcaption {
-    font-size: 0.6rem;
+/* .card:hover figcaption {
+    font-size:2px;
     position: absolute;
     height: 180px;
     width: 190px;
@@ -350,12 +351,13 @@ footer {
     bottom: 0px;
     padding-left: 12px;
     padding-bottom: 10px;
-}
+} */
 
 .card:hover ~ .card {
     font-weight: bold;
     cursor: pointer;
     transform: translateX(22px);
+    font-size: large;
 }
 
 .navbar {
@@ -438,8 +440,10 @@ h1 span {
 .gallery {
   display: grid;
   grid-template-columns: repeat(6, 1fr); /* Display 3 cards per row by default */
-  gap: 20px; /* Adjust the gap between cards */
+  gap: 50px; /* Adjust the gap between cards */
+  margin-top:1.5rem;
 }
+
 
 .card {
   border: 1px solid #ccc; /* Card border */
