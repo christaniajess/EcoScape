@@ -564,7 +564,7 @@ textarea {
 #transport-info {
   position: relative;
   top: 93vh;
-  background-image: linear-gradient(to bottom, rgb(148, 181, 149), rgb(216, 230, 216));
+  background-image: linear-gradient(to bottom, rgb(31, 51, 31), rgb(95, 132, 95));
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
