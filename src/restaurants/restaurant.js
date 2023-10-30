@@ -1,4 +1,4 @@
-const words = ["sustainable restaurants here!", "yummy restaurants here!"];
+const words = ["sustainable accommodations here!", "eco-friendly accomodations here!"];
 const el = document.querySelector("#typewriter");
 
 const sleepTime = 100;
@@ -29,31 +29,27 @@ const effect = async () => {
 effect();
 
 // for the tabs
-areas = ['All', 'Central','East','South','North','West']
-var numtab = 1
-string = ''
-tabs = document.getElementById('tabs')
-for(area of areas)
-{
-    if(numtab==1)
-    {
-        string+=
-        `<input id='tab${numtab}' type='radio' name='tabs' checked>
-        <label for='tab${numtab}'>${area}</label>
-        `
-        numtab++
-    }
-    else
-    {
-        string +=
-        `<input id='tab${numtab}' type='radio' name='tabs'>
-        <label for='tab${numtab}'>${area}</label>`
-        numtab++
-    }
-}
-tabs.innerHTML = string
-
-
-
-
-
+// areas = ['All', 'Central','East','South','North','West']
+// var numtab = 1
+// string = ''
+// tabs = document.getElementById('tabs')
+// for(area of areas)
+// {
+//     if(numtab==1)
+//     {
+//         string+=
+//         `<input id='tab${numtab}' type='radio' name='tabs' checked>
+//         <label for='tab${numtab}'>${area}</label>
+//         `
+//         numtab++
+//     }
+//     else
+//     {
+//         string +=
+//         `<input id='tab${numtab}' type='radio' name='tabs'>
+//         <label for='tab${numtab}'>${area}</label>`
+//         numtab++
+//     }
+// }
+// tabs.innerHTML = string
+// console.log(tabs)

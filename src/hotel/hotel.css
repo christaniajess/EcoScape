@@ -1,16 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
-@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"); 
-/* bootstrap, icons & fonts  */
-@import url("https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"); 
-
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900"); 
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+  
+
   
   body {
     
@@ -241,6 +237,21 @@
     cursor: pointer;
     transform: translateX(22px);
 }
+ 
+
+.navbar {
+  padding: 0;
+  position: static;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
 .navbar li {
   position: relative;
 }
@@ -277,7 +288,6 @@ h1 span {
   background: #BDBDBD;
 }
 
- 
 @import url("https://github.com/christaniajess/EcoScape/blob/362273a0fed78c5e8650c9e19025bc96bdc8fa55/src/att/style.css");
 @import url("https://github.com/christaniajess/EcoScape/blob/b1858dc5e5b1e6289c5bc3971d9eda690fa85d81/src/att/typewriter_style.css");
 
@@ -303,6 +313,13 @@ h1 span {
     width: auto;
 }
 
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Display 3 cards per row by default */
+  gap: 20px; /* Adjust the gap between cards */
+}
 
 .card {
   border: 1px solid #ccc; /* Card border */

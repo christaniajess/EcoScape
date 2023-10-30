@@ -237,6 +237,8 @@
     cursor: pointer;
     transform: translateX(22px);
 }
+ 
+
 .navbar {
   padding: 0;
   position: static;
@@ -285,7 +287,6 @@ h1 span {
 .navbar li:hover>a {
   background: #BDBDBD;
 }
-
 
 @import url("https://github.com/christaniajess/EcoScape/blob/362273a0fed78c5e8650c9e19025bc96bdc8fa55/src/att/style.css");
 @import url("https://github.com/christaniajess/EcoScape/blob/b1858dc5e5b1e6289c5bc3971d9eda690fa85d81/src/att/typewriter_style.css");
