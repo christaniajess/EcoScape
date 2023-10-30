@@ -14,6 +14,14 @@ const routes = [
     name: 'Attraction',
     component: Attraction,
   },
+  // {
+  //   path: '/hotels',
+  //   name: 'Hotels',
+  //   component: Hotel,
+  // },
+ 
+
+ 
 ];
 
 const router = createRouter({

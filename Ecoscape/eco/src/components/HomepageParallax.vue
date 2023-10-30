@@ -111,7 +111,7 @@
   #main-title{
     position: relative;
     margin-bottom: 350px;
-    color: #fff;
+    color: #FFF;
     font-size: 5em;
     z-index: 1;
     font-family: 'Poppins', sans-serif;

@@ -16,7 +16,7 @@
             <h6 class="footer-title text-uppercase fw-bold mb-2">Directory</h6>
             <ul class="list-unstyled mb-0">
               <li class="mb-1">
-                <router-link to="/attractions" class="footer-links">Attractions</router-link>
+                <router-link to="/att" class="footer-links">Attractions</router-link>
               </li>
               <li class="mb-1">
                 <router-link to="/hotels" class="footer-links">Hotels</router-link>

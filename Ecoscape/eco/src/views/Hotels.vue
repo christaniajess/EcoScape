@@ -18,14 +18,14 @@
       <NavBar/>
       <!--Header -->
         <br><br>
+        <!-- <h2>Discover <span id="typewriter"></span><span id="cursor">|</span></h2> -->
+        <!--Tabs (choosing which region)-->
         <Tabs/>
         <!-- put the card component here -->
         <Footer/>
       </body>
       </html>
 </template>
-
-
 
 <script>
 

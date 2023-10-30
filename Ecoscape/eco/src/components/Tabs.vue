@@ -1,9 +1,9 @@
 <template>
     
-        <h3>
-            Discover 
-            <!-- figures out how to make this into typewriting -->
-        </h3>
+    <h3>
+        Discover 
+        <!-- figure out how to make this into typewriting -->
+     </h3>
     <div id="tab-container" class="tab-container">
           <div class="container-fluid">
             <div class="col-md-10 col-md-offset-1">
@@ -34,11 +34,11 @@
 
     h3
     {
-        font-size: 25px;
         padding: 1.5rem;
         /* margin-bottom:2rem; */    
-        font-weight: 50px;
-        margin-left:2.1cm;
+        font-weight: 500px;
+        margin-left:1.8cm;
+
     }
   
     /* tabs */
@@ -46,8 +46,8 @@
     {
         /* margin-top: 20px;
         margin-bottom: 10px; */
-        padding:1.5rem;
-        margin-left:3rem;
+        padding:1rem;
+        margin-left:2.5rem;
     }
 
     .tab-content 
@@ -90,105 +90,65 @@
             cursor: pointer;
         }
     }
-    #tab1 {
-        &:checked {
-        &~#content1 {
-            display: block;
-        }
-        }
-    }
-    #tab2 {
-        &:checked {
-        &~#content2 {
-            display: block;
-        }
+    #tab1 
+    {
+        &:checked  
+        {
+            &~#content1 
+            /* & this will refer to the content1` */
+            {
+                display: block;
+            }
         }
     }
-    #tab3 {
-        &:checked {
-        &~#content3 {
-            display: block;
-        }
+    #tab2 
+    {
+        &:checked 
+        {
+            &~#content2 
+            {
+                display: block;
+            }
         }
     }
-    #tab4 {
-        &:checked {
-        &~#content4 {
-            display: block;
+    #tab3 
+    {
+        &:checked 
+        {
+            &~#content3 
+            {
+                display: block;
+            }
         }
+    }
+    #tab4 
+    {
+        &:checked 
+        {
+            &~#content4 
+            {
+                display: block;
+            }
         }
     }
     #tab5 {
-        &:checked {
-        &~#content5 {
-            display: block;
-        }
-        }
-    }
-    #tab6 {
-        &:checked {
-        &~#content6 {
-            display: block;
-        }
+        &:checked 
+        {
+            &~#content5 
+            {
+                display: block;
+            }
         }
     }
-
-    .gallery
+    #tab6 
     {
-        display: flex;
-        gap:1.5cm;
-        padding-top: 1rem;
-        
-        
-    }
-    .card
-    {
-        position:relative;
-        left:1.5rem;
-        width:190px;
-        height:140px;
-        border-radius:8px;
-        transition:1000ms all;
-        transform-origin: center left;
-        box-shadow: 0 5px 13px rgba(0, 0, 0, 0.5);
-        outline: 1px solid #3c343d;
-        overflow:hidden;
-    }
-    .card img {
-        height: 160px;
-        object-fit: cover;
-        border-radius: 4px;
-    }
-
-    .card:hover {
-        cursor: pointer;
-        transform: scale(1.15);
-    }
-
-    .card:hover figcaption {
-        font-size: 0.6rem;
-        position: absolute;
-        height: 180px;
-        width: 190px;
-        display: flex;
-        align-items: end;
-        background: 
-        linear-gradient(
-            to top, 
-            rgba(0, 0, 0, 0.9) 0%,
-            rgba(0, 0, 0, 0) 100%
-        );
-        color: white;
-        left: 0px;
-        bottom: 0px;
-        padding-left: 12px;
-        padding-bottom: 10px;
-    }
-
-    .card:hover ~ .card {
-        font-weight: bold;
-        cursor: pointer;
-        transform: translateX(22px);
+        &:checked 
+        {
+            &~#content6 
+            {
+                display: block;
+            }
+        }
     }
     
 </style>
