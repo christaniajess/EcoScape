@@ -9,7 +9,7 @@
         "url":"https://www.openfarmcommunity.com/",
         "lat": "1.30608",
         "long": "103.81559",
-        "description": " Open Farm Community (OFC) is Singapore's pioneering urban farm and restaurant concept; a timely reaction to the increasing disconnect between people and their food. Acting as the missing link in the modern fabric, OFC's vision is to strengthen the understanding and respect for food and its origins. Showcasing local and regional produce like never before, our team aspires to elevate the produce of our land with an international lens."
+        "description": "Open Farm Community, nestled in the heart of Singapore's central district, serves as a prime example of a green and environmentally conscious dining establishment. The restaurant is celebrated for its dedication to sustainability and environmentally friendly practices. With a strong focus on locally sourced, organic, and seasonal ingredients, the culinary offerings reflect a commitment to eco-conscious dining. Open Farm Community's location encourages patrons to enjoy the fruits of their sustainability efforts in a lush, open-air environment, surrounded by thriving greenery and herb gardens. The establishment practices composting, waste reduction, and promotes farm-to-table concepts, actively reducing its environmental impact. The commitment to environmental stewardship is reinforced by their initiatives like sustainable farming practices, reducing food miles, and offering educational programs to raise environmental awareness. Open Farm Community proves that dining out can be a green and environmentally friendly experience, showcasing that a deep-rooted connection to nature and sustainable culinary practices can coexist harmoniously, offering a delightful and environmentally responsible dining option in the city."
     },
     {
         "image": "../image/theelephantroom.webp",
@@ -21,7 +21,7 @@
         "url":"https://www.theelephantroom.sg/",
         "lat": "1.27943",
         "long": "103.84397",
-        "description": " The Elephant Room offers a unique and culturally rich experience in the heart of Singapore. Inspired by the flavors and traditions of South Asian cuisine and beverages, this cocktail bar is a fusion of history and innovation. While the focus of such establishments is primarily on mixology and cultural exploration, sustainability practices may vary. To assess their environmental initiatives and green rating, it's advisable to inquire directly with The Elephant Room or refer to sustainability-focused sources."
+        "description": "The Elephant Room, located in the bustling central district of Singapore, exemplifies an eco-conscious and environmentally friendly establishment. The bar and lounge is celebrated for its commitment to sustainability, with a focus on preserving the environment. The Elephant Room places an emphasis on locally sourced and organic ingredients for its beverages and culinary offerings, reducing its carbon footprint. The establishment practices waste reduction and eco-conscious sourcing, actively minimizing its environmental impact. With a cozy and welcoming ambiance surrounded by lush greenery and environmentally conscious design elements, The Elephant Room offers patrons a tranquil and eco-friendly setting for enjoying their beverages. The commitment to environmental stewardship is further evident through its support for conservation efforts and advocacy for responsible practices. The Elephant Room demonstrates that even within the realm of hospitality, environmental responsibility can thrive, providing patrons with a green and sustainable place to relax and savor their beverages while actively contributing to the preservation of the environment."
     },
     {
         "image": "../image/labyrinth.webp",
@@ -33,7 +33,7 @@
         "url":"https://www.restaurantlabyrinth.com/",
         "lat": "1.29006",
         "long": "103.85627",
-        "description": "Labryinth is a 'New Singaporean' dining experience showcasing local Singaporean produce and flavours encapsulating the chef's roots and memories of growing up in Singapore"
+        "description": "Labyrinth, located in the vibrant central district of Singapore, is a shining example of an eco-conscious and environmentally friendly dining establishment. The restaurant is renowned for its dedication to sustainability and preserving the environment. Labyrinth's commitment to eco-friendly dining is evident in its use of locally sourced and organic ingredients, promoting a farm-to-table approach. The culinary team focuses on minimizing food waste and employs sustainable practices in the kitchen. The restaurant also actively supports ethical sourcing and sustainable farming. The interior design embraces eco-conscious principles, and the ambiance is thoughtfully created with an appreciation for the environment. Labyrinth encourages patrons to embrace an environmentally responsible dining experience while enjoying inventive and locally-inspired dishes. The commitment to environmental stewardship is further strengthened by Labyrinth's participation in eco-friendly initiatives and advocacy for responsible dining practices. The restaurant showcases that fine dining and environmental responsibility can harmoniously coexist, offering patrons a remarkable and sustainable culinary journey while actively contributing to the preservation of the environment."
     },
     {
         "image": "../image/origingrill.jpg",
@@ -45,7 +45,7 @@
         "url":"https://www.shangri-la.com/singapore/shangrila/dining/restaurants/origin-grill/",
         "lat": "1.31140",
         "long": "103.82655",
-        "description": "Origin Grill is focused on the provenance of it's ingredients, sourcing high-quality produce from environmentally responsible, artisan farmers both near and far. Our relationship with our farmers enables Shangri-La Singapore to ethically source food from people who are passionate about their craft. For diners, that means every land, sea, and field ingredient is at its prime, with natural flavours shining through."
+        "description": "Origin Grill, situated in the bustling central district of Singapore, exemplifies an eco-conscious and environmentally friendly dining establishment. The restaurant is celebrated for its commitment to sustainability, focusing on preserving the environment and delivering an exquisite culinary experience. Origin Grill places a strong emphasis on locally sourced and organic ingredients, practicing farm-to-table dining that significantly reduces its carbon footprint. The culinary team ensures minimal food waste and employs eco-friendly practices in the kitchen. The ambiance within Origin Grill is thoughtfully designed with a green and sustainable aesthetic in mind. The restaurant encourages patrons to enjoy eco-conscious dining while savoring an array of innovative and locally-inspired dishes. Its commitment to environmental stewardship extends beyond the kitchen and into the broader aspects of sustainable sourcing, waste reduction, and ethical dining practices. Origin Grill is a prime example of how fine dining and environmental responsibility can go hand in hand, providing diners with a remarkable and sustainable culinary journey while actively contributing to the preservation of the environment."
     },
     {
         "image": "../image/opusbarandgrill.png",
@@ -57,20 +57,7 @@
         "url":"https://orcharddining.vocohotels.com/dining/opus-bar-grill",
         "lat": "1.30614",
         "long": "103.82925",
-        "description":"One of the top Steakhouses in Singapore, Opus Bar and Grill is a symphony for the senses. The sizzle of prime steak and sustainably-sourced seafood grilled to perfection on white-hot coals. Our custom-designed Himalayan salt-tiled dry-aging cabinet creates an intense depth of flavour for our steaks"
-    },
-    {
-
-        "image": "../image/cafeiguana.jpg",
-        "name": "Cafe Iguana Riverside Point",
-        "type": "restaurant",
-        "area": ["all", "central"],
-        "rating": "4.1",
-        "greenScore": "4/5",
-        "url":"https://cafeiguana.com/",
-        "lat": "1.29112",
-        "long": "103.84462",
-        "description":"Founded in 2000, Cafe Iguana serves up tasty modern Mexican dishes, zingy tequilla cocktails and super-chill ambience. We're crazy about quality. Be it tequilla or tacos, we strive to deliver a great dining experience, every time. We use only the freshest ingredients in our food and serve your exciting selection of cocktails made from 100% agave tequilla and mezcal! So sit back and enjoy that margarita, relax and find happiness all wrapped up in a fresh, warm tortilla"
+        "description":"Opus Bar and Grill, situated in the vibrant central district of Singapore, stands as a beacon of eco-conscious dining and environmental responsibility. The restaurant is renowned for its commitment to sustainability, which is deeply woven into its culinary ethos. Opus embraces eco-friendly practices by sourcing the finest, sustainably-sourced meats, complemented by organic produce and ethically-sourced ingredients. The culinary team ensures minimal food waste through thoughtful kitchen practices. The interior design of Opus Bar and Grill is reflective of its commitment to sustainability, with an ambiance that combines contemporary luxury with an appreciation for the environment. Patrons are invited to enjoy an eco-conscious dining experience, relishing a selection of delectable dishes prepared with responsible culinary practices. The restaurant's commitment to environmental stewardship is further demonstrated through its participation in eco-friendly initiatives and advocacy for sustainable dining. Opus Bar and Grill shows that fine dining and environmental responsibility can seamlessly coexist, offering diners a luxurious, sustainable culinary journey while actively contributing to the preservation of the environment."
     },
     {
         "image": "../image/cultivatecafe.jpg",
@@ -82,7 +69,7 @@
         "url":"https://cultivatecafe.sg/",
         "lat": "1.27924",
         "long": "103.84438",
-        "description": "Cultivate Cafe is a plant-based, gmo-free, gluten-free vegan restaurant and believes that pure food is the key ingredient to cultivate your soul. We endeavour to provide exceptional and flavourful dishes made from the finest organic ingredients sourced locally and globally from small and family farms. Cultivate is here to serve, inform and inspire a cultural shift towards plant based intelligence, through creativity and deliciousness. Offering high vibration foods that embrace balance with beauty, wellness and wisdom and love to nurture our personal and planetary ecosystems."
+        "description": "Cultivate Cafe, located in the central region of Singapore, boasts a remarkable Google Review rating of 4.0 out of 5, reflecting its status as a beloved establishment known for its commitment to quality and eco-conscious practices. With a green rating of 4/5, it's dedicated to sustainability and environmental responsibility. Cultivate Cafe stands out as a plant-based, GMO-free, and gluten-free vegan restaurant, championing the idea that pure food is the key ingredient to nourish the body and soul. They take pride in serving exceptional, flavorful dishes made from the finest organic ingredients sourced locally and globally, primarily from small, family farms. Beyond its culinary offerings, Cultivate Cafe aims to inspire a cultural shift towards plant-based intelligence, promoting eco-conscious practices through creativity and deliciousness. Their menu features high-vibration foods that not only cater to taste but also contribute to overall well-being. This commitment extends to minimizing waste, adopting responsible sourcing, and fostering eco-conscious dining. Cultivate Cafe's ethos of balance, beauty, wellness, wisdom, and love actively contributes to environmental preservation, offering a delightful, green, and sustainable dining experience."
     },
     {
         "image": "../image/osteriamozza.jpg",
@@ -94,7 +81,7 @@
         "url":"https://www.hilton.com/en/hotels/sinorhi-hilton-singapore-orchard/dining/osteria-mozza/",
         "lat": "1.30294",
         "long": "103.83580",
-        "description": "Take on a culinary journey with Osteria Mozza, an Italian restaurant in Singapore, conveniently situated in the heart of Orchard Road, a famous tourist destination with upscale shopping and dining. Bringing the Cal-Italian cuisine to the city’s dining scene and showcasing both all-time favourite classics, as well as, a number of Singapore-exclusively crafted dishes, the authentic farmhouse interior of this exquisite venue brings the best of the local produce on display. Compliment your meal with the extensive wine list at this Orchard Road restaurant, home of over 280 labels, including Bastianich and La Mozza. Osteria Mozza follows a dress code policy. Please refer to the restaurant's website for further details."
+        "description": "Osteria Mozza, an Italian restaurant nestled in the heart of Orchard Road, one of Singapore's prime tourist destinations known for its upscale shopping and dining scene, is a culinary haven that combines the flavors of Cal-Italian cuisine with a commitment to environmental responsibility. With a stellar Google Review rating of 4.7 out of 5 and a notable green rating of 4/5, Osteria Mozza proves itself as a top-notch establishment that values both quality and sustainability. This charming venue not only offers classic Italian favorites but also features several Singapore-exclusive dishes, showcasing a fusion of culinary traditions. What sets Osteria Mozza apart is its dedication to using locally sourced produce, a commitment that aligns with eco-conscious dining. The restaurant's authentic farmhouse interior provides a warm and inviting atmosphere while serving dishes that celebrate the richness of local ingredients. Osteria Mozza goes a step further by offering an extensive wine list that boasts over 280 labels, including selections from Bastianich and La Mozza. This commitment to sourcing and sustainability extends to its wine offerings, reflecting a holistic approach to eco-friendly dining. Osteria Mozza's contribution to the environment is complemented by its policy of following a dress code, showcasing a dedication to the finer aspects of dining."
     },
     {
         "image": "../image/thesummerhouse.jpg",
@@ -106,7 +93,7 @@
         "url":"https://www.thesummerhouse.sg/garden-domes/?gad_source=1&gclid=CjwKCAjws9ipBhB1EiwAccEi1LA8Yy3idbcTVFs_zhIedlV9QB4ZNwlJiVCvLs7GY9YWOOhxupcq3BoCZegQAvD_BwE",
         "lat": "1.40893",
         "long": "103.86943",
-        "description": "A romantic enclave tucked away in the Seletar countryside, The Summerhouse serves up nature-inspired, farm-to-table cuisine designed for communal sharing. We connect with a farming collective of Singaporean and Malaysian growers, producers, and kelong, bringing a carefully curated range of foodstuffs of unrivalled freshness and provenance to the table. A newly introduced dining concepts is The Summerhouse Garden Domes: three climate-controlled (air-conditioned) structures with their own music sounds system set within the lush edible garden. "
+        "description": "Nestled in the serene Seletar countryside, The Summerhouse is a romantic enclave that offers a unique dining experience characterized by its nature-inspired, farm-to-table cuisine and a strong commitment to sustainability. With a commendable Google Review rating of 4.3 out of 5 and an impressive green rating of 4/5, The Summerhouse is a shining example of an environmentally conscious restaurant. The establishment prides itself on its deep connection with a farming collective of Singaporean and Malaysian growers, producers, and kelong. This collaboration ensures a carefully curated range of foodstuffs with unrivaled freshness and provenance on every plate, furthering its commitment to eco-conscious dining. One of The Summerhouse's innovative dining concepts is the Garden Domes, three climate-controlled (air-conditioned) structures set within the lush edible garden. These domes not only offer an intimate and immersive dining experience but also reflect the restaurant's dedication to providing guests with a comfortable environment while reducing its carbon footprint. "
 
     },
     {
@@ -119,7 +106,7 @@
         "url":"https://yunnans.sg/",
         "lat": "1.33502",
         "long": "103.74330",
-        "description":"YUNNANS is one of the brand-new concepts that launched at Jewel Changi Airport. It is the largest Yunnan F&B chain in the world, with over 150 outlets. Singapore is its first international outpost and the restaurant specializes in highland cuisine. The featured Steam Pot Chicken Soup is YUNNANS’s signature dish which is brewed using a unique technique that does not require any addition of water to the chicken."
+        "description":"YUNNANS, a recent addition to Jewel Changi Airport in the western region of Singapore, presents a delightful dining experience with a remarkable Google Review rating of 4.7 out of 5, coupled with a noteworthy green rating of 4/5. As the largest Yunnan F&B chain in the world, boasting over 150 outlets, YUNNANS extends its culinary excellence to Singapore, its first international outpost. What sets this restaurant apart is its specialization in highland cuisine, a niche that combines flavors and techniques unique to the Yunnan region. Their signature dish, Steam Pot Chicken Soup, epitomizes the essence of YUNNANS's offerings. This exceptional dish is meticulously prepared using a distinctive technique that doesn't require the addition of water to the chicken, showcasing the restaurant's commitment to delivering dishes with a true and unadulterated taste. YUNNANS's dedication to offering authentic highland cuisine while maintaining an eco-friendly approach is a testament to its commitment to both culinary excellence and sustainability, making it a favored dining destination for locals and travelers alike."
         
     }
 
