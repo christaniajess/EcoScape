@@ -4,13 +4,13 @@
         <!-- <span id="typewriter">sustainable places here!
             <span id="cursor">|</span>
         </span> -->
-        <vue-typer
+        <!-- <vue-typer
             :text="['sustainable places here']"
             :repeat = 'infinty'
             :shuffle = 'false'
         >
 
-        </vue-typer>
+        </vue-typer> -->
     </h3>
     <div id="tab-container" class="tab-container">
           <div class="container-fluid">
@@ -178,7 +178,3 @@
     
 </style>
 
-<script>
-    // import { VueTyper } from 'vue-typer'
-    var VueTyper = require('vue-typer').VueTyper
-</script>
