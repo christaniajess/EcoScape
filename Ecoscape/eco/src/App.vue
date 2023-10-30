@@ -12,6 +12,7 @@ import AboutCarousel from "@/components/AboutCarousel.vue";
 import Footer from "@/components/Footer.vue";
 import "aos/dist/aos.css"; // Import the AOS styles
 import AOS from "aos";
+import Tabs from "./components/Tabs.vue";
 
 export default {
   name: "App",
@@ -20,6 +21,7 @@ export default {
     Footer,
     HomepageParallax,
     AboutCarousel,
+    Tabs,
   },
   mounted() {
     AOS.init(); // Initialize AOS

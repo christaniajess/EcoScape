@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Homepage from '@/views/Homepage.vue';
+import Attraction from '@/views/Attractions.vue';
 
 const routes = [
   {
@@ -8,6 +9,11 @@ const routes = [
     component: Homepage,
   },
   // Add more routes as needed
+  {
+    path: '/att',
+    name: 'Attraction',
+    component: Attraction,
+  },
 ];
 
 const router = createRouter({
