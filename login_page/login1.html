@@ -1,0 +1,107 @@
+<template>
+    <head>
+    <script src="login.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="icon" href="img/icon.jpg" type="image/icon type">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
+    </head>
+    <body>
+    <div>
+                    <!-- IMPORT NAVBAR COMPONENT!!! -->
+      <!-- <NavBar />  -->
+        <header class="navbar">
+        <div class="container">
+          <div class="logo">
+            <h1><a href="#"><span>ECOSCAPE</span></a></h1>
+          </div>
+    
+          <nav>
+            <ul> 
+              <li><a class="nav-link" href="#hero">Home</a></li>
+              <li><a class="nav-link" href="#about">About Us</a></li>
+              <!-- Other navigation items -->
+            </ul>
+          </nav>
+  
+          <div class="user-info" v-if="userLoggedIn">
+            <div class="dropdown">
+              <span class="dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hello, {{ userName }}
+              </span>
+              <div class="dropdown-menu" aria-labelledby="userDropdown">
+                <a class="dropdown-item" @click="logout">Sign Out</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    <div class="container-fluid p-0">
+      <div class="banner full-height p-0">
+        <div class="section position-relative justify-content-center text-center">
+          <div class="row full-height justify-content-center">
+            <div class="text-center justify-content-center py-5">
+              <div class="section try pb-5 pt-5 pt-sm-2 text-center">
+                <h6 class="mb-0 pb-3">
+                  <span v-if="isLogin">Log In</span>
+                  <span v-else>Sign Up</span>
+                </h6>
+                <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" v-model="isLogin">
+                <label for="reg-log"></label>
+                <div class="card-3d-wrap mx-auto">
+                  <div class="card-3d-wrapper">
+                    <div class="card-front">
+                      <div class="center-wrap">
+                        <div class="section text-center">
+                          <h4 class="mb-4 pb-3" v-if="isLogin">Log In</h4>
+                          <h4 class="mb-4 pb-3" v-else>Sign Up</h4>
+                          <div class="form-group">
+                            <input v-if="isLogin" type="email" name="logEmail" class="form-style" placeholder="Your Email" id="logEmail" autocomplete="off" v-model="loginEmail">
+                            <input v-else type="text" name="signUpName" class="form-style" placeholder="Your Full Name" id="signUpName" autocomplete="off" v-model="signupName">
+                            <i class="input-icon uil uil-at"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input v-if="isLogin" type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" v-model="loginPassword">
+                            <input v-else type="email" name="signUpEmail" class="form-style" placeholder="Your Email" id="signUpEmail" autocomplete="off" v-model="signupEmail">
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <a href="#" class="btn mt-4" @click="performAction">
+                            {{ isLogin ? 'Log In' : 'Sign Up' }}
+                          </a>
+                          <p class="mb-0 mt-4 text-center">
+                            <a href="#0" class="link lead">Forgot your password?</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-back">
+                      <div class="center-wrap">
+                        <div class="section text-center">
+                          <h4 class="mb-4 pb-3">Sign Up</h4>
+                          <div class="form-group">
+                            <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off" v-model="signupName">
+                            <i class="input-icon uil uil-user"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" v-model="signupPassword">
+                            <i class="input-icon uil-lock-alt"></i>
+                          </div>
+                          <a href="#" class="btn mt-4" id="word" @click="performAction">Sign Up</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+  <hr id="footer-separation">
+    <!-- <Footer /> -->
