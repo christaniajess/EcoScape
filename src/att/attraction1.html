@@ -6,9 +6,8 @@
     <title>EcoScape</title>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./typewriter.js" defer></script>
-    <link rel="stylesheet" href="./" />
     <link rel="icon" href="../image/icon2.png">
+    <script src="./hotel.js" defer></script>
     <!-- <link rel="stylesheet" href="./menu.css"> -->
     <link rel="stylesheet"  href="./attractionstyle.css">
     
@@ -65,46 +64,79 @@
               <label for="tab6">West</label>
     
               <!-- Content for All -->
-                <div id="content1" class="tab-content" v-for="gallery in dividedAllDestinations" >
-                  <div class="gallery">
-                    <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
-                  </div>
+              <div id="content1" class="tab-content">
+                <div class="gallery">
+                  <dest
+                    class="card"
+                    v-for="(destination) of destinations"
+                    :name="destination.name"
+                    :image="destination.image"
+                    @click="navigateToUrl(destination.index)"
+                  ></dest>
                 </div>
+              </div>
             
               <!-- Content for Central -->
-              <div id="content2" class="tab-content" v-for="gallery in dividedCentralDestinations">
+              <div id="content2" class="tab-content">
                 <div class="gallery">
-                  <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
+                  <dest
+                      class="card"
+                      v-for="(destination) of central_dest"
+                      :name="destination.name"
+                      :image="destination.image"
+                      @click="navigateToUrl(destination.index)"
+                    ></dest>
                 </div>
               </div>
     
               <!-- Content for East -->
-              <div id="content3" class="tab-content" v-for="gallery in dividedEastDestinations">
+              <div id="content3" class="tab-content">
                 <div class="gallery">
-                  <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
+                  <dest
+                      class="card"
+                      v-for="(destination) of east_dest"
+                      :name="destination.name"
+                      :image="destination.image"
+                      @click="navigateToUrl(destination.index)"
+                    ></dest>
                 </div>
               </div>
     
               <!-- Content for the south -->
-              <div id="content4" class="tab-content" v-for="gallery in dividedSouthDestinations">
+              <div id="content4" class="tab-content">
                 <div class="gallery">
-                  <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
-                </div>
+                  <dest
+                      class="card"
+                      v-for="(destination) of south_dest"
+                      :name="destination.name"
+                      :image="destination.image"
+                      @click="navigateToUrl(destination.index)"
+                    ></dest>
               </div>
     
               <!-- Content for the north -->
-              <div id="content5" class="tab-content" v-for="gallery in dividedNorthDestinations">
+              <div id="content5" class="tab-content">
                 <div class="gallery">
-                  <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
+                  <dest
+                      class="card"
+                      v-for="(destination) of north_dest"
+                      :name="destination.name"
+                      :image="destination.image"
+                      @click="navigateToUrl(destination.index)"
+                    ></dest>
                 </div>
               </div>
     
               <!-- Content for the west (jurong lake gardens) -->
-              <div id="content6" class="tab-content" v-for="gallery in dividedWestDestinations">
+              <div id="content6" class="tab-content">
                 <div class="gallery">
-                  <dest class="card" v-for="destination in gallery" :name="destination.name" :image="destination.image" :url="destination.url" @click="navigateToUrl(destination.url)"></dest>
-                </div>
-              </div>
+                  <dest
+                      class="card"
+                      v-for="(destination) of north_dest"
+                      :name="destination.name"
+                      :image="destination.image"
+                      @click="navigateToUrl(destination.index)"
+                    ></dest>
             </div>
           </div>
         </div>
@@ -129,67 +161,12 @@
                     }
                 },
                 methods: {
-                  navigateToUrl(url) {
-                    // Handle the navigation to the specified URL
-                    window.location.href = url;
-                  }
-                },
-                computed: {
-                  dividedAllDestinations() {
-                    // Divide the destinations array into groups of 6
-                    const result = [];
-                    const groupSize = 6;
-                    for (let i = 0; i < this.destinations.length; i += groupSize) {
-                      result.push(this.destinations.slice(i, i + groupSize));
-                    }
-                    // console.log(result)
-                    return result;
-                  },
-                  dividedCentralDestinations() {
-                    // Divide the destinations array into groups of 6
-                    const resultC = [];
-                    const groupSize = 6;
-                    for (let i = 0; i < this.central_dest.length; i += groupSize) {
-                      resultC.push(this.central_dest.slice(i, i + groupSize));
-                    }
-                    return resultC;
-                  },
-                  dividedNorthDestinations() {
-                    // Divide the destinations array into groups of 6
-                    const resultN = [];
-                    const groupSize = 6;
-                    for (let i = 0; i < this.north_dest.length; i += groupSize) {
-                      resultN.push(this.north_dest.slice(i, i + groupSize));
-                    }
-                    return resultN;
-                  },
-                  dividedSouthDestinations() {
-                    // Divide the destinations array into groups of 6
-                    const resultS = [];
-                    const groupSize = 6;
-                    for (let i = 0; i < this.south_dest.length; i += groupSize) {
-                      resultS.push(this.south_dest.slice(i, i + groupSize));
-                    }
-                    return resultS;
-                  },
-                  dividedEastDestinations() {
-                    // Divide the destinations array into groups of 6
-                    const resultE = [];
-                    const groupSize = 6;
-                    for (let i = 0; i < this.east_dest.length; i += groupSize) {
-                      resultE.push(this.east_dest.slice(i, i + groupSize));
-                    }
-                    return resultE;
-                  },
-                  dividedWestDestinations() {
-                    // Divide the destinations array into groups of 6
-                    const resultW = [];
-                    const groupSize = 6;
-                    for (let i = 0; i < this.west_dest.length; i += groupSize) {
-                      resultW.push(this.west_dest.slice(i, i + groupSize));
-                    }
-                    return resultW;
-                  }
+                  navigateToUrl(index) {
+                      // Handle the navigation to the specified URL and pass the index to the next page
+                      localStorage.setItem("index", index);
+                      window.location.href = "attraction_indiv.html";
+                      console.log(index)
+                      }
                 },
                 created() { // lifecycle book -- created is an event tat occurs when the Vue instance has been created
                     axios.get(url)
@@ -201,10 +178,17 @@
                                   // console.log(result[i])
                                   destination = {}
                                   
+                                  destination.index = i
                                   destination.name = result[i].name
                                   destination.image =  result[i].image
-                                  destination.url = result[i].url
+                                  destination.url = "attraction_indiv.html"
                                   destination.area = result[i].area
+                                  destination.ownUrl = result[i].url
+                                  destination.rating = result[i].rating
+                                  destination.greenScore = result[i].greenScore
+                                  destination.lat = result[i].lat
+                                  destination.long = result[i].long
+                                  destination.description = result[i].description
                                   if (this.init) {
                                     this.destinations = [destination]
                                     this.init = false
