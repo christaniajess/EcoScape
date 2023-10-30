@@ -26,8 +26,8 @@
               <input id="tab6" type="radio" name="tabs">
               <label for="tab6">West</label>
             </div>
-          </div>
-        </div>
+        </div>       
+    </div>
 </template>
 
 <style>
