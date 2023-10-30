@@ -9,7 +9,7 @@
     <link rel="icon" href="../image/icon2.png">
     <!-- <link rel="stylesheet" href="./menu.css"> -->
     <link href="../restaurants/restaurant.css" rel="stylesheet">
-    
+
   </head>
   <body>
         <div id = "app">
@@ -68,10 +68,10 @@
                       <div class="gallery">
                         <dest
                           class="card"
-                          v-for="(destination, index) of destinations"
+                          v-for="(destination) of destinations"
                           :name="destination.name"
                           :image="destination.image"
-                          @click="navigateToUrl(index)"
+                          @click="navigateToUrl(destination.index)"
                         ></dest>
                       </div>
                     </div>
@@ -81,10 +81,10 @@
                     <div class="gallery">
                       <dest
                           class="card"
-                          v-for="(destination, index) of central_dest"
+                          v-for="(destination) of central_dest"
                           :name="destination.name"
                           :image="destination.image"
-                          @click="navigateToUrl(index)"
+                          @click="navigateToUrl(destination.index)"
                         ></dest>
                     </div>
                   </div>
@@ -94,10 +94,10 @@
                     <div class="gallery">
                       <dest
                           class="card"
-                          v-for="(destination, index) of east_dest"
+                          v-for="(destination) of east_dest"
                           :name="destination.name"
                           :image="destination.image"
-                          @click="navigateToUrl(index)"
+                          @click="navigateToUrl(destination.index)"
                         ></dest>
                     </div>
                   </div>
@@ -107,10 +107,10 @@
                     <div class="gallery">
                       <dest
                           class="card"
-                          v-for="(destination, index) of south_dest"
+                          v-for="(destination) of south_dest"
                           :name="destination.name"
                           :image="destination.image"
-                          @click="navigateToUrl(index)"
+                          @click="navigateToUrl(destination.index)"
                         ></dest>
                   </div>
         
@@ -119,10 +119,10 @@
                     <div class="gallery">
                       <dest
                           class="card"
-                          v-for="(destination, index) of north_dest"
+                          v-for="(destination) of north_dest"
                           :name="destination.name"
                           :image="destination.image"
-                          @click="navigateToUrl(index)"
+                          @click="navigateToUrl(destination.index)"
                         ></dest>
                     </div>
                   </div>
@@ -132,10 +132,10 @@
                     <div class="gallery">
                       <dest
                           class="card"
-                          v-for="(destination, index) of north_dest"
+                          v-for="(destination) of north_dest"
                           :name="destination.name"
                           :image="destination.image"
-                          @click="navigateToUrl(index)"
+                          @click="navigateToUrl(destination.index)"
                         ></dest>
                     </div>
                   </div>
@@ -198,7 +198,7 @@
                                     } else 
                                         this.destinations.push(destination)
                                     }
-                                    console.log(this.destinations)
+                                    console.log(this.south_dest)
                                     
                                     // Populating different areas
                                     for (destination of this.destinations) {
