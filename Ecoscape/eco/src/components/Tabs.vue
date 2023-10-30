@@ -1,9 +1,17 @@
 <template>
-    
     <h3>
-        Discover 
-        <!-- figure out how to make this into typewriting -->
-     </h3>
+        Discover      
+        <!-- <span id="typewriter">sustainable places here!
+            <span id="cursor">|</span>
+        </span> -->
+        <vue-typer
+            :text="['sustainable places here']"
+            :repeat = 'infinty'
+            :shuffle = 'false'
+        >
+
+        </vue-typer>
+    </h3>
     <div id="tab-container" class="tab-container">
           <div class="container-fluid">
             <div class="col-md-10 col-md-offset-1">
@@ -34,12 +42,29 @@
 
     h3
     {
-        padding: 1.5rem;
-        /* margin-bottom:2rem; */    
+        padding: 1.5rem;  
         font-weight: 500px;
         margin-left:1.8cm;
 
+        /* 
+        #typewriter
+        {
+            color:#628a5c;
+        }
+        #cursor
+        {
+            color:#21321F;
+            font-weight:bold;
+            animation: blink 1s linear infinite;
+        }
+        @keyframes blink
+        {
+            100% {opacity:1;}
+            50% {opacity:0}
+        } */
     }
+
+
   
     /* tabs */
     #tab-container 
@@ -152,3 +177,8 @@
     }
     
 </style>
+
+<script>
+    // import { VueTyper } from 'vue-typer'
+    var VueTyper = require('vue-typer').VueTyper
+</script>
