@@ -1,18 +1,7 @@
-<script>
-    import Vue from 'vue';
-    import VueTypedJs from 'vue-typed-js'
-    Vue.use(VueTypedJs)
-</script>
 <template>
-    <vue-typed-js :strings = "['sustainable accomodations here!']">
-        <h2>Discover<span class="typing"></span></h2>
-    </vue-typed-js>
     <div class="container">
         <h2>
             Discover
-            <span class="typed-text">{{ typeValue }}</span>
-            <span class="blinking-cursor">|</span>
-            <!-- <span class="cursor" :class"{typing: typeStatus}"></span> -->
         </h2>
     </div>
     <div id="tab-container" class="tab-container">
@@ -40,8 +29,6 @@
           </div>
         </div>
 </template>
-
-
 
 <style>
 
