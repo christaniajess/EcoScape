@@ -43,10 +43,20 @@
                   <li><router-link to="#">Green Transport Planner</router-link></li>
                 </ul>
               </li>
-              <li>
-                <router-link to="#" class="nav-link">
+              <li v-if="!userLoggedIn">
+                <router-link to="/login" class="nav-link">
                   <img src="/images/profile-icon.png" class="profile-icon" alt="profile" />Login / Sign Up
                 </router-link>
+              </li>
+              <li v-else>
+                <div class="dropdown">
+                  <span class="dropdown-toggle" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Hello, {{ userName }}
+                  </span>
+                  <div class="dropdown-menu" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" @click="logout">Sign Out</a>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
@@ -64,13 +74,26 @@ export default {
       isNavbarOpen: false, // Add a data property to track the state of the navbar
     };
   },
+  computed: {
+    userLoggedIn() {
+      // Check if the user is logged in (replace with your authentication state)
+      return this.$store.getters.isUserLoggedIn; // Replace with your authentication state
+    },
+    userName() {
+      // Get the user's name from the state
+      return this.$store.state.user.name; // Replace with your user data
+    },
+  },
   methods: {
     toggleSearch() {
-      console.log('hihi')
       this.showSearchBar = !this.showSearchBar;
     },
     toggleNavbar() {
       this.isNavbarOpen = !this.isNavbarOpen; // Toggle the collapsed navbar
+    },
+    logout() {
+      // Implement the logout functionality
+      this.$store.dispatch('logout'); // Replace with your logout action
     },
   },
 };

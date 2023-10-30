@@ -46,6 +46,10 @@ import Footer from "@/components/Footer.vue";
 import AboutCarousel from "@/components/AboutCarousel.vue";
 
 export default {
+  name: "HomePage",
+  data() {
+    return {};
+  },
   components: {
     NavBar,
     HomepageParallax,
