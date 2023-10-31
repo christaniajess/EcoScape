@@ -30,7 +30,7 @@
                             of tranquility and thrill. Gaze down on the glittering expanse of the city from the world-famous Infinity Pool and immerse yourself in a world of infinite possibilities all 
                             in one extraordinary destination. There is nowhere else on earth quite like this.
                         </p>
-                        <a href="#contact" class="button button-flex">
+                        <a href="https://www.marinabaysands.com/?&ds_rl=1273801&ds_rl=1279392&ds_rl=1258716&gad_source=1&ds_rl=1273534&ds_rl=1279392&gclid=Cj0KCQjwy4KqBhD0ARIsAEbCt6iRNncIL2zB27WgpoBZ89cKQA11gqr7UVgkWz1Pf1qFnfK6dB8IRasaAg1AEALw_wcB&gclsrc=aw.ds" class="button button-flex">
                             Go To Their Website! <i class="uil uil-message button__icon"></i>
                         </a>
                     </div>
