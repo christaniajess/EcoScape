@@ -34,7 +34,6 @@
     {
         padding:1.5rem;
         font-weight:600;
-        margin-left:1.8cm;
         font-size:1.5rem;
     }
     .animated-text span
@@ -73,10 +72,8 @@
     /* tabs */
     #tab-container 
     {
-        /* margin-top: 20px;
-        margin-bottom: 10px; */
         padding:1rem;
-        margin-left:2.5rem;
+        margin-left:4.5rem;
     }
 
     .tab-content 

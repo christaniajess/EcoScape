@@ -18,10 +18,8 @@
     <body>
       <NavBar/>
       <br><br>
-      <!-- <Tabs/> -->
-          <!-- put the card component here -->
-      <cards/>
-      <!-- <Cards/> -->
+      <Tabs/>
+      <Cards/>
       <Waves/> 
       <Footer/>
     </body>
