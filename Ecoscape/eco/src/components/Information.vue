@@ -4,8 +4,13 @@
         <section class="home section" id="home">
             <div class="home__container container grid">
                 <div class="home__content grid">
+                    <div class="home__social">
+                        <a href="" class="home__social-icon">
+                            <i class="uiil uil-instagram-alt"></i>
+                        </a>
+                    </div>
                     <div class="home__img">
-                        <svg id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                        <svg class="home__blob" id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
                             <defs>
                                 <clipPath id="blob">
                                     <path fill="#474bff" d="M406,292.5Q403,345,354.5,365Q306,385,256.5,428Q207,471,164.5,423.5Q122,376,94,333.5Q66,291,46.5,234Q27,177,57.5,121Q88,65,151,60.5Q214,56,258,80.5Q302,105,338.5,129Q375,153,392,196.5Q409,240,406,292.5Z" />
@@ -95,7 +100,7 @@
     {
         /* FOR THE COLORS */
         --header-height: 3rem;
-        --hue-color: 250 ; /* initial hsl was hsl(250, 69%, 61%) */
+        --hue-color: 250 ; 
         --first-color: hsl((var(--hue-color)), 69%, 61%); /* can change this later by going to HSL calculator */
         --first-color-alt: #628a5c;
         --first-color-lighter: hsl(var(--hue-color), 92%,85%);
@@ -230,13 +235,30 @@
         grid-template-columns:.5fr;
         padding-top:3.5rem;
         align-items: center;
+    } 
+    .home__social
+    {
+        display:grid;
+        grid-template-columns: max-content;
+        row-gap: 1rem;
+    }
+    .home__social-icon
+    {
+        font-size:1.25rem;
+        color:var(--first-color);
+    }
+    .home__social-icon:hover
+    {
+        color: var(--first-color-alt);
+    }
+    .home__blob
+    {
+        width:1000;
     }
     .home__blob-img
     {
         width: 900;
-        margin-left:auto;
-        margin-right:auto;
-
+        
     }
     .home__data
     {
@@ -260,7 +282,7 @@
     .home__scroll-button
     {
         color: var(--first-color);
-        transition: .3s
+        transition: .3s;
     }
     .home__scroll-button:hover
     {
@@ -286,15 +308,16 @@
     .button
     {
         display:inline-block;
-        background-color:black ; /* can change the color of the button here */
+        background-color:#101207 ; /* can change the color of the button here */
         color:white;
         padding:1rem;
         border-radius: .5rem;
         font-weight:var(--font-medium);
+        text-decoration: none;
     }
     .button:hover
     {
-        background-color: var(--first-color-alt); /* can change the color of this button when hovered in the root section */
+        background-color: var(--first-color-alt); 
     }
     .button__icon
     {
@@ -341,6 +364,5 @@
         display:block;
         text-align:center;
     }
-
 
 </style>
