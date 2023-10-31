@@ -18,9 +18,10 @@
     <body>
       <NavBar/>
       <br><br>
-      <Tabs/>
+      <!-- <Tabs/> -->
           <!-- put the card component here -->
-      <Cards/>
+      <cards/>
+      <!-- <Cards/> -->
       <Waves/> 
       <Footer/>
     </body>
@@ -33,26 +34,25 @@
 <script>
 
 import NavBar from "@/components/NavBar.vue";
-import HomepageParallax from "@/components/HomepageParallax.vue";
 import Footer from "@/components/Footer.vue";
-import AboutCarousel from "@/components/AboutCarousel.vue";
 import Tabs from "@/components/Tabs.vue";
 import Cards from "@/components/Cards.vue";
 import Waves from "@/components/wallpaper.vue";
 import axios from 'axios';
+import cards from "@/components/Cards2.vue"
 
 const url = '../destination.json';
 
 export default {
   components: {
     NavBar,
-    HomepageParallax,
     Footer,
-    AboutCarousel,
     Tabs,
     Cards,
     Waves,
+    cards,
 },
+
 data() {
                     return {
                         destinations: [{name:"", image:"", url: "", area: []}],
