@@ -14,6 +14,7 @@ import "aos/dist/aos.css"; // Import the AOS styles
 import AOS from "aos";
 import Tabs from "./components/Tabs.vue";
 import Cards from "./components/Cards.vue";
+import Wallpaper from "./components/wallpaper.vue";
 
 export default {
   name: "App",
@@ -24,6 +25,7 @@ export default {
     AboutCarousel,
     Tabs,
     Cards,
+    Wallpaper,
   },
   mounted() {
     AOS.init(); // Initialize AOS

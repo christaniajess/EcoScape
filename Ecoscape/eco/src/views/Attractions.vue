@@ -15,11 +15,11 @@
       />
     </head>
   <body>
-    
     <NavBar/>
       <!--Header -->
         <br><br>
         <Tabs/>
+        <Wallpaper/>
         <!-- put the card component here -->
         <Footer/>
       </body>
@@ -34,8 +34,9 @@ import NavBar from "@/components/NavBar.vue";
 import HomepageParallax from "@/components/HomepageParallax.vue";
 import Footer from "@/components/Footer.vue";
 import AboutCarousel from "@/components/AboutCarousel.vue";
-import Tabs from "@/components/Tabs.vue"
-import Cards from "@/components/Cards.vue"
+import Tabs from "@/components/Tabs.vue";
+import Cards from "@/components/Cards.vue";
+import Wallpaper from "@/components/wallpaper.vue";
 
 export default {
   components: {
@@ -45,6 +46,7 @@ export default {
     AboutCarousel,
     Tabs,
     Cards,
+    Wallpaper,
 },
 }
 </script>
