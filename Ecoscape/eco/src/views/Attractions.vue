@@ -15,7 +15,8 @@
       />
     </head>
   <body>
-      <NavBar/>
+    
+    <NavBar/>
       <!--Header -->
         <br><br>
         <Tabs/>

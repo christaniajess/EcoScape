@@ -1,4 +1,5 @@
 <template>
+    
     <h3>
         Discover      
         <!-- <span id="typewriter">sustainable places here!
