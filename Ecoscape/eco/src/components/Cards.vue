@@ -1,15 +1,16 @@
 <template>
-    <div id="tab-container" class="tab-container">
-        <div class="container-fluid">
-            <div class="col-md-10 col-md-offset-1">
-                
-             
-            </div>
-        </div>
+     <div id="content1" class="tab-content" v-for="gallery in dividedAllDestinations">
+    <div class="gallery">
+      <dest
+        class="card"
+        v-for="destination in gallery"
+        :name="destination.name"
+        :image="destination.image"
+        :url="destination.url"
+        @click="navigateToUrl(destination.url)"
+      ></dest>
     </div>
-
-
-    
+  </div>
 </template>
 
 <style>
@@ -112,3 +113,135 @@
     }
 
 </style>
+
+<script>
+import axios from 'axios';
+import { ref, computed } from 'vue';
+
+export default {
+  data() {
+    return {
+      destinations: [{ name: '', image: '', url: '', area: [] }],
+      init: true,
+      central_dest: [],
+      north_dest: [],
+      south_dest: [],
+      east_dest: [],
+      west_dest: [],
+    };
+  },
+  methods: {
+              navigateToUrl(url) {
+                // Handle the navigation to the specified URL
+                window.location.href = url;
+              }
+            },
+            computed: {
+              dividedAllDestinations() {
+                // Divide the destinations array into groups of 6
+                const result = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.destinations.length; i += groupSize) {
+                  result.push(this.destinations.slice(i, i + groupSize));
+                }
+                // console.log(result)
+                return result;
+              },
+              dividedCentralDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultC = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.central_dest.length; i += groupSize) {
+                  resultC.push(this.central_dest.slice(i, i + groupSize));
+                }
+                return resultC;
+              },
+              dividedNorthDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultN = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.north_dest.length; i += groupSize) {
+                  resultN.push(this.north_dest.slice(i, i + groupSize));
+                }
+                return resultN;
+              },
+              dividedSouthDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultS = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.south_dest.length; i += groupSize) {
+                  resultS.push(this.south_dest.slice(i, i + groupSize));
+                }
+                return resultS;
+              },
+              dividedEastDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultE = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.east_dest.length; i += groupSize) {
+                  resultE.push(this.east_dest.slice(i, i + groupSize));
+                }
+                return resultE;
+              },
+              dividedWestDestinations() {
+                // Divide the destinations array into groups of 6
+                const resultW = [];
+                const groupSize = 6;
+                for (let i = 0; i < this.west_dest.length; i += groupSize) {
+                  resultW.push(this.west_dest.slice(i, i + groupSize));
+                }
+                return resultW;
+              }
+            },
+    // Define other computed properties as needed
+  
+  created() {
+    const url = '../destination.json';
+    axios.get(url)
+                        .then(response => {
+                            const result = response.data
+                            // console.log(result)
+                            
+                            for (let i = 0; i<result.length; i++) {
+                              // console.log(result[i])
+                              destination = {}
+                              
+                              destination.name = result[i].name
+                              destination.image = "../" + result[i].image
+                              destination.url = result[i].url
+                              destination.area = result[i].area
+                              if (this.init) {
+                                this.destinations = [destination]
+                                this.init = false
+                            } else 
+                                this.destinations.push(destination)
+                            }
+                            // console.log(this.destinations)
+
+                            // Populating different areas
+                            for (destination of this.destinations) {
+                              // console.log(destination)
+                              // console.log(destination.area[1])
+                              if (destination.area[1] == "central") {
+                                this.central_dest.push(destination)
+                              }
+                              else if (destination.area[1] == "north") {
+                                this.north_dest.push(destination)
+                              }
+                              else if (destination.area[1] == "south") {
+                                this.south_dest.push(destination)
+                              }
+                              else if (destination.area[1] == "east") {
+                                this.east_dest.push(destination)
+                              }
+                              else if (destination.area[1] == "west") {
+                                this.west_dest.push(destination)
+                              }
+                            }
+                        })
+                        .catch(error => {
+                            console.error(error);
+                        });
+  },
+};
+</script>
