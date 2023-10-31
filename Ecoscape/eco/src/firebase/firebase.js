@@ -1,47 +1,27 @@
 // src/firebase.js
-import firebase from "firebase/app";
-import "firebase/auth"; // Import the authentication module
 
+// Import specific Firebase services
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+
+// Your Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDmN08IvkUv2vQn7o_Cbd5daeQ3OXxGRpo",
-    authDomain: "ecoscape-ea1d6.firebaseapp.com",
-    projectId: "ecoscape-ea1d6",
-    storageBucket: "ecoscape-ea1d6.appspot.com",
-    messagingSenderId: "104462396856",
-    appId: "1:104462396856:web:bcaaa850fb71afed13b34d",
-    measurementId: "G-35CF9R9L0S"
-  };
+  apiKey: "AIzaSyDmN08IvkUv2vQn7o_Cbd5daeQ3OXxGRpo",
+  authDomain: "ecoscape-ea1d6.firebaseapp.com",
+  databaseURL: "https://ecoscape-ea1d6-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "ecoscape-ea1d6",
+  storageBucket: "ecoscape-ea1d6.appspot.com",
+  messagingSenderId: "104462396856",
+  appId: "1:104462396856:web:bcaaa850fb71afed13b34d",
+  measurementId: "G-35CF9R9L0S"
+};
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
 
-export const auth = firebase.auth(); // Export the authentication module
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-// import { getAuth } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
-// import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
-// import { getFirestore } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
-// // import {getFirestore, doc} from 'firebase/firestore'; 
+// Get the authentication service
+const auth = getAuth(app);
 
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
-
-// // Your web app's Firebase configuration
-// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-
-// const firestore = getFirestore(); 
-
-// // Initialize Firebase
-// const firebaseApp = initializeApp(firebaseConfig);
-// // const analytics = getAnalytics(firebaseApp);
-// const auth = getAuth(firebaseApp); 
-// const db = getFirestore(firebaseApp);
-
-// // detect auth state
-// onAuthStateChanged(auth, (user) => {
-//     if (user !== null) {
-//         console.log('logged in!');
-//     } else {
-//         console.log('No user');
-//     }
-// });
+export { auth }; // Export the auth service for use in your components
+export default firebaseApp;
+export {firebaseConfig};

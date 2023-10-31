@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Homepage from '@/views/Homepage.vue';
 import Login from '@/views/Login.vue';
-import store from "@/store"; // Assuming you have a Vuex store
+import store from "@/store/index.js"; // Assuming you have a Vuex store
 
 const routes = [
   {
@@ -17,7 +17,7 @@ const routes = [
   {
     path: "/Dashboard",
     name: "Dashboard",
-    component: () => import("@/views/Dashboard.vue"),
+    component: () => import("@/components/Dashboard.vue"),
     meta: { requiresAuth: true }, // Add this meta field to specify that authentication is required
   }
   // Add more routes as needed

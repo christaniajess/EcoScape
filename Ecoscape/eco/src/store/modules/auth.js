@@ -1,7 +1,7 @@
 // store/modules/auth.js
 
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "@/firebase"; // Assuming you have set up Firebase in your project
+import { auth } from "@/firebase/firebase.js"; // Assuming you have set up Firebase in your project
 
 const state = {
   user: null,
@@ -31,5 +31,6 @@ export default {
   state,
   mutations,
   actions,
-  auth
+  
 };
+

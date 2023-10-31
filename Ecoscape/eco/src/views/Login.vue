@@ -84,12 +84,13 @@
   </template>
 
 <script>
-import NavBar from "@/components/NavBar.vue"; // Make sure to adjust the import path as needed
+// import { createStore } from 'vuex';
+
+import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import firebaseConfig from '@/firebaseConfig';
-import Dashboard from "@/components/Dashboard.vue"; 
+import { auth } from "@/firebase/firebase.js"; // Import Firebase Authentication
+import firebaseApp from "@/firebase/firebase.js"; // Import your Firebase app instance
+import Dashboard from "@/components/Dashboard.vue";
 
 export default {
   components: {
@@ -105,22 +106,26 @@ export default {
   methods: {
     async login() {
       try {
-        await firebase.auth().signInWithEmailAndPassword(this.email, this.password);
+        await auth.signInWithEmailAndPassword(app, this.email, this.password); // Use auth from Firebase Authentication
         this.$router.push('/Dashboard'); // Redirect to dashboard after successful login
       } catch (error) {
         console.error('Login error:', error);
         // Handle login error here
       }
     },
+
     async signUp() {
       try {
-        await firebase.auth().createUserWithEmailAndPassword(this.email, this.password);
+        await auth.createUserWithEmailAndPassword(app, this.email, this.password); // Use auth from Firebase Authentication
         this.$router.push('/Dashboard'); // Redirect to dashboard after successful sign-up
       } catch (error) {
         console.error('Sign-up error:', error);
         // Handle sign-up error here
       }
     },
+  },
+ created() {
+    this.$store.dispatch('checkUserAuthentication');
   },
 };
 </script>
@@ -307,7 +312,6 @@ h6 span {
     width: 100%; 
     height:100%; 
     background-color: #2f4425;
-    /* background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg"); */
     background-position: bottom center; 
     background-repeat: no-repeat;
     background-size: 300%; 
