@@ -1,13 +1,18 @@
 <template>
-    <div class="tab-content">
-      <div class="gallery">
-        <Dest class="card"
-                      v-for="(destination) of north_dest"
-                      :name="destination.name"
-                      :image="destination.image"
-                      @click="navigateToUrl(destination.index)"/>
+  <div class="tab-content">
+    <div class="gallery" v-if="destinations.length > 0">
+      <Dest
+        v-for="destination in destinations"
+        :key="destination.url"
+        :name="destination.name"
+        :image="destination.image"
+        :url="destination.url"
+        />
       </div>
-    </div>
+      <div v-else>
+        Loading... <!-- Or some loading message -->
+      </div>
+  </div>
 </template>
 
 <script>
