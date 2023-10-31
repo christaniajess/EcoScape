@@ -35,8 +35,12 @@
                         <div class="section text-center">
                           <h4 class="mb-4 pb-3">Sign Up</h4>
                           <div class="form-group">
-                          <input type="text" name="SignUpname" class="form-style" placeholder="Your Email (e.g james012@gmail.com)" id="SignUpEmail" autocomplete="off" v-model="signupName">
+                          <input type="text" name="SignUpEmail" class="form-style" placeholder="Your Email (e.g james012@gmail.com)" id="SignUpEmail" autocomplete="off" v-model="signupName">
                           <i class="input-icon uil uil-user"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input type="password" name="Signpass" class="form-style" placeholder="Your Password" id="Signpass" autocomplete="off" v-model="signupPassword">
+                          <i class="input-icon uil uil-lock-alt"></i>
                         </div>
                         <div class="form-group mt-2">
                           <input type="password" name="Signpass" class="form-style" placeholder="Your Password" id="Signpass" autocomplete="off" v-model="signupPassword">

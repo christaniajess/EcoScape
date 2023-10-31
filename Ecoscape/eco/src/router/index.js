@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Homepage from '@/views/Homepage.vue';
 import Login from '@/views/Login.vue';
-import { createRouter, createWebHistory } from "vue-router";
 import store from "@/store"; // Assuming you have a Vuex store
 
 const routes = [
