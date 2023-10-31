@@ -3,6 +3,7 @@ import Homepage from '@/views/Homepage.vue';
 import Attraction from '@/views/Attractions.vue';
 import Hotel from '@/views/Hotels.vue';
 import Restaurants from '@/views/Restaurants.vue';
+import Individual from '@/views/Indiv.vue';
 
 const routes = [
   {
@@ -26,9 +27,12 @@ const routes = [
     name: 'Restaurants',
     component: Restaurants,
   },
- 
-
- 
+  {
+    // testing only to see if can make the individual pages
+    path: '/individual',
+    name: 'Individual',
+    component: Individual,
+  },
 ];
 
 const router = createRouter({

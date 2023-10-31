@@ -18,10 +18,9 @@
       <NavBar/>
       <!--Header -->
         <br><br>
-        <!-- <h2>Discover <span id="typewriter"></span><span id="cursor">|</span></h2> -->
-        <!--Tabs (choosing which region)-->
         <Tabs/>
         <!-- put the card component here -->
+        <Waves />
         <Footer/>
       </body>
       </html>
@@ -33,8 +32,9 @@ import NavBar from "@/components/NavBar.vue";
 import HomepageParallax from "@/components/HomepageParallax.vue";
 import Footer from "@/components/Footer.vue";
 import AboutCarousel from "@/components/AboutCarousel.vue";
-import Tabs from "@/components/Tabs.vue"
-import Cards from "@/components/Cards.vue"
+import Tabs from "@/components/Tabs.vue";
+import Cards from "@/components/Cards.vue";
+import Waves from "@/components/wallpaper.vue";
 
 export default {
   components: {
@@ -44,6 +44,7 @@ export default {
     AboutCarousel,
     Tabs,
     Cards,
+    Waves,
 },
 }
 </script>

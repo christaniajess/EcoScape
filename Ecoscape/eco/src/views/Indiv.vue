@@ -15,10 +15,10 @@
       />
     </head>
   <body>
-      <NavBar/>
+        <NavBar/>
       <!--Header -->
-        <br><br>
-        <Tabs/>
+        <br><br><br>
+        <Information />
         <!-- put the card component here -->
         <Waves/>
         <Footer/>
@@ -31,20 +31,16 @@
 import NavBar from "@/components/NavBar.vue";
 import HomepageParallax from "@/components/HomepageParallax.vue";
 import Footer from "@/components/Footer.vue";
-import AboutCarousel from "@/components/AboutCarousel.vue";
-import Tabs from "@/components/Tabs.vue";
-import Cards from "@/components/Cards.vue";
 import Waves from "@/components/wallpaper.vue";
+import Information from "@/components/Information.vue"
 
 export default {
   components: {
     NavBar,
     HomepageParallax,
-    Footer,
     AboutCarousel,
-    Tabs,
-    Cards,
     Waves,
+    Information,
 },
 }
 </script>
