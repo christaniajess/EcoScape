@@ -13,6 +13,7 @@
   export default {
     props: ['name', 'image', 'url'],
   };
+
   </script>
   
   <style scoped>

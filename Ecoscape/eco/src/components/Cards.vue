@@ -1,15 +1,18 @@
 <template>
     <div class="tab-content">
       <div class="gallery">
-        <Dest />
+        <Dest class="card"
+                      v-for="(destination) of north_dest"
+                      :name="destination.name"
+                      :image="destination.image"
+                      @click="navigateToUrl(destination.index)"/>
       </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import { ref, computed } from 'vue';
-import Dest from '@/components/Dest.vue';
+import Dest from "@/components/Dest.vue";
 
 export default {
   data() {
@@ -105,7 +108,7 @@ export default {
             this.init = false;
           } else this.destinations.push(destination);
         }
-
+        
         // Populating different areas
         for (const destination of this.destinations) {
           if (destination.area[1] == 'central') {
@@ -125,6 +128,9 @@ export default {
         console.error(error);
       });
   },
+  components: {
+    Dest
+  }
 };
 </script>
 
