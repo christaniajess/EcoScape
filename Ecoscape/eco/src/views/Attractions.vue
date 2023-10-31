@@ -13,14 +13,16 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
         crossorigin="anonymous"
       />
+
     </head>
   <body>
     <NavBar/>
+    <br><br>
       <!--Header -->
-        <br><br>
         <Tabs/>
-        <Wallpaper/>
         <!-- put the card component here -->
+
+        <Waves/>
         <Footer/>
       </body>
       </html>
@@ -36,7 +38,7 @@ import Footer from "@/components/Footer.vue";
 import AboutCarousel from "@/components/AboutCarousel.vue";
 import Tabs from "@/components/Tabs.vue";
 import Cards from "@/components/Cards.vue";
-import Wallpaper from "@/components/wallpaper.vue";
+import Waves from "@/components/wallpaper.vue";
 
 export default {
   components: {
@@ -46,7 +48,7 @@ export default {
     AboutCarousel,
     Tabs,
     Cards,
-    Wallpaper,
+    Waves,
 },
 }
 </script>

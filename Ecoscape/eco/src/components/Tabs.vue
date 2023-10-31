@@ -1,18 +1,7 @@
 <template>
-    
-    <h3>
-        Discover      
-        <!-- <span id="typewriter">sustainable places here!
-            <span id="cursor">|</span>
-        </span> -->
-        <!-- <vue-typer
-            :text="['sustainable places here']"
-            :repeat = 'infinty'
-            :shuffle = 'false'
-        >
-
-        </vue-typer> -->
-    </h3>
+    <div class="animated-text">
+        Discover <span></span>
+    </div>
     <div id="tab-container" class="tab-container">
           <div class="container-fluid">
             <div class="col-md-10 col-md-offset-1">
@@ -41,32 +30,46 @@
 
 <style>
 
-    h3
+    .animated-text
     {
-        padding: 1.5rem;  
-        font-weight: 500px;
+        padding:1.5rem;
+        font-weight:600;
         margin-left:1.8cm;
-
-        /* 
-        #typewriter
-        {
-            color:#628a5c;
-        }
-        #cursor
-        {
-            color:#21321F;
-            font-weight:bold;
-            animation: blink 1s linear infinite;
-        }
-        @keyframes blink
-        {
-            100% {opacity:1;}
-            50% {opacity:0}
-        } */
+        font-size:1.5rem;
     }
-
-
-  
+    .animated-text span
+    {
+        position:relative;
+        font-weight: 500;
+    }
+    .animated-text span::before
+    {
+        content: 'eco-friendly places here!';
+        color:#628a5c;
+        animation: words 20s infinite;
+    }
+    .animated-text span::after
+    {
+        content:'';
+        background-color: #FFF;
+        position:absolute;
+        width: calc(100% + 8px);
+        height:100%;
+        border-left:3px solid #21321F;
+        right: -8px; /* makes the cursor have space between the words */
+        animation:cursor .6s infinite, typing 20s steps(14) infinite;
+    }
+    @keyframes typing
+    {
+        10%,15%,30%,35%,50%,55%,70%,75%,90%,95%
+        {
+            width:0;
+        }
+        5%,20%,25%,40%,45%,60%,65%,80%,85%
+        {
+            width: calc(100% +8px);
+        }
+    }
     /* tabs */
     #tab-container 
     {
