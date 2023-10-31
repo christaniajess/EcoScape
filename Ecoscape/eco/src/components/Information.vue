@@ -81,21 +81,13 @@
 
         <!-- MAPS SERVICE SECTION -->
         <section class="services section" id="services">
-            <h2 class="section__title">Maps</h2>
+            <h2 class="section__title">Map</h2>
             <span class="section__subtitle">Where they are located</span>
             <div class="map__container container grid">
                 <!-- insert map here and replace the image with the API-->
                 <img src="../images/mbs.jpg"> 
-                <div class="map__data">
-                    <h3>Your Position</h3>
-                    Latitude: {{ currPos.lat }}
-                    <!-- Latitude: {{ currPos.lat.toFixed(2) }} -->
-                </div>
             </div>
-
-        </section>
-
-        
+        </section>  
     </main> 
 </template>
 
@@ -371,24 +363,3 @@
     }
 
 </style>
-
-<script>
-import {computed,ref,onMounted} from 'vue'
-import {useGeolocation} from '../useGeolocation'
-import {Loader} from '@googlemaps/js-api-loader'
-
-export default
-{
-    name:'App',
-    setup()
-     {
-       const { coords } = useGeolocation()
-       const currPos = computed(() => ({
-         lat:coords.value.latitude,
-         lng:coords.value.longitude
-       }))
-       return {currPos}
-     }
-    
-}
-</script>
