@@ -68,10 +68,36 @@ export default defineComponent({
     Carousel,
     Slide,
   },
+  mounted() {
+    if (this.$route.meta.referrer !== 'login') {
+      this.scrollToAboutUs();
+    }
+  },
+  methods: {
+    scrollToAboutUs() {
+      // Scroll to the "About Us" section
+      const aboutUsElement = document.getElementById('about-us');
+      if (aboutUsElement) {
+        aboutUsElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    },
+  },
 });
 </script>
 
 <style scoped>
+  @import url(https://db.onlinewebfonts.com/c/ae54ba780341eb52a73bf1c481b8b951?family=Poppins);
+
+  @font-face {
+    font-family: "Poppins";
+    src: url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.eot");
+    src: url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.svg#Poppins")format("svg");
+  }
+
   #about-us {
     display: flex;
     /* position: static; */
@@ -120,6 +146,7 @@ export default defineComponent({
   padding-bottom: 30px;
   color: rgba(255, 255, 255, 0.8); /* Caption text color */
   font-size: 14px; /* Caption text size */
+  font-family: 'Poppins', sans-serif;
   line-height: 1.5;
 }
 

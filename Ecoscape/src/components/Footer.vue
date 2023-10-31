@@ -40,7 +40,7 @@
             <h6 class="footer-title text-uppercase fw-bold mb-2">EcoScape</h6>
             <ul class="list-unstyled mb-0">
               <li class="mb-2">
-                <router-link to="/about" class="footer-links">About Us</router-link>
+                <router-link to="/" class="footer-links">About Us</router-link>
               </li>
             </ul>
           </div>

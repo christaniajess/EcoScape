@@ -32,7 +32,7 @@
                 </div>
               </li>
               <li>
-                <router-link to="#" class="nav-link">About Us</router-link>
+                <router-link to="/#about-us" class="nav-link">About Us</router-link>
               </li>
               <li class="dropdown">
                 <a href="#"><span>Directory</span> <i class="fa fa-angle-down"></i></a>

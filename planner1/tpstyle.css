@@ -308,7 +308,7 @@ body {
   padding: 5px;
 }
 
-/* transport info */
+/* transport */
 .flex-container {
     position: absolute;
     height: 95vh;
@@ -563,6 +563,9 @@ textarea {
 
 #transport-info {
   position: relative;
+  margin-bottom: 50px;
+  bottom: 0;
+  left: 0;
   top: 93vh;
   background-image: linear-gradient(to bottom, rgb(31, 51, 31), rgb(95, 132, 95));
   background-size: cover;
@@ -582,13 +585,59 @@ textarea {
 .card .card-title{
   color: #36502b;
   font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .card-subtitle{
   font-size: 1.2rem;
 }
 
+@media screen and (max-width: 771px) {
+  .card .card-title{
+    font-size: 1.8rem;
+  }
+  .card .card-subtitle{
+    font-size: 1rem;
+  }
+}
 
+@media screen and (max-width: 683px) {
+  .card .card-title{
+    font-size: 1.5rem;
+  }
+  .card .card-subtitle{
+    font-size: 0.8rem;
+  }
+}
 
+/* metrics */
+#metrics{
+  position: relative;
+  z-index: 2;
+  width: 35%;
+  top: 100vh;
+}
+
+/* .container {
+  position: relative;
+  text-align: center;
+  color: black;
+} */
+
+.odometer {
+  font-size: 3rem;
+}
+
+.counter.title {
+  letter-spacing: 1.5px;
+  line-height: 1.25;
+}
+.counter{
+  position: relative;
+  margin-bottom: 100px;
+  text-align: center;
+  color: black;
+}
 
 
