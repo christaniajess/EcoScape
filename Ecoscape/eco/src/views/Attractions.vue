@@ -13,19 +13,19 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
         crossorigin="anonymous"
       />
-
     </head>
-  <body>
-    <NavBar/>
-    <br><br>
-      <!--Header -->
-        <Tabs/>
-        <!-- put the card component here -->
 
-        <Waves/>
-        <Footer/>
-      </body>
-      </html>
+    <body>
+      <NavBar/>
+      <br><br>
+      <Tabs/>
+          <!-- put the card component here -->
+      <Cards/>
+      <Waves/> 
+      <Footer/>
+    </body>
+
+  </html>
 </template>
 
 
