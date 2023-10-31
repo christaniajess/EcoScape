@@ -82,6 +82,11 @@
 <script>
 import NavBar from "@/components/NavBar.vue"; // Make sure to adjust the import path as needed
 import Footer from "@/components/Footer.vue";
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import firebaseConfig from '@/firebaseConfig';
+import Dashboard from "@/components/Dashboard.vue"; 
+
 export default {
   components: {
     NavBar,
@@ -89,47 +94,32 @@ export default {
   },
   data() {
     return {
-      isLogin: true,
-      loginEmail: '',
-      loginPassword: '',
-      signupName: '',
-      signupEmail: '',
-      signupPassword: '',
+      email: '',
+      password: '',
     };
   },
-  computed: {
-    userLoggedIn() {
-      // Check if the user is logged in (replace with your authentication state)
-      return this.$store.getters.isUserLoggedIn; // Replace with your authentication state
-    },
-    userName() {
-      // Get the user's name from the state
-      return this.$store.state.user.name; // Replace with your user data
-    },
-  },
   methods: {
-    performAction() {
-      if (this.isLogin) {
-        // Handle login action
-        const email = this.loginEmail;
-        const password = this.loginPassword;
-        // Perform login with email and password
-      } else {
-        // Handle sign-up action
-        const name = this.signupName;
-        const email = this.signupEmail;
-        const password = this.signupPassword;
-        // Perform sign-up with name, email, and password
+    async login() {
+      try {
+        await firebase.auth().signInWithEmailAndPassword(this.email, this.password);
+        this.$router.push('/Dashboard'); // Redirect to dashboard after successful login
+      } catch (error) {
+        console.error('Login error:', error);
+        // Handle login error here
       }
     },
-    logout() {
-      // Implement the logout functionality
-      this.$store.dispatch('logout'); // Replace with your logout action
+    async signUp() {
+      try {
+        await firebase.auth().createUserWithEmailAndPassword(this.email, this.password);
+        this.$router.push('/Dashboard'); // Redirect to dashboard after successful sign-up
+      } catch (error) {
+        console.error('Sign-up error:', error);
+        // Handle sign-up error here
+      }
     },
   },
 };
 </script>
-
 <style scoped>
     @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css");
     @import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"); 
