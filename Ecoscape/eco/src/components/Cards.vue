@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-content">
+  <div id="content1" class="tab-content">
     <div class="gallery" v-if="destinations.length > 0">
       <Dest
         v-for="destination in destinations"
@@ -141,102 +141,117 @@ export default {
 
 
 <style scoped>
-    .gallery
-    {
-        display: flex;
-        gap:1.5cm;
-        padding-top: 1rem;
-        
-        
-    }
-    .card
-    {
-        position:relative;
-        left:1.5rem;
-        width:190px;
-        height:140px;
-        border-radius:8px;
-        transition:1000ms all;
-        transform-origin: center left;
-        box-shadow: 0 5px 13px rgba(0, 0, 0, 0.5);
-        outline: 1px solid #3c343d;
-        overflow:hidden;
-    }
-    .card img {
-        height: 160px;
-        object-fit: cover;
-        border-radius: 4px;
-    }
+  /* Your existing component styles here */
+  @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
 
-    .card:hover {
-        cursor: pointer;
-        transform: scale(1.15);
-    }
 
-    .card:hover figcaption {
-        font-size: 0.6rem;
-        position: absolute;
-        height: 180px;
-        width: 190px;
-        display: flex;
-        align-items: end;
-        background: 
-        linear-gradient(
-            to top, 
-            rgba(0, 0, 0, 0.9) 0%,
-            rgba(0, 0, 0, 0) 100%
-        );
-        color: white;
-        left: 0px;
-        bottom: 0px;
-        padding-left: 12px;
-        padding-bottom: 10px;
-    }
+  .gallery {
+    display: flex;
+    gap: 1.5cm;
+    padding-top: 1rem;
+  }
+  
+  .card {
+    position: relative;
+    left: 1.5rem;
+    width: 190px;
+    height: 140px;
+    border-radius: 8px;
+    transition: 1000ms all;
+    transform-origin: center left;
+    box-shadow: 0 5px 13px rgba(0, 0, 0, 0.5);
+    outline: 1px solid #3c343d;
+    overflow: hidden;
+  }
+  
+  .card img {
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .card:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+  }
+  
+  .card:hover figcaption {
+    font-size: 0.6rem;
+    position: absolute;
+    height: 180px;
+    width: 190px;
+    display: flex;
+    align-items: end;
+    background: 
+      linear-gradient(
+        to top, 
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    color: white;
+    left: 0px;
+    bottom: 0px;
+    padding-left: 12px;
+    padding-bottom: 10px;
+  }
+  
+  .card:hover ~ .card {
+    font-weight: bold;
+    cursor: pointer;
+    transform: translateX(22px);
+  }
 
-    .card:hover ~ .card {
-        font-weight: bold;
-        cursor: pointer;
-        transform: translateX(22px);
-    }
-    .gallery {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* Display 3 cards per row by default */
-    gap: 20px; /* Adjust the gap between cards */
-    }
+  /* Add the provided CSS code below this line */
 
-    .card {
-    border: 1px solid #ccc; /* Card border */
-    border-radius: 8px; /* Rounded corners */
+  
+
+  * {
+    margin: 0;
     padding: 0;
-    display: flex; /* Make the card a flex container */
-    flex-direction: column; /* Arrange card contents vertically */
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: system-ui;
+  }
+  
+  h2 {
+    font-size: 25px;
+    margin-left: 3rem;
+    padding: 1.5rem;
+    font-weight: 50px;
+  }
+  
+  #typewriter {
+    color: #628a5c;
+  }
+  
+  #cursor {
+    color: #21321F;
+    font-weight: bold;
+    animation: blink 1s linear infinite;
+  }
+  
+  @keyframes blink {
+    100% {
+      opacity: 1;
     }
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  :root {
+    --primary: #628a5c;
+    --text-color: white;
+    --white: white;
+    --text-gray: #FEFEFE;
+    --text-heading-gray: white;
+    --background: #EDF0F9;
+    --border: #fff;
+  }
+  
+  /* ... (Continue adding the rest of the provided CSS code) ... */
 
-    /* Media queries for responsive design */
-    @media (max-width: 1400px) {
-    .gallery {
-        grid-template-columns: repeat(4, 1fr); /* Display 2 cards per row for medium-sized screens */
-    }
-    
-    }
-    @media (max-width: 992px) {
-    .gallery {
-        grid-template-columns: repeat(3, 1fr); /* Display 2 cards per row for medium-sized screens */
-    }
-    
-    }
-    @media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr); /* Display 2 cards per row for medium-sized screens */
-    }
-    
-    }
-
-    @media (max-width: 480px) {
-    .gallery {
-        grid-template-columns: 1fr; /* Display 1 card per row for small screens */
-    }
-    
-    }
-
+  /* Add the provided CSS code above this line */
 </style>
