@@ -5,9 +5,26 @@
             <div class="home__container container grid">
                 <div class="home__content grid">
                     <div class="home__img">
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#FF0066" d="M48.1,-74.1C62.6,-65.6,74.6,-52.6,77.2,-37.9C79.7,-23.2,72.8,-6.9,69.5,9.4C66.2,25.6,66.6,41.8,60.1,55.7C53.7,69.5,40.4,81.1,26.3,81.9C12.1,82.6,-3.1,72.4,-20.1,67.8C-37.1,63.1,-56,64,-68.6,55.9C-81.3,47.8,-87.6,30.6,-84.7,15.5C-81.8,0.3,-69.6,-13,-60,-24.7C-50.4,-36.3,-43.4,-46.5,-33.8,-57.2C-24.2,-67.9,-12.1,-79.3,2.4,-83C16.8,-86.7,33.7,-82.7,48.1,-74.1Z" transform="translate(100 100)" />
+                        <svg id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+                            <defs>
+                                <clipPath id="blob">
+                                    <path fill="#474bff" d="M406,292.5Q403,345,354.5,365Q306,385,256.5,428Q207,471,164.5,423.5Q122,376,94,333.5Q66,291,46.5,234Q27,177,57.5,121Q88,65,151,60.5Q214,56,258,80.5Q302,105,338.5,129Q375,153,392,196.5Q409,240,406,292.5Z" />
+                                </clipPath>
+                            </defs>
+                            <image x="0" y="0" width="100%" height="100%" clip-path="url(#blob)" href="../images/mbs.jpg" preserveAspectRatio="xMidYMid slice"></image>
                         </svg>
+                    </div>
+                    <div class="home__data">
+                        <h1 class="home__title">Marina Bay Sands</h1>
+                        <h3 class="home__subtitle">Green Rating: 4.6/5</h3>
+                        <h3 class="home__subtitle">Rating: 4.6/5</h3>
+                        <p class="home__description">
+                            Where luxury unfolds at every turn. Discover Marina Bay Sands, a landmark destination in the heart of Singapore's vibrant city district. Envisioned by renowned architect
+                            Mosche Safdie, the striking aesthetic defiantly blurs the line between art and architecture.
+                            Experience unparalleled luxury matched by exceptional service, in a land where every detail whispers indulgence. An exhilirating oasis
+                            of tranquility and thrill. Gaze down on the glittering expanse of the city from the world-famous Infinity Pool and immerse yourself in a world of infinite possibilities all 
+                            in one extraordinary destination. There is nowhere else on earth quite like this.
+                        </p>
 
                     </div>
                 </div>
