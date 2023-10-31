@@ -3,7 +3,7 @@ import Homepage from '@/views/Homepage.vue';
 import Attraction from '@/views/Attractions.vue';
 import Hotel from '@/views/Hotels.vue';
 import Restaurants from '@/views/Restaurants.vue';
-import Individual from '@/views/Indiv.vue';
+import Individual from '@/views/Indiv.vue'; // Delete when done
 
 const routes = [
   {
@@ -29,6 +29,7 @@ const routes = [
   },
   {
     // testing only to see if can make the individual pages
+    //Delete when done
     path: '/individual',
     name: 'Individual',
     component: Individual,

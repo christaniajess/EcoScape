@@ -38,7 +38,6 @@ import Tabs from "@/components/Tabs.vue";
 import Cards from "@/components/Cards.vue";
 import Waves from "@/components/wallpaper.vue";
 import Information from "@/components/Information.vue";
-// import Info from '@/components/information2.vue';
 
 export default {
   components: {
@@ -50,7 +49,6 @@ export default {
     Cards,
     Waves,
     Information,
-    // Info,
 },
 }
 </script>
