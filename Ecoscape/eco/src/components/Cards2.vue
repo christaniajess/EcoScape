@@ -13,7 +13,7 @@
                     <span class="filter-item" data-filter="central">Central</span>
                     <span class="filter-item" data-filter="East">East</span>
                     <span class="filter-item" data-filter="South">South</span>
-                    <span class="filter-item" data-filter="North">North</span>
+                    <span class="filter-item" data-filter="north">North</span>
                     <span class="filter-item" data-filter="West">West</span>
                 </div>
             </div>
@@ -24,6 +24,18 @@
                         <article class="card">
                             <figure>
                                 <img src="../images/mbs.jpg">
+                                <figacaption><h3>Marina Bay Sands</h3></figacaption>
+                            </figure>
+                        </article>
+                    </div>
+                </div>
+                <!-- GALLERY ITEM END -->
+                 <!-- GALLERY ITEM START -->
+                 <div class="gallery-item north">
+                    <div class="gallery-item-inner">
+                        <article class="card">
+                            <figure>
+                                <img src="../images/Singaopre_Zoo.jpg">
                                 <figacaption><h3>Marina Bay Sands</h3></figacaption>
                             </figure>
                         </article>
