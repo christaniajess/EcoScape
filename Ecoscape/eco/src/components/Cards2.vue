@@ -9,51 +9,59 @@
         <div class="container">
             <div class="row">
                 <div class="gallery-filter">
-                    <span class="filter-item" data-filter="All">All</span>
-                    <span class="filter-item" data-filter="central">Central</span>
-                    <span class="filter-item" data-filter="East">East</span>
-                    <span class="filter-item" data-filter="South">South</span>
-                    <span class="filter-item" data-filter="north">North</span>
-                    <span class="filter-item" data-filter="West">West</span>
+                    <span class="filter-item" data-filter="all">All|</span>
+                    <span class="filter-item" data-filter="central">Central|</span>
+                    <span class="filter-item" data-filter="east">East|</span>
+                    <span class="filter-item" data-filter="south">South|</span>
+                    <span class="filter-item" data-filter="north">North|</span>
+                    <span class="filter-item" data-filter="west">West|</span>
                 </div>
             </div>
             <div class="row">
                 <!-- GALLERY ITEM START -->
                 <div class="gallery-item central">
                     <div class="gallery-item-inner">
-                        <article class="card">
-                            <figure>
-                                <img src="../images/mbs.jpg">
-                                <figacaption><h3>Marina Bay Sands</h3></figacaption>
-                            </figure>
-                        </article>
+                        <!-- make this into a card please -->
+                        <img src="../images/reservoir.jpg" alt="Reservoir">
+                    </div>
+                </div>
+                <!-- GALLERY ITEM END -->
+                 <!-- GALLERY ITEM START -->
+                 <div class="gallery-item east">
+                    <div class="gallery-item-inner">
+                        <!-- make this into a card please -->
+                        <img src="../images/ecp.jpg" alt="East Coast Park">
+                    </div>
+                </div>
+                <!-- GALLERY ITEM END -->
+                 <!-- GALLERY ITEM START -->
+                 <div class="gallery-item south">
+                    <div class="gallery-item-inner">
+                        <!-- make this into a card please -->
+                        <img src="../images/fcpark.jpg" alt="Fort Canning Park">
                     </div>
                 </div>
                 <!-- GALLERY ITEM END -->
                  <!-- GALLERY ITEM START -->
                  <div class="gallery-item north">
                     <div class="gallery-item-inner">
-                        <article class="card">
-                            <figure>
-                                <img src="../images/Singaopre_Zoo.jpg">
-                                <figacaption><h3>Marina Bay Sands</h3></figacaption>
-                            </figure>
-                        </article>
+                        <!-- make this into a card please -->
+                        <img src="../images/Singapore_Zoo.jpg" alt="Singapore zoo">
                     </div>
                 </div>
                 <!-- GALLERY ITEM END -->
-
-
+                 <!-- GALLERY ITEM END -->
+                 <!-- GALLERY ITEM START -->
+                 <div class="gallery-item west">
+                    <div class="gallery-item-inner">
+                        <!-- make this into a card please -->
+                        <img src="../images/jlg.png" alt="Jurong Lake Garden">
+                    </div>
+                </div>
+                <!-- GALLERY ITEM END -->
             </div>
-
         </div>
-
     </section>
-
-
-
-
-
 
 </template>
 
@@ -113,29 +121,38 @@
     }
 
     /* GALLERY */
-    .gallery
+    /* .gallery
     {
         display: flex;
         gap:1.5cm;
-        /* padding-top: 1rem; */  
+    } */
+    *
+    {
+        margin:0;
+        box-sizing:border-box;
+    }
+    .gallery
+    {
+        width:100%;
+        display:block;
+        min-height:100vh;
     }
     .gallery .gallery-filter
     {
         padding: 0 15px;
         width:100%;
     }
-
-
-    .gallery .gallery-filter.filter-item
+    .gallery .gallery-filter .filter-item
     {
-        color:#FFF;
+        /* color:#FFFFFF; */
         font-size:18px;
-        text-transform:uppercase;
+        /* text-transform:uppercase; */
         display:inline-block;
         margin: 0 10px;
         cursor:pointer;
         border-bottom: 2px solid transparent;
         line-height:1.2;
+        transition: all 0.3s ease;
     }
 
     .gallery .gallery-filter .filter-item.active
@@ -143,52 +160,57 @@
         color: #FF9800;
         border-color: #FF9800;
     }
+    /* .gallery .gallery-item
+    {
+  
+    } */
+    .gallery .gallery-item.show
+    {
+        animation:fadeIn 0.5s ease;
 
-    /* CARD CSS */
-    .card
-    {
-        position:relative;
-        left:1.5rem;
-        width:190px;
-        height:140px;
-        border-radius:8px;
-        transition:1000ms all;
-        transform-origin: center-left;
-        box-shadow: 0 5px 13px rgba(0,0,0,0.5);
-        outline: 1px solid #3c343d;
-        overflow:hidden;
     }
-    .card img
+    @keyframes fadeIn
     {
-        height:160px;
-        object-fit:cover;
-        border-radius:4px;
+        0%
+        {
+            opacity:0;
+        }
+        100%
+        {
+            opacity:1;
+        }
     }
-    .card:hover
+    .gallery .gallery-item.hide
     {
-        cursor:pointer;
-        transform: scale(1.15);
+        display:none;
     }
-    .card:hover figcaption
-    {
-        font-size:0.6rem;
-        position:absolute;
-        height: 180px;
-        width: 190px;
-        display: flex;
-        align-items: end;
-        background: 
-        linear-gradient(
-            to top, 
-            rgba(0, 0, 0, 0.9) 0%,
-            rgba(0, 0, 0, 0) 100%
-        );
-        color: white;
-        left: 0px;
-        bottom: 0px;
-        padding-left: 12px;
-        padding-bottom: 10px;
-    }
-
 
 </style>
+<!-- <script>
+    const filtercontainer = documnet.querySelector('.gallery-filter'),
+    galleryItems = document.querySelectorAll('.gallery-item');
+    filtercontainer.addEventListener('click', (event)=>
+    {
+        if(event.target.classList.contains('filter-item'))
+        {
+            //deactivate existing active 'filter-item'
+            filtercontainer.querySelector('.active').classList.remove('active');
+            //activate new 'filter-item'
+            event.target.classList.add('active');
+            const filterValue = event.target.getAttribute('data-filter');
+            galleryItems.forEach((item)=>
+            {
+                if(item.classList.contains(filterValue))
+                {
+                    item.classList.remove('hide')
+                    item.classList.add('show')
+                }
+                else
+                {
+                    item.classList.remove('show')
+                    item.classList.add('hide')
+                }
+            })
+        };
+    })
+</script> -->
