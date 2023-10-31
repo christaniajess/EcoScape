@@ -13,6 +13,7 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
         crossorigin="anonymous"
       />
+      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
     </head>
   <body>
         <NavBar/>
@@ -31,14 +32,20 @@
 import NavBar from "@/components/NavBar.vue";
 import HomepageParallax from "@/components/HomepageParallax.vue";
 import Footer from "@/components/Footer.vue";
+import AboutCarousel from "@/components/AboutCarousel.vue";
+import Tabs from "@/components/Tabs.vue";
+import Cards from "@/components/Cards.vue";
 import Waves from "@/components/wallpaper.vue";
-import Information from "@/components/Information.vue"
+import Information from "@/components/Information.vue";
 
 export default {
   components: {
     NavBar,
     HomepageParallax,
+    Footer,
     AboutCarousel,
+    Tabs,
+    Cards,
     Waves,
     Information,
 },
