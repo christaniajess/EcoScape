@@ -30,7 +30,7 @@ const routes = [
   {
     // testing only to see if can make the individual pages
     //Delete when done
-    path: '/individual',
+    path: '/individual/:id',
     name: 'Individual',
     component: Individual,
   },

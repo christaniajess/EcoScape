@@ -16,21 +16,17 @@
                                     <path fill="#474bff" d="M406,292.5Q403,345,354.5,365Q306,385,256.5,428Q207,471,164.5,423.5Q122,376,94,333.5Q66,291,46.5,234Q27,177,57.5,121Q88,65,151,60.5Q214,56,258,80.5Q302,105,338.5,129Q375,153,392,196.5Q409,240,406,292.5Z" />
                                 </clipPath>
                             </defs>
-                            <image class="home__blob-img" x="12" y="18" width="100%" height="100%" clip-path="url(#blob)" href="../images/mbs.jpg" preserveAspectRatio="xMidYMid slice"></image>
+                            <image class="home__blob-img" x="12" y="18" width="100%" height="100%" clip-path="url(#blob)" :href="image" preserveAspectRatio="xMidYMid slice"></image>
                         </svg>
                     </div>
                     <div class="home__data">
-                        <h1 class="home__title">Marina Bay Sands</h1>
-                        <h3 class="home__subtitle">Green Rating: 4.6/5</h3>
-                        <h3 class="home__subtitle">Rating: 4.6/5</h3>
-                        <p class="home__description">
-                            Where luxury unfolds at every turn. Discover Marina Bay Sands, a landmark destination in the heart of Singapore's vibrant city district. Envisioned by renowned architect
-                            Mosche Safdie, the striking aesthetic defiantly blurs the line between art and architecture.
-                            Experience unparalleled luxury matched by exceptional service, in a land where every detail whispers indulgence. An exhilirating oasis
-                            of tranquility and thrill. Gaze down on the glittering expanse of the city from the world-famous Infinity Pool and immerse yourself in a world of infinite possibilities all 
-                            in one extraordinary destination. There is nowhere else on earth quite like this.
+                        <h1 class="home__title">{{ name }}</h1>  <!-- Edit name -->
+                        <h3 class="home__subtitle">Green Rating: {{ greenScore }}</h3>  <!-- Edit  green rating -->
+                        <h3 class="home__subtitle">Rating:{{ rating }}</h3> <!-- Edit rating  -->
+                        <p class="home__description"> <!-- Edit description -->
+                            {{ description }}
                         </p>
-                        <a href="https://www.marinabaysands.com/?&ds_rl=1273801&ds_rl=1279392&ds_rl=1258716&gad_source=1&ds_rl=1273534&ds_rl=1279392&gclid=Cj0KCQjwy4KqBhD0ARIsAEbCt6iRNncIL2zB27WgpoBZ89cKQA11gqr7UVgkWz1Pf1qFnfK6dB8IRasaAg1AEALw_wcB&gclsrc=aw.ds" class="button button-flex">
+                        <a :href="url" class="button button-flex"> <!-- Edit url-->
                             Go To Their Website! <i class="uil uil-message button__icon"></i>
                         </a>
                     </div>
@@ -50,16 +46,12 @@
         <!-- ABOUT PAGE -->
         <section class="about section" id="about">
             <h2 class="section__title">About</h2>
-            <span class="section__subtitle">Marina Bay Sands</span>
+            <span class="section__subtitle">{{ name }}</span>
             <div class="about__container container grid">
-                <img src="../images/mbs.jpg" alt="" class="about__img">
+                <img :src="image" alt="" class="about__img">
                 <div class="about__data">
                     <p class="about__description">
-                        Where luxury unfolds at every turn. Discover Marina Bay Sands, a landmark destination in the heart of Singapore's vibrant city district. Envisioned by renowned architect
-                        Mosche Safdie, the striking aesthetic defiantly blurs the line between art and architecture.
-                        Experience unparalleled luxury matched by exceptional service, in a land where every detail whispers indulgence. An exhilirating oasis
-                        of tranquility and thrill. Gaze down on the glittering expanse of the city from the world-famous Infinity Pool and immerse yourself in a world of infinite possibilities all 
-                        in one extraordinary destination. There is nowhere else on earth quite like this.
+                        {{ description }}
                     </p>
                     <div class="about__info">
                         <div>
@@ -79,20 +71,108 @@
             </div>
         </section>
 
-        <!-- MAPS SERVICE SECTION -->
+        <!-- MAPS SERVICE SECTION --> 
         <section class="services section" id="services">
             <h2 class="section__title">Map</h2>
             <span class="section__subtitle">Where they are located</span>
             <div class="map__container container grid">
                 <!-- insert map here and replace the image with the API-->
-                <img src="../images/mbs.jpg"> 
+                <div id="map"></div>
             </div>
         </section>  
+        
     </main> 
 </template>
 
+<script>
+import axios from 'axios';
+
+(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ", v: "weekly"});
+
+        export default {
+  props: {
+    index: {
+      type: Number,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      image: "",
+      url: "",
+      name: "",
+      greenScore: "",
+      rating: "",
+      description: "",
+      lat: "",
+      long: ""
+    };
+  },
+  mounted() {
+    this.fetchDestinationData();
+  },
+  methods: {
+    async fetchDestinationData() {
+      try {
+        const response = await axios.get('/destination.json'); // Path to the JSON file in the public folder
+        console.log(response.data)
+        console.log(this.index)
+        const destination = response.data[this.index]
+        console.log(destination)
+        this.image = "../" + destination.image
+        this.url = destination.url
+        this.name = destination.name
+        this.greenScore = destination.greenScore
+        this.rating = destination.rating
+        this.description = destination.description
+        this.lat = destination.lat; // Assign lat and long here
+        this.long = destination.long;
+        
+        // Now that lat and long are set, call initMap
+        this.initMap();
+
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    },
+    initMap() {
+        let map;
+
+        // Use an arrow function to preserve the `this` context
+        const initMap = async () => {
+            const { Map } = await google.maps.importLibrary("maps");
+            map = new Map(document.getElementById("map"), {
+            center: { lat: parseFloat(this.lat), lng: parseFloat(this.long) },
+            zoom: 15
+            });
+
+            const marker = new google.maps.Marker({
+            position: { lat: parseFloat(this.lat), lng: parseFloat(this.long) },
+            map: map,
+            title: this.name,
+            draggable: false,
+            animation: google.maps.Animation.DROP
+            });
+
+            const infoWindow = new google.maps.InfoWindow({
+            content: "<h3>" + this.name + "</h3>"
+            });
+            infoWindow.open(map, marker);
+        };
+
+        initMap(); // Call the arrow function to preserve `this` context
+        }
+  },
+};
+</script>
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    #map {
+    height: 50%;
+    width: 50%;
+  }
     :root
     {
         /* FOR THE COLORS */

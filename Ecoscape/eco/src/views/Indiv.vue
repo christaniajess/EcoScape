@@ -19,7 +19,7 @@
         <NavBar/>
       <!--Header -->
         <br><br><br>
-        <Information />
+        <Information :index="index"/>
         <!-- <Info/> -->
         <!-- put the card component here -->
         <Waves/>
@@ -40,6 +40,11 @@ import Waves from "@/components/wallpaper.vue";
 import Information from "@/components/Information.vue";
 
 export default {
+  data() {
+    return {
+      index: this.$route.params.id
+    }
+  },
   components: {
     NavBar,
     HomepageParallax,

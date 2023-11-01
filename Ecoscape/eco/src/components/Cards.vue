@@ -3,11 +3,11 @@
     <div class="gallery">
       <Dest
         class="card"
-        v-for="(destination, index) of destinations"
+        v-for="(destination, index) of central_dest"
         :key="index"
         :name="destination.name"
         :image="destination.image"
-        @click="navigateToUrl(destination.url)"
+        @click="navigateToUrl(index)"
       ></Dest>
     </div>
   </div>
@@ -94,10 +94,9 @@ export default {
     };
   },
   methods: {
-    navigateToUrl(url) {
-      // Handle the navigation to the specified URL
-      window.location.href = url;
-    },
+  navigateToUrl(destinationIndex) {
+    this.$router.push({ name: 'Individual', params: { id: destinationIndex } });
+    }
   },
   created() {
     const url = '../destination.json';
