@@ -34,8 +34,6 @@ import NavBar from "@/components/NavBar.vue";
 import HomepageParallax from "@/components/HomepageParallax.vue";
 import Footer from "@/components/Footer.vue";
 import AboutCarousel from "@/components/AboutCarousel.vue";
-import Tabs from "@/components/Tabs.vue";
-import Cards from "@/components/Cards.vue";
 import Waves from "@/components/wallpaper.vue";
 import TabsHotel from "../components/TabsHotel.vue";
 
@@ -46,8 +44,6 @@ components: {
     HomepageParallax,
     Footer,
     AboutCarousel,
-    Tabs,
-    Cards,
     Waves,
     TabsHotel
 }
