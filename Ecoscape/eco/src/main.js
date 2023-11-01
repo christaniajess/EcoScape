@@ -9,7 +9,7 @@ import App from './App.vue';
 import store from "./store/index.js"; 
 import router from './router/index.js';
 import 'font-awesome/css/font-awesome.min.css';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 
 store.dispatch('checkUserAuthentication');
 

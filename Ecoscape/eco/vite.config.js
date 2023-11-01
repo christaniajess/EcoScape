@@ -11,9 +11,11 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-      'firebase': 'firebase/app',
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  }
+  },
+  commonjsOptions: {
+    esmExternals: true, 
+ },
 });
 

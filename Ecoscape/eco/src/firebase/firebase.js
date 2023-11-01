@@ -8,11 +8,9 @@ const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const firebase = require("firebase/app");
 const { getAuth, createUserWithEmailAndPassword } = require("firebase/auth");
-const app = require("express")();
-const { initializeApp } = require('firebase-admin/app');
-import 'firebase/auth';
+import { initializeApp } from 'firebase/app';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
-admin.initializeApp();
 // Your Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDmN08IvkUv2vQn7o_Cbd5daeQ3OXxGRpo",
@@ -24,6 +22,7 @@ const firebaseConfig = {
   appId: "1:104462396856:web:bcaaa850fb71afed13b34d",
   measurementId: "G-35CF9R9L0S"
 };
+const app = initializeApp(firebaseConfig);
 
 // Get the authentication service
 const auth = getAuth();

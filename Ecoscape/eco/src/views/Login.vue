@@ -88,9 +88,10 @@
 
 
 <script>
-import firebase from "firebase";
-import "firebase/auth"; 
-import db from "./firebase/firebase.js";
+import firebase from "firebase/app";
+import { initializeApp } from 'firebase/app';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+// import db from "./firebase/firebase.js";
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
 import Dashboard from "@/components/Dashboard.vue";
