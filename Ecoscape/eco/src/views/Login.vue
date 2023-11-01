@@ -50,7 +50,7 @@
                           <input type="password" name="confirmPass" class="form-style" placeholder="Confirm Password" id="confirmPass" autocomplete="off" v-model="confirmPassword">
                           <i class="input-icon uil uil-lock-alt"></i>
                         </div>
-                        <a href="#" class="btn mt-4" id="word" @click="performSignUp">Sign Up</a>
+                        <a href="#" class="btn mt-4" id="word" @click="signUp">Sign Up</a>
                       </div>
                     </div>
                    </div>     
@@ -66,7 +66,7 @@
                             <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" v-model="signupPassword">
                             <i class="input-icon uil-lock-alt"></i>
                           </div>
-                          <a href="#" class="btn mt-4" id="word" @click="performAction">Log In</a>
+                          <a href="#" class="btn mt-4" id="word" @click="isLogin">Log In</a>
                         </div>
                       </div>
                     </div>
@@ -83,52 +83,64 @@
 
   </template>
 
-<script>
-// import { createStore } from 'vuex';
 
+<script>
+import firebase from "firebase";
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
-import { auth } from "@/firebase/firebase.js"; // Import Firebase Authentication
-import firebaseApp from "@/firebase/firebase.js"; // Import your Firebase app instance
 import Dashboard from "@/components/Dashboard.vue";
 
+  
 export default {
   components: {
     NavBar,
     Footer,
   },
-  data() {
+  methods: {
+    data() {
     return {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
+      error: null,
     };
   },
   methods: {
-    async login() {
-      try {
-        await auth.signInWithEmailAndPassword(app, this.email, this.password); // Use auth from Firebase Authentication
-        this.$router.push('/Dashboard'); // Redirect to dashboard after successful login
-      } catch (error) {
-        console.error('Login error:', error);
-        // Handle login error here
-      }
-    },
-
-    async signUp() {
-      try {
-        await auth.createUserWithEmailAndPassword(app, this.email, this.password); // Use auth from Firebase Authentication
-        this.$router.push('/Dashboard'); // Redirect to dashboard after successful sign-up
-      } catch (error) {
-        console.error('Sign-up error:', error);
-        // Handle sign-up error here
-      }
+    async isLogin() {
+      this.error = null;
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          this.$router.replace("dashboard");
+        })
+        .catch(error => {
+          this.error = alert(error.message);
+        });
     },
   },
- created() {
+    async signUp() {
+      this.error = null;
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .then(() => {
+          const user = firebase.auth().currentUser;
+          const actionCodeSettings = {
+            url: `${process.env.VUE_APP_HOST_NAME}/sign-in/?email=${user.email}`,
+          };
+          user.sendEmailVerification(actionCodeSettings);
+        })
+        .catch(error => {
+          this.error = alert(error.message);
+        });
+    },
+  },
+  created() {
     this.$store.dispatch('checkUserAuthentication');
   },
 };
 </script>
+
 <style scoped>
     @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css");
     @import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"); 

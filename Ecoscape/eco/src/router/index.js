@@ -19,7 +19,12 @@ const routes = [
     name: "Dashboard",
     component: () => import("@/components/Dashboard.vue"),
     meta: { requiresAuth: true }, // Add this meta field to specify that authentication is required
-  }
+  }, 
+  {
+    path: '/sign-in', // set the URL the user will visit
+    name: 'signIn', // use this name as a shortcut in your links
+    component: SignIn // load the SignIn component
+   }
   // Add more routes as needed
 ];
 
@@ -28,20 +33,18 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
-  // Check if the route requires authentication
-  if (to.matched.some((record) => record.meta.requiresAuth)) {
-    // Check if the user is authenticated
-    if (store.getters.isUserAuthenticated) { // Adjust this to your Vuex store's state
-      next(); // Continue to the requested route
-    } else {
-      next({ name: "Login" }); // Redirect to the login page (or any other route)
-    }
-  } else {
-    next(); // No authentication required, continue to the route
-  }
-});
 
+router.beforeEach((to, from, next) => {
+  const currentUser = Firebase.auth().currentUser;
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  if (requiresAuth && !currentUser) {
+   next('/sign-in');
+  } else if (requiresAuth && currentUser) {
+   next();
+  } else {
+   next();
+  }
+  });
 export default router;
 
 
