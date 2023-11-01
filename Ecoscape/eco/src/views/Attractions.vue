@@ -99,7 +99,7 @@ data() {
                                 } else 
                                     this.destinations.push(destination)
                                 }
-                                // console.log(this.destinations)
+                                console.log(this.destinations)
                                 
                                 // Populating different areas
                                 for (destination of this.destinations) {

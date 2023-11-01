@@ -3,7 +3,7 @@
     <div class="gallery">
       <Dest
         class="card"
-        v-for="(destination, index) in destinations"
+        v-for="(destination, index) of destinations"
         :key="index"
         :name="destination.name"
         :image="destination.image"
@@ -207,15 +207,6 @@ export default {
   }
   
  /* tabs */
-  #tab-container 
-  {
-    /* margin-top: 20px;
-    margin-bottom: 10px; */
-    padding:1.5rem;
-    margin-left:1.5rem;
-    
-
-  }
 
   .tab-content 
   {
@@ -251,48 +242,6 @@ export default {
       color: #bd235d;
       cursor: pointer;
       
-    }
-  }
-  #tab1 {
-    &:checked {
-      &~#content1 {
-        display: block;
-      }
-    }
-  }
-  #tab2 {
-    &:checked {
-      &~#content2 {
-        display: block;
-      }
-    }
-  }
-  #tab3 {
-    &:checked {
-      &~#content3 {
-        display: block;
-      }
-    }
-  }
-  #tab4 {
-    &:checked {
-      &~#content4 {
-        display: block;
-      }
-    }
-  }
-  #tab5 {
-    &:checked {
-      &~#content5 {
-        display: block;
-      }
-    }
-  }
-  #tab6 {
-    &:checked {
-      &~#content6 {
-        display: block;
-      }
     }
   }
 
@@ -352,55 +301,5 @@ export default {
     font-weight: bold;
     cursor: pointer;
     transform: translateX(22px);
-}
- 
-
-.navbar {
-  padding: 0;
-  position: static;
-}
-
-.navbar ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  list-style: none;
-  align-items: center;
-}
-
-.navbar li {
-  position: relative;
-}
-
-.navbar a,
-.navbar a:focus {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 13px;
-  margin-left: 10px;
-  font-family: "Raleway", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: black;
-  white-space: nowrap;
-  transition: 0.3s;
-}
-
-.navbar a i,
-.navbar a:focus i {
-  font-size: 12px;
-  line-height: 0;
-  margin-left: 5px;
-}
-
-h1 span {
-  color:black; 
-}
-.navbar a:hover,
-.navbar.active,
-.navbar.active:focus,
-.navbar li:hover>a {
-  background: #BDBDBD;
 }
 </style>
