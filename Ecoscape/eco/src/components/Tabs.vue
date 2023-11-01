@@ -35,6 +35,7 @@
         padding:1.5rem;
         font-weight:600;
         font-size:1.5rem;
+        margin-left:2.6cm;
     }
     .animated-text span
     {
