@@ -3,11 +3,11 @@
     <div class="gallery">
       <Dest
         class="card"
-        v-for="(destination, index) of central_dest"
+        v-for="(destination, index) of destinations"
         :key="index"
         :name="destination.name"
-        :image="destination.image"
-        @click="navigateToUrl(index)"
+        :image="destination.image"  
+        @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
   </div>
@@ -20,7 +20,7 @@
         :key="index"
         :name="destination.name"
         :image="destination.image"
-        @click="navigateToUrl(destination.url)"
+        @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
   </div>
@@ -33,7 +33,7 @@
         :key="index"
         :name="destination.name"
         :image="destination.image"
-        @click="navigateToUrl(destination.url)"
+        @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
   </div>
@@ -46,7 +46,7 @@
         :key="index"
         :name="destination.name"
         :image="destination.image"
-        @click="navigateToUrl(destination.url)"
+        @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
   </div>
@@ -59,7 +59,7 @@
         :key="index"
         :name="destination.name"
         :image="destination.image"
-        @click="navigateToUrl(destination.url)"
+        @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
   </div>
@@ -72,7 +72,7 @@
         :key="index"
         :name="destination.name"
         :image="destination.image"
-        @click="navigateToUrl(destination.url)"
+        @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
   </div>
@@ -105,6 +105,9 @@ export default {
       .then((response) => {
         const result = response.data;
         this.destinations = result;
+        this.destinations.forEach((destination, index) => {
+          destination.index = index; // Add the 'index' attribute
+        });
 
         // Populating different areas
         this.central_dest = this.destinations.filter(destination => destination.area[1] === 'central');
