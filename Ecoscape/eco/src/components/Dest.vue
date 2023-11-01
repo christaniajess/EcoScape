@@ -3,7 +3,7 @@
       <figure>
         <img :src="image" >
         <figcaption>
-          <h3>{{ name }}</h3>
+          <h5>{{ name }}</h5>
         </figcaption>
       </figure>
     </article>
