@@ -19,8 +19,6 @@
       <NavBar/>
       <br><br>
       <Tabs/>
-          <!-- put the card component here -->
-      <Cards/>
       <Waves/> 
       <Footer/>
     </body>
@@ -128,6 +126,7 @@ data() {
 </script>
 
 <style scoped>
+@import "bootstrap/dist/css/bootstrap.css";
   #footer-separation {
   background-color: #8ebe6d; /* Remove white space above and below */
   border: none; /* Remove the default line */

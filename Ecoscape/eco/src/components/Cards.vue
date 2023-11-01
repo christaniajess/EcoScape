@@ -11,6 +11,71 @@
       ></Dest>
     </div>
   </div>
+
+  <div id="content2" class="tab-content">
+    <div class="gallery">
+      <Dest
+        class="card"
+        v-for="(destination, index) of central_dest"
+        :key="index"
+        :name="destination.name"
+        :image="destination.image"
+        @click="navigateToUrl(destination.url)"
+      ></Dest>
+    </div>
+  </div>
+
+  <div id="content3" class="tab-content">
+    <div class="gallery">
+      <Dest
+        class="card"
+        v-for="(destination, index) of east_dest"
+        :key="index"
+        :name="destination.name"
+        :image="destination.image"
+        @click="navigateToUrl(destination.url)"
+      ></Dest>
+    </div>
+  </div>
+
+  <div id="content4" class="tab-content">
+    <div class="gallery">
+      <Dest
+        class="card"
+        v-for="(destination, index) of south_dest"
+        :key="index"
+        :name="destination.name"
+        :image="destination.image"
+        @click="navigateToUrl(destination.url)"
+      ></Dest>
+    </div>
+  </div>
+
+  <div id="content5" class="tab-content">
+    <div class="gallery">
+      <Dest
+        class="card"
+        v-for="(destination, index) of north_dest"
+        :key="index"
+        :name="destination.name"
+        :image="destination.image"
+        @click="navigateToUrl(destination.url)"
+      ></Dest>
+    </div>
+  </div>
+
+  <div id="content6" class="tab-content">
+    <div class="gallery">
+      <Dest
+        class="card"
+        v-for="(destination, index) of west_dest"
+        :key="index"
+        :name="destination.name"
+        :image="destination.image"
+        @click="navigateToUrl(destination.url)"
+      ></Dest>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -58,7 +123,6 @@ export default {
   }
 };
 </script>
-
 
 <style scoped>
   /* Your existing component styles here */
@@ -245,15 +309,12 @@ export default {
     }
   }
 
-  .gallery
-  {
-    display: flex;
-    gap:1.5cm;
-    padding-top: 1rem;
-    
-    
-  }
-  .card
+  .gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Display 3 cards per row by default */
+  gap: 20px; /* Adjust the gap between cards */
+}
+  /* .card
   {
     position:relative;
     left:1.5rem;
@@ -265,7 +326,14 @@ export default {
     box-shadow: 0 5px 13px rgba(0, 0, 0, 0.5);
     outline: 1px solid #3c343d;
     overflow:hidden;
-  }
+  } */
+  .card {
+  border: 1px solid #ccc; /* Card border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 0;
+  display: flex; /* Make the card a flex container */
+  flex-direction: column; /* Arrange card contents vertically */
+}
   .card img {
     height: 160px;
     object-fit: cover;
@@ -301,5 +369,30 @@ export default {
     font-weight: bold;
     cursor: pointer;
     transform: translateX(22px);
+}
+@media (max-width: 1400px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr); /* Display 2 cards per row for medium-sized screens */
+  }
+  
+}
+@media (max-width: 992px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr); /* Display 2 cards per row for medium-sized screens */
+  }
+  
+}
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Display 2 cards per row for medium-sized screens */
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr; /* Display 1 card per row for small screens */
+  }
+  
 }
 </style>

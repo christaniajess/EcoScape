@@ -23,11 +23,19 @@
     
               <input id="tab6" type="radio" name="tabs">
               <label for="tab6">West</label>
+
+              <Cards />
             </div>
         </div>       
     </div>
 </template>
-
+<script>
+import Cards from "@/components/Cards.vue";
+export default {
+    components: {
+        Cards
+    }
+}</script>
 <style>
 
     .animated-text
@@ -179,6 +187,5 @@
             }
         }
     }
-    
 </style>
 

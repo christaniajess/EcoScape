@@ -1,7 +1,7 @@
 <template>
     <article class="card">
       <figure>
-        <img :src="image" />
+        <img :src="image" >
         <figcaption>
           <h3>{{ name }}</h3>
         </figcaption>
@@ -11,6 +11,8 @@
   
   <script>
   export default {
+    created() {
+    },
     props: ['name', 'image', 'url'],
   };
 
