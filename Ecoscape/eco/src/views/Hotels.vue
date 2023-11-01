@@ -1,30 +1,32 @@
 <template>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
-      <!-- <link rel="stylesheet" href="./menu.css"> -->
-      <!-- <link rel="stylesheet"  href="../attraction/attractionstyle.css"> -->
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-        crossorigin="anonymous"
-      />
-    </head>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="./menu.css"> -->
+    <!-- <link rel="stylesheet"  href="../attraction/attractionstyle.css"> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+
   <body>
-      <NavBar/>
-      <!--Header -->
-        <br><br>
-        <Tabs/>
-        <!-- put the card component here -->
-        <Waves/>
-        <Footer/>
-      </body>
-      </html>
+    <NavBar/>
+    <br><br>
+    <TabsHotel/>
+    <Waves/> 
+    <Footer/>
+  </body>
+
+</html>
 </template>
+
+
 
 <script>
 
@@ -35,9 +37,11 @@ import AboutCarousel from "@/components/AboutCarousel.vue";
 import Tabs from "@/components/Tabs.vue";
 import Cards from "@/components/Cards.vue";
 import Waves from "@/components/wallpaper.vue";
+import TabsHotel from "../components/TabsHotel.vue";
+
 
 export default {
-  components: {
+components: {
     NavBar,
     HomepageParallax,
     Footer,
@@ -45,16 +49,19 @@ export default {
     Tabs,
     Cards,
     Waves,
-},
+    TabsHotel
 }
+}
+
 </script>
 
 <style scoped>
-  #footer-separation {
-  background-color: #8ebe6d; /* Remove white space above and below */
-  border: none; /* Remove the default line */
-  height: 1px; /* Increase line thickness */
-  width: 80%; /* Adjust width as needed */
-  margin: 0 auto; /* Center the line horizontally */
+@import "bootstrap/dist/css/bootstrap.css";
+#footer-separation {
+background-color: #8ebe6d; /* Remove white space above and below */
+border: none; /* Remove the default line */
+height: 1px; /* Increase line thickness */
+width: 80%; /* Adjust width as needed */
+margin: 0 auto; /* Center the line horizontally */
 }
 </style>

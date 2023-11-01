@@ -4,6 +4,7 @@ import Attraction from '@/views/Attractions.vue';
 import Hotel from '@/views/Hotels.vue';
 import Restaurants from '@/views/Restaurants.vue';
 import Individual from '@/views/Indiv.vue'; // Delete when done
+import IndividualHotel from '@/views/IndivHotel.vue';
 
 const routes = [
   {
@@ -34,6 +35,11 @@ const routes = [
     name: 'Individual',
     component: Individual,
   },
+  {
+    path: '/individualHotel/:id',
+    name: 'IndividualHotel',
+    component: IndividualHotel
+}
 ];
 
 const router = createRouter({
