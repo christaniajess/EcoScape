@@ -11,6 +11,7 @@
     "@googlemaps/js-api-loader": "^1.16.2",
     "aos": "^2.3.4",
     "axios": "^1.6.0",
+    "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
     "boxicons": "^2.1.4",
     "font-awesome": "^4.7.0",

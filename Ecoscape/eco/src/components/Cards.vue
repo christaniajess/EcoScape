@@ -1,17 +1,80 @@
 <template>
   <div id="content1" class="tab-content">
-    <div class="gallery" v-if="destinations.length > 0">
+    <div class="gallery">
       <Dest
-        v-for="destination in destinations"
-        :key="destination.url"
+        class="card"
+        v-for="(destination, index) of destinations"
+        :key="index"
         :name="destination.name"
         :image="destination.image"
-        :url="destination.url"
-        />
-      </div>
-      <div v-else>
-        Loading... <!-- Or some loading message -->
-      </div>
+        @click="navigateToUrl(destination.url)"
+      ></Dest>
+    </div>
+  </div>
+
+  <div id="content2" class="tab-content">
+    <div class="gallery">
+      <Dest
+        class="card"
+        v-for="(destination, index) of central_dest"
+        :key="index"
+        :name="destination.name"
+        :image="destination.image"
+        @click="navigateToUrl(destination.url)"
+      ></Dest>
+    </div>
+  </div>
+
+  <div id="content3" class="tab-content">
+    <div class="gallery">
+      <Dest
+        class="card"
+        v-for="(destination, index) of east_dest"
+        :key="index"
+        :name="destination.name"
+        :image="destination.image"
+        @click="navigateToUrl(destination.url)"
+      ></Dest>
+    </div>
+  </div>
+
+  <div id="content4" class="tab-content">
+    <div class="gallery">
+      <Dest
+        class="card"
+        v-for="(destination, index) of south_dest"
+        :key="index"
+        :name="destination.name"
+        :image="destination.image"
+        @click="navigateToUrl(destination.url)"
+      ></Dest>
+    </div>
+  </div>
+
+  <div id="content5" class="tab-content">
+    <div class="gallery">
+      <Dest
+        class="card"
+        v-for="(destination, index) of north_dest"
+        :key="index"
+        :name="destination.name"
+        :image="destination.image"
+        @click="navigateToUrl(destination.url)"
+      ></Dest>
+    </div>
+  </div>
+
+  <div id="content6" class="tab-content">
+    <div class="gallery">
+      <Dest
+        class="card"
+        v-for="(destination, index) of west_dest"
+        :key="index"
+        :name="destination.name"
+        :image="destination.image"
+        @click="navigateToUrl(destination.url)"
+      ></Dest>
+    </div>
   </div>
 </template>
 
@@ -22,8 +85,7 @@ import Dest from "@/components/Dest.vue";
 export default {
   data() {
     return {
-      destinations: [{ name: '', image: '', url: '', area: [] }],
-      init: true,
+      destinations: [],
       central_dest: [],
       north_dest: [],
       south_dest: [],
@@ -37,97 +99,20 @@ export default {
       window.location.href = url;
     },
   },
-  computed: {
-    dividedAllDestinations() {
-      // Divide the destinations array into groups of 6
-      const result = [];
-      const groupSize = 6;
-      for (let i = 0; i < this.destinations.length; i += groupSize) {
-        result.push(this.destinations.slice(i, i + groupSize));
-      }
-      return result;
-    },
-    dividedCentralDestinations() {
-      // Divide the destinations array into groups of 6
-      const resultC = [];
-      const groupSize = 6;
-      for (let i = 0; i < this.central_dest.length; i += groupSize) {
-        resultC.push(this.central_dest.slice(i, i + groupSize));
-      }
-      return resultC;
-    },
-    dividedNorthDestinations() {
-      // Divide the destinations array into groups of 6
-      const resultN = [];
-      const groupSize = 6;
-      for (let i = 0; i < this.north_dest.length; i += groupSize) {
-        resultN.push(this.north_dest.slice(i, i + groupSize));
-      }
-      return resultN;
-    },
-    dividedSouthDestinations() {
-      // Divide the destinations array into groups of 6
-      const resultS = [];
-      const groupSize = 6;
-      for (let i = 0; i < this.south_dest.length; i += groupSize) {
-        resultS.push(this.south_dest.slice(i, i + groupSize));
-      }
-      return resultS;
-    },
-    dividedEastDestinations() {
-      // Divide the destinations array into groups of 6
-      const resultE = [];
-      const groupSize = 6;
-      for (let i = 0; i < this.east_dest.length; i += groupSize) {
-        resultE.push(this.east_dest.slice(i, i + groupSize));
-      }
-      return resultE;
-    },
-    dividedWestDestinations() {
-      // Divide the destinations array into groups of 6
-      const resultW = [];
-      const groupSize = 6;
-      for (let i = 0; i < this.west_dest.length; i += groupSize) {
-        resultW.push(this.west_dest.slice(i, i + groupSize));
-      }
-      return resultW;
-    },
-  },
   created() {
     const url = '../destination.json';
     axios
       .get(url)
       .then((response) => {
         const result = response.data;
-        console.log(result)
+        this.destinations = result;
 
-        for (let i = 0; i < result.length; i++) {
-          const destination = {};
-
-          destination.name = result[i].name;
-          destination.image = '../' + result[i].image;
-          destination.url = result[i].url;
-          destination.area = result[i].area;
-          if (this.init) {
-            this.destinations = [destination];
-            this.init = false;
-          } else this.destinations.push(destination);
-        }
-        
         // Populating different areas
-        for (const destination of this.destinations) {
-          if (destination.area[1] == 'central') {
-            this.central_dest.push(destination);
-          } else if (destination.area[1] == 'north') {
-            this.north_dest.push(destination);
-          } else if (destination.area[1] == 'south') {
-            this.south_dest.push(destination);
-          } else if (destination.area[1] == 'east') {
-            this.east_dest.push(destination);
-          } else if (destination.area[1] == 'west') {
-            this.west_dest.push(destination);
-          }
-        }
+        this.central_dest = this.destinations.filter(destination => destination.area[1] === 'central');
+        this.north_dest = this.destinations.filter(destination => destination.area[1] === 'north');
+        this.south_dest = this.destinations.filter(destination => destination.area[1] === 'south');
+        this.east_dest = this.destinations.filter(destination => destination.area[1] === 'east');
+        this.west_dest = this.destinations.filter(destination => destination.area[1] === 'west');
       })
       .catch((error) => {
         console.error(error);
@@ -138,7 +123,6 @@ export default {
   }
 };
 </script>
-
 
 <style scoped>
   /* Your existing component styles here */
@@ -251,7 +235,164 @@ export default {
     --border: #fff;
   }
   
-  /* ... (Continue adding the rest of the provided CSS code) ... */
+  *, *::after, *::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 
-  /* Add the provided CSS code above this line */
+  #header {
+    transition: all 0.5s;
+    z-index: 997;
+    transition: all 0.5s;
+    padding: 24px 0;
+    background: rgba(103, 176, 209, 0.8);
+  }
+  
+  #header.header-transparent {
+    background: transparent;
+  }
+  
+  #header.header-scrolled {
+    background: rgba(55, 142, 181, 0.9);
+    padding: 12px;
+  }
+  
+  #header .logo img {
+    padding: 0;
+    margin: 0;
+    max-height: 50px;
+  }
+  
+  @media (max-width: 768px) {
+    #header.header-scrolled {
+      padding: 15px 0;
+    }
+  }
+  
+ /* tabs */
+
+  .tab-content 
+  {
+    display: none;
+    padding: 20px 0 0;
+  }
+
+  input 
+  {
+    display: none;
+    &:checked 
+    {
+      &+label 
+      {
+        color: #bd235d;
+      }
+    }
+  }
+  label {
+    display: inline-block;
+    padding: 0 25px;
+    font-weight: 600;
+    &:not(:first-of-type) {
+      border-left: 2px solid #628a5c;
+      @media screen and (max-width: 480px) {
+        border-left: none;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      display: block;
+    }
+    &:hover {
+      color: #bd235d;
+      cursor: pointer;
+      
+    }
+  }
+
+  .gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Display 3 cards per row by default */
+  gap: 20px; /* Adjust the gap between cards */
+}
+  /* .card
+  {
+    position:relative;
+    left:1.5rem;
+    width:190px;
+    height:140px;
+    border-radius:8px;
+    transition:1000ms all;
+    transform-origin: center left;
+    box-shadow: 0 5px 13px rgba(0, 0, 0, 0.5);
+    outline: 1px solid #3c343d;
+    overflow:hidden;
+  } */
+  .card {
+  border: 1px solid #ccc; /* Card border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 0;
+  display: flex; /* Make the card a flex container */
+  flex-direction: column; /* Arrange card contents vertically */
+}
+  .card img {
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+.card:hover figcaption {
+    font-size: 0.6rem;
+    position: absolute;
+    height: 180px;
+    width: 190px;
+    display: flex;
+    align-items: end;
+    background: 
+    linear-gradient(
+        to top, 
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    color: white;
+    left: 0px;
+    bottom: 0px;
+    padding-left: 12px;
+    padding-bottom: 10px;
+}
+
+.card:hover ~ .card {
+    font-weight: bold;
+    cursor: pointer;
+    transform: translateX(22px);
+}
+@media (max-width: 1400px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr); /* Display 2 cards per row for medium-sized screens */
+  }
+  
+}
+@media (max-width: 992px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr); /* Display 2 cards per row for medium-sized screens */
+  }
+  
+}
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Display 2 cards per row for medium-sized screens */
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr; /* Display 1 card per row for small screens */
+  }
+  
+}
 </style>
