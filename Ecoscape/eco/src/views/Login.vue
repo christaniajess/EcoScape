@@ -50,6 +50,9 @@
                           <input type="password" name="confirmPass" class="form-style" placeholder="Confirm Password" id="confirmPass" autocomplete="off" v-model="confirmPassword">
                           <i class="input-icon uil uil-lock-alt"></i>
                         </div>
+                        <!-- <div class="error" v-show="error">
+                            {{ this.errorm }}
+                        </div> -->
                         <a href="#" class="btn mt-4" id="word" @click="signUp">Sign Up</a>
                       </div>
                     </div>
@@ -86,6 +89,8 @@
 
 <script>
 import firebase from "firebase";
+import "firebase/auth"; 
+import db from "./firebase/firebase.js";
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
 import Dashboard from "@/components/Dashboard.vue";
