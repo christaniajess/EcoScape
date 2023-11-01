@@ -77,7 +77,7 @@
             <span class="section__subtitle">Where they are located</span>
             <div class="map__container container grid">
                 <!-- insert map here and replace the image with the API-->
-                <div id="map"></div>
+                <GoogleMap v-if="lat !== 0 && long !== 0" :lat="lat" :long="long" :name="name"/>
             </div>
         </section>  
         
@@ -86,11 +86,12 @@
 
 <script>
 import axios from 'axios';
+import GoogleMap from '@/components/GoogleMap.vue';
 
-(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-        ({key: "AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ", v: "weekly"});
-
-        export default {
+export default {
+    components: {
+        GoogleMap
+    },
   props: {
     index: {
       type: Number,
@@ -105,8 +106,8 @@ import axios from 'axios';
       greenScore: "",
       rating: "",
       description: "",
-      lat: "",
-      long: ""
+      lat: 0,
+      long: 0
     };
   },
   mounted() {
@@ -126,44 +127,15 @@ import axios from 'axios';
         this.greenScore = destination.greenScore
         this.rating = destination.rating
         this.description = destination.description
-        this.lat = destination.lat; // Assign lat and long here
-        this.long = destination.long;
-        
-        // Now that lat and long are set, call initMap
-        this.initMap();
+        this.lat = parseFloat(destination.lat);
+        this.long = parseFloat(destination.long);
+
 
       } catch (error) {
         console.error('Error fetching data:', error);
       }
-    },
-    initMap() {
-        let map;
-
-        // Use an arrow function to preserve the `this` context
-        const initMap = async () => {
-            const { Map } = await google.maps.importLibrary("maps");
-            map = new Map(document.getElementById("map"), {
-            center: { lat: parseFloat(this.lat), lng: parseFloat(this.long) },
-            zoom: 15
-            });
-
-            const marker = new google.maps.Marker({
-            position: { lat: parseFloat(this.lat), lng: parseFloat(this.long) },
-            map: map,
-            title: this.name,
-            draggable: false,
-            animation: google.maps.Animation.DROP
-            });
-
-            const infoWindow = new google.maps.InfoWindow({
-            content: "<h3>" + this.name + "</h3>"
-            });
-            infoWindow.open(map, marker);
-        };
-
-        initMap(); // Call the arrow function to preserve `this` context
-        }
-  },
+    }
+  }
 };
 </script>
 
