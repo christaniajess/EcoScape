@@ -7,7 +7,7 @@
 
           <div class="col-lg-4 col-md-4 mb-2 mb-lg-0">
             <div class="d-flex align-items-center">
-              <img src="images/icon-lightgreen.png" alt="" class="footer-logo mt-4 mb-3" />
+              <img src="/images/icon-lightgreen.png" alt="img" class="footer-logo mt-4 mb-3" />
               <h2 class="footer-main-title mt-2 ps-3 pt-2">EcoScape</h2>
             </div>
           </div>
@@ -77,7 +77,11 @@
 </template>
 
 <script>
+// const greenIcon = "https://firebasestorage.googleapis.com/v0/b/ecoscape-ea1d6.appspot.com/o/icon-lightgreen.png?alt=media&token=50011abb-4973-45fe-a30e-5f018029bfaf&_gl=1*1jnmu3r*_ga*MTk3MDY3MDUwOS4xNjk0MzMzNDE5*_ga_CW55HF8NVT*MTY5ODk0NzI5Mi4yNS4xLjE2OTg5NDg2MDIuMjguMC4w"; 
+
+
 export default {
+  // greenIcon: 'https://firebasestorage.googleapis.com/v0/b/ecoscape-ea1d6.appspot.com/o/icon-lightgreen.png?alt=media&token=50011abb-4973-45fe-a30e-5f018029bfaf&_gl=1*138q2ee*_ga*MTk3MDY3MDUwOS4xNjk0MzMzNDE5*_ga_CW55HF8NVT*MTY5ODk0NzI5Mi4yNS4xLjE2OTg5NDg2OTAuNjAuMC4w',
   methods: {
     openEmail() {
       window.open('mailto:example@example.com');

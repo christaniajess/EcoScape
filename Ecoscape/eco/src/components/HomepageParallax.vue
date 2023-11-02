@@ -6,12 +6,10 @@
         alt="bg"
         id="bg"
       />
-      <img
-        src="images/homepage-img2.png"
-        id="img"
+      <img src="/images/homepage-img2.png" id="img"
         class="w-100 h-100"
         alt="img"
-      />
+        />
       <div data-aos="fade-up" data-aos-duration="1500">
         <div id="main-title">
           <img :src="iconImage" id="title-icon" alt="" /> EcoScape
@@ -26,6 +24,8 @@
   </template>
   
   <script>
+// import imageSrc from '/images/homepage-img2.png';
+
   export default {
     data() {
       return {

@@ -1,0 +1,1 @@
+import{_ as o,c as e,o as t,a}from"./index-3fb011e4.js";import"images/homepage-img2.png";import"images/icon-lightgreen.png";const s={name:"Dashboard"},r=a("h1",null,"Welcome to the Dashboard",-1),c=[r];function n(_,d,p,i,l,h){return t(),e("div",null,c)}const $=o(s,[["render",n]]);export{$ as default};

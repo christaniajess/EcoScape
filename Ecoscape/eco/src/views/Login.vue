@@ -95,15 +95,15 @@
 
 
 <script>
-import firebase from "firebase/compat/app"; 
-// import { initializeApp } from 'firebase/compat/functions';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import 'firebase/auth';
-import 'firebase/firestore';
-import {numbersRef} from "@/firebase/firebase.js"; 
-import auth from "@/firebase/firebase.js";
-import db from "@/firebase/firebase.js";
-import { collection, getDoc, addDoc } from 'firebase/firestore';
+// import firebase from "firebase/compat/app"; 
+// // import { initializeApp } from 'firebase/compat/functions';
+// import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+// import 'firebase/auth';
+// import 'firebase/firestore';
+// import {numbersRef} from "@/firebase/firebase.js"; 
+// import auth from "@/firebase/firebase.js";
+// import db from "@/firebase/firebase.js";
+// import { collection, getDoc, addDoc } from 'firebase/firestore';
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
 import Dashboard from "@/components/Dashboard.vue";
@@ -129,59 +129,58 @@ export default {
     NavBar,
     Footer,
   },
-  methods: {
-    data() {
-    return {
-      email: "",
-      password: "",
-      error: null,
-    };
-  },
-  methods: {
-    async isLogin() {
-      this.error = null;
-      firebase
-        .auth()
-        .signInWithEmailAndPassword(this.email, this.password)
-        .then(() => {
-          this.$router.replace("dashboard");
-        })
-        .catch(error => {
-          this.error = alert(error.message);
-        });
-    },
-  },
-    async signUp() {
+  // methods: {
+  //   data() {
+  //   return {
+  //     email: "",
+  //     password: "",
+  //     error: null,
+  //   };
+  // }  
+  //   async isLogin() {
+  //     this.error = null;
+  //     firebase
+  //       .auth()
+  //       .signInWithEmailAndPassword(this.email, this.password)
+  //       .then(() => {
+  //         this.$router.replace("dashboard");
+  //       })
+  //       .catch(error => {
+  //         this.error = alert(error.message);
+  //       });
+  //   },
+  // },
+  //   async signUp() {
 
-      // 'users' collection reference
-      const colRef = collection(db, 'users')
-      //data to send
-      const dataObj = {
-        email : "james012@gmail.com", 
-        password: "01212"
-      }
-      const docRef = await addDoc(colRef, dataObj)
+  //     // 'users' collection reference
+  //     const colRef = collection(db, 'users')
+  //     //data to send
+  //     const dataObj = {
+  //       email : "james012@gmail.com", 
+  //       password: "01212"
+  //     }
+  //     const docRef = await addDoc(colRef, dataObj)
 
-      console.log('Document was created with ID', docRef.id)
-      this.error = null;
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(this.email, this.password)
-        .then(() => {
-          const user = firebase.auth().currentUser;
-          const actionCodeSettings = {
-            url: `${process.env.VUE_APP_HOST_NAME}/sign-in/?email=${user.email}`,
-          };
-          user.sendEmailVerification(actionCodeSettings);
-        })
-        .catch(error => {
-          this.error = alert(error.message);
-        });
-    },
-  },
-  created() {
-    this.$store.dispatch('checkUserAuthentication');
-  },
+  //     console.log('Document was created with ID', docRef.id)
+  //     this.error = null;
+  //     firebase
+  //       .auth()
+  //       .createUserWithEmailAndPassword(this.email, this.password)
+  //       .then(() => {
+  //         const user = firebase.auth().currentUser;
+  //         const actionCodeSettings = {
+  //           url: `${process.env.VUE_APP_HOST_NAME}/sign-in/?email=${user.email}`,
+  //         };
+  //         user.sendEmailVerification(actionCodeSettings);
+  //       })
+  //       .catch(error => {
+  //         this.error = alert(error.message);
+  //       });
+  //   },
+  // },
+  // created() {
+  //   this.$store.dispatch('checkUserAuthentication');
+  // },
 };
 </script>
 

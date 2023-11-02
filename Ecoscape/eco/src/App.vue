@@ -13,9 +13,9 @@ import Footer from "@/components/Footer.vue";
 import "aos/dist/aos.css"; // Import the AOS styles
 import AOS from "aos";
 //import firestore instance & relevant methods 
-import firebaseApp from "@/firebase/firebase.js";
-import { doc, getDoc, addDoc } from 'firebase/firestore';
-import db from '@/firebase/firebase.js'; 
+// import firebaseApp from "@/firebase/firebase.js";
+// import { doc, getDoc, addDoc } from 'firebase/firestore';
+// import db from '@/firebase/firebase.js'; 
 
 
 

@@ -40,7 +40,7 @@
                   <li><router-link to="#">Hotels</router-link></li>
                   <li><router-link to="#">Attractions</router-link></li>
                   <li><router-link to="#">Restaurants</router-link></li>
-                  <li><router-link to="#">Green Transport Planner</router-link></li>
+                  <li><router-link to="/Transport">Green Transport Planner</router-link></li>
                 </ul>
               </li>
               <li>
