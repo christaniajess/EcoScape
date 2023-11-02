@@ -23,6 +23,7 @@
         @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
+    <p v-if="central_dest.length === 0">No green attractions in the Central area.</p>
   </div>
 
   <div id="content3" class="tab-content">
@@ -36,6 +37,7 @@
         @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
+    <p v-if="east_dest.length === 0">No green attractions in the East area.</p>
   </div>
 
   <div id="content4" class="tab-content">
@@ -49,6 +51,7 @@
         @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
+    <p v-if="south_dest.length === 0">No green attractions in the South area.</p>
   </div>
 
   <div id="content5" class="tab-content">
@@ -62,6 +65,7 @@
         @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
+    <p v-if="north_dest.length === 0">No green attractions in the North area.</p>
   </div>
 
   <div id="content6" class="tab-content">
@@ -75,6 +79,7 @@
         @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
+    <p v-if="west_dest.length === 0">No green attractions in the West area.</p>
   </div>
 </template>
 
