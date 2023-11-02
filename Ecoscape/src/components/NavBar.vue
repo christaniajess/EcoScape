@@ -40,7 +40,7 @@
                   <li><router-link to="#">Hotels</router-link></li>
                   <li><router-link to="#">Attractions</router-link></li>
                   <li><router-link to="#">Restaurants</router-link></li>
-                  <li><router-link to="#">Green Transport Planner</router-link></li>
+                  <li><router-link to="/transport">Green Transport Planner</router-link></li>
                 </ul>
               </li>
               <li v-if="!userLoggedIn">
@@ -114,7 +114,7 @@ export default {
 
 #header {
     transition: all 0.5s;
-    z-index: 997;
+    z-index: 1000;
     transition: all 0.5s;
     padding: 24px 0;
   }

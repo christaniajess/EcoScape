@@ -53,7 +53,7 @@
   </script>
 
 <style scoped>
-    @media screen and (min-width: 1001px) {
+  @media screen and (min-width: 1001px) {
   #main-title{
     position: relative;
     margin-bottom: 350px;
@@ -188,16 +188,6 @@ section img{
     object-fit: cover;
     pointer-events: none;
 }
-
-/* #main-title{
-    position: relative;
-    margin-bottom: 350px;
-    color: #fff;
-    font-size: 7em;
-    z-index: 1;
-    font-family: 'Poppins', sans-serif;
-    text-shadow: 4px 4px #00000072;
-} */
 
 #img{
     z-index: 2;

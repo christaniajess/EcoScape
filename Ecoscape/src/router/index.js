@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Homepage from '@/views/Homepage.vue';
 import Login from '@/views/Login.vue';
 import NotFound from '@/views/NotFound.vue';
+import Transport from '@/views/Transport.vue'
 
 const routes = [
   {
@@ -14,13 +15,17 @@ const routes = [
     name: 'Login',
     component: Login,
   },
+  {
+    path: '/transport',
+    name: 'Transport',
+    component: Transport,
+  },
   //catchall404
   {
     path: '/:catchAll(.*)',
     name: 'NotFound',
     component: NotFound,
   },
-
 ];
 
 const router = createRouter({

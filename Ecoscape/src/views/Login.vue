@@ -80,7 +80,7 @@ jocelyn smu, [30/10/2023 2:36 PM]
 
   </template>
 
-jocelyn smu, [30/10/2023 2:36 PM]
+
 <script>
 import NavBar from "@/components/NavBar.vue"; // Make sure to adjust the import path as needed
 import Footer from "@/components/Footer.vue";
@@ -140,7 +140,17 @@ export default {
 
     @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900"); 
 
+    @import url(https://db.onlinewebfonts.com/c/ae54ba780341eb52a73bf1c481b8b951?family=Poppins);
 
+@font-face {
+  font-family: "Poppins";
+  src: url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.eot");
+  src: url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/ae54ba780341eb52a73bf1c481b8b951.svg#Poppins")format("svg");
+}
 body {
     font-family: "Poppins", sans-serif;
     background-image: url("./images/sg.jpg");

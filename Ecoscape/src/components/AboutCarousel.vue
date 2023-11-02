@@ -18,7 +18,7 @@
             :itemsToShow="3"
             :wrapAround="true"
             :transition="1000"
-            :autoplay="3500"
+            :autoplay="2500"
           >
             <Slide v-for="image in images" :key="image.src">
               <div class="carousel__item">
