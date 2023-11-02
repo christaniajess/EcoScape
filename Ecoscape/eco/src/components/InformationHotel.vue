@@ -45,7 +45,6 @@
 
         <!-- ABOUT PAGE -->
         <section class="about section" id="about">
-            <h2 class="section__title">About</h2>
             <span class="section__subtitle">{{ name }}</span>
             <div class="about__container container grid">
                 <img :src="image" alt="" class="about__img">
