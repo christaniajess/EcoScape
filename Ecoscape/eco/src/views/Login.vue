@@ -5,7 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EcoScape</title>
-
+      <!-- update the version number as needed -->
+    <!-- <script defer src="/__/firebase/10.5.2/firebase-app-compat.js"></script> -->
+    <!-- include only the Firebase features as you need -->
+    <!-- <script defer src="/__/firebase/10.5.2/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/10.5.2/firebase-performance-compat.js"></script> -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -37,10 +48,6 @@
                           <div class="form-group">
                           <input type="text" name="SignUpEmail" class="form-style" placeholder="Your Email (e.g james012@gmail.com)" id="SignUpEmail" autocomplete="off" v-model="signupName">
                           <i class="input-icon uil uil-user"></i>
-                        </div>
-                        <div class="form-group mt-2">
-                          <input type="password" name="Signpass" class="form-style" placeholder="Your Password" id="Signpass" autocomplete="off" v-model="signupPassword">
-                          <i class="input-icon uil uil-lock-alt"></i>
                         </div>
                         <div class="form-group mt-2">
                           <input type="password" name="Signpass" class="form-style" placeholder="Your Password" id="Signpass" autocomplete="off" v-model="signupPassword">
@@ -88,13 +95,33 @@
 
 
 <script>
-import firebase from "firebase/app";
-import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-// import db from "./firebase/firebase.js";
+import firebase from "firebase/compat/app"; 
+// import { initializeApp } from 'firebase/compat/functions';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import 'firebase/auth';
+import 'firebase/firestore';
+import {numbersRef} from "@/firebase/firebase.js"; 
+import auth from "@/firebase/firebase.js";
+import db from "@/firebase/firebase.js";
+import { collection, getDoc, addDoc } from 'firebase/firestore';
 import NavBar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
 import Dashboard from "@/components/Dashboard.vue";
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDmN08IvkUv2vQn7o_Cbd5daeQ3OXxGRpo",
+//   authDomain: "ecoscape-ea1d6.firebaseapp.com",
+//   databaseURL: "https://ecoscape-ea1d6-default-rtdb.asia-southeast1.firebasedatabase.app",
+//   projectId: "ecoscape-ea1d6",
+//   storageBucket: "ecoscape-ea1d6.appspot.com",
+//   messagingSenderId: "104462396856",
+//   appId: "1:104462396856:web:bcaaa850fb71afed13b34d",
+//   measurementId: "G-35CF9R9L0S"
+// };
+
+// firebase.initializeApp(firebaseConfig);
+
+
 
   
 export default {
@@ -125,6 +152,17 @@ export default {
     },
   },
     async signUp() {
+
+      // 'users' collection reference
+      const colRef = collection(db, 'users')
+      //data to send
+      const dataObj = {
+        email : "james012@gmail.com", 
+        password: "01212"
+      }
+      const docRef = await addDoc(colRef, dataObj)
+
+      console.log('Document was created with ID', docRef.id)
       this.error = null;
       firebase
         .auth()
@@ -190,17 +228,7 @@ h1 span {
 .navbar li:hover>a {
     background: rgba(255, 255, 255, 0.2);
   }
-/* .img-responsive {
-    max-width: none; 
-    margin: 0; 
-    padding: 0; 
-    background-color:rgb(255, 255, 255);
-    opacity:0.6;
-    width: 100%; 
-    height: 100%; 
-    align-items: center;
-    
-} */
+
 .banner {
     margin: 0;
     padding:0; 
