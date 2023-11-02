@@ -38,7 +38,7 @@
                 <a href="#"><span>Directory</span> <i class="fa fa-angle-down"></i></a>
                 <ul>
                   <li><router-link to="#">Hotels</router-link></li>
-                  <li><router-link to="#">Attractions</router-link></li>
+                  <li><router-link to="/att">Attractions</router-link></li>
                   <li><router-link to="#">Restaurants</router-link></li>
                   <li><router-link to="/transport">Green Transport Planner</router-link></li>
                 </ul>

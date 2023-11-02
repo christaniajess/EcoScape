@@ -309,9 +309,10 @@ body {
 }
 
 /* transport */
+
 .flex-container {
     position: absolute;
-    height: 95vh;
+    height: 97vh;
     width: 100%;
     display: -webkit-flex;
     display: flex;
@@ -576,10 +577,10 @@ textarea {
 .card {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   background-color: #fff;
-  padding: 20px;
+  padding: 10px;
   position: relative;
   z-index: 2;
-  top: -20px;
+  top: -10px;
 }
 
 .card .card-title{

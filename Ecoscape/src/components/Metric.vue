@@ -1,9 +1,9 @@
 <template>
   <section id="metrics">
     <div class="counter">
-      <p>State</p>
+      <p>Status</p>
       <div class="odometer" ref="odometer">0</div>
-      <h6 class="title">Air Quality Index</h6>
+      <h6 class="title">Carbon Emission Calculator</h6>
     </div>
   </section>
 </template>
@@ -34,12 +34,12 @@ export default {
   position: relative;
   z-index: 2;
   width: 100%;
-
-  min-height: 30vh;
+  align-items: center;
+  min-height: 25vh;
 }
 
 .odometer {
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 .counter.title {
@@ -49,7 +49,6 @@ export default {
 
 .counter {
   position: relative;
-  margin-bottom: 100px;
   text-align: center;
   color: black;
 }

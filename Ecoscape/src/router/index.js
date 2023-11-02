@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Homepage from '@/views/Homepage.vue';
 import Login from '@/views/Login.vue';
 import NotFound from '@/views/NotFound.vue';
-import Transport from '@/views/Transport.vue'
+import Transport from '@/views/Transport.vue';
+import Attractions from '@/views/Attractions.vue';
 
 const routes = [
   {
@@ -19,6 +20,11 @@ const routes = [
     path: '/transport',
     name: 'Transport',
     component: Transport,
+  },
+  {
+    path: '/att',
+    name: 'Attractions',
+    component: Attractions,
   },
   //catchall404
   {

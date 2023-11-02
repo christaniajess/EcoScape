@@ -190,14 +190,17 @@
     </script>
 
     <section id="transport-info">
-        <div class="card rounded-2 border mx-5 p-3 text-center">
-            <div class="card-title mt-5 pt-3">
-                Discover Sustainable Mobility with Us
-            </div>
-            <div class="card-subtitle px-5 pt-4 mx-4">
-                Are you ready to embrace eco-friendly transportation and reduce your carbon footprint? EcoScape offers a range of sustainable options that not only help protect the environment but also make your daily commute or travel more convenient. Explore our Green Transport Planner.
-            </div>
-            <div class="card-text mt-5 pb-3 mb-5" id="card-text">
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="card rounded-2 border mx-5 text-center w-75">
+                <div class="card-title mt-4 pt-3">
+                    Discover Sustainable Mobility with Us
+                </div>
+                <div class="card-subtitle px-5 pt-4 mx-4">
+                    Are you ready to embrace eco-friendly transportation and reduce your carbon footprint? EcoScape offers a range of sustainable options that not only help protect the environment but also make your daily commute or travel more convenient. Explore our Green Transport Planner.
+                </div>
+                <div class="card-text mt-5 pb-3 mb-3" id="card-text">
+                    Join us in reducing your carbon footprint and protecting the environment. Start your journey with EcoScape today!
+                </div>
             </div>
         </div>
     </section>
@@ -223,13 +226,12 @@
         downBtnEv.addEventListener("click", function() {
             // Update the card's content for bicycle
             // cardSubtitle.textContent = "Information about Bicycle";
-            cardText.textContent = "Learn more about our bicycle rental services and how you can contribute to a greener future.";
+            cardText.textContent = "Electric vehicle (EV) rentals for an emission-free ride.";
         });
 
         downBtnBus.addEventListener("click", function() {
-            // Update the card's content for bicycle
-            // cardSubtitle.textContent = "Information about Bicycle";
-            cardText.textContent = "Learn more about our bicycle rental services and how you can contribute to a greener future.";
+            
+            cardText.textContent = "Public buses designed for maximum comfort and minimal environmental impact.";
         });
 
         // Event listener for the bus down button
