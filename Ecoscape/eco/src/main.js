@@ -9,15 +9,28 @@ import App from './App.vue';
 import store from "./store/index.js"; 
 import router from './router/index.js';
 import 'font-awesome/css/font-awesome.min.css';
+import VueGoogleMaps from '@fawmi/vue-google-maps';
+
 // import firebase from "firebase/compat/app"; 
 
-// store.dispatch('checkUserAuthentication');
+// store.dispatch('checkUserAuthentication')
 
 
+
+const app = createApp(App);
+
+app.use(router);
+app.use(store);
+app.use(VueGoogleMaps, {
+    load: {
+        key: 'AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ',
+    },
+})
+
+app.mount('#app');
 // Initialize Firebase with your configuration
 // const firebaseApp = initializeApp(firebaseConfig);
 // Create the Vue app instance
-const app = createApp(App);
 
 // Provide the Firebase app instance and the store to your Vue app
 // app.config.globalProperties.$firebase = firebaseApp;
@@ -30,10 +43,7 @@ const app = createApp(App);
 //   });
   
   
-app.use(router);
 
-// Mount the app to the DOM
-app.mount('#app');
 
 
 

@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Homepage from '@/views/Homepage.vue';
 import Login from '@/views/Login.vue';
 import store from "@/store/index.js"; // Assuming you have a Vuex store
+import Transport from '@/views/Transport.vue';
+
 
 const routes = [
   {
@@ -21,10 +23,10 @@ const routes = [
     meta: { requiresAuth: true }, // Add this meta field to specify that authentication is required
   },
   {
-    path: '/transport',
+    path: '/Transport',
     name: 'Transport',
     component: Transport,
-  }
+  },
   // {
   //   path: '/sign-in', // set the URL the user will visit
   //   name: 'signIn', // use this name as a shortcut in your links
