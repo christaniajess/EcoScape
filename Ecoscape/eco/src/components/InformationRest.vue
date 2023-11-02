@@ -49,25 +49,6 @@
             <span class="section__subtitle">{{ name }}</span>
             <div class="about__container container grid">
                 <img :src="image" alt="" class="about__img">
-                <div class="about__data">
-                    <p class="about__description">
-                        {{ description }}
-                    </p>
-                    <div class="about__info">
-                        <div>
-                            <span class="about__info-title">08+</span>
-                            <span class="about__info-name">Years <br> experience</span>
-                        </div>
-                        <div>
-                            <span class="about__info-title">20+</span>
-                            <span class="about__info-name">Completed <br> projects</span>
-                        </div>
-                        <div>
-                            <span class="about__info-title">05+</span>
-                            <span class="about__info-name">Companies <br> worked</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
