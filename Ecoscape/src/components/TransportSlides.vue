@@ -464,14 +464,13 @@ textarea {
 
 #transport-info {
   position: relative;
-  margin-bottom: 50px;
   bottom: 0;
   left: 0;
-  min-height: 30vh;
+  min-height: 40vh;
   background-image: linear-gradient(
     to bottom,
-    rgb(31, 51, 31),
-    rgb(95, 132, 95)
+    rgb(15, 49, 16),
+    rgb(83, 123, 83)
   );
   background-size: cover;
   background-position: center center;
@@ -484,7 +483,7 @@ textarea {
   padding: 10px;
   position: relative;
   z-index: 2;
-  top: -10px;
+  top: -35px;
 }
 
 .card .card-title {

@@ -18,6 +18,14 @@ import Dest from "./components/Dest.vue";
 import Information from "./components/Information.vue";
 import Typewriter from "./components/Typewriter.vue";
 import Wallpaper from "./components/Wallpaper.vue";
+import CardsHotel from "./components/CardsHotel.vue";
+import CardsRest from "./components/CardsRest.vue";
+import GoogleMap from "./components/GoogleMap.vue";
+import InformationHotel from "./components/InformationHotel.vue";
+import InformationRest from "./components/InformationRest.vue";
+import Tabs from "./components/Tabs.vue";
+import TabsHotel from "./components/TabsHotel.vue";
+import TabsRest from "./components/TabsRest.vue";
 import "aos/dist/aos.css"; // Import the AOS styles
 import AOS from "aos";
 
@@ -35,6 +43,14 @@ export default {
     Information,
     Typewriter,
     Wallpaper,
+    CardsHotel,
+    CardsRest,
+    GoogleMap,
+    InformationHotel,
+    InformationRest,
+    Tabs,
+    TabsHotel,
+    TabsRest,
   },
   mounted() {
     AOS.init(); // Initialize AOS

@@ -1,9 +1,9 @@
 <template>
   <section id="metrics">
-    <div class="counter">
+    <div class="counter text-white pt-4">
       <p>Status</p>
-      <div class="odometer" ref="odometer">0</div>
-      <h6 class="title">Carbon Emission Calculator</h6>
+      <div class="odometer text-white" ref="odometer">0</div>
+      <h6 class="title text-white">Carbon Emission Calculator</h6>
     </div>
   </section>
 </template>
@@ -32,24 +32,38 @@ export default {
 <style scoped>
 #metrics {
   position: relative;
-  z-index: 2;
   width: 100%;
-  align-items: center;
   min-height: 25vh;
+}
+
+.counter{
+    position:relative;
+    align-items: center;
+    text-align: center;
+    min-height: 25vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../../images/cloud-forest.jpg)no-repeat fixed;
+    background-position:center;
+    background-size:cover;
+    z-index: 2;
+}
+.counter:before{
+    position:absolute;
+    content: "";
+    z-index: 0;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
 }
 
 .odometer {
   font-size: 3.5rem;
+  z-index: 2;
 }
 
 .counter.title {
   letter-spacing: 1.5px;
   line-height: 1.25;
-}
-
-.counter {
-  position: relative;
-  text-align: center;
-  color: black;
 }
 </style>

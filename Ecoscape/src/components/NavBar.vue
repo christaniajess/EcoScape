@@ -3,7 +3,11 @@
     <div class="container-fluid d-flex align-items-center justify-content-between position-relative">
       <div class="logo ps-3">
         <h1 class="text-light">
-          <router-link to="/"><span>ECOSCAPE</span></router-link>
+          <router-link to="/" class="nav-link scrollto" exact  
+          :class="{
+          'text-white': isHomepage || isLoginPage || isTransportPage
+           }">
+        <span>ECOSCAPE</span></router-link>
         </h1>
       </div>
       <nav class="navbar navbar-expand-lg p-0">
@@ -14,38 +18,33 @@
           <div class="collapse navbar-collapse" id="navbarExamples" :class="{ 'show': isNavbarOpen }">
             <ul>
               <li>
-                <router-link to="/" class="nav-link scrollto" exact>Home</router-link>
-              </li>
-              <li class="search-icon">
-                <button @click="toggleSearch">
-                  <i class="fa fa-search"></i>
-                </button>
-                <div class="search-bar" :class="{ 'show': showSearchBar }">
-                  <input
-                    type="text"
-                    class="search-input"
-                    placeholder="Enter keywords to search"
-                  />
-                  <button @click="toggleSearch">
-                    <i class="fa fa-times"></i>
-                  </button>
-                </div>
+                <router-link to="/" class="nav-link scrollto" exact :class="{
+          'text-white': isHomepage || isLoginPage || isTransportPage
+           }">Home</router-link>
               </li>
               <li>
-                <router-link to="/#about-us" class="nav-link">About Us</router-link>
+                <router-link to="/#about-us" class="nav-link" :class="{
+          'text-white': isHomepage || isLoginPage || isTransportPage
+           }">About Us</router-link>
               </li>
               <li class="dropdown">
-                <a href="#"><span>Directory</span> <i class="fa fa-angle-down"></i></a>
+                <a href="#"><span :class="{
+          'text-white': isHomepage || isLoginPage || isTransportPage
+           }">Directory</span> <i class="fa fa-angle-down" :class="{
+          'text-white': isHomepage || isLoginPage || isTransportPage
+           }"></i></a>
                 <ul>
-                  <li><router-link to="#">Hotels</router-link></li>
+                  <li><router-link to="/hotels">Hotels</router-link></li>
                   <li><router-link to="/att">Attractions</router-link></li>
-                  <li><router-link to="#">Restaurants</router-link></li>
+                  <li><router-link to="/restaurants">Restaurants</router-link></li>
                   <li><router-link to="/transport">Green Transport Planner</router-link></li>
                 </ul>
               </li>
               <li v-if="!userLoggedIn">
-                <router-link to="/login" class="nav-link">
-                  <img src="/images/profile-icon.png" class="profile-icon" alt="profile" />Login / Sign Up
+                <router-link to="/login" class="nav-link" :class="{
+          'text-white': isHomepage || isLoginPage || isTransportPage
+           }">
+                  Login / Sign Up
                 </router-link>
               </li>
               <li v-else>
@@ -83,6 +82,25 @@ export default {
       // Get the user's name from the state
       return this.$store.state.user.name; // Replace with your user data
     },
+    isHomepage() {
+      return this.$route.path === '/';
+    },
+    isLoginPage() {
+      return this.$route.path === '/login'; 
+    },
+    isTransportPage() {
+      return this.$route.path === '/transport'; // Adjust the login route as needed
+    },
+    isHotelPage() {
+      return this.$route.path === '/hotels'; // Adjust the login route as needed
+    },
+    isAttPage() {
+      return this.$route.path === '/att'; // Adjust the login route as needed
+    },
+    isResPage() {
+      return this.$route.path === '/restaurants'; // Adjust the login route as needed
+    },
+
   },
   methods: {
     toggleSearch() {
@@ -136,7 +154,7 @@ export default {
   
   #header .logo h1 a,
   #header .logo h1 a:hover {
-    color: #fff;
+    color: #000;
     text-decoration: none;
   }
   
@@ -179,7 +197,7 @@ export default {
     font-family: "Raleway", sans-serif;
     font-size: 16px;
     font-weight: 700;
-    color: #fff;
+    color: #000;
     white-space: nowrap;
     transition: 0.3s;
   }
@@ -195,7 +213,12 @@ export default {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(213, 213, 213, 0.2);
+    color: #87ab69;
+  }
+
+  .nav-link .text-white:hover{
+    background: rgba(213, 213, 213, 0.2);
     color: #87ab69;
   }
 
@@ -251,7 +274,7 @@ export default {
   Mobile Navigation 
   */
   .mobile-nav-toggle {
-    color: #fff;
+    color: #000;
     font-size: 40px;
     cursor: pointer;
     display: none;
@@ -355,48 +378,6 @@ export default {
     border: 0px;
 }
 
-.navbar .search-icon {
-  position: relative;
-}
 
-.navbar .search-icon button {
-  background: transparent;
-  border: none;
-  color: white;
-  outline: none;
-  padding-left: 1.5rem;
-  padding-right: 1rem;
-}
 
-.navbar .search-bar {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 100%;
-  background: #fff; /* Background color for the search bar */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Box shadow for the search bar */
-  padding: 10px; /* Adjust padding as needed */
-}
-
-.navbar .search-bar .search-input {
-  width: 150px;
-  padding: 8px;
-  border: none; /* Remove the border */
-  background: transparent; /* Background color for the input field */
-  font-size: 16px;
-  color: #000; /* Text color */
-}
-
-.navbar .search-bar button#search-close {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #000; /* Color for the close button */
-}
-
-.profile-icon{
-  height: 35px;
-  width: 35px;
-  padding: 5px;
-}
 </style>
