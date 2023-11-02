@@ -2,7 +2,7 @@
     <body>
       <NavBar />
       <TransportSlides />
-      <GMap />
+      <!-- <GMap /> -->
       <tpMap />
       <Metric />
       <Footer />

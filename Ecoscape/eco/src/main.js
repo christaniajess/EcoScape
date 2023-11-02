@@ -9,7 +9,7 @@ import App from './App.vue';
 import store from "./store/index.js"; 
 import router from './router/index.js';
 import 'font-awesome/css/font-awesome.min.css';
-import VueGoogleMaps from '@fawmi/vue-google-maps';
+// import VueGoogleMaps from '@fawmi/vue-google-maps';
 
 // import firebase from "firebase/compat/app"; 
 
@@ -21,11 +21,11 @@ const app = createApp(App);
 
 app.use(router);
 app.use(store);
-app.use(VueGoogleMaps, {
-    load: {
-        key: 'AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ',
-    },
-})
+// app.use(VueGoogleMaps, {
+//     load: {
+//         key: 'AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ',
+//     },
+// })
 
 app.mount('#app');
 // Initialize Firebase with your configuration

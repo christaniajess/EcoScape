@@ -7,11 +7,11 @@
       <!-- <p class="lead text-center">Get Geo Location</p> -->
       <form>
         <div class="form-group">
-          <label for="addr">Enter An Address</label>
+          <label for="addr">Enter Your Location</label>
           <input type="text" class="form-control" v-model="address" placeholder="E.g. Gardens By the Bay">
           <br>
-          <button type="button" @click="getFullAddress" class="btn btn-success">Get Full Address!</button>
-          <button type="button" @click="getPostalCode" class="btn btn-success">Get Postal Code!</button>
+          <button type="button" onclick="getLoc('addr')" class="btn btn-success">Get Full Address!</button>
+            <button type="button" onclick="getLoc('postcode')" class="btn btn-success">Get Postal Code!</button>
           <!-- the following set the lat, lng values to put a marker on the map-->
           <input type="hidden" id="lat" name="lat" :value="lat" />
           <input type="hidden" id="lng" name="lng" :value="lng" />
@@ -26,28 +26,29 @@
             <h3>Transportation Data</h3>
             <!-- Display bicycle parking data -->
             <ul v-if="bicycleParkingData.length > 0">
-              <li v-for="parking in bicycleParkingData" :key="parking.ID">
+            <li v-for="parking in bicycleParkingData" :key="parking.ID">
                 <p><strong>Description:</strong> {{ parking.Description }}</p>
                 <p><strong>Latitude:</strong> {{ parking.Latitude }}</p>
                 <p><strong>Longitude:</strong> {{ parking.Longitude }}</p>
                 <!-- Add other bicycle parking data properties here -->
-              </li>
+            </li>
             </ul>
+
             <!-- Display car parks data -->
             <ul v-if="carParksData.length > 0">
-              <li v-for="carpark in carParksData" :key="carpark.CarParkID">
+            <li v-for="carpark in carParksData" :key="carpark.CarParkID">
                 <p><strong>Car Park ID:</strong> {{ carpark.CarParkID }}</p>
                 <p><strong>Area:</strong> {{ carpark.Area }}</p>
                 <!-- Add other car park data properties here -->
-              </li>
+            </li>
             </ul>
             <!-- Display bus stops data -->
-            <ul v-if="busStopsData.length > 0">
-              <li v-for="busStop in busStopsData" :key="busStop.BusStopCode">
+            <ul v-if="filteredBusStops.length > 0">
+             <li v-for="busStop in filteredBusStops" :key="busStop.BusStopCode">
                 <p><strong>Bus Stop Code:</strong> {{ busStop.BusStopCode }}</p>
                 <p><strong>Road Name:</strong> {{ busStop.RoadName }}</p>
-                <!-- Add other bus stop data properties here -->
-              </li>
+        <!-- Add other bus stop data properties here -->
+                </li>
             </ul>
             <!-- Display MRT data -->
             <ul v-if="mrtData.length > 0">
@@ -66,7 +67,7 @@
   </template>
   <script>
   import axios from 'axios';
-  import { Loader } from "@googlemaps/js-api-loader"
+//   import { Loader } from "@googlemaps/js-api-loader"
   export default {
     data() {
       return {
@@ -80,6 +81,32 @@
         busStopsData: [],
         mrtData: [],
       };
+    },
+    computed: {
+    filteredBusStops() {
+      // Filter the bus stops based on the user's entered location
+      if (this.address) {
+        if (this.locationFilterType === 'fullAddress') {
+          return this.busStopsData.filter(busStop => busStop.RoadName.includes(this.address));
+        } else if (this.locationFilterType === 'postalCode') {
+          return this.busStopsData.filter(busStop => busStop.PostalCode === this.address);
+        } else {
+        // If no address is entered, return all bus stops
+        var errorMsg = "There are no bus stops nearby!"
+        return errorMsg; 
+        }
+        }       
+    },
+    filteredCarParks() {
+        if (this.address) {
+        if (this.locationFilterType === 'fullAddress') {
+          return this.carParksData.filter(carPark => this.address.includes(carPark.area));
+        } else if (this.locationFilterType === 'postalCode') {
+          return this.carParksData.filter(carPark => carPark.PostalCode === this.address);
+        }
+    
+  }
+  }
     },
     methods: {
         // async function initMap() {
@@ -198,29 +225,29 @@
             return addr["types"][0] == "country" ;
         },
         async getBicycleParkingData() {
-        const apiUrl = 'http://datamall2.mytransport.sg/ltaodataservice/BicycleParkingv2';
-        const key = 'mcXYAV2rQXOykVpqXBXaxw=='; // Replace with your LTA API key
-        const latitude = this.lat;
-        const longitude = this.lng;
-        const distance = 0.5; // Default radius in kilometers
-        try {
-        const response = await axios.get(apiUrl, {
-          headers: {
-            AccountKey: key,
-          },
-          params: {
-            latitude,
-            longitude,
-            distance,
-          },
-        });
-  
-          const data = response.data;
-          this.bicycleParkingData = data;
-        } catch (error) {
-          console.error('Error fetching bicycle parking data:', error);
-        }
-      },
+            const apiUrl = 'http://datamall2.mytransport.sg/ltaodataservice/BicycleParkingv2';
+            const key = 'mcXYAV2rQXOykVpqXBXaxw=='; // Replace with your LTA API key
+            const latitude = this.lat;
+            const longitude = this.lng;
+            const distance = 0.5; // Default radius in kilometers
+
+            try {
+                const response = await axios.get(apiUrl, {
+                headers: {
+                    AccountKey: key,
+                },
+                params: {
+                    latitude,
+                    longitude,
+                    distance,
+                },
+                });
+
+                this.bicycleParkingData = response.data;
+            } catch (error) {
+                console.error('Error fetching bicycle parking data:', error);
+            }
+            },
       async getCarParksData() {
         const apiUrl = 'http://datamall2.mytransport.sg/ltaodataservice/CarParkAvailabilityv2';
         const key = 'mcXYAV2rQXOykVpqXBXaxw=='; // Replace with your LTA API key
@@ -234,6 +261,7 @@
   
           const data = response.data;
           this.carParksData = data;
+          
         } catch (error) {
           console.error('Error fetching car parks data:', error);
         }
