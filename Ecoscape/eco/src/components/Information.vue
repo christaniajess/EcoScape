@@ -5,9 +5,6 @@
             <div class="home__container container grid">
                 <div class="home__content grid">
                     <div class="home__social">
-                        <a href="" class="home__social-icon">
-                            <i class="uiil uil-instagram-alt"></i>
-                        </a>
                     </div>
                     <div class="home__img">
                         <svg class="home__blob" id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >

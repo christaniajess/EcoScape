@@ -23,6 +23,7 @@
         @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
+    <p v-if="central_dest.length === 0">No hotels in the Central area.</p>
   </div>
 
   <div id="content3" class="tab-content">
@@ -36,6 +37,7 @@
         @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
+    <p v-if="east_dest.length === 0">No hotels in the East area.</p>
   </div>
 
   <div id="content4" class="tab-content">
@@ -49,6 +51,7 @@
         @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
+    <p v-if="south_dest.length === 0">No hotels in the South area.</p>
   </div>
 
   <div id="content5" class="tab-content">
@@ -62,6 +65,7 @@
         @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
+    <p v-if="north_dest.length === 0">No hotels in the North area.</p>
   </div>
 
   <div id="content6" class="tab-content">
@@ -75,6 +79,7 @@
         @click="navigateToUrl(destination.index)"
       ></Dest>
     </div>
+    <p v-if="west_dest.length === 0">No hotels in the West area.</p>
   </div>
 </template>
 
@@ -130,7 +135,10 @@ export default {
   /* Your existing component styles here */
   @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
 
-
+  p {
+    padding: 25px;
+  }
+  
   .gallery {
     display: flex;
     gap: 1.5cm;
@@ -188,8 +196,6 @@ export default {
   }
 
   /* Add the provided CSS code below this line */
-
-  
 
   * {
     margin: 0;
