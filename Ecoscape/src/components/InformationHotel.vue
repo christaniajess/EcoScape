@@ -1,6 +1,6 @@
 <template>
     <!-- HEADER -->
-    <main class="main center-container">
+    <main class="main">
         <section class="home section" id="home">
             <div class="home__container container grid">
                 <div class="home__content grid">
@@ -23,21 +23,13 @@
                 </div>
 
                 <div class="home__scroll"> 
-                    <a href="#about" class="home__scroll-button button--flex">
+                    <a href="#services" class="home__scroll-button button--flex">
                         <i class="uil uil-mouse-alt home__scroll-mouse"></i>
                         <span class="home__scroll-name">Scroll down</span>
                         <i class="uil uil-arrow-down home__scroll-arrow"></i>
                     </a>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- ABOUT PAGE -->
-        <section class="about section" id="about">
-            <span class="section__subtitle" style="color: black;">{{ name }}</span>
-            <div class="about__container container grid">
-                <img :src="image" alt="" class="about__img">
             </div>
         </section>
 
@@ -243,6 +235,9 @@ export default {
     }
 
     /* HOME */
+    .about__img{
+        border-radius: 5%;
+    }
     .home__container
     {
         gap:1rem;
@@ -268,15 +263,7 @@ export default {
     {
         color: var(--first-color-alt);
     }
-    .home__blob
-    {
-        width:1000;
-    }
-    .home__blob-img
-    {
-        width: 900;
-        
-    }
+    
     .home__data
     {
         grid-column:1/3;
@@ -348,38 +335,6 @@ export default {
         align-items:center;
     }
 
-    /* ABOUT SECTION */
-    .about__img
-    {
-        width:500px;
-        border-radius: .5rem;
-        justify-self: center ;
-        align-self: center;
-    }
-    .about__description
-    {
-        text-align: center;
-        margin-bottom:var(--mb-2-5);
-    }
-    .about__info
-    {
-        display:flex;
-        justify-content: space-evenly;
-        margin-bottom: var(--mb-2-5);
-    }
-    .about__info-title
-    {
-        font-size: var(--h2-font-size);
-        font-weight: var(--font-semi-bold);
-    }
-    .about__info-name
-    {
-        font-size: var(--smaller-font-size);
-    }
-    .about__info-title,.about__info-name
-    {
-        display:block;
-        text-align:center;
-    }
+    
 
 </style>
