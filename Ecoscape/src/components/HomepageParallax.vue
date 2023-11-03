@@ -72,6 +72,7 @@
     font-size: 7em;
     z-index: 1;
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     text-shadow: 4px 4px #00000072;
   }
   #title-icon{
@@ -90,6 +91,7 @@
     font-size: 7em;
     z-index: 1;
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     text-shadow: 4px 4px #00000072;
   }
   #title-icon{
@@ -108,6 +110,7 @@
     font-size: 6em;
     z-index: 1;
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     text-shadow: 4px 4px #00000072;
   }
   #title-icon{
@@ -126,6 +129,7 @@
     font-size: 5em;
     z-index: 1;
     font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     text-shadow: 4px 4px #00000072;
   }
   #title-icon{
@@ -136,14 +140,14 @@
   }
 }
 
-*{
+/* *{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-}
+} */
 
 body{
-    min-height: 1500px;
+    min-height: 100vh;
 }
 
 /* #title-icon{

@@ -69,7 +69,6 @@
 export default {
   data() {
     return {
-      showSearchBar: false,
       isNavbarOpen: false, // Add a data property to track the state of the navbar
     };
   },
@@ -91,21 +90,9 @@ export default {
     isTransportPage() {
       return this.$route.path === '/transport'; // Adjust the login route as needed
     },
-    isHotelPage() {
-      return this.$route.path === '/hotels'; // Adjust the login route as needed
-    },
-    isAttPage() {
-      return this.$route.path === '/att'; // Adjust the login route as needed
-    },
-    isResPage() {
-      return this.$route.path === '/restaurants'; // Adjust the login route as needed
-    },
 
   },
   methods: {
-    toggleSearch() {
-      this.showSearchBar = !this.showSearchBar;
-    },
     toggleNavbar() {
       this.isNavbarOpen = !this.isNavbarOpen; // Toggle the collapsed navbar
     },
@@ -154,7 +141,7 @@ export default {
   
   #header .logo h1 a,
   #header .logo h1 a:hover {
-    color: #000;
+    color: #4b6043;
     text-decoration: none;
   }
   
@@ -197,7 +184,7 @@ export default {
     font-family: "Raleway", sans-serif;
     font-size: 16px;
     font-weight: 700;
-    color: #000;
+    color: #4b6043;
     white-space: nowrap;
     transition: 0.3s;
   }

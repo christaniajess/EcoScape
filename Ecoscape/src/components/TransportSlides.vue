@@ -249,6 +249,7 @@ export default {
   z-index: 2;
   font-size: 2vw;
   font-family: "Poppins", sans-serif;
+  font-weight: bold;
   margin: auto;
   text-align: center;
   transform: rotate(90deg) !important;

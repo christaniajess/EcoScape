@@ -4,7 +4,7 @@
       <div class="row align-items-center">
         <div class="col-12 col-md-4 about_text text-center p-3 ps-5">
           <div data-aos="fade-up" data-aos-duration="1000">
-            <h2>ABOUT US</h2>
+            <h2 class="text-light">ABOUT US</h2>
             <p class="about-para">
               We aim to contribute to raising awareness about
               <span class="fw-bold">SUSTAINABLE TOURISM PRACTICES</span> and
@@ -24,7 +24,7 @@
               <div class="carousel__item">
                 <img class="caroImg" :src="image.src" alt="" />
                 <div class="caption">
-                  <h4>{{ image.caption.title }}</h4>
+                  <h4 class="fw-bold text-light">{{ image.caption.title }}</h4>
                   <p>{{ image.caption.description }}</p>
                 </div>
               </div>
@@ -105,6 +105,7 @@ export default defineComponent({
     margin-top: 0; /* Remove the top margin if any */
     padding: 0; /* Remove any padding */
     background-color: #101207;
+
   }
 
 
@@ -115,6 +116,7 @@ export default defineComponent({
     align-items: center;
     justify-content: center; 
     color: white;
+    
   }
 
   .about-para{
