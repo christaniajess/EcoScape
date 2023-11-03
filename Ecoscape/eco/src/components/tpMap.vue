@@ -66,9 +66,20 @@
     </div>
   </template>
   <script>
-  import axios from 'axios';
-//   import { Loader } from "@googlemaps/js-api-loader"
+ import axios from 'axios';
+  import GoogleMap from '@/components/GoogleMap.vue';
+
+  
   export default {
+    components: {
+        GoogleMap
+    },
+    props: {
+    index: {
+      type: Number,
+      required: true,
+    },
+  },
     data() {
       return {
         address: 'Singapore Management University',
@@ -80,6 +91,10 @@
         carParksData: [],
         busStopsData: [],
         mrtData: [],
+        image: "",
+        url: "",
+        name: "",
+
       };
     },
     computed: {

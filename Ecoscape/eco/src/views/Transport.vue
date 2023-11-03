@@ -15,7 +15,7 @@
   import Metric from "../components/Metric.vue";
   import Footer from "@/components/Footer.vue";
   import tpMap from "@/components/tpMap.vue"; 
-  import GMap from "@/components/GMap.vue"; 
+  import GoogleMap from "@/components/GMap.vue"; 
 
   export default {
     name: "Transport",
