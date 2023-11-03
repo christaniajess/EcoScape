@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fawmi/vue-google-maps": "^0.9.79",
     "aos": "^2.3.4",
     "axios": "^1.6.0",
     "bootstrap-icons": "^1.11.1",
