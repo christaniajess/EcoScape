@@ -197,7 +197,7 @@ export default defineComponent({
     const auth = getAuth(); // Access the Auth instance
     const signUpButtonClicked = ref(false);
     const loginButtonClicked = ref(false);
-    const toDisplay = "";
+    var toDisplay = "";
     const router = useRouter();
 
     // Function to check if an email is valid
