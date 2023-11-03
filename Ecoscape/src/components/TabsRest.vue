@@ -44,6 +44,7 @@ export default {
         font-weight:600;
         margin-left:1.8cm;
         font-size:1.5rem;
+        color: black;
     }
     .animated-text span
     {
@@ -85,6 +86,7 @@ export default {
         margin-bottom: 10px; */
         padding:1rem;
         margin-left:2.5rem;
+        color: black;
     }
 
     .tab-content 

@@ -468,14 +468,7 @@ textarea {
   bottom: 0;
   left: 0;
   min-height: 40vh;
-  background-image: linear-gradient(
-    to bottom,
-    rgb(15, 49, 16),
-    rgb(83, 123, 83)
-  );
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background: #101207;
 }
 
 .card {

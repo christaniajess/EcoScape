@@ -1,28 +1,18 @@
 <template>
     <!-- HEADER -->
-    <main class="main">
+    <main class="main center-container">
         <section class="home section" id="home">
             <div class="home__container container grid">
                 <div class="home__content grid">
                     <div class="home__social">
-                        <a href="" class="home__social-icon">
-                            <i class="uiil uil-instagram-alt"></i>
-                        </a>
                     </div>
-                    <div class="home__img">
-                        <svg class="home__blob" id="10015.io" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
-                            <defs>
-                                <clipPath id="blob">
-                                    <path fill="#474bff" d="M406,292.5Q403,345,354.5,365Q306,385,256.5,428Q207,471,164.5,423.5Q122,376,94,333.5Q66,291,46.5,234Q27,177,57.5,121Q88,65,151,60.5Q214,56,258,80.5Q302,105,338.5,129Q375,153,392,196.5Q409,240,406,292.5Z" />
-                                </clipPath>
-                            </defs>
-                            <image class="home__blob-img" x="12" y="18" width="100%" height="100%" clip-path="url(#blob)" :href="image" preserveAspectRatio="xMidYMid slice"></image>
-                        </svg>
+                    <div class="about__container container grid">
+                        <img :src="image" alt="" class="about__img">
                     </div>
                     <div class="home__data">
                         <h1 class="home__title">{{ name }}</h1>  <!-- Edit name -->
-                        <h3 class="home__subtitle">Green Rating: {{ greenScore }}</h3>  <!-- Edit  green rating -->
-                        <h3 class="home__subtitle">Rating:{{ rating }}</h3> <!-- Edit rating  -->
+                        <h3 class="home__subtitle" style="color: #41782b">Green Rating: {{ greenScore }}</h3>  <!-- Edit  green rating -->
+                        <h3 class="home__subtitle" style="color: rgb(252, 177, 3);">Rating: {{ rating }}</h3> <!-- Edit rating  -->
                         <p class="home__description"> <!-- Edit description -->
                             {{ description }}
                         </p>
@@ -45,29 +35,9 @@
 
         <!-- ABOUT PAGE -->
         <section class="about section" id="about">
-            <h2 class="section__title">About</h2>
-            <span class="section__subtitle">{{ name }}</span>
+            <span class="section__subtitle" style="color: black;">{{ name }}</span>
             <div class="about__container container grid">
                 <img :src="image" alt="" class="about__img">
-                <div class="about__data">
-                    <p class="about__description">
-                        {{ description }}
-                    </p>
-                    <div class="about__info">
-                        <div>
-                            <span class="about__info-title">08+</span>
-                            <span class="about__info-name">Years <br> experience</span>
-                        </div>
-                        <div>
-                            <span class="about__info-title">20+</span>
-                            <span class="about__info-name">Completed <br> projects</span>
-                        </div>
-                        <div>
-                            <span class="about__info-title">05+</span>
-                            <span class="about__info-name">Companies <br> worked</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -145,7 +115,7 @@ export default {
     :root
     {
         /* FOR THE COLORS */
-        --header-height: 3rem;
+        /* --header-height: 3rem; */
         --hue-color: 250 ; 
         --first-color: hsl((var(--hue-color)), 69%, 61%); /* can change this later by going to HSL calculator */
         --first-color-alt: #628a5c;
@@ -240,7 +210,7 @@ export default {
     /* CSS CLASSES */
     .section
     {
-        padding:2rem 0 4 rem;
+        padding:2rem 0 4rem;
     }
     .section__title
     {
@@ -259,6 +229,7 @@ export default {
 
     }
     /* LAYOUT */
+
     .container
     {
         max-width: 768px;
