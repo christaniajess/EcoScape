@@ -308,7 +308,7 @@
     // Load the Google Maps script here if not already loaded
     if (typeof google === 'undefined') {
       const script = document.createElement('script');
-      script.src = 'https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY';
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ';
       script.onload = this.initMap;
       document.body.appendChild(script);
     } else {

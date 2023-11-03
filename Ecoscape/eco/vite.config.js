@@ -16,12 +16,12 @@ export default defineConfig({
   },
   commonjsOptions: {
     esmExternals: true, 
- }
+ },
   // build: {
   //   rollupOptions: {
   //     output: {
   //       // Other output options...
-  //       assetFileNames: '../images/homepage-img2.png', '../images/icon-lightgreen.png', 
+  //       assetFileNames: 'images'
   //     }
   //   }
   //   }
