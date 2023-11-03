@@ -5,18 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EcoScape</title>
-      <!-- update the version number as needed -->
-    <!-- <script defer src="/__/firebase/10.5.2/firebase-app-compat.js"></script> -->
-    <!-- include only the Firebase features as you need -->
-    <!-- <script defer src="/__/firebase/10.5.2/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.5.2/firebase-performance-compat.js"></script> -->
+  
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -37,7 +26,7 @@
                   <span>Sign Up</span>
                   <span>Log In</span>
                 </h6>
-                <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" v-model="isLogin">
+                <input class="checkbox" type="checkbox" id="reg-log" name="reg-log">
                 <label for="reg-log"></label>
                 <div class="card-3d-wrap mx-auto">
                   <div class="card-3d-wrapper">
@@ -45,22 +34,29 @@
                       <div class="center-wrap">
                         <div class="section text-center">
                           <h4 class="mb-4 pb-3">Sign Up</h4>
+                        </div>
+                        <div v-if="!signupEmailIsValid && signUpButtonClicked" class="error">
+                          Please enter a valid email (e.g., yourname@example.com)
+                        </div>
                           <div class="form-group">
-                          <input type="text" name="SignUpEmail" class="form-style" placeholder="Your Email (e.g james012@gmail.com)" id="SignUpEmail" autocomplete="off" v-model="signupName">
+                          <input type="text" name="SignUpEmail" class="form-style" placeholder="Your Email (e.g james012@gmail.com)" id="SignUpEmail" autocomplete="off" v-model="SignUpEmail">
                           <i class="input-icon uil uil-user"></i>
+
+                        <div class="form-group mt-2">
+                          <input type="password" name="Signpass" class="form-style" placeholder="Your Password" id="Signpass" autocomplete="off" v-model="Signpass">
+                          <i class="input-icon uil  uil-lock-alt"></i>
                         </div>
                         <div class="form-group mt-2">
-                          <input type="password" name="Signpass" class="form-style" placeholder="Your Password" id="Signpass" autocomplete="off" v-model="signupPassword">
+                          <input type="password" name="confirmPass" class="form-style" placeholder="Confirm Password" id="confirmPass" autocomplete="off" v-model="confirmPass">
                           <i class="input-icon uil uil-lock-alt"></i>
                         </div>
-                        <div class="form-group mt-2">
-                          <input type="password" name="confirmPass" class="form-style" placeholder="Confirm Password" id="confirmPass" autocomplete="off" v-model="confirmPassword">
-                          <i class="input-icon uil uil-lock-alt"></i>
-                        </div>
-                        <!-- <div class="error" v-show="error">
-                            {{ this.errorm }}
-                        </div> -->
-                        <a href="#" class="btn mt-4" id="word" @click="signUp">Sign Up</a>
+                        <div class="error" v-if="!isPasswordMatch && signUpButtonClicked">
+                          Passwords do not match :(
+                          </div>
+                          <div class="error" v-if="!passwordValid && signUpButtonClicked">
+                          Your password should be at least 6 characters long!
+                          </div>
+                        <a href="#" class="btn mt-4" id="signUp" @click="signUp">Sign Up</a>
                       </div>
                     </div>
                    </div>     
@@ -69,14 +65,17 @@
                         <div class="section text-center">
                           <h4 class="mb-4 pb-3">Log In</h4>
                           <div class="form-group">
-                            <input type="text" name="logEmail" class="form-style" placeholder="Your Email (e.g james012@gmail.com)" id="logEmail" autocomplete="off" v-model="signupName">
+                            <input type="text" name="logEmail" class="form-style" placeholder="Your Email (e.g james012@gmail.com)" id="logEmail" autocomplete="off" v-model="logEmail">
                             <i class="input-icon uil uil-user"></i>
                           </div>
+                          <div v-if="!loginEmailIsValid && loginButtonClicked" class="error">
+                          Please enter a valid email (e.g., yourname@example.com)
+                        </div>
                           <div class="form-group mt-2">
-                            <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" v-model="signupPassword">
+                            <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" v-model="logpass">
                             <i class="input-icon uil-lock-alt"></i>
                           </div>
-                          <a href="#" class="btn mt-4" id="word" @click="isLogin">Log In</a>
+                          <a href="#" class="btn mt-4" id="Login" @click="isLogin">Log In</a>
                         </div>
                       </div>
                     </div>
@@ -93,96 +92,116 @@
 
   </template>
 
+ 
+ <script>
+import { defineComponent, ref, computed } from 'vue';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import NavBar from '@/components/NavBar.vue';
+import Footer from '@/components/Footer.vue';
+import Dashboard from '@/components/Dashboard.vue'; 
 
-<script>
-// import firebase from "firebase/compat/app"; 
-// // import { initializeApp } from 'firebase/compat/functions';
-// import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-// import 'firebase/auth';
-// import 'firebase/firestore';
-// import {numbersRef} from "@/firebase/firebase.js"; 
-// import auth from "@/firebase/firebase.js";
-// import db from "@/firebase/firebase.js";
-// import { collection, getDoc, addDoc } from 'firebase/firestore';
-import NavBar from "@/components/NavBar.vue";
-import Footer from "@/components/Footer.vue";
-import Dashboard from "@/components/Dashboard.vue";
-
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDmN08IvkUv2vQn7o_Cbd5daeQ3OXxGRpo",
-//   authDomain: "ecoscape-ea1d6.firebaseapp.com",
-//   databaseURL: "https://ecoscape-ea1d6-default-rtdb.asia-southeast1.firebasedatabase.app",
-//   projectId: "ecoscape-ea1d6",
-//   storageBucket: "ecoscape-ea1d6.appspot.com",
-//   messagingSenderId: "104462396856",
-//   appId: "1:104462396856:web:bcaaa850fb71afed13b34d",
-//   measurementId: "G-35CF9R9L0S"
-// };
-
-// firebase.initializeApp(firebaseConfig);
-
-
-
-  
-export default {
+export default defineComponent({
   components: {
     NavBar,
     Footer,
+    Dashboard,
   },
-  // methods: {
-  //   data() {
-  //   return {
-  //     email: "",
-  //     password: "",
-  //     error: null,
-  //   };
-  // }  
-  //   async isLogin() {
-  //     this.error = null;
-  //     firebase
-  //       .auth()
-  //       .signInWithEmailAndPassword(this.email, this.password)
-  //       .then(() => {
-  //         this.$router.replace("dashboard");
-  //       })
-  //       .catch(error => {
-  //         this.error = alert(error.message);
-  //       });
-  //   },
-  // },
-  //   async signUp() {
+  setup() {
+    const email = ref('');
+    const logpass = ref('');
+    const error = ref(null);
+    const logEmail = ref(''); // Define logEmail
+    const SignUpEmail = ref(''); // Define SignUpEmail
+    const Signpass = ref(''); 
+    const confirmPass = ref(''); 
+    const db = getFirestore(); // Access Firestore without the app parameter
+    const auth = getAuth(); // Access the Auth instance
+    const signUpButtonClicked = ref(false);
+    const loginButtonClicked = ref(false);
+    // Function to check if an email is valid
+    const isEmailValid = (emailValue) => {
+      return emailValue.includes('@');
+    };
+    // Check if the email is valid for login
+    const loginEmailIsValid = computed(() => isEmailValid(logEmail.value));
 
-  //     // 'users' collection reference
-  //     const colRef = collection(db, 'users')
-  //     //data to send
-  //     const dataObj = {
-  //       email : "james012@gmail.com", 
-  //       password: "01212"
-  //     }
-  //     const docRef = await addDoc(colRef, dataObj)
+    // Check if the email is valid for signup
+    const signupEmailIsValid = computed(() => isEmailValid(SignUpEmail.value));
 
-  //     console.log('Document was created with ID', docRef.id)
-  //     this.error = null;
-  //     firebase
-  //       .auth()
-  //       .createUserWithEmailAndPassword(this.email, this.password)
-  //       .then(() => {
-  //         const user = firebase.auth().currentUser;
-  //         const actionCodeSettings = {
-  //           url: `${process.env.VUE_APP_HOST_NAME}/sign-in/?email=${user.email}`,
-  //         };
-  //         user.sendEmailVerification(actionCodeSettings);
-  //       })
-  //       .catch(error => {
-  //         this.error = alert(error.message);
-  //       });
-  //   },
-  // },
-  // created() {
-  //   this.$store.dispatch('checkUserAuthentication');
-  // },
-};
+    const passwordValid = computed(() => {
+      return Signpass.value.length >= 6
+    }); 
+
+    const isPasswordMatch = computed(() => {
+      // Validate if password matches the confirm password
+      return Signpass.value === confirmPass.value;
+
+    });
+
+    const isLogin = async () => {
+      error.value = null;
+      loginButtonClicked.value = true;
+
+      try {
+        await signInWithEmailAndPassword(auth,  logEmail.value, logpass.value);
+        // Redirect to the dashboard
+        this.$router.replace('Dashboard');
+      } catch (e) {
+        error.value = e.message;
+      }
+    };
+
+    const signUp = async () => {
+      error.value = null;
+      signUpButtonClicked.value = true;
+
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth,  SignUpEmail.value, Signpass.value);
+        const user = userCredential.user;
+        const actionCodeSettings = {
+          url: `${process.env.VUE_APP_HOST_NAME}/sign-in/?email=${user.email}`,
+        };
+        // Send email verification
+        // user.sendEmailVerification(auth, actionCodeSettings);
+        // 'users' collection reference
+        const colRef = collection(db, 'users');
+        // Data to send
+        const dataObj = {
+          email: user.email,
+          password: user.password
+          // Add other user-related data
+        };
+        await addDoc(colRef, dataObj);
+      } catch (e) {
+        error.value = e.message;
+      }
+    };
+
+    return {
+      email,
+      logpass,
+      error,
+      isLogin,
+      signUp,
+      isEmailValid,
+      isPasswordMatch,
+      logEmail,
+      SignUpEmail,
+      Signpass,
+      confirmPass,
+      loginButtonClicked,
+      signUpButtonClicked,
+      signupEmailIsValid,
+      loginEmailIsValid,
+      passwordValid,
+    };
+  }
+});
 </script>
+
+
+
 
 <style scoped>
     @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css");
@@ -221,12 +240,6 @@ body {
 h1 span {
     color:rgb(36, 140, 46); 
 }
-.navbar a:hover,
-.navbar.active,
-.navbar.active:focus,
-.navbar li:hover>a {
-    background: rgba(255, 255, 255, 0.2);
-  }
 
 .banner {
     margin: 0;
@@ -274,7 +287,9 @@ h6 span {
     margin: 5px; 
     
 }
-
+.error {
+  font-size: 12px;
+}
 .section{
     position: relative; 
     margin-top: 19px; 

@@ -1,8 +1,17 @@
 // src/firebase.js
-
-// Import specific Firebase services
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+// var firebase = require('firebase');
+// var firebaseui = require('firebaseui');
+// // Initialize the FirebaseUI Widget using Firebase.
+// var ui = new firebaseui.auth.AuthUI(firebase.auth());
+// ui.start('#firebaseui-auth-container', {
+//     signInOptions: [
+//       firebase.auth.EmailAuthProvider.PROVIDER_ID
+//     ],
+//     // Other config options...
+//   });
+// // Import specific Firebase services
+// import { getFirestore, collection, getDocs } from 'firebase/firestore';
+// import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -62,3 +71,28 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 // exports.api = functions.https.onRequest(app);
 // export const numbersRef = collection(db, "numbers");
 // export default {firebaseApp, auth, db}; 
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDmN08IvkUv2vQn7o_Cbd5daeQ3OXxGRpo",
+  authDomain: "ecoscape-ea1d6.firebaseapp.com",
+  databaseURL: "https://ecoscape-ea1d6-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "ecoscape-ea1d6",
+  storageBucket: "ecoscape-ea1d6.appspot.com",
+  messagingSenderId: "104462396856",
+  appId: "1:104462396856:web:bcaaa850fb71afed13b34d",
+  measurementId: "G-35CF9R9L0S"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+

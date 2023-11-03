@@ -75,7 +75,7 @@
                             <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off" v-model="signupPassword">
                             <i class="input-icon uil-lock-alt"></i>
                           </div>
-                          <a href="#" class="btn mt-4" id="word" @click="isLogin">Log In</a>
+                          <a href="#" class="btn mt-4" id="word" onclick="isLogin">Log In</a>
                         </div>
                       </div>
                     </div>
@@ -93,7 +93,7 @@
   </template>
 
 
-<script>
+<script>  
 import firebase from "firebase/compat/app"; 
 // import { initializeApp } from 'firebase/compat/functions';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
