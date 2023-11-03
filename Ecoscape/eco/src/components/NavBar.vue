@@ -43,11 +43,24 @@
                   <li><router-link to="/Transport">Green Transport Planner</router-link></li>
                 </ul>
               </li>
-              <li>
-                <router-link to="/Login" class="nav-link">
-                  <img src="/images/profile-icon.png" class="profile-icon" alt="profile" />Login / Sign Up
-                </router-link>
-              </li>
+              <router-link
+              v-if="isUserAuthenticated"
+              to="/logout"
+              class="nav-link"
+              @click="signOut"
+            >
+              <img src="/images/profile-icon.png" class="profile-icon" alt="profile" />
+              Sign Out
+            </router-link>
+            <router-link
+              v-else
+              to="/login"
+              class="nav-link"
+            >
+              <img src="/images/profile-icon.png" class="profile-icon" alt="profile" />
+              Login / Sign Up
+            </router-link>
+
             </ul>
           </div>
         </div>
@@ -57,12 +70,22 @@
 </template>
 
 <script>
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
+
 export default {
   data() {
     return {
       showSearchBar: false,
       isNavbarOpen: false, // Add a data property to track the state of the navbar
+      isUserAuthenticated: false, // Add a data property to track user authentication status
+
     };
+  },
+  created() {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      this.isUserAuthenticated = user !== null; // Set isUserAuthenticated based on user's authentication status
+    });
   },
   methods: {
     toggleSearch() {
@@ -71,6 +94,18 @@ export default {
     },
     toggleNavbar() {
       this.isNavbarOpen = !this.isNavbarOpen; // Toggle the collapsed navbar
+    },
+    signOut() {
+      const auth = getAuth();
+      signOut(auth)
+        .then(() => {
+          // User signed out successfully
+          this.isUserAuthenticated = false;
+          this.$router.push('/');
+        })
+        .catch((error) => {
+          console.error('Sign Out Error:', error);
+        });
     },
   },
 };

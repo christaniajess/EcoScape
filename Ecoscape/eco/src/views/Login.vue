@@ -94,12 +94,13 @@
 
  
  <script>
-import { defineComponent, ref, computed } from 'vue';
+import { defineComponent, ref, computed, toDisplayString } from 'vue';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import NavBar from '@/components/NavBar.vue';
 import Footer from '@/components/Footer.vue';
 import Dashboard from '@/components/Dashboard.vue'; 
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
   components: {
@@ -119,6 +120,9 @@ export default defineComponent({
     const auth = getAuth(); // Access the Auth instance
     const signUpButtonClicked = ref(false);
     const loginButtonClicked = ref(false);
+    const toDisplay = "";
+    const router = useRouter();
+
     // Function to check if an email is valid
     const isEmailValid = (emailValue) => {
       return emailValue.includes('@');
@@ -145,13 +149,36 @@ export default defineComponent({
 
       try {
         await signInWithEmailAndPassword(auth,  logEmail.value, logpass.value);
+        
+        // Query Firestore for user data
+        const colRef = collection(db, 'users');
+        const q = query(colRef, where('uid', '==', auth.currentUser.uid));
+        const querySnapshot = await getDocs(q);
+        
+        if (querySnapshot.size > 0) {
+          // User data found
+          querySnapshot.forEach((doc) => {
+            const userData = doc.data();
+            // Use userData as needed
+          });
+        }
+
         // Redirect to the dashboard
         this.$router.replace('Dashboard');
       } catch (e) {
         error.value = e.message;
       }
     };
-
+    const createUserInFirestore = async (user) => {
+          const colRef = collection(db, 'users');
+          const userDoc = {
+            uid: user.uid, // Use the Firebase Authentication UID
+            email: SignUpEmail.value, 
+            password: Signpass.value
+            // Other user-specific data
+          };
+          await addDoc(colRef, userDoc);
+};     
     const signUp = async () => {
       error.value = null;
       signUpButtonClicked.value = true;
@@ -159,20 +186,9 @@ export default defineComponent({
       try {
         const userCredential = await createUserWithEmailAndPassword(auth,  SignUpEmail.value, Signpass.value);
         const user = userCredential.user;
-        const actionCodeSettings = {
-          url: `${process.env.VUE_APP_HOST_NAME}/sign-in/?email=${user.email}`,
-        };
-        // Send email verification
-        // user.sendEmailVerification(auth, actionCodeSettings);
-        // 'users' collection reference
-        const colRef = collection(db, 'users');
-        // Data to send
-        const dataObj = {
-          email: user.email,
-          password: user.password
-          // Add other user-related data
-        };
-        await addDoc(colRef, dataObj);
+        await createUserInFirestore(user);
+        // Redirect to the homepage
+        toDisplay = "You are signed in!"
       } catch (e) {
         error.value = e.message;
       }
@@ -194,7 +210,8 @@ export default defineComponent({
       signUpButtonClicked,
       signupEmailIsValid,
       loginEmailIsValid,
-      passwordValid,
+      passwordValid, 
+      toDisplay,
     };
   }
 });
