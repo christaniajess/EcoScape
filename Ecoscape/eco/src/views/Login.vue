@@ -94,7 +94,7 @@
 
  
  <script>
-import { defineComponent, ref, computed, toDisplayString } from 'vue';
+import { defineComponent, ref, computed } from 'vue';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import NavBar from '@/components/NavBar.vue';
