@@ -12,6 +12,9 @@ import AboutCarousel from "@/components/AboutCarousel.vue";
 import Footer from "@/components/Footer.vue";
 import "aos/dist/aos.css"; // Import the AOS styles
 import AOS from "aos";
+import SearchMap from "@/components/SearchMap.vue"; 
+import TransportSlides from "@/components/TransportSlides.vue"; 
+
 //import firestore instance & relevant methods 
 // import firebaseApp from "@/firebase/firebase.js";
 // import { doc, getDoc, addDoc } from 'firebase/firestore';
@@ -26,6 +29,8 @@ export default {
     Footer,
     HomepageParallax,
     AboutCarousel,
+    SearchMap, 
+    TransportSlides, 
   },
   mounted() {
     AOS.init(); // Initialize AOS

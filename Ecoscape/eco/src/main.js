@@ -11,7 +11,8 @@ import router from './router/index.js';
 import 'font-awesome/css/font-awesome.min.css';
 import { getFirestore } from 'firebase/firestore';
 import { initializeApp} from 'firebase/app'; 
-import VueGoogleMaps from '@fawmi/vue-google-maps'
+import VueGoogleMaps from '@fawmi/vue-google-maps'; 
+
 // import firebase from "firebase/compat/app"; 
 const firebaseConfig = {
     apiKey: "AIzaSyDmN08IvkUv2vQn7o_Cbd5daeQ3OXxGRpo",
@@ -39,7 +40,9 @@ app.use(router);
 app.use(store);
 app.use(VueGoogleMaps, {
     load: {
-        key: 'AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ',
+        key: 'AIzaSyDmN08IvkUv2vQn7o_Cbd5daeQ3OXxGRpo',
+        libraries: "places", // Include additional libraries as needed
+
     },
 })
 

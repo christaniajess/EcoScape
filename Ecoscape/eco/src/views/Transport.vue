@@ -2,8 +2,8 @@
     <body>
       <NavBar />
       <TransportSlides />
-      <GoogleMap />
-      <tpMap />
+      <SearchMap />
+      <!-- <tpMap /> -->
       <Metric />
       <Footer />
     </body>
@@ -14,8 +14,8 @@
   import TransportSlides from "@/components/TransportSlides.vue";
   import Metric from "@/components/Metric.vue";
   import Footer from "@/components/Footer.vue";
-  import tpMap from "@/components/tpMap.vue"; 
-  import GoogleMap from "@/components/GoogleMap.vue"; 
+  // import tpMap from "@/components/tpMap.vue"; 
+  import SearchMap from "@/components/SearchMap.vue"; 
 
   export default {
     name: "Transport",
@@ -26,9 +26,9 @@
       NavBar,
       TransportSlides,
       Metric,
-      GoogleMap,
       Footer,
-      tpMap,
+      // tpMap,
+      SearchMap,
     },
   };
   </script>   

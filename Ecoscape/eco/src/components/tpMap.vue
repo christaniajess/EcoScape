@@ -1,25 +1,17 @@
 <template>
-    <div>
-      <h3>Google Map</h3>
-      <div id="map"></div>
-      <head>
-    <title>Simple Marker</title>
-    <!-- The callback parameter is required, so we use console.debug as a noop -->
- 
-  </head>
-  <body>
-    <gmp-map center="1.2832854986190796,103.86353302001953" zoom="14" map-id="DEMO_MAP_ID">
-      <gmp-advanced-marker position="1.2832854986190796,103.86353302001953" title="My location">
-      </gmp-advanced-marker>
+  <div>
+    <input
+      id="place-autocomplete"
+      type="text"
+      placeholder="Search for a location"
+      v-model="searchText"
+      @input="onSearchInput"
+    />
+    <gmp-map :center="mapCenter" :zoom="14" map-id="DEMO_MAP_ID">
+      <gmp-advanced-marker :position="markerPosition" title="My location"></gmp-advanced-marker>
     </gmp-map>
-  </body>
-       <div class="jumbotron">
-      <!-- <p class="lead text-center">Get Geo Location</p> -->
-      <form>
-        <div class="form-group">
-          <label for="addr">Enter Your Location</label>
-          <input type="text" class="form-control" v-model="address" placeholder="E.g. Gardens By the Bay">
-          <br>
+  </div>
+<div>
           <button type="button" onclick="getLoc('addr')" class="btn btn-success">Get Full Address!</button>
             <button type="button" onclick="getLoc('postcode')" class="btn btn-success">Get Postal Code!</button>
           <!-- the following set the lat, lng values to put a marker on the map-->
@@ -27,9 +19,13 @@
           <input type="hidden" id="lng" name="lng" :value="lng" />
           <!-- Buttons to fetch data for different modes of transportation -->
           <button @click="getBicycleParkingData">Get Bicycle Parking Data</button>
+          <br>
           <button @click="getCarParksData">Get Car Parks Data</button>
+          <br>
           <button @click="getBusStopsData">Get Bus Stops Data</button>
+          <br>
           <button @click="getMRTData">Get MRT Data</button>
+          
 
           <!-- Display transportation data -->
           <div id="transportData">
@@ -69,78 +65,63 @@
               </li>
             </ul>
           </div>
-        </div>
         <p id="display" class="lead text-center">{{ displayInfo }}</p>
-      </form>
-      </div>
     </div>
   </template>
-  <script>
+ 
+<script>
 
- import axios from 'axios';
-  import GoogleMap from '@/components/GoogleMap.vue';
+//  import axios from 'axios';
+//   import GoogleMap from '@/components/GoogleMap.vue';
 
-  
-  export default {
-    components: {
-        GoogleMap
-    },
-    props: {
-    index: {
-      type: Number,
-      required: true,
-    },
-  },
-    data() {
-      return {
-        address: 'Singapore Management University',
-        lat: '1.2973784',
-        lng: '103.8495219',
-        title: 'Hello SMU',
-        displayInfo: '',
-        bicycleParkingData: [],
-        carParksData: [],
-        busStopsData: [],
-        mrtData: [],
-        image: "",
-        url: "",
-        name: "",
-
-      };
-    },
-    computed: {
-    filteredBusStops() {
-      // Filter the bus stops based on the user's entered location
-      if (this.address) {
-        if (this.locationFilterType === 'fullAddress') {
-          return this.busStopsData.filter(busStop => busStop.RoadName.includes(this.address));
-        } else if (this.locationFilterType === 'postalCode') {
-          return this.busStopsData.filter(busStop => busStop.PostalCode === this.address);
-        } else {
-        // If no address is entered, return all bus stops
-        var errorMsg = "There are no bus stops nearby!"
-        return errorMsg; 
-        }
-        }       
-    },
-    filteredCarParks() {
-        if (this.address) {
-        if (this.locationFilterType === 'fullAddress') {
-          return this.carParksData.filter(carPark => this.address.includes(carPark.area));
-        } else if (this.locationFilterType === 'postalCode') {
-          return this.carParksData.filter(carPark => carPark.PostalCode === this.address);
-        }
-    
-  }
-  },
-  mounted() {
-    this.loadGoogleMapsScript();
-    console.log("mounted")
+export default {
+  data() {
+    return {
+      mapCenter: "1.2973784,103.8495219",
+      markerPosition: "1.2973784,103.8495219",
+      searchText: "",
+    };
   },
   methods: {
+    onSearchInput() {
+      if (this.searchText.length === 0) {
+        return; // No search query, no action
+      }
+
+      // Use the Places Autocomplete Service to get place predictions
+      const autocompleteService = new google.maps.places.AutocompleteService();
+
+      autocompleteService.getPlacePredictions(
+        {
+          input: this.searchText,
+        },
+        (predictions) => {
+          if (predictions) {
+            // Use the first prediction (most relevant) or display a list of suggestions
+            const firstPrediction = predictions[0];
+            if (firstPrediction) {
+              const placeService = new google.maps.places.PlacesService(document.createElement("div"));
+              placeService.getDetails(
+                {
+                  placeId: firstPrediction.place_id,
+                },
+                (place, status) => {
+                  if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    // Update the map's center and marker position
+                    this.mapCenter = `${place.geometry.location.lat()},${place.geometry.location.lng()}`;
+                    this.markerPosition = `${place.geometry.location.lat()},${place.geometry.location.lng()}`;
+                  }
+                }
+              );
+            }
+          }
+        }
+      );
+    },
     loadGoogleMapsScript() {
       const script = document.createElement("script");
-      script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ&libraries=maps,marker&v=beta";
+      script.src =
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ&libraries=places";
       script.async = true;
       script.defer = true;
       script.onload = this.initializeMap;
@@ -148,15 +129,100 @@
     },
     initializeMap() {
       // Your map initialization logic here
-      this.lat = parseFloat(this.lat);
-        this.lng = parseFloat(this.lng);
-        var loc = { lat: this.lat, lng: this.lng };
       const map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: 1.2973784, lng: 103.8495219 },
         zoom: 14,
       });
-      const marker = new google.maps.Marker({ position: loc, map: map, title: this.title });
-      },
+      const marker = new google.maps.Marker({
+        position: { lat: 1.2973784, lng: 103.8495219 },
+        map: map,
+        title: "Hello SMU",
+      });
+    },
+  },
+  mounted() {
+    this.loadGoogleMapsScript();
+  },
+};
+</script>
+
+  
+  <!-- // export default {
+  //   components: {
+  //       GoogleMap
+  //   },
+  //   props: {
+  //   index: {
+  //     type: Number,
+  //     required: true,
+  //   },
+  // },
+  //   data() {
+  //     return {
+  //       address: 'Singapore Management University',
+  //       mapCenter: "1.2832854986190796,103.86353302001953",
+  //       markerPosition: "1.2832854986190796,103.86353302001953",
+  //       searchText: "",
+  //       title: 'Hello SMU',
+  //       displayInfo: '',
+  //       bicycleParkingData: [],
+  //       carParksData: [],
+  //       busStopsData: [],
+  //       mrtData: [],
+  //       image: "",
+  //       url: "",
+  //       name: "",
+
+  //     };
+  //   },
+    // computed: {
+    // filteredBusStops() {
+    //   // Filter the bus stops based on the user's entered location
+    //   if (this.address) {
+    //     if (this.locationFilterType === 'fullAddress') {
+    //       return this.busStopsData.filter(busStop => busStop.RoadName.includes(this.address));
+    //     } else if (this.locationFilterType === 'postalCode') {
+    //       return this.busStopsData.filter(busStop => busStop.PostalCode === this.address);
+    //     } else {
+    //     // If no address is entered, return all bus stops
+    //     var errorMsg = "There are no bus stops nearby!"
+    //     return errorMsg; 
+    //     }
+    //     }       
+    // },
+    // filteredCarParks() {
+    //     if (this.address) {
+    //     if (this.locationFilterType === 'fullAddress') {
+    //       return this.carParksData.filter(carPark => this.address.includes(carPark.area));
+    //     } else if (this.locationFilterType === 'postalCode') {
+    //       return this.carParksData.filter(carPark => carPark.PostalCode === this.address);
+    //     }
+    
+  // }
+  // },
+  // mounted() {
+  //   this.loadGoogleMapsScript();
+  //   console.log("mounted")
+  // },
+  // methods: {
+    
+    // loadGoogleMapsScript() {
+    //   const script = document.createElement("script");
+    //   script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ&libraries=maps,marker&v=beta";
+    //   script.async = true;
+    //   script.defer = true;
+    //   script.onload = this.initializeMap;
+    //   document.head.appendChild(script);
+    // },
+    // initializeMap() {
+    //   // Your map initialization logic here
+    //   const map = new google.maps.Map(document.getElementById("map"), {
+    //     center: { lat: 1.2973784, lng: 103.8495219 },
+    //     zoom: 14,
+
+    //   });
+    //   const marker = new google.maps.Marker({ position: loc, map: map, title: this.title });
+    //   },
       //  getLoc(action) {
       //       var addr = document.getElementById("addr").value;
       //       console.log(addr);
@@ -201,56 +267,56 @@
       //               }); 
       //   },
 
-        getFullAddress (data) {
-            var addr = data["results"][0]["formatted_address"];
-            var loc = getLatLng(data);
-            return addr + ", lat: " + loc["lat"] + ", lng: " + loc["lng"];
-        },
+        // getFullAddress (data) {
+        //     var addr = data["results"][0]["formatted_address"];
+        //     var loc = getLatLng(data);
+        //     return addr + ", lat: " + loc["lat"] + ", lng: " + loc["lng"];
+        // },
 
-        getLatLng(data) {
-            var location= data["results"][0]["geometry"]["location"];
-            return location; 
-        },
+        // getLatLng(data) {
+        //     var location= data["results"][0]["geometry"]["location"];
+        //     return location; 
+        // },
 
-        getPostCode(data) {
-            var addrcomponents = data["results"][0]["address_components"];
-            var postcode = addrcomponents.filter(postcodeHelper);
-            // country is an array but there should be only one element
-            return postcode[0]["long_name"];
-        },
+        // getPostCode(data) {
+        //     var addrcomponents = data["results"][0]["address_components"];
+        //     var postcode = addrcomponents.filter(postcodeHelper);
+        //     // country is an array but there should be only one element
+        //     return postcode[0]["long_name"];
+        // },
 
-        postcodeHelper(addr) {  
-            return addr["types"][0] == "postal_code" ;
-        },
+        // postcodeHelper(addr) {  
+        //     return addr["types"][0] == "postal_code" ;
+        // },
 
-        getKeys(data){
-            // data["results"][0] is an object
-            // this gets the keys/properties of results[0] object
-            var keys = Object.keys(data["results"][0]);
-            for (key of keys) {
-                // this prints --
-                /*  address_components
-                    formatted_address
-                    geometry
-                    place_id
-                    plus_code
-                    types */
-                document.getElementById("display").innerText += key + "; ";
-            }
-        },
+        // getKeys(data){
+        //     // data["results"][0] is an object
+        //     // this gets the keys/properties of results[0] object
+        //     var keys = Object.keys(data["results"][0]);
+        //     for (key of keys) {
+        //         // this prints --
+        //         /*  address_components
+        //             formatted_address
+        //             geometry
+        //             place_id
+        //             plus_code
+        //             types */
+        //         document.getElementById("display").innerText += key + "; ";
+        //     }
+        // },
 
-        getCountry(data) {
-            // this is an array
-            var addrcomponents = data["results"][0]["address_components"];
-            // The filter() method creates a new array with array elements that passes a test.
-            var country = addrcomponents.filter(countryHelper);
-            // country is an array but there should be only one element
-            return country[0]["long_name"];
-        },
+        // getCountry(data) {
+        //     // this is an array
+        //     var addrcomponents = data["results"][0]["address_components"];
+        //     // The filter() method creates a new array with array elements that passes a test.
+        //     var country = addrcomponents.filter(countryHelper);
+        //     // country is an array but there should be only one element
+        //     return country[0]["long_name"];
+        // },
 
-        countryHelper(addr, index) {    
-            return addr["types"][0] == "country" ;
-        },
+        // countryHelper(addr, index) {    
+        //     return addr["types"][0] == "country" ;
+        // },
       //   async getBicycleParkingData() {
       //       const apiUrl = 'http://datamall2.mytransport.sg/ltaodataservice/BicycleParkingv2';
       //       const key = 'mcXYAV2rQXOykVpqXBXaxw=='; // Replace with your LTA API key
@@ -303,7 +369,7 @@
       //         AccountKey: key,
       //       },
       //     });
-  
+    
       //     const data = response.data;
       //     this.busStopsData = data;
       //   } catch (error) {
@@ -329,18 +395,18 @@
       // },
       
 
-    },
+    // },
 
-    created() {
-    // Load the Google Maps script here if not already loaded
-    if (typeof google === 'undefined') {
-      const script = document.createElement('script');
-      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ';
-      script.onload = this.initMap;
-      document.body.appendChild(script);
-    } else {
-      this.initMap();
-    }
+    // created() {
+    // // Load the Google Maps script here if not already loaded
+    // if (typeof google === 'undefined') {
+    //   const script = document.createElement('script');
+    //   script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAEdK4QmPR7xGkCxDcpoD1GLKBwBL-R0zQ';
+    //   script.onload = this.initMap;
+    //   document.body.appendChild(script);
+    // } else {
+    //   this.initMap();
+    // }
   
       // this.getFullAddress();
       // this.getBicycleParkingData();
@@ -348,11 +414,10 @@
       // this.getBusStopsData();
       // this.getMRTData();
     }
-  }}
-  </script>
+  }} -->
   
   
-  <style>
+  <style scoped>
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
  gmp-map {
