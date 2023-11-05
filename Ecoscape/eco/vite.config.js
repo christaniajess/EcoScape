@@ -23,6 +23,7 @@ export default defineConfig({
   //   proxy: {
   //     // '/api/geocode/json': 'https://maps.googleapis.com/maps/' , 
   //     '/BicycleParkingv2' : 'http://datamall2.mytransport.sg/ltaodataservice/',
+  //     '/BusStops' : 
   //       }
 
   // }

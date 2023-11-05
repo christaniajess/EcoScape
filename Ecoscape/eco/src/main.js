@@ -38,13 +38,13 @@ const db = getFirestore(firebaseApp);
 
 app.use(router);
 app.use(store);
-app.use(VueGoogleMaps, {
-    load: {
-        key: 'AIzaSyDmN08IvkUv2vQn7o_Cbd5daeQ3OXxGRpo',
-        libraries: "places", // Include additional libraries as needed
+// app.use(VueGoogleMaps, {
+//     load: {
+//         key: 'AIzaSyDmN08IvkUv2vQn7o_Cbd5daeQ3OXxGRpo',
+//         libraries: "places", // Include additional libraries as needed
 
-    },
-})
+//     },
+// })
 
 app.mount('#app');
 

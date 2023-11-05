@@ -7,6 +7,7 @@
             <input
               id="tab1"
               type="radio"
+              name="tabs"
               checked
               v-model="activeTab"
               value="bicycle"
@@ -55,7 +56,48 @@
 </template>
   
   <script>
+  import axios from 'axios';
   
+export default {
+  data() {
+    return {
+      latitude: null, // User input latitude
+      longitude: null, // User input longitude
+      bicycleData: [], // Data fetched from the API
+    };
+  },
+  methods: {
+    async getBicycleParkingData() {
+      // Ensure both latitude and longitude are provided by the user
+      if (!this.latitude || !this.longitude) {
+        console.error('Please enter both latitude and longitude.');
+        return;
+      }
+
+      const apiUrl = 'http://datamall2.mytransport.sg/ltaodataservice/BicycleParkingv2';
+      const apiKey = 'mcXYAV2rQXOykVpqXBXaxw==';
+
+      const requestParams = {
+        Lat: this.latitude,
+        Long: this.longitude,
+      };
+
+      try {
+        const response = await axios.get(apiUrl, {
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            Accept: 'application/json',
+          },
+          params: requestParams,
+        });
+
+        this.bicycleData = response.data.value;
+      } catch (error) {
+        console.error('Error fetching bicycle parking data:', error);
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>

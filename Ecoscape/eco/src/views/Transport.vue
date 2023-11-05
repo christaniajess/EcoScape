@@ -6,8 +6,9 @@
     <!-- <TransportMap /> -->
     <!-- <TpGoogleMap :lat="yourLatValue" :long="yourLongValue" :name="yourNameValue"/> -->
     <!-- <TransportMap /> -->
-    <!-- <BicycleInfo/>
-    <CarParkInfo/> -->
+    <BicycleInfo/>
+
+    <CarParkInfo/>
     <BusInfo />
     <!-- <MrtInfo/> -->
     <SearchMap /> 
@@ -18,12 +19,12 @@
 
 <script>
 import NavBar from "@/components/NavBar.vue";
-import TransportSlides from "../components/TransportSlides.vue";
-import Metric from "../components/Metric.vue";
+import TransportSlides from "@/components/TransportSlides.vue";
+import Metric from "@/components/Metric.vue";
 import Footer from "@/components/Footer.vue";
 import SearchMap from "../components/SearchMap.vue";
-import BicycleInfo from "../components/BicycleInfo.vue";
-import CarParkInfo from "../components/CarParkInfo.vue";
+import BicycleInfo from "@/components/BicycleInfo.vue";
+import CarParkInfo from "@/components/CarParkInfo.vue";
 import BusInfo from "@/components/BusInfo.vue";
 import MrtInfo from "../components/MrtInfo.vue";
 
@@ -41,9 +42,10 @@ export default {
     // TransportMap,
     SearchMap,
     // MrtInfo,
-    // BicycleInfo,
-    // CarParkInfo,
-    BusInfo
+    BicycleInfo,
+    CarParkInfo,
+    BusInfo,
+    
 },
 };
 </script>
