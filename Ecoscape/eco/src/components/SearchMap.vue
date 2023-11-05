@@ -11,7 +11,7 @@
     </div>
 
     <!-- Rendering the map on the page -->
-    <GMapMap :center="coords" :zoom="10" map-type-id="terrain" style="width: 100%; height: 50rem">
+    <GMapMap :center="coords" :zoom="10" map-type-id="terrain" style="width: 100%; height: 100vh;">
 
       <!-- Marker to display the searched location -->
       <GMapMarker

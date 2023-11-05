@@ -1,5 +1,12 @@
 // store/index.js
 import { createStore } from 'vuex';
+// store/index.js
+
+const state = {
+  latitude: null,
+  longitude: null,
+  bicycleData: [],
+};
 
 const store = createStore({
   state: {

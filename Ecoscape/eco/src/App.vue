@@ -21,7 +21,6 @@ import TransportSlides from "@/components/TransportSlides.vue";
 // import db from '@/firebase/firebase.js'; 
 
 
-
 export default {
   name: "App",
   components: {

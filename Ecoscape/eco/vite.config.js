@@ -19,4 +19,11 @@ export default defineConfig({
       "fast-deep-equal",
     ],
   },
+  // server: {
+  //   proxy: {
+  //     // '/api/geocode/json': 'https://maps.googleapis.com/maps/' , 
+  //     '/BicycleParkingv2' : 'http://datamall2.mytransport.sg/ltaodataservice/',
+  //       }
+
+  // }
 });
